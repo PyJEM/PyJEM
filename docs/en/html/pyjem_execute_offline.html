@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Execution with Offline &mdash; PyJEM Use Manual 1.0.0.620 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0.620',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyJEM Use Manual 1.0.0.620 documentation" href="index.html" />
+    <link rel="up" title="Execute PyJEM" href="execute_pyjem.html" />
+    <link rel="next" title="FAQ" href="FAQ.html" />
+    <link rel="prev" title="Execution with Online" href="pyjem_execute_online.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="execution-with-offline">
+<h1>Execution with Offline<a class="headerlink" href="#execution-with-offline" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-offline">
+<h2>About offline<a class="headerlink" href="#about-offline" title="Permalink to this headline">¶</a></h2>
+<p>Before moving the TEM in the online version,
+it was created to check what kind of movement the created source code performs and
+to check the behavior in the absence of the device.
+All functions available in the online version can be used offline.
+Also, it may differ from the actual behavior of TEM.</p>
+</div>
+<div class="section" id="import-pyjem-tem3-and-example-of-use">
+<h2>import PyJEM.TEM3 and example of use<a class="headerlink" href="#import-pyjem-tem3-and-example-of-use" title="Permalink to this headline">¶</a></h2>
+<p>In PyJEM.TEM3, you can use the functions divided by TEM3 class such as Aperture, Gun, Lens etc.</p>
+<div class="section" id="import-pyjem-tem3">
+<h3>import PyJEM.TEM3<a class="headerlink" href="#import-pyjem-tem3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+[MSC v.1900 64 bit (AMD 64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+&gt;&gt;&gt;from PyJEM.offline import TEM3
+Ready Communication
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-magnification-information">
+<h3>Get magnification information<a class="headerlink" href="#get-magnification-information" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+[MSC v.1900 64 bit (AMD 64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+&gt;&gt;&gt;eos = TEM3.EOS3()
+&gt;&gt;&gt;eos.GetMagValue()
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">In the first line of the above CommandLine, an instance of a class that controls EOS of TEM3 is created.</div>
+<div class="line">The second line gets the current magnification.</div>
+</div>
+</div>
+</div>
+<div class="section" id="import-pyjem-detector-and-example-of-use">
+<h2>import PyJEM.detector and example of use<a class="headerlink" href="#import-pyjem-detector-and-example-of-use" title="Permalink to this headline">¶</a></h2>
+<p>With PyJEM.detector, you can acquire and set detector conditions, acquire images,
+execute Auto functions, and so on.</p>
+<div class="section" id="import-pyjem-detector">
+<h3>import PyJEM.detector<a class="headerlink" href="#import-pyjem-detector" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+[MSC v.1900 64 bit (AMD 64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+&gt;&gt;&gt;from PyJEM.offline import detector
+0 : camera
+1 : STEM Image
+</pre></div>
+</div>
+<p>In the same way as the online version,
+the detector names that can be controlled by import are displayed in the list print statement.
+This is a display of the <strong>detector name</strong> which can be controlled to the variable of list type at the time of import.
+The number written on the left is the element number.</p>
+</div>
+<div class="section" id="get-detector-condition">
+<h3>Get detector condition<a class="headerlink" href="#get-detector-condition" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+[MSC v.1900 64 bit (AMD 64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+&gt;&gt;&gt;det = detector.Detector(&quot;STEM Image&quot;)
+STEM Image is Correct!
+&gt;&gt;&gt;det.get_detectorsetting()
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">In the first line of the above CommandLine,
+we create instances of detectors for which detector information is to be acquired.
+In the above CommandLine, for example, the target detector name is STEM Image.
+Please enter the detector name you want to target in Detector ().
+If a detector name controllable by PyJEM is entered, &#8220;* detector name * is Correct!&#8221;
+Will be displayed.</div>
+<div class="line">Get the state of the detector specified in the second line.</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="howtouse.html">How to use</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="use_spyder.html">Use Spyder (editor)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="execute_pyjem.html">Execute PyJEM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pyjem_execute_online.html">Execution with Online</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Execution with Offline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pyjem_execute_offline.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;Copyright © 2006-2018 JEOL Ltd..
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/pyjem_execute_offline.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

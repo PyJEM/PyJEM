@@ -1,0 +1,41 @@
+FAQ
+=====
+
+FAQ about PyJEM
+
+
+What is TEMPC and Remote PC?
+----------------------------
+
+**TEMPC**
+
+.. image:: image/TEMPC_pyjem.png
+   :scale: 50%
+
+**RemotePC**
+
+.. image:: image/RemotePC_pyjem.png
+   :scale: 50%
+
+When the TEM unit can not be controlled with PyJEM
+-----------------------------------------------------
+
+If you try not to connect to TEM unit with PyJEM, please try the following method.
+
+**PyJEM in the TEMPC**::
+
+    Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+    [MSC v.1900 64 bit (AMD 64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    >>>import PyJEM 
+    >>>PyJEM.local()
+
+**PyJEM in the RemotePC**::
+
+    Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+    [MSC v.1900 64 bit (AMD 64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    >>>import PyJEM 
+    >>>PyJEM.remote()

@@ -1,0 +1,13 @@
+Use Spyder (editor)
+=====================
+
+Spyder is an integrated development environment, 
+intended to program scientific applications with python. 
+We recommend using spyder as a programming environment using PyJEM.
+
+For details spyder, please visit https://github.com/spyder-ide/spyde.
+
+.. toctree::
+
+   use_spyder.start
+   

@@ -1,0 +1,156 @@
+Execution with Online
+==========================
+
+You can control the TEM connected to PyJEM.
+
+Pre-conditions
+---------------
+
+  * TEMCenter is running
+
+Use of TEM3 package
+----------------------
+
+TEM3 is a package that can control TEM such as Aperture, Gun, Lens etc
+Below is an initial process for using TEM3 package and an example of simple usage.
+
+Initial process of using TEM3 package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, execute import TEM3.
+Start python and enter "from PyJEM import TEM3" on the command line.
+
+:: 
+
+    Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+    [MSC v.1900 64 bit (AMD 64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    >>>from PyJEM import TEM3
+    Ready Communication
+  
+* If import successful, it displays * Ready Communication * as a print statement. (It may not be displayed in Ipython)
+
+* If import fails, it displays * Not Ready Communication * as a print statement. (It may not be displayed in Ipython)
+
+
+Get magnification information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As an example using the TEM3 package, we will show you how to get the magnification of the TEM unit.
+
+:: 
+
+    Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+    [MSC v.1900 64 bit (AMD 64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    >>>eos = TEM3.EOS3()
+    >>>eos.GetTemStemMode()
+
+| In the first line of the above CommandLine, an instance of a class that controls EOS of TEM3 is created. 
+| The second line gets the current magnification.
+
+
+
+Use of detector package
+----------------------------
+
+In the detector package, you can get and set detector conditions, 
+acquire images, execute Auto functions, and so on.
+
+Initial process of using detector package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, execute import detector.
+Start python and enter "from PyJEM import detector" on the command line.
+
+:: 
+
+    Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+    [MSC v.1900 64 bit (AMD 64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    >>>from PyJEM import detector
+    0 : STEM DF
+    1 : STEM BF
+    2 : NONE  
+  
+In the same way as the offline version. 
+If import succeeds, it displays a list of detectors that can be controlled by detector package.
+This is a display of the **detector name** which can be controlled to the variable of list type at the time of import. 
+The left number is the element number of target detector.
+
+The name of the detector to be displayed may change depending on TEM unit.
+
+Example of execution:
+
+.. image:: image/import_detector_online.gif
+   :scale: 80%
+
+Get detector condition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As an example using the detector package, we will show you how to get the targeted detector condition.
+
+:: 
+
+    Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+    [MSC v.1900 64 bit (AMD 64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    >>>det = detector.Detector("STEM DF")
+    STEM DF is Correct!
+    >>>det.get_detectorsetting()
+
+| In the first line of the above CommandLine, 
+  we create instances of detectors for which detector information is to be acquired.
+  In the above CommandLine, for example, the target detector name is STEM DF. 
+  Please enter the detector name you want to target in Detector (). 
+  If a detector name controllable by PyJEM is entered, "* detector name * is Correct!" 
+  Will be displayed.
+| Get the state of the detector specified in the second line.
+
+
+Example of execution:
+ 
+.. image:: image/detector_get_setting_online.gif
+   :scale: 80%
+
+Execution of sample code
+--------------------------------
+
+1. Start Spyder.
+2. Use IPython Console in Spyder to get the PyJEM folder path.
+
+:: 
+
+    Python3.5.1 |Anaconda 4.0.0 (64bit)| (default, Feb 15 2016, 09:49:46)
+    [MSC v.1900 64 bit (AMD 64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+    >>>import PyJEM
+    >>>PyJEM.__path__
+
+3. After acquiring the PyJEM folder path, paste it on the red frame below.
+
+  .. image:: image/spyder_UI_folder_select.png
+     :scale: 40%
+
+4. Click [sample] in the red frame.
+
+  .. image:: image/spyder_UI_samplepath.png
+     :scale: 40%
+
+5. Click to display the sample file, so double click on the file you want to execute.
+
+6. The source code of the clicked file is displayed in the red frame.
+
+  .. image:: image/sample_emission_execute.png
+     :scale: 40%
+
+7. Click the [Run file] button.
+
+  .. image:: image/spyder_UI_runbuttun.png
+     :scale: 40%
+
