@@ -3,7 +3,7 @@ PyJEM
 
 manual document.
 
-=> [Yahoo!Japan](https://pyjem.github.io/PyJEM/)
+=> [PyJEM manual](https://pyjem.github.io/PyJEM/)
 
 
 ========================
