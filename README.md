@@ -1,6 +1,12 @@
 PyJEM
 =====================
 
+manual document.
+
+=> [Yahoo!Japan](https://pyjem.github.io/PyJEM/)
+
+
+========================
 About this repository
 ------------------------------------
 　This site only answers questions about PyJEM. 
