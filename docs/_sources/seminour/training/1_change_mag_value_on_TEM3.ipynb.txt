@@ -1,0 +1,383 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# A1.  現在の倍率の取得\n",
+    "\n",
+    "* 現在の倍率の取得は、PyJEM.TEM3.EOS3()に定義されているGetMagValue()で確認することができます。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## パッケージの読み込み"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from PyJEM.offline import TEM3   #offline\n",
+    "#from PyJEM import TEM3           #online"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 利用するクラスのインスタンスの作成\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "eos = TEM3.EOS3()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 現在の倍率の取得"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[200, 'X', 'X200']"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "eos.GetMagValue()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# A2.  倍率の変更後、変更された倍率の確認\n",
+    "\n",
+    "* 倍率の変更は、PyJEM.TEM3.EOS3()に定義されているSetSelector()で変更することができます。\n",
+    "* SetSelector()には引数が1つあり、入力した値に応じた倍率へ変更されます。\n",
+    "* 入力値は、indexで 0 ～ 40　までです。\n",
+    "* Set～関数は戻り値がありません。変更後の倍率は、GetMagValue()で確認することができます。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## パッケージの読み込み"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from PyJEM.offline import TEM3   #offline\n",
+    "#from PyJEM import TEM3           #online"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 利用するクラスのインスタンスの作成\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "eos = TEM3.EOS3()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 倍率の変更"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "eos.SetSelector(1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 結果の確認"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[250, 'X', 'X250']"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "eos.GetMagValue()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# A3.  現在の倍率からfor文を使い10段階倍率を上げる\n",
+    "* for文を利用する。\n",
+    " * for i in range(10):\n",
+    "* 現在の倍率から1段階倍率を上げる関数は、 **UpSelector()**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## パッケージの読み込み"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from PyJEM.offline import TEM3   #offline\n",
+    "#from PyJEM import TEM3           #online"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 利用するクラスのインスタンスの作成\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "eos = TEM3.EOS3()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## ループ実行"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[300, 'X', 'X300']\n",
+      "[400, 'X', 'X400']\n",
+      "[500, 'X', 'X500']\n",
+      "[600, 'X', 'X600']\n",
+      "[800, 'X', 'X800']\n",
+      "[1000, 'X', 'X1000']\n",
+      "[1200, 'X', 'X1200']\n",
+      "[1500, 'X', 'X1500']\n",
+      "[2000, 'X', 'X2000']\n",
+      "[2500, 'X', 'X2500']\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(10):\n",
+    "    eos.UpSelector()\n",
+    "    print(eos.GetMagValue())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Q4. 現在の倍率から連続して倍率変更を行う関数を作って実行\n",
+    "* 引数は1つ。倍率変更のループ回数\n",
+    "* 関数名は、test4"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## パッケージの読み込み"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from PyJEM.offline import TEM3   #offline\n",
+    "#from PyJEM import TEM3           #online"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 利用するクラスのインスタンスの作成\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "eos = TEM3.EOS3()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 関数の定義"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def test4(loop):\n",
+    "    for i in range(loop):\n",
+    "        eos.UpSelector()\n",
+    "        print(eos.GetMagValue())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 作成した関数の実行"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[30000, 'X', 'X30k']\n",
+      "[40000, 'X', 'X40k']\n",
+      "[50000, 'X', 'X50k']\n",
+      "[60000, 'X', 'X60k']\n",
+      "[80000, 'X', 'X80k']\n",
+      "[100000, 'X', 'X100k']\n",
+      "[120000, 'X', 'X120k']\n",
+      "[150000, 'X', 'X150k']\n",
+      "[200000, 'X', 'X200k']\n",
+      "[250000, 'X', 'X250k']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 現在の倍率から10段階連続して上げる\n",
+    "test4(10)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.5.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
