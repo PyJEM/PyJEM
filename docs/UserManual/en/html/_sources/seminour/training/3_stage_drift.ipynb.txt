@@ -1,0 +1,433 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# A1. 複合処理 (offline用)\n",
+    "ステージを動かし、動かしてからの時間経過ごとのずれ量を表示する  \n",
+    "1. ステージを10um動かし、初期位置に戻す。\n",
+    "2. 指定したループ回数増の撮影を行う。\n",
+    "3. 一枚目の画像と、その後画像の比較を行い、ずれ量をグラフとして表示する"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0 : camera\n",
+      "1 : STEM Image\n"
+     ]
+    }
+   ],
+   "source": [
+    "%matplotlib inline\n",
+    "import PyJEM\n",
+    "import time\n",
+    "from PyJEM.offline import detector\n",
+    "from PyJEM.offline import TEM3\n",
+    "import cv2\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "import math"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "camera is Correct!\n"
+     ]
+    }
+   ],
+   "source": [
+    "_detector = detector.Detector(\"camera\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[ 77,  88,  95, ...,   0,   0,   0],\n",
+       "       [160, 156,  83, ...,   0,   0,   0],\n",
+       "       [157, 137, 143, ...,   0,   0,   0],\n",
+       "       ..., \n",
+       "       [145, 138, 153, ..., 255, 255, 255],\n",
+       "       [ 94,  82,  37, ..., 255, 255, 255],\n",
+       "       [ 91, 141, 122, ..., 255, 255, 255]], dtype=uint8)"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "_detector.snapshot(\"jpg\", save=True, filename=\"test\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "input:10\n",
+      "detectorName: camera\n",
+      "extention: jpg\n",
+      "camera is Correct!\n",
+      "Start Python Script.\n",
+      "No.1\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.2\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.3\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.4\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.5\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.6\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.7\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.8\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.9\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "No.10\n",
+      "X = 0.0, Y = -1.1368683772161603e-13\n",
+      "Distance = 1.1368683772161603e-13\n",
+      "= End =\n",
+      "Time = 1.7679926167919007 sec\n",
+      "Drift = 6.430277855340014e-14 (pixels / sec)\n"
+     ]
+    },
+    {
+     "data": {
+      "image/png": "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\n",
+      "text/plain": [
+       "<matplotlib.figure.Figure at 0x169c24bf748>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "num = int(input(\"input:\"))\n",
+    "detectorName = input(\"detectorName: \")\n",
+    "extention = input(\"extention: \")\n",
+    "\n",
+    "_stage = TEM3.Stage3()\n",
+    "_detector = detector.Detector(detectorName)\n",
+    "\n",
+    "print (\"Start Python Script.\")\n",
+    "\n",
+    "_stage.SetXRel(10000)\n",
+    "_stage.SetYRel(10000)\n",
+    "\n",
+    "_stage.SetXRel(-10000)\n",
+    "_stage.SetYRel(-10000)\n",
+    "\n",
+    "time.sleep(1)\n",
+    "\n",
+    "st = time.clock()\n",
+    "\n",
+    "for i in range(num+1):\n",
+    "    if ( i == 0):\n",
+    "        _detector.snapshot(extention, save=True, filename=\"test\" + str(i))\n",
+    "\n",
+    "    elif( i > 0):\n",
+    "        _detector.snapshot(extention, save=True, filename=\"test\" + str(i))\n",
+    "\n",
+    "        img1 = cv2.imread(detector.resource_path + \"\\\\test\" + str(0) + \".\" + extention, 0)\n",
+    "        img2 = cv2.imread(detector.resource_path + \"\\\\test\" + str(i) + \".\" + extention, 0)\n",
+    "\n",
+    "        img1 = np.float32(img1)\n",
+    "        img2 = np.float32(img2)\n",
+    "\n",
+    "        print (\"No.\" + str(i))\n",
+    "        value,b = cv2.phaseCorrelate(img1,img2)\n",
+    "        print (\"X = \" + str(value[0]) + \", Y = \" + str(value[1]))\n",
+    "\n",
+    "        distance = math.sqrt((value[0]*value[0]) + (value[1]*value[1]))\n",
+    "        print (\"Distance = \" + str(distance))\n",
+    "\n",
+    "        plt.plot(i, distance, \"o\")\n",
+    "\n",
+    "fin = time.clock()\n",
+    "print (\"= End =\")\n",
+    "print (\"Time = \"+str(fin - st) + \" sec\")\n",
+    "print (\"Drift = \" + str(distance / (fin - st)) + \" (pixels / sec)\")\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Help on function plot in module matplotlib.pyplot:\n",
+      "\n",
+      "plot(*args, **kwargs)\n",
+      "    Plot lines and/or markers to the\n",
+      "    :class:`~matplotlib.axes.Axes`.  *args* is a variable length\n",
+      "    argument, allowing for multiple *x*, *y* pairs with an\n",
+      "    optional format string.  For example, each of the following is\n",
+      "    legal::\n",
+      "    \n",
+      "        plot(x, y)        # plot x and y using default line style and color\n",
+      "        plot(x, y, 'bo')  # plot x and y using blue circle markers\n",
+      "        plot(y)           # plot y using x as index array 0..N-1\n",
+      "        plot(y, 'r+')     # ditto, but with red plusses\n",
+      "    \n",
+      "    If *x* and/or *y* is 2-dimensional, then the corresponding columns\n",
+      "    will be plotted.\n",
+      "    \n",
+      "    If used with labeled data, make sure that the color spec is not\n",
+      "    included as an element in data, as otherwise the last case\n",
+      "    ``plot(\"v\",\"r\", data={\"v\":..., \"r\":...)``\n",
+      "    can be interpreted as the first case which would do ``plot(v, r)``\n",
+      "    using the default line style and color.\n",
+      "    \n",
+      "    If not used with labeled data (i.e., without a data argument),\n",
+      "    an arbitrary number of *x*, *y*, *fmt* groups can be specified, as in::\n",
+      "    \n",
+      "        a.plot(x1, y1, 'g^', x2, y2, 'g-')\n",
+      "    \n",
+      "    Return value is a list of lines that were added.\n",
+      "    \n",
+      "    By default, each line is assigned a different style specified by a\n",
+      "    'style cycle'.  To change this behavior, you can edit the\n",
+      "    axes.prop_cycle rcParam.\n",
+      "    \n",
+      "    The following format string characters are accepted to control\n",
+      "    the line style or marker:\n",
+      "    \n",
+      "    ================    ===============================\n",
+      "    character           description\n",
+      "    ================    ===============================\n",
+      "    ``'-'``             solid line style\n",
+      "    ``'--'``            dashed line style\n",
+      "    ``'-.'``            dash-dot line style\n",
+      "    ``':'``             dotted line style\n",
+      "    ``'.'``             point marker\n",
+      "    ``','``             pixel marker\n",
+      "    ``'o'``             circle marker\n",
+      "    ``'v'``             triangle_down marker\n",
+      "    ``'^'``             triangle_up marker\n",
+      "    ``'<'``             triangle_left marker\n",
+      "    ``'>'``             triangle_right marker\n",
+      "    ``'1'``             tri_down marker\n",
+      "    ``'2'``             tri_up marker\n",
+      "    ``'3'``             tri_left marker\n",
+      "    ``'4'``             tri_right marker\n",
+      "    ``'s'``             square marker\n",
+      "    ``'p'``             pentagon marker\n",
+      "    ``'*'``             star marker\n",
+      "    ``'h'``             hexagon1 marker\n",
+      "    ``'H'``             hexagon2 marker\n",
+      "    ``'+'``             plus marker\n",
+      "    ``'x'``             x marker\n",
+      "    ``'D'``             diamond marker\n",
+      "    ``'d'``             thin_diamond marker\n",
+      "    ``'|'``             vline marker\n",
+      "    ``'_'``             hline marker\n",
+      "    ================    ===============================\n",
+      "    \n",
+      "    \n",
+      "    The following color abbreviations are supported:\n",
+      "    \n",
+      "    ==========  ========\n",
+      "    character   color\n",
+      "    ==========  ========\n",
+      "    'b'         blue\n",
+      "    'g'         green\n",
+      "    'r'         red\n",
+      "    'c'         cyan\n",
+      "    'm'         magenta\n",
+      "    'y'         yellow\n",
+      "    'k'         black\n",
+      "    'w'         white\n",
+      "    ==========  ========\n",
+      "    \n",
+      "    In addition, you can specify colors in many weird and\n",
+      "    wonderful ways, including full names (``'green'``), hex\n",
+      "    strings (``'#008000'``), RGB or RGBA tuples (``(0,1,0,1)``) or\n",
+      "    grayscale intensities as a string (``'0.8'``).  Of these, the\n",
+      "    string specifications can be used in place of a ``fmt`` group,\n",
+      "    but the tuple forms can be used only as ``kwargs``.\n",
+      "    \n",
+      "    Line styles and colors are combined in a single format string, as in\n",
+      "    ``'bo'`` for blue circles.\n",
+      "    \n",
+      "    The *kwargs* can be used to set line properties (any property that has\n",
+      "    a ``set_*`` method).  You can use this to set a line label (for auto\n",
+      "    legends), linewidth, anitialising, marker face color, etc.  Here is an\n",
+      "    example::\n",
+      "    \n",
+      "        plot([1,2,3], [1,2,3], 'go-', label='line 1', linewidth=2)\n",
+      "        plot([1,2,3], [1,4,9], 'rs',  label='line 2')\n",
+      "        axis([0, 4, 0, 10])\n",
+      "        legend()\n",
+      "    \n",
+      "    If you make multiple lines with one plot command, the kwargs\n",
+      "    apply to all those lines, e.g.::\n",
+      "    \n",
+      "        plot(x1, y1, x2, y2, antialiased=False)\n",
+      "    \n",
+      "    Neither line will be antialiased.\n",
+      "    \n",
+      "    You do not need to use format strings, which are just\n",
+      "    abbreviations.  All of the line properties can be controlled\n",
+      "    by keyword arguments.  For example, you can set the color,\n",
+      "    marker, linestyle, and markercolor with::\n",
+      "    \n",
+      "        plot(x, y, color='green', linestyle='dashed', marker='o',\n",
+      "             markerfacecolor='blue', markersize=12).\n",
+      "    \n",
+      "    See :class:`~matplotlib.lines.Line2D` for details.\n",
+      "    \n",
+      "    The kwargs are :class:`~matplotlib.lines.Line2D` properties:\n",
+      "    \n",
+      "      agg_filter: unknown\n",
+      "      alpha: float (0.0 transparent through 1.0 opaque) \n",
+      "      animated: [True | False] \n",
+      "      antialiased or aa: [True | False] \n",
+      "      axes: an :class:`~matplotlib.axes.Axes` instance \n",
+      "      clip_box: a :class:`matplotlib.transforms.Bbox` instance \n",
+      "      clip_on: [True | False] \n",
+      "      clip_path: [ (:class:`~matplotlib.path.Path`, :class:`~matplotlib.transforms.Transform`) | :class:`~matplotlib.patches.Patch` | None ] \n",
+      "      color or c: any matplotlib color \n",
+      "      contains: a callable function \n",
+      "      dash_capstyle: ['butt' | 'round' | 'projecting'] \n",
+      "      dash_joinstyle: ['miter' | 'round' | 'bevel'] \n",
+      "      dashes: sequence of on/off ink in points \n",
+      "      drawstyle: ['default' | 'steps' | 'steps-pre' | 'steps-mid' | 'steps-post'] \n",
+      "      figure: a :class:`matplotlib.figure.Figure` instance \n",
+      "      fillstyle: ['full' | 'left' | 'right' | 'bottom' | 'top' | 'none'] \n",
+      "      gid: an id string \n",
+      "      label: string or anything printable with '%s' conversion. \n",
+      "      linestyle or ls: ['solid' | 'dashed', 'dashdot', 'dotted' | (offset, on-off-dash-seq) | ``'-'`` | ``'--'`` | ``'-.'`` | ``':'`` | ``'None'`` | ``' '`` | ``''``]\n",
+      "      linewidth or lw: float value in points \n",
+      "      marker: :mod:`A valid marker style <matplotlib.markers>`\n",
+      "      markeredgecolor or mec: any matplotlib color \n",
+      "      markeredgewidth or mew: float value in points \n",
+      "      markerfacecolor or mfc: any matplotlib color \n",
+      "      markerfacecoloralt or mfcalt: any matplotlib color \n",
+      "      markersize or ms: float \n",
+      "      markevery: [None | int | length-2 tuple of int | slice | list/array of int | float | length-2 tuple of float]\n",
+      "      path_effects: unknown\n",
+      "      picker: float distance in points or callable pick function ``fn(artist, event)`` \n",
+      "      pickradius: float distance in points \n",
+      "      rasterized: [True | False | None] \n",
+      "      sketch_params: unknown\n",
+      "      snap: unknown\n",
+      "      solid_capstyle: ['butt' | 'round' |  'projecting'] \n",
+      "      solid_joinstyle: ['miter' | 'round' | 'bevel'] \n",
+      "      transform: a :class:`matplotlib.transforms.Transform` instance \n",
+      "      url: a url string \n",
+      "      visible: [True | False] \n",
+      "      xdata: 1D array \n",
+      "      ydata: 1D array \n",
+      "      zorder: any number \n",
+      "    \n",
+      "    kwargs *scalex* and *scaley*, if defined, are passed on to\n",
+      "    :meth:`~matplotlib.axes.Axes.autoscale_view` to determine\n",
+      "    whether the *x* and *y* axes are autoscaled; the default is\n",
+      "    *True*.\n",
+      "    \n",
+      "    Notes\n",
+      "    -----\n",
+      "    \n",
+      "    In addition to the above described arguments, this function can take a\n",
+      "    **data** keyword argument. If such a **data** argument is given, the\n",
+      "    following arguments are replaced by **data[<arg>]**:\n",
+      "    \n",
+      "    * All arguments with the following names: 'y', 'x'.\n",
+      "    \n",
+      "    \n",
+      "    \n",
+      "    \n",
+      "    Additional kwargs: hold = [True|False] overrides default hold state\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "help(plt.plot)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.5.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
