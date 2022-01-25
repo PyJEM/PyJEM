@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Activate python environment. &mdash; PyJEM Use Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PyJEM Use Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Log/Log.html">What is New in PyJEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tutorial/index.html">Tutorial</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyJEM Use Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Activate python environment.</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/docs/Tutorial/train/1_basic.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Activate-python-environment.">
+<h1>Activate python environment.<a class="headerlink" href="#Activate-python-environment." title="Permalink to this headline">¶</a></h1>
+<div class="section" id="conda-activate">
+<h2>conda activate<a class="headerlink" href="#conda-activate" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="Use-python3.5">
+<h3>Use python3.5<a class="headerlink" href="#Use-python3.5" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open the “Anaconda Prompt”</p></li>
+<li><p>Write “conda activate vjem35” on the command line.</p></li>
+</ol>
+</div>
+<div class="section" id="Use-python3.7">
+<h3>Use python3.7<a class="headerlink" href="#Use-python3.7" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open the “Anaconda Prompt”</p></li>
+<li><p>Write “conda activate vjem37” on the command line.</p></li>
+</ol>
+</div>
+<div class="section" id="Use-python3.8">
+<h3>Use python3.8<a class="headerlink" href="#Use-python3.8" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Open the “Anaconda Prompt”</p></li>
+<li><p>Write “conda activate vjem38” on the command line.</p></li>
+</ol>
+</div>
+<div class="section" id="Example">
+<h3>Example<a class="headerlink" href="#Example" title="Permalink to this headline">¶</a></h3>
+<p>Activate python3.5 environment.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">JEOL</span>\<span class="n">Desktop</span><span class="o">&gt;</span><span class="n">conda</span> <span class="n">activate</span> <span class="n">vjem35</span>
+<span class="p">(</span><span class="n">vjem35</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">JEOL</span>\<span class="n">Desktop</span><span class="o">&gt;</span><span class="n">python</span>
+<span class="n">Python</span> <span class="mf">3.5.3</span> <span class="o">|</span> <span class="n">packaged</span> <span class="n">by</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">|</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">May</span> <span class="mi">12</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">49</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="mf">.1900</span> <span class="mi">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Online">
+<h1>Online<a class="headerlink" href="#Online" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="TEM3-package">
+<h2>TEM3 package<a class="headerlink" href="#TEM3-package" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Load the TEM3 package to control TEM.</p>
+<div class="section" id="1.-import">
+<h3>1. import<a class="headerlink" href="#1.-import" title="Permalink to this headline">¶</a></h3>
+<p>The below code will load the TEM3 package.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">TEM3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="2.-connect-to-TEM">
+<h3>2. connect to TEM<a class="headerlink" href="#2.-connect-to-TEM" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Execute the following code to connect to TEM.</div>
+<div class="line">There are 2 ways to connect to the TEM.</div>
+</div>
+<p><strong>Execute the connect function</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="go">Ready Communication</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Create class instance</strong></div>
+<div class="line">ex) create Apt3 instance</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">Apt3</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="go">Ready Communication</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="3.-Check-communication-status">
+<h3>3. Check communication status<a class="headerlink" href="#3.-Check-communication-status" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">You can check the communication status with TEM with the following code.</div>
+<div class="line">The return value is Boolean. True is output if communication is successful.</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">isconnect</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If communication is possible, the function can be executed from the interface documents.</p>
+</div>
+</div>
+<div class="section" id="detector-package">
+<h2>detector package<a class="headerlink" href="#detector-package" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line">Load the detector package to control camera/detector.</div>
+<div class="line">With this package, you can use JEOL’s camera, stem detector, and its associated features.</div>
+</div>
+<div class="section" id="id1">
+<h3>1. import<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The below code will load the detector package.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detector</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="2.-Check-communication-status">
+<h3>2. Check communication status<a class="headerlink" href="#2.-Check-communication-status" title="Permalink to this headline">¶</a></h3>
+<p>You can check the communication status with TEM with the following code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">get_connect_info</span><span class="p">()</span>
+<span class="go">(&quot;detector&quot;, &quot;online&quot;, &quot;127.0.0.1&quot;)</span>
+</pre></div>
+</div>
+<p>From the above execution result, “127.0.0.1” displays IP address of the connection destination PC.</p>
+<ul class="simple">
+<li><p>If “offline” is displayed, change it to “online” from the code below.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">online</span><span class="p">()</span>
+<span class="go">(&quot;detector&quot;, &quot;online&quot;, &quot;127.0.0.1&quot;)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If IP address is different, please change it from the code below.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">change_ip</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="go">(&quot;detector&quot;, &quot;online&quot;, &quot;...&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Offline">
+<h1>Offline<a class="headerlink" href="#Offline" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>TEM3 package<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="1.-Switch-to-offine">
+<h3>1. Switch to offine<a class="headerlink" href="#1.-Switch-to-offine" title="Permalink to this headline">¶</a></h3>
+<p>Execute the following code to dummy data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM.offline</span> <span class="kn">import</span> <span class="n">TEM3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>detector package<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="1.-Switch-to-offline">
+<h3>1. Switch to offline<a class="headerlink" href="#1.-Switch-to-offline" title="Permalink to this headline">¶</a></h3>
+<p>Execute the following code to dummy data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">offline</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">isonline</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2021 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

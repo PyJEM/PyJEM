@@ -10,19 +10,6 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f902f766",
-   "metadata": {},
-   "source": [
-    "## **Version 1.2.0**\n",
-    "***\n",
-    "\n",
-    "### Bug fix\n",
-    "\n",
-    "* Fixed a bug that TEM3 package was not installed on vjem37 and vjem38. \n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "id": "91edb505",
    "metadata": {},
    "source": [

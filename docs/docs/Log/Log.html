@@ -1,0 +1,685 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>What is New in PyJEM &mdash; PyJEM Use Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PyJEM Use Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Log/Log.html">What is New in PyJEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tutorial/index.html">Tutorial</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyJEM Use Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>What is New in PyJEM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/docs/Log/Log.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="What-is-New-in-PyJEM">
+<h1>What is New in PyJEM<a class="headerlink" href="#What-is-New-in-PyJEM" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Version-1.2.0">
+<h2><strong>Version 1.2.0</strong><a class="headerlink" href="#Version-1.2.0" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="Bug-fix">
+<h3>Bug fix<a class="headerlink" href="#Bug-fix" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed a bug that TEM3 package was not installed on vjem37 and vjem38.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="Version-1.1.1">
+<h2><strong>Version 1.1.1</strong><a class="headerlink" href="#Version-1.1.1" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="Change-of-offline-usage">
+<h3>Change of offline usage<a class="headerlink" href="#Change-of-offline-usage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Version 1.1.0 (before)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detecotor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">offline</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Version 1.1.1 (current)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM.offline</span> <span class="kn">import</span> <span class="n">detector</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="Version-1.1.0">
+<h2><strong>Version 1.1.0</strong><a class="headerlink" href="#Version-1.1.0" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="To-Miniconda">
+<h3>To Miniconda<a class="headerlink" href="#To-Miniconda" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">The python environment has been changed. The base python environment changes to Miniconda.</div>
+<div class="line">In addition, we recommend the virtual environment (vjem) provided by JEOL as the usage environment for PyJEM.</div>
+</div>
+<div class="section" id="Creating-a-recommended-python-environment">
+<h4>Creating a recommended python environment<a class="headerlink" href="#Creating-a-recommended-python-environment" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>python3.5 environment is <em>vjem35</em></p></li>
+<li><p>python3.7 environment is <em>vjem37</em></p></li>
+<li><p>python3.8 environment is <em>vjem38</em></p></li>
+</ul>
+<p>How to Use is :</p>
+<ol class="arabic simple">
+<li><p>Open the “Anaconda Prompt”</p></li>
+<li><p>Write “conda activate vjem35” on the command line.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="python-3.7,-3.8">
+<h3>python 3.7, 3.8<a class="headerlink" href="#python-3.7,-3.8" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p>Correspondence to python 3.7, python3.8</p>
+</div>
+<div class="section" id="Installer-encryption">
+<h3>Installer encryption<a class="headerlink" href="#Installer-encryption" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p>I encrypted using <em>pycryptodome</em> for the installer. You can decrypt it with the license key that came with the delivery CD. If you want to decrypt it, please download the script from the following.</p>
+</div>
+<div class="section" id="TEM3-(package)">
+<h3>TEM3 (package)<a class="headerlink" href="#TEM3-(package)" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<div class="section" id="Change-the-connection-method">
+<h4>Change the connection method<a class="headerlink" href="#Change-the-connection-method" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Until now, when you execute “from PyJEM import TEM3”, it was connected to TEM. However, if the connection cannot be made, a timeout of 40</div>
+<div class="line">seconds will occur, so I changed it so that it does not connect when B is executed. The following measures have been taken to resolve this issue.</div>
+</div>
+<ul>
+<li><p>Do not connect with “import TEM3”</p></li>
+<li><p>Changed timeout time to 4 seconds</p></li>
+<li><p>The connection to TEM is changed when connect() is executed or the instance of each class is created.</p>
+<p>ex) Connection</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">TEM3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p><strong>or</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">TEM3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">Apt3</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="Output-exception">
+<h4>Output exception<a class="headerlink" href="#Output-exception" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Until now, even if execution failed, no error was output, so changed to output.</p>
+<p>ex) Nitrogen3.GetCurrentScenarioStatus()</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nit</span> <span class="o">=</span> <span class="n">TEM3</span><span class="o">.</span><span class="n">Nitrogen3</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nit</span><span class="o">.</span><span class="n">GetCurrentScenarioStatus</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">RuntimeError</span>: <span class="n">Function execution error. function: Nitrogen3::GetCurrentScenarioStatus, code : 26637</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="Add-Command">
+<h4>Add Command<a class="headerlink" href="#Add-Command" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p>connect</p></li>
+<li><p>isconnect</p></li>
+<li><p>GetDefInfo (Def3)</p></li>
+<li><p>GetContBrtInfo (Detector3)</p></li>
+<li><p>GetHtTargetValue (GUN3)</p></li>
+<li><p>GetHtMonitorValue (GUN3)</p></li>
+<li><p>GetHtCurrentValue (GUN3)</p></li>
+<li><p>SetHtWobbler (GUN3)</p></li>
+<li><p>SetA2Wobbler (GUN3)</p></li>
+<li><p>SetA2Rel (GUN3)</p></li>
+<li><p>SetA2Abs (GUN3)</p></li>
+<li><p>SetHtStts (GUN3)</p></li>
+<li><p>GetLensInfo (Lens3)</p></li>
+<li><p>SetStdFocus (Lens3)</p></li>
+<li><p>SetPegMonitorSw (VACUUM3)</p></li>
+<li><p>SetPigMonitorSw (VACUUM3)</p></li>
+<li><p>GetPegInfo (VACUUM3)</p></li>
+<li><p>GetPigInfo (VACUUM3)</p></li>
+<li><p>GetSampleInformation (Nitrogen3)</p></li>
+<li><p>GetCurrentScenarioStatus (Nitrogen3)</p></li>
+<li><p>GetMagazineExistStatus (Nitrogen3)</p></li>
+<li><p>TransferCartridge (Nitrogen3)</p></li>
+<li><p>GetLiquidLevel (Nitrogen3)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="Bug-fixes">
+<h4>Bug fixes<a class="headerlink" href="#Bug-fixes" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p>Output is different between offline and online.</p></li>
+<li><p>Stage drive related synchronization problems.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="detector-(package)">
+<h3>detector (package)<a class="headerlink" href="#detector-(package)" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<div class="section" id="Add-online-/-offline-switch-method">
+<h4>Add online / offline switch method<a class="headerlink" href="#Add-online-/-offline-switch-method" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>The method of switching between online and offline has been changed as follows.</p>
+<p><strong>ONLINE</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detecotor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">online</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>OFFLINE</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detecotor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">offline</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>online/offline check command.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detecotor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">isonline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="Changed-the-setting-method-of-IP-Address.">
+<h4>Changed the setting method of IP Address.<a class="headerlink" href="#Changed-the-setting-method-of-IP-Address." title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detecotor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">change_ip</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sightx-is-packaged-separately">
+<h4>sightx is packaged separately<a class="headerlink" href="#sightx-is-packaged-separately" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>I used to switch between B and C with a function, but I changed it to switch for each package.</p>
+<p><strong>detector</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detecotor</span>
+</pre></div>
+</div>
+<p><strong>sightx</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">sightx</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2021 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
