@@ -30,10 +30,16 @@ PC Environment
 * Windows 7 64bit 
 * Windows 10 64bit 
 
-**relative software**:
-* Python 3.5.2 64bit
-* opencv2 (python library)
-* httplib2 (python library)
+### Python version
+ * Python 3.5 64bit
+ * Python 3.7 64bit
+ * Python 3.8 64bit
+ 
+### Relative library
+ * opencv-python
+ * httplib2
+ * pycryptodome
+
 
 
 What you can do with PyJEM
