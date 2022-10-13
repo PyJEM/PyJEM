@@ -35,10 +35,10 @@ PC Environment
  * Python 3.7 64bit
  * Python 3.8 64bit
  
-### Relative library
- * opencv-python
- * httplib2
- * pycryptodome
+### Requires library
+ * opencv-python==3.4
+ * httplib2>=0.9.2
+ * pycryptodome==3.6.6
 
 
 
