@@ -7,7 +7,7 @@ PyJEM User Manual
 =============================
 
 PyJEM is a Python package that provides control TEM, capture live image, and so on.
-This document introduces how to install PyJEM, FAQ, and simple script code. 
+This document introduces how to install PyJEM, FAQ, and simple script code.
 
 .. toctree::
    :maxdepth: 2
@@ -17,6 +17,7 @@ This document introduces how to install PyJEM, FAQ, and simple script code.
    Log/Log
    Forum/Tutorial
    Tutorial/*
+   Interfaces/*
 
 
 Indices and tables
@@ -25,4 +26,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
