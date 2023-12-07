@@ -13,12 +13,13 @@ About this repository
 
 Summary
 ---------
-| In recent years, there is an increasing demand to automatically control from 
+  In recent years, there is an increasing demand to automatically control from 
   TEM control to acquisition of images, and to control the TEM remotely. 
   Until now, it was necessary to organize programs using TEM external control 
   (TEMExt) written in C ++, but there are problems such as the high level of 
   hurdling to create programs in C ++ language and few functions available in TEMExt had.
-| PyJEM solved these problems. Since PyJEM is a python library, 
+  
+PyJEM solved these problems. Since PyJEM is a python library, 
   we can interactively control TEM. 
   In addition, functions available from existing TEMExt are powered up, enabling remote control.
 
