@@ -23,25 +23,6 @@ Summary
   In addition, functions available from existing TEMExt are powered up, enabling remote control.
 
 
-PC Environment
-----------------
-**OS**:
-
-* Windows 7 64bit 
-* Windows 10 64bit 
-
-### Python version
- * Python 3.5 64bit
- * Python 3.7 64bit
- * Python 3.8 64bit
- 
-### Requires library
- * opencv-python==3.4
- * httplib2>=0.9.2
- * pycryptodome==3.6.6
-
-
-
 What you can do with PyJEM
 ----------------------------
 With PyJEM, it is relatively easy to control the TEM itself and acquire images. 
