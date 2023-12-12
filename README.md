@@ -1,15 +1,18 @@
 PyJEM
 =====================
+This site only answers questions about PyJEM. 
 
-manual document.
+- Manual : [PyJEM manual](https://pyjem.github.io/PyJEM/)
 
-=> [PyJEM manual](https://pyjem.github.io/PyJEM/)
-
-
-
-About this repository
+vjem (python virtual environment)
 ------------------------------------
-　This site only answers questions about PyJEM. 
+vjem is a recommendate virtual python environment for PyJEM development.
+
+- python 3.5 : [vjem35.yml](vjem/vjem35.yml)
+- python 3.7 : [vjem37.yml](vjem/vjem37.yml)
+- python 3.8 : [vjem38.yml](vjem/vjem38.yml)
+- python 3.9 : [vjem39.yml](vjem/vjem39.yml)
+- python 3.10 : [vjem310.yml](vjem/vjem310.yml)
 
 Summary
 ---------
