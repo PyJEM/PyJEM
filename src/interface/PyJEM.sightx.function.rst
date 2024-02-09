@@ -1,0 +1,7 @@
+PyJEM.sightx.function module
+============================
+
+.. automodule:: PyJEM.sightx.function
+   :members:
+   :undoc-members:
+   :show-inheritance:
