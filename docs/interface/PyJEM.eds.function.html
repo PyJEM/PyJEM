@@ -1,0 +1,2366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>PyJEM.eds.function module &mdash; PyJEM Manual 1.3.0.3564 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PyJEM.sightx package" href="PyJEM.sightx.html" />
+    <link rel="prev" title="PyJEM.eds package" href="PyJEM.eds.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyJEM Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3.0.3564
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix/Installer.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="PyJEM.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="PyJEM.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.detector.html">PyJEM.detector package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.detectorext.html">PyJEM.detectorext package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="PyJEM.eds.html">PyJEM.eds package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="PyJEM.eds.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyJEM.eds.html#module-PyJEM.eds">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.sightx.html">PyJEM.sightx package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.html">PyJEM.TEM3 module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.html#module-PyJEM">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Log/index.html">What is New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyJEM Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="PyJEM.html">API Reference</a> &raquo;</li>
+        
+          <li><a href="PyJEM.eds.html">PyJEM.eds package</a> &raquo;</li>
+        
+      <li>PyJEM.eds.function module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/interface/PyJEM.eds.function.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-PyJEM.eds.function">
+<span id="pyjem-eds-function-module"></span><h1>PyJEM.eds.function module<a class="headerlink" href="#module-PyJEM.eds.function" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="PyJEM.eds.function.check_communication">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">check_communication</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.check_communication" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface is for checking the HTTP connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Output in dict type. The explanation of the output keys is as follows.
+- Result (str): ‘OK’ is success, ‘Fail’ is failure.
+- Message (str):  This is a free text from EDS system.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">check_communication</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;Version&#39;: &#39;1.0&#39;,</span>
+<span class="go">    &#39;Result&#39;: &#39;OK&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.create_count_map">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">create_count_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.create_count_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface create gross count mapping data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul>
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (ElementsKey):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number and Line.
+The list of Line : ‘None’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’ , ‘Default’
+‘Default’ is selecting default line automatically.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>TargetDetector (int):</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<p>0=Total,
+1=FirstDetector,
+2=SecondDetector,
+3=ThirdDetector,
+4=ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (list):</dt><dd><p>The array of ID. The length of array is the same as length of element list.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.create_net_count_map">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">create_net_count_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.create_net_count_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface create net count mapping data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul>
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (ElementsKey):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number and Line.
+The list of Line : ‘None’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’ , ‘Default’
+‘Default’ is selecting default line automatically.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>TargetDetector (int):</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<p>0=Total,
+1=FirstDetector,
+2=SecondDetector,
+3=ThirdDetector,
+4=ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (list):</dt><dd><p>The array of ID. The length of array is the same as length of element list.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.create_quantitative_map">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">create_quantitative_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.create_quantitative_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface create quantitative mapping data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul>
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (ElementsKey):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number and Line.
+The list of Line : ‘None’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’ , ‘Default’
+‘Default’ is selecting default line automatically.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>TargetDetector int:</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<p>0=Total,
+1=FirstDetector,
+2=SecondDetector,
+3=ThirdDetector,
+4=ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (list):</dt><dd><p>The array of ID. The length of array is the same as length of element list.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_autoqualitative_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_autoqualitative_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.execute_autoqualitative_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface execute auto qualitative analysis.
+This interface search the elements by peak of spectrum.
+This return the searched elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (int):</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<ul>
+<li><p>0=Total,</p></li>
+<li><p>1=FirstDetector,</p></li>
+<li><p>2=SecondDetector,</p></li>
+<li><p>3=ThirdDetector,</p></li>
+<li><p>4=ForthDetector</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (str):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number,.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="n">AutoqualitativeParam</span><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="s1">&#39;0000-0000-0000-0000&#39;</span><span class="p">,</span><span class="n">detector</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">execute_autoqualitative_analysis</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &#39;Message&#39; : &#39;This is a free text from EDS system.&#39;,</span>
+<span class="go">    &#39;Elements&#39; :[&#39;aaaa-aaaa-aaaa-aaaa&#39;, &#39;bbbb-bbbb-bbbb-bbbb&#39;,&#39;cccc-cccc-cccc-cccc&#39;],</span>
+<span class="go">    &#39;Result&#39;: &#39;OK&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_count_line_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_count_line_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.execute_count_line_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface create gross count data of line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul>
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (ElementsKey):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number and Line.
+The list of Line : ‘None’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’ , ‘Default’
+‘Default’ is selecting default line automatically.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>TargetDetector int:</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<p>0=Total,
+1=FirstDetector,
+2=SecondDetector,
+3=ThirdDetector,
+4=ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (list):</dt><dd><p>The array of ID. The length of array is the same as length of element list.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_net_count_line_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_net_count_line_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.execute_net_count_line_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface create net count data of line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul>
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (ElementsKey):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number and Line.
+The list of Line : ‘None’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’ , ‘Default’
+‘Default’ is selecting default line automatically.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>TargetDetector int:</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<p>0=Total,
+1=FirstDetector,
+2=SecondDetector,
+3=ThirdDetector,
+4=ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (list):</dt><dd><p>The array of ID. The length of array is the same as length of element list.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_quantitative_line_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_quantitative_line_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.execute_quantitative_line_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface create quantitative data of line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul>
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (ElementsKey):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number and Line.
+The list of Line : ‘None’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’ , ‘Default’
+‘Default’ is selecting default line automatically.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>TargetDetector (int):</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<p>0=Total,
+1=FirstDetector,
+2=SecondDetector,
+3=ThirdDetector,
+4=ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (str):</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (list):</dt><dd><p>The array of ID. The length of array is the same as length of element list.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_quantitative_spectrum_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_quantitative_spectrum_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.execute_quantitative_spectrum_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface execute quantitative analysis for spectrum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul>
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (ElementsKey):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number and Line.
+The list of Line : ‘None’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’ , ‘Default’
+‘Default’ is selecting default line automatically.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>TargetDetector int:</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<p>0=Total,
+1=FirstDetector,
+2=SecondDetector,
+3=ThirdDetector,
+4=ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Quantities (str):</dt><dd><p>The array of elemental quantity. The unit is Mass%.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.extract_area_spectrum">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">extract_area_spectrum</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.extract_area_spectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can create an integrated spectrum that extracted from spectrum imaging data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SpectrumDataID (str):</dt><dd><p>This is a ID of the spectrm that extraced from original spectrum imaging data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.extract_line_spectrum">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">extract_line_spectrum</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.extract_line_spectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can create an integrated spectrum that extracted from line analysis data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul>
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Elements (ElementsKey):</dt><dd><p>This is two dimensional array. This is a list of element that contains elemental number and Line.
+The list of Line : ‘None’, ‘K’, ‘L’, ‘M’, ‘N’, ‘O’ , ‘Default’
+‘Default’ is selecting default line automatically.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>TargetDetector int:</dt><dd><p>This parameter select a target detector.
+If 0 is specified, the target data will be a integrated data.</p>
+<p>0=Total,
+1=FirstDetector,
+2=SecondDetector,
+3=ThirdDetector,
+4=ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Quantities (str):</dt><dd><p>The array of elemental quantity. The unit is Mass%.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_acquisition_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_acquisition_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_acquisition_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the settings of EDS acquisition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessTime (str):</dt><dd><p>The kind of process time. The range is in ProcessTimeList of specification.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DwellTime (float):</dt><dd><p>The DwellTime is the time spent on the sample.
+The unit is [μsec]
+The actual time depends on CollectionMode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CollectionMode (int):</dt><dd><p>0 : Endless, 1 : LiveTime, 2 : RealTime, 3 : Sweep
+The time spent on the sample is the same as DwellTime in RealTime mode.
+Otherwise, the effective counting time is the same as DwellTime in LiveTime mode.
+The time spent on the sample in LiveTime mode become longer than DwellTime in RealTime mode.
+The DwellTime will be ignored in Endless mode.
+Sweep mode collects data throughout an analytical area for a set number of times.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SweepCount (int):</dt><dd><p>The number of acquiring the data to create an integrated data.
+This is available in Full/Area/Line mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableScanSync (bool):</dt><dd><p>True: Sync, False: Not sync
+If this mode is true, DwellTime is synchronized with pixel clock of scan generator.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EDSSelected (bool):</dt><dd><p>true: Enable to start an acquisition of EDS signals. false: Not enable to do it.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_acquisition_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_acquisition_status</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_acquisition_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the status of EDS acquisition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>AcquisitionRunning (bool):</dt><dd><p>true : Running, false : Stopped</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>LiveTime (int):</dt><dd><p>live time [sec]
+The length of array is 4 + 1. 4 is maximum number of detectors.
+1 is for total dead time.
+The order is [first detector, second, third, fourth, total ].</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>RealTime (int):</dt><dd><p>live time [sec]
+The length of array is 4 + 1. 4 is maximum number of detectors.
+1 is for total dead time.
+The order is [first detector, second, third, fourth, total ].</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SweepCount (int):</dt><dd><p>The current number of acquiring the data to create integrated data.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_acquisition_status</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;Version&#39;: &#39;1.0&#39;,</span>
+<span class="go">    &#39;AcquisitionRunning&#39; : False,</span>
+<span class="go">    &#39;ElapsedLiveTime&#39; : 12,</span>
+<span class="go">    &#39;ElapsedRealTime&#39; : 12,</span>
+<span class="go">    &#39;SweepCount&#39; : 2</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the settings of analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>LengthOfSpectrum (int):</dt><dd><p>This number is length of spectrum. The unit is [10 ev / ch].</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategories (str):</dt><dd><p>The type is array of string.
+This is a list of standard data that the user create their own standard data.
+This string can be used for UserCategoryName for some analysis..</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DisableElements (list):</dt><dd><p>This is the list of disabled element</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>QualitativeSensitivity (str):</dt><dd><p>’Low’ : low sensitivity, ‘Middle’ : middle sensitivity, ‘High’ : high sensitivity
+This is a sensitivity of qualitative analysis.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ZAFEnable (bool):</dt><dd><p>true : Enable, false : Disable
+This can get that ZAF correction is available or not.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PRZEnable (bool):</dt><dd><p>true : Enable, false : Disable
+This can get that PRZ correction is available or not.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Cliff-LorimerEnable (bool):</dt><dd><p>true : Enable, false : Disable
+This can get that Cliff-Lorimer correction is available or not.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_analysis_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;LengthOfSpectrum&#39; : 4096,</span>
+<span class="go">    &#39;UserCategories&#39; : [</span>
+<span class="go">        &#39;This is a list of standard data that the user create their own standard data. This string can be used for UserCategoryName for some analysis.&#39;</span>
+<span class="go">    ],</span>
+<span class="go">    &#39;DisableElements&#39; : [</span>
+<span class="go">        [&#39;ElementalNumber&#39;, 8],</span>
+<span class="go">        [&#39;ElementalNumber&#39;, 10]</span>
+<span class="go">    ],</span>
+<span class="go">    &#39;QualitativeSensitivity&#39; : &#39;Middle&#39;,</span>
+<span class="go">    &#39;ZAFEnable&#39; : True,</span>
+<span class="go">    &#39;PRZEnable&#39; : True,</span>
+<span class="go">    &#39;CliffLorimerEnable&#39; : True</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_analysis_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_analysis_status</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_analysis_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the status of analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ExecutingAnalysis (bool):</dt><dd><p>true : Executing, false : Stopped</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_analysis_status</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;ExecutingAnalysis&#39; : True,</span>
+<span class="go">    &#39;Version&#39; : &#39;1.0&#39;,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_analyzer_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_analyzer_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_analyzer_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the settings of EDS analyzer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessTime (list):</dt><dd><p>The kind of process time.
+The range is in ProcessTimeList of specification
+The length of array is the same as maximum number of detectors.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_analyzer_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    ProcessTime&#39;:[&#39;T1&#39;, &#39;T1&#39;, &#39;T1&#39;, &#39;T1&#39;],</span>
+<span class="go">    &#39;Version&#39;: &#39;1.0&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_analyzer_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_analyzer_status</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_analyzer_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the status of EDS analyzer.</p>
+<dl class="simple">
+<dt>Return (dict):</dt><dd><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>InputCountRate (list):</dt><dd><p>input count rate. [%]
+The length of array is 4 + 1. 4 is maximum number of detectors.
+1 is for total count rate.
+The order is [first detector, second, third, fourth, total ].</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OutputCountRate (list):</dt><dd><p>output count rate. [%]
+The length of array is 4 + 1. 4 is maximum number of detectors.
+1 is for total count rate.
+The order is [first detector, second, third, fourth, total ].</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DeadTime (list):</dt><dd><p>dead time [%]
+The length of array is 4 + 1. 4 is maximum number of detectors.
+1 is for total dead time.
+The order is [first detector, second, third, fourth, total ].</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_analyzer_status</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;InputCountRate&#39; : [21, 21, 21, 21, 21],</span>
+<span class="go">    &#39;OutputCountRate&#39; : [21, 21, 21, 21, 21],</span>
+<span class="go">    &#39;DeadTime&#39; : [21, 21, 21, 21, 21]</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_config">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the package’s settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>service info.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+<span class="go">{&#39;name&#39;: &#39;---&#39;, &#39;ip&#39;: &#39;---&#39;, &#39;port&#39;: ---, &#39;uri&#39;: &#39;---&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_detector_configuration">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_detector_configuration</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_detector_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the configuration of EDS system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Enabled (list) :</dt><dd><p>true : Enabled, false : Disabled
+The length of array is 4.
+The index 0 means first detector.
+The index 1 means second detector.
+The index 2 means third detector.
+The index 3 means forth detector.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Retractable (list):</dt><dd><p>true : Retractable, false : Not Retractable
+The length of array is 4.
+The index 0 means first detector.
+The index 1 means second detector.
+The index 2 means third detector.
+The index 3 means forth detector.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_detector_configuration</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;Enabled&#39; : [True, True, True, True],</span>
+<span class="go">    &#39;Retractable&#39; : [True, True, False, False],</span>
+<span class="go">    &#39;Version&#39; : &#39;---&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_detector_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_detector_status</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_detector_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the status of EDS detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Position (str):</dt><dd><p>The length of array is 4. The order is the same as ‘Enabled’ of detector configuration
+-1 : Unknown, 0 : Bake, 1 : SampleChange, 2 : Retract, 3 : Insert</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>MovingPosition (int):</dt><dd><p>The length of array is 4. The order is the same as ‘Enabled’ of detector configuration
+0 : Stopped, 1 : Moving,</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DetectorErrorCode (str):</dt><dd><p>The error code of detector hardware.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_detector_status</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;Position&#39; : [1, 1, 0, 0],</span>
+<span class="go">    &#39;MovingPosition&#39; : [1, 1, 0, 0],</span>
+<span class="go">    &#39;DetectorErrorCode&#39;: &#39;E01&#39;,</span>
+<span class="go">    &#39;Version&#39;: &#39;---&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_map_data">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_map_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_map_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get binary data of the elemental map. This is available for opend map data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>This is binary data. The intensity of map is 4bytes floating point.
+The length of array depends on map size.
+Top-left pixel is the first of array. A byte order is little endian.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>byte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_multiple_line_data">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_multiple_line_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_multiple_line_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get acquiring spectrum data that specifying the line position of spectrum imaging data. This is available for opend spectrum data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StartLine (int):</dt><dd><p>This is a start line number of the spectrum imaging data to get.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EndLine (int):</dt><dd><p>This is a start line number of the spectrum imaging data to get.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>This is binary data.
+The multiple spectrum data format is the same as get_multiple_spectrum_data().
+This data contains multiple line.
+The line of StartLine is first of this data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_multiple_spectrum_data">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_multiple_spectrum_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_multiple_spectrum_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get acquiring spectrum data that specifying the position of line analysis data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StartPosition (int)n:</dt><dd><p>This is an index of pixels that is the starting position to get from the line analysis data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EndPosition (int):</dt><dd><p>This is an index of pixels that is the end position to get from the line analysis data.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>This is binary data.
+The spectrum data format is the same as get_spectrum_data().
+This data contains multiple spectrum for pixels.
+The pixel of StartPosition is first of this data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_net_count_line_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_net_count_line_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_net_count_line_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the settings of net count line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_net_count_line_analysis_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;Version&#39;:&#39;1.0&#39;,</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 0,</span>
+<span class="go">    &#39;StandardDataType&#39; : 0,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_net_count_map_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_net_count_map_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_net_count_map_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the settings of net count mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>PixelWidth (int):</dt><dd><p>The width of output data. The unit is pixel.
+This can be selected from the list [64, 128, 256, 512, 1024, 2048, 4096] and should be less than original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelHeight (int):</dt><dd><p>The height of output data. The unit is pixel.
+This can be selected from the list [64, 128, 256, 512, 1024, 2048, 4096] and should be less than original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_net_count_map_analysis_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;PixelWidth&#39; : 128,</span>
+<span class="go">    &#39;PixelHeight&#39; : 128,</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 0,</span>
+<span class="go">    &#39;StandardDataType&#39; : 0,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_quantitative_line_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_quantitative_line_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_quantitative_line_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the settings of quantitative line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (str):</dt><dd><p>The category name of standard data.
+If the StandardDataType is USER, this category name is available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CorrectionType (int):</dt><dd><p>0 : None, 1 : ZAF, 2 : PRZ, 3 : Cliff-Lorimer, 4 : ZETA
+ZAF/ PRZ/ Cliff-Lorimer/ ZETA are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ConversionType (int):</dt><dd><p>0 : None, 1 : Metal, 2 : Oxide, 3 : Compound
+Metal/ Oxide are available</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (int):</dt><dd><p>This is a cation number of oxide.
+This is available in oxide mode as conversion type.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableSumPeakRemoval (bool):</dt><dd><p>true : Enable, false : Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_quantitative_line_analysis_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 0,</span>
+<span class="go">    &#39;StandardDataType&#39; : 0,</span>
+<span class="go">    &#39;UserCategoryName&#39; : &#39;&#39;,</span>
+<span class="go">    &#39;CorrectionType&#39; : 3,</span>
+<span class="go">    &#39;ConversionType&#39; : 1,</span>
+<span class="go">    &#39;OxideCation&#39;:1,</span>
+<span class="go">    &#39;EnableSumPeakRemoval&#39; : True</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_quantitative_map_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_quantitative_map_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_quantitative_map_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>This interface set the settings of quantitative mapping.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>PixelWidth (int):</dt><dd><p>The width of output data. The unit is pixel.
+This can be selected from the list [64, 128, 256, 512, 1024, 2048, 4096] and should be less than original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelHeight (int):</dt><dd><p>The height of output data. The unit is pixel.
+This can be selected from the list [64, 128, 256, 512, 1024, 2048, 4096] and should be less than original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (str):</dt><dd><p>The category name of standard data.
+If the StandardDataType is USER, this category name is available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CorrectionType (int):</dt><dd><p>0 : None, 1 : ZAF, 2 : PRZ, 3 : Cliff-Lorimer, 4 : ZETA
+ZAF/ PRZ/ Cliff-Lorimer/ ZETA are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ConversionType (int):</dt><dd><p>0 : None, 1 : Metal, 2 : Oxide, 3 : Compound
+Metal/ Oxide are available</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableSumPeakRemoval (bool):</dt><dd><p>true : Enable, false : Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_quantitative_map_analysis_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;PixelWidth&#39; : 128,</span>
+<span class="go">    &#39;PixelHeight&#39; : 128,</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 0,</span>
+<span class="go">    &#39;StandardDataType&#39; : 0,</span>
+<span class="go">    &#39;UserCategoryName&#39; : &#39;&#39;,</span>
+<span class="go">    &#39;CorrectionType&#39; : 3,</span>
+<span class="go">    &#39;ConversionType&#39; : 1,</span>
+<span class="go">    &#39;EnableSumPeakRemoval&#39; : True,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_quantitative_spectrum_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_quantitative_spectrum_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_quantitative_spectrum_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the settings of quantitative analysis for spectrum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (str):</dt><dd><p>The category name of standard data.
+If the StandardDataType is USER, this category name is available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CorrectionType (int):</dt><dd><p>0 : None, 1 : ZAF, 2 : PRZ, 3 : Cliff-Lorimer, 4 : ZETA
+ZAF/ PRZ/ Cliff-Lorimer/ ZETA are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableAbsorptionCorrection (bool):</dt><dd><p>true : Enable, false : Disable
+This parameter decide whether the absorption correction is enable or not.
+This is available in Cliff-Lorimer mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Thickness (int):</dt><dd><p>This is a value of thickness. The unit is [nm]
+This is available in Cliff-Lorimer mode and the absorption correction is enabled.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Density (int):</dt><dd><p>This is a value of density. The unit is [g/cm3]
+This is available in Cliff-Lorimer mode and the absorption correction is enabled.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableFluorescenceCorrection (bool):</dt><dd><p>true : Enable, false : Disable
+This parameter decide whether the fluorescence correction is enable or not.
+This is available in Cliff-Lorimer mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ConversionType (int):</dt><dd><p>0 : None, 1 : Metal, 2 : Oxide, 3 : Compound
+Metal/ Oxide are available</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (int):</dt><dd><p>This is a cation number of oxide.
+This is available in oxide mode as conversion type.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_quantitative_spectrum_analysis_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;PixelWidth&#39; : 128,</span>
+<span class="go">    &#39;PixelHeight&#39; : 128,</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 0,</span>
+<span class="go">    &#39;StandardDataType&#39; : 0,</span>
+<span class="go">    &#39;UserCategoryName&#39; : &#39;&#39;,</span>
+<span class="go">    &#39;CorrectionType&#39; : 3,</span>
+<span class="go">    &#39;ConversionType&#39; : 1,</span>
+<span class="go">    &#39;EnableSumPeakRemoval&#39; : True,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_specification">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_specification</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_specification" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get the specfication of EDS system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Version (str):</dt><dd><p>version number of this data structure.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessTimeList (list):</dt><dd><p>This is the list of ProcessTimeList</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_specification</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    ProcessTimeList&#39;:[</span>
+<span class="go">        [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;],</span>
+<span class="go">        [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;],</span>
+<span class="go">        [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;],</span>
+<span class="go">        [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;]</span>
+<span class="go">    ],</span>
+<span class="go">    &#39;Version&#39;: &#39;1.0&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_spectrum_data">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_spectrum_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.get_spectrum_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can get spectrum data that is acquiring or opened.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (str):</dt><dd><p>Usually, This ID will be get from returned value from ‘StartAcquisition’.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>This is binary data.
+The intensity of X-ray energy is 4bytes integer.
+The length of energy is 4096 pixel.
+A lowest energy is top of data.
+The number of spectrums depends on specified position of line data.
+A byte order is little endian.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>byte</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.reset_detector">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">reset_detector</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.reset_detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can reset a harware of detector.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_acquisition_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_acquisition_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_acquisition_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can set the settings of EDS acquisition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ProcessTime (str):</dt><dd><p>The kind of process time. The range is in ProcessTimeList of specification.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DwellTime (float):</dt><dd><p>The DwellTime is the time spent on the sample.
+If EnableScanSync is set as true, this parameter works on the sample per pixel.
+The unit is [μsec]
+The actual time depends on CollectionMode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CollectionMode (int):</dt><dd><p>0 : Endless, 1 : LiveTime, 2 : RealTime, 3 : Sweep
+The time spent on the sample is the same as DwellTime in RealTime mode.
+Otherwise, the effective counting time is the same as DwellTime in LiveTime mode.
+The time spent on the sample in LiveTime mode become longer than DwellTime in RealTime mode.The DwellTime will be ignored in Endless mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SweepCount (int):</dt><dd><p>The number of acquiring the data to create an integrated data.
+This is available in Full/Area/Line mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableScanSync (bool):</dt><dd><p>true : Sync, false : Not sync
+If this mode is true, The DwellTime is synchronized with pixel clock of scan generator.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EDSSelected (bool):</dt><dd><p>true: Enable to start an acquisition of EDS signals. false: Not enable to do it.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Output in dict type. The explanation of the output keys is as follows.
+similar to get_acquisition_settings()</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="n">AcquisitionSettingParam</span><span class="p">(</span><span class="n">ptime</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T2&#39;</span><span class="p">,</span> <span class="s1">&#39;T3&#39;</span><span class="p">,</span> <span class="s1">&#39;T4&#39;</span><span class="p">],</span><span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">set_acquisition_settings</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &#39;ProcessTime&#39; : [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;],</span>
+<span class="go">    &#39;SweepCount&#39; : 1,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_analyzer_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_analyzer_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_analyzer_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can set the settings of EDS analyzer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>ProcessTime (list):</dt><dd><p>The kind of process time.
+The range is in ProcessTimeList of specification
+The length of array is the same as maximum number of detectors.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>similar to get_analyzer_settings()</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="n">AnalyzerParam</span><span class="p">([</span><span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T1&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">set_analyzer_settings</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">))</span>
+<span class="go">{&#39;ProcessTime&#39; : [&#39;T1&#39;, &#39;T1&#39;, &#39;T1&#39;, &#39;T1&#39;]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_detector_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_detector_status</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_detector_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can set the status of EDS detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Position (list):</dt><dd><p>The length of array is 4. The order is the same as ‘Enabled’ of detector configuration
+-1 : Unknown, 0 : Bake, 1 : SampleChange, 2 : Retract, 3 : Insert</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="n">DetectorStatusParam</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">set_detector_status</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_ip">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_ip</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function can modify the IP Address which is URI of this package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – ip address.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_net_count_line_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_net_count_line_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_net_count_line_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can set the settings of net count line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> – <p>(dict)
+The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>similar to get_net_count_line_analysis_settings().</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_net_count_map_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_net_count_map_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_net_count_map_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can set the settings of net count mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>PixelWidth (int):</dt><dd><p>The width of output data. The unit is pixel.
+This can be selected from the list [64, 128, 256, 512, 1024, 2048, 4096] and should be less than original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelHeight (int):</dt><dd><p>The height of output data. The unit is pixel.
+This can be selected from the list [64, 128, 256, 512, 1024, 2048, 4096] and should be less than original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>simliar to ‘get_net_count_map_analysis_settings()’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_port">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_port</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#PyJEM.eds.function.set_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function can modify the port number which is URI of this package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – port numnber.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please do not use it except for JEOL service.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_quantitative_line_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_quantitative_line_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_quantitative_line_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can set the settings of quantitative line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (str):</dt><dd><p>The category name of standard data.
+If the StandardDataType is USER, this category name is available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CorrectionType (int):</dt><dd><p>0 : None, 1 : ZAF, 2 : PRZ, 3 : Cliff-Lorimer, 4 : ZETA
+ZAF/ PRZ/ Cliff-Lorimer/ ZETA are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ConversionType (int):</dt><dd><p>0 : None, 1 : Metal, 2 : Oxide, 3 : Compound
+Metal/ Oxide are available</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (int):</dt><dd><p>This is a cation number of oxide.
+This is available in oxide mode as conversion type.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableSumPeakRemoval (bool):</dt><dd><p>true : Enable, false : Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="n">QuantitativeLineParam</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="go">                                 datatype = 0,</span>
+<span class="go">                                 name=&quot;&quot;,</span>
+<span class="go">                                 correctiontype=3,</span>
+<span class="go">                                 conversiontype=1,</span>
+<span class="go">                                 oxidecation=1,</span>
+<span class="go">                                 enablesumpeakremoval=True).__dict__</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">set_quantitative_line_analysis_settings</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>similar to get_quantitative_line_analysis_settings()</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_quantitative_map_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_quantitative_map_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_quantitative_map_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface set the settings of quantitative mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>PixelWidth (int):</dt><dd><p>The width of output data. The unit is pixel.
+This can be selected from the list [64, 128, 256, 512, 1024, 2048, 4096] and should be less than original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelHeight (int):</dt><dd><p>The height of output data. The unit is pixel.
+This can be selected from the list [64, 128, 256, 512, 1024, 2048, 4096] and should be less than original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (str):</dt><dd><p>The category name of standard data.
+If the StandardDataType is USER, this category name is available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CorrectionType (int):</dt><dd><p>0 : None, 1 : ZAF, 2 : PRZ, 3 : Cliff-Lorimer, 4 : ZETA
+ZAF/ PRZ/ Cliff-Lorimer/ ZETA are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ConversionType (int):</dt><dd><p>0 : None, 1 : Metal, 2 : Oxide, 3 : Compound
+Metal/ Oxide are available</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableSumPeakRemoval (bool):</dt><dd><p>true : Enable, false : Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>similar to get_quantitative_map_analysis_settings()</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_quantitative_spectrum_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_quantitative_spectrum_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.set_quantitative_spectrum_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface can set the settings of quantitative analysis for spectrum.
+param’s type is QuantitativeSpectrumParam</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>The following describes the keys to be set.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>ProcessingMethod (int):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise
+The kind of processing method.
+Speed/ Precise are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (int):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External
+The NORM/ COMMON/ USER are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (str):</dt><dd><p>The category name of standard data.
+If the StandardDataType is USER, this category name is available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CorrectionType (int):</dt><dd><p>0 : None, 1 : ZAF, 2 : PRZ, 3 : Cliff-Lorimer, 4 : ZETA
+ZAF/ PRZ/ Cliff-Lorimer/ ZETA are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableAbsorptionCorrection (bool):</dt><dd><p>true : Enable, false : Disable
+This parameter decide whether the absorption correction is enable or not.
+This is available in Cliff-Lorimer mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Thickness (int):</dt><dd><p>This is a value of thickness. The unit is [nm]
+This is available in Cliff-Lorimer mode and the absorption correction is enabled.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Density (int):</dt><dd><p>This is a value of density. The unit is [g/cm3]
+This is available in Cliff-Lorimer mode and the absorption correction is enabled.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableFluorescenceCorrection (bool):</dt><dd><p>true : Enable, false : Disable
+This parameter decide whether the fluorescence correction is enable or not.
+This is available in Cliff-Lorimer mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ConversionType (int):</dt><dd><p>0 : None, 1 : Metal, 2 : Oxide, 3 : Compound
+Metal/ Oxide are available</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (int):</dt><dd><p>This is a cation number of oxide.
+This is available in oxide mode as conversion type.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>similar to get_quantitative_spectrum_analysis_settings()</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.start_acquisition">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">start_acquisition</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.start_acquisition" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface start an acquisition of EDS signals.
+If EnableScanSync is true, the scan generator should
+be started after this is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ : success, ‘Fail’ : failure</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataID (str):</dt><dd><p>This is an ID to specify the data that the acquired spectrum will be stored.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start_acquisition</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;Result&#39; : &#39;OK&#39;,</span>
+<span class="go">    &#39;Message&#39; : &#39;This is a free text from EDS system.&#39;,</span>
+<span class="go">    &#39;DataID&#39; : &#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.stop_acquisition">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">stop_acquisition</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.function.stop_acquisition" title="Permalink to this definition">¶</a></dt>
+<dd><p>This interface stop the acquisition of EDS signals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Output in dict type. The explanation of the output keys is as follows.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Message (str) :</dt><dd><p>This is a free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (str):</dt><dd><p>’OK’ is success, ‘Fail’ is failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stop_acquisition</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;Message&#39; : &#39;This is a free text from EDS system.&#39;,</span>
+<span class="go">    &#39;Result&#39; : &#39;OK&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="PyJEM.sightx.html" class="btn btn-neutral float-right" title="PyJEM.sightx package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="PyJEM.eds.html" class="btn btn-neutral float-left" title="PyJEM.eds package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2023 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
