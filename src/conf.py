@@ -44,7 +44,6 @@ def copy_pyd():
 sys.path.insert(0, os.path.abspath('../../../'))
 # TEM3.pydの取得
 fie = copy_pyd()
-print(fie, os.path.exists(fie))
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the

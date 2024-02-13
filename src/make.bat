@@ -7,7 +7,7 @@ if "%SPHINXBUILD%" == "" (
 )
 REM absolute output file path.
 pushd %~dp0..
-set BUILDDIR=%CD%\build
+set BUILDDIR=%CD%\docs
 popd
 
 
