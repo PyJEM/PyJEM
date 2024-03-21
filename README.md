@@ -8,11 +8,13 @@ vjem (python virtual environment)
 ------------------------------------
 vjem is a recommendate virtual python environment for PyJEM development.
 
-- python 3.5 : [vjem35.yml](vjem/vjem35.yml)
-- python 3.7 : [vjem37.yml](vjem/vjem37.yml)
-- python 3.8 : [vjem38.yml](vjem/vjem38.yml)
+- ~~python 3.5~~  
+- ~~python 3.7~~  
+- ~~python 3.8~~  
 - python 3.9 : [vjem39.yml](vjem/vjem39.yml)
 - python 3.10 : [vjem310.yml](vjem/vjem310.yml)
+
+※ Please use vjem39 of later due to installation errors. (2024/3/21)
 
 Summary
 ---------
