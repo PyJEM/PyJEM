@@ -64,6 +64,7 @@ extensions = [
     'nbsphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
+    'sphinx.ext.viewcode',   # ソースコードリンク
     'sphinx.ext.napoleon'  # 改行コードのため
 ]
 
