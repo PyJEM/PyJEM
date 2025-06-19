@@ -7,7 +7,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PyJEM.sightx.function module &mdash; PyJEM Manual 1.3.0.3564 documentation</title>
+  <title>PyJEM.sightx.function module &mdash; PyJEM Manual 1.3.9.3639
+ documentation</title>
   
 
   
@@ -65,7 +66,8 @@
             
             
               <div class="version">
-                1.3.0.3564
+                1.3.9.3639
+
               </div>
             
           
@@ -240,7 +242,7 @@
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">detector</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">AutoFocus</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sightx</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">detector</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">AutoFocus</span><span class="p">()</span>
 <span class="go">{&quot;status&quot;:...}</span>
 </pre></div>
 </div>
@@ -301,7 +303,7 @@
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">detector</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">get_detectorsetting</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sightx</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">detector</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">get_detectorsetting</span><span class="p">()</span>
 <span class="go">{</span>
 <span class="go">&quot;ExposureTimeValue&quot;:100,</span>
 <span class="go">&quot;GainIndex&quot;:100, ...</span>
@@ -360,7 +362,7 @@ Can only be used if the flag to leave the cache is ON</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tif”</p></li>
 <li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
 Only available when ‘save’ is True.</p></li>
@@ -392,7 +394,7 @@ else return value is saved file name.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="o">*</span><span class="n">detector</span> <span class="n">name</span><span class="o">*</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">=</span><span class="n">sightx</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="o">*</span><span class="n">detector</span> <span class="n">name</span><span class="o">*</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">.</span><span class="n">livestart</span><span class="p">()</span>
 <span class="go">{&quot;status&quot;:&quot;OK&quot;}</span>
 </pre></div>
@@ -491,7 +493,7 @@ If no value is entered for the argument, the value is not changed.</p>
 </dl>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ExposureTimeValue&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot;GainIndex&quot;</span><span class="p">:</span><span class="mi">8000</span><span class="p">,</span><span class="s2">&quot;OffsetIndex&quot;</span><span class="p">:</span><span class="mi">8000</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">detector</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">set_detectorsetting</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sightx</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">detector</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">set_detectorsetting</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -529,7 +531,7 @@ If no value is entered for the argument, the value is not changed.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">detector</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">set_exposuretime_index</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sightx</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">detector</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">set_exposuretime_index</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="go">{&quot;ExposureTimeIndex&quot;:100}</span>
 </pre></div>
 </div>
@@ -726,7 +728,7 @@ The image is taken with the selected detector and the acquired image array is ou
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tif”</p></li>
 <li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
 Only available when ‘save’ is True.</p></li>
@@ -765,7 +767,7 @@ this function does not acquire the new image, to return the image array acquired
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tif”</p></li>
 <li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
 Only available when ‘save’ is True.</p></li>
@@ -820,7 +822,7 @@ else return value is saved file name (str).</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">get_assignChannels</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sightx</span><span class="o">.</span><span class="n">get_assignChannels</span><span class="p">()</span>
 <span class="go">{</span>
 <span class="go">  &quot;0&quot;: “BF”,</span>
 <span class="go">  &quot;1&quot;: “ADF1”,</span>
@@ -855,7 +857,7 @@ else return value is saved file name (str).</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sightx</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
 <span class="go">{&#39;name&#39;: &#39;---&#39;, &#39;ip&#39;: &#39;---&#39;, &#39;port&#39;: ---, &#39;uri&#39;: &#39;---&#39;}</span>
 </pre></div>
 </div>
@@ -922,7 +924,7 @@ else return value is saved file name (str).</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">start_accumulate_image_cache</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sightx</span><span class="o">.</span><span class="n">start_accumulate_image_cache</span><span class="p">()</span>
 <span class="go">{&quot;status&quot;:&quot;OK&quot;}</span>
 </pre></div>
 </div>
@@ -941,7 +943,7 @@ else return value is saved file name (str).</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">stop_accumulate_image_cache</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sightx</span><span class="o">.</span><span class="n">stop_accumulate_image_cache</span><span class="p">()</span>
 <span class="go">{&quot;status&quot;:&quot;OK&quot;}</span>
 </pre></div>
 </div>
@@ -963,7 +965,7 @@ else return value is saved file name (str).</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright Copyright 2016-2023 JEOL Ltd..
+        &#169; Copyright Copyright 2016-2024 JEOL Ltd..
 
     </p>
   </div>

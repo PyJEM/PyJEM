@@ -7,7 +7,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PyJEM.detector.function module &mdash; PyJEM Manual 1.3.0.3564 documentation</title>
+  <title>PyJEM.detector.function module &mdash; PyJEM Manual 1.3.9.3639
+ documentation</title>
   
 
   
@@ -65,7 +66,8 @@
             
             
               <div class="version">
-                1.3.0.3564
+                1.3.9.3639
+
               </div>
             
           
@@ -360,7 +362,7 @@ Can only be used if the flag to leave the cache is ON</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tif”</p></li>
 <li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
 Only available when ‘save’ is True.</p></li>
@@ -730,7 +732,7 @@ The image is taken with the selected detector and the acquired image array is ou
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tif”</p></li>
 <li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
 Only available when ‘save’ is True.</p></li>
@@ -769,7 +771,7 @@ this function does not acquire the new image, to return the image array acquired
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tif”</p></li>
 <li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
 Only available when ‘save’ is True.</p></li>
@@ -871,7 +873,7 @@ else return value is saved file name (str).</p>
 <dd><p>This function can modify the IP Address which is URI of this package.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – ip address.</p>
+<dd class="field-odd"><p><strong>(</strong><strong>int</strong><strong>)</strong> (<em>val</em>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -882,12 +884,17 @@ else return value is saved file name (str).</p>
 <dd><p>This function can modify the port number which is URI of this package.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – port numnber.</p>
+<dd class="field-odd"><p><strong>(</strong><strong>int</strong><strong>)</strong> (<em>val</em>) – </p>
 </dd>
 </dl>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please do not use it except for JEOL service.</p>
+</div>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+<span class="go">{&#39;name&#39;: &#39;---&#39;, &#39;ip&#39;: &#39;---&#39;, &#39;port&#39;: ---, &#39;uri&#39;: &#39;---&#39;}</span>
+</pre></div>
 </div>
 </dd></dl>
 
@@ -967,7 +974,7 @@ else return value is saved file name (str).</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright Copyright 2016-2023 JEOL Ltd..
+        &#169; Copyright Copyright 2016-2024 JEOL Ltd..
 
     </p>
   </div>
