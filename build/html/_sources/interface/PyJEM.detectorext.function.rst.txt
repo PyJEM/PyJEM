@@ -1,0 +1,7 @@
+PyJEM.detectorext.function module
+=================================
+
+.. automodule:: PyJEM.detectorext.function
+   :members:
+   :undoc-members:
+   :show-inheritance:

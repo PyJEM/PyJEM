@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to Use &mdash; PyJEM Manual 1.3.9.3635
+ documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyJEM Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3.9.3635
+
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix/Installer.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface/PyJEM.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Log/index.html">What is New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyJEM Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>How to Use</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/Forum/HowToUse.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="How-to-Use">
+<h1>How to Use<a class="headerlink" href="#How-to-Use" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Tools">
+<h2>Tools<a class="headerlink" href="#Tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Spyder">
+<h3>Spyder<a class="headerlink" href="#Spyder" title="Permalink to this headline">¶</a></h3>
+<p>Spyder is an integrated development environment, intended to program scientific applications with python. We recommend using spyder as a programming environment using PyJEM.</p>
+<div class="line-block">
+<div class="line">For details spyder, please visit</div>
+<div class="line">[spyder url] (<a class="reference external" href="https://github.com/spyder-ide/spyde">https://github.com/spyder-ide/spyde</a>)</div>
+</div>
+<p>This page introduces how to start Spyder. The precondition is that Anaconda3 is installed.</p>
+<div class="section" id="Starting-method">
+<h4>Starting method<a class="headerlink" href="#Starting-method" title="Permalink to this headline">¶</a></h4>
+<p><strong>Windows7</strong>:</p>
+<ol class="arabic simple">
+<li><p>Click [Start]</p></li>
+<li><p>Click [All Programs]</p></li>
+</ol>
+<img alt="../_images/windows7_start.png" src="../_images/windows7_start.png" />
+<ol class="arabic simple" start="3">
+<li><p>Click [Anaconda 3 (64-bit)]</p></li>
+<li><p>Click<a class="reference external" href="#spyder">Spyder</a></p></li>
+</ol>
+<img alt="../_images/windows7_spyder_pos.png" src="../_images/windows7_spyder_pos.png" />
+<p><strong>Windows10</strong>:</p>
+<ol class="arabic simple">
+<li><p>Click [Start]</p></li>
+<li><p>Click [All Programs]</p></li>
+</ol>
+<img alt="../_images/win10_start.png" src="../_images/win10_start.png" />
+<ol class="arabic simple" start="3">
+<li><p>Click [Anaconda 3 (64-bit)]</p></li>
+<li><p>Click<a class="reference external" href="#spyder">Spyder</a></p></li>
+</ol>
+<img alt="../_images/win10_spyder_pos.png" src="../_images/win10_spyder_pos.png" />
+</div>
+<div class="section" id="About-UI">
+<h4>About UI<a class="headerlink" href="#About-UI" title="Permalink to this headline">¶</a></h4>
+<p>When you start Spyder, the following UI will be displayed. Below, since the red frame is SourceFile, you can write python code.</p>
+<img alt="../_images/spyder_UI_about_editor1.png" src="../_images/spyder_UI_about_editor1.png" />
+<p>Below, the red frame becomes the Directory of SourceFile.</p>
+<img alt="../_images/spyder_UI_about_editor.png" src="../_images/spyder_UI_about_editor.png" />
+<p>Below, the red frame becomes the Ipython’s Console. To exit Console, in the Console screen Right click and select [Quit]. To start a new Console, on the Console tab Right-click and select Open a new Console.</p>
+<img alt="../_images/spyder_UI_IPython.png" src="../_images/spyder_UI_IPython.png" />
+</div>
+</div>
+<div class="section" id="Jupyter-notebook">
+<h3>Jupyter notebook<a class="headerlink" href="#Jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2024 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
