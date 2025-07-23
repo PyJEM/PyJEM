@@ -72,7 +72,7 @@
    "id": "ee6d0329",
    "metadata": {},
    "source": [
-    "### (A)VEM1342-11 and later\n",
+    "### VEM1342-11 and later\n",
     "***\n",
     "\n",
     "<img src=\"images/インストール手順.png\" width=\"40%\">\n",
@@ -91,7 +91,7 @@
     "  \n",
     "  <img src=\"images/インストールボタンの押下.png\" width=\"40%\">\n",
     "\n",
-    "### (B)VEM1342-7 to VEM1342-11\n",
+    "### VEM1342-7 to VEM1342-11\n",
     "***\n",
     "\n",
     "This version of the installer has no UI.\n",
@@ -101,12 +101,6 @@
     "\n",
     "#### 3.1. run as administrator setup.bat\n"
    ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "327f3272",
-   "metadata": {},
-   "source": []
   },
   {
    "cell_type": "markdown",
@@ -124,7 +118,7 @@
    "id": "206bd470",
    "metadata": {},
    "source": [
-    "### (A)VEM1342-11 and later\n",
+    "### EM1342-11 and later\n",
     "***\n",
     "\n",
     "#### 4.1. Select the virtual environment\n",
@@ -144,7 +138,7 @@
     "  <img src=\"images/インストールボタンの押下.png\" width=\"40%\">\n",
     "\n",
     "\n",
-    "### (B)VEM1342-7 to VEM1342-11\n",
+    "### VEM1342-7 to VEM1342-11\n",
     "***\n",
     "Install any version downloaded from the [Forum](https://github.com/PyJEM/PyJEM/releases).\n",
     "\n",
