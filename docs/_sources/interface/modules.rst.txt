@@ -1,7 +1,0 @@
-PyJEM
-=====
-
-.. toctree::
-   :maxdepth: 4
-
-   PyJEM
