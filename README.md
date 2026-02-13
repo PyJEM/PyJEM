@@ -1,52 +1,36 @@
-PyJEM
-=====================
-This site only answers questions about PyJEM. 
+# PyJEM: Python library for external control of JEOL TEM
 
-- Manual : [PyJEM manual](https://pyjem.github.io/PyJEM/)
+**This site handles inquiries about PyJEM only.**  
+**For instrument or JEOL software questions, contact your sales representative.**
 
-vjem (python virtual environment)
-------------------------------------
-vjem is a recommendate virtual python environment for PyJEM development.
+- **Documentation** : https://pyjem.github.io/PyJEM/
+- **Released** : https://github.com/PyJEM/PyJEM/tags
+- **Share scripts** : https://github.com/PyJEM/ScriptCode/tree/master/trunk
+- **Bug reports** : https://github.com/PyJEM/PyJEM/issues
 
-- ~~python 3.5~~  
-- ~~python 3.7~~  
-- ~~python 3.8~~  
-- python 3.9 : [vjem39.yml](vjem/vjem39.yml)
+
+### Features provided:
+- TEM unit control: beam, optics, stage, etc.
+- auto functions: auto-focus, auto-contrast-brightness, etc.
+- Detector control: imaging, acquiring/changing imaging conditions, etc.
+- Functions for other proprietary software, etc.
+
+## Network connection (local / remote)
+
+**PyJEM is pre‑installed on TEM PC**
+- Older systems may not include PyJEM — contact your sales representative for installation.
+
+**Remote control**
+- the PC with PyJEM and the TEM PC (TEMPC) are on the same network, remote operation is possible.
+- To enable remote control, set the IP address in each relevant PyJEM package.
+
+
+## vjem
+vjem is a recommendate python environment for PyJEM development.
+This environment have scientific, math libraries.
+
 - python 3.10 : [vjem310.yml](vjem/vjem310.yml)
-
-※ Please use vjem39 of later due to installation errors. (2024/3/21)
-
-Summary
----------
-  In recent years, there is an increasing demand to automatically control from 
-  TEM control to acquisition of images, and to control the TEM remotely. 
-  Until now, it was necessary to organize programs using TEM external control 
-  (TEMExt) written in C ++, but there are problems such as the high level of 
-  hurdling to create programs in C ++ language and few functions available in TEMExt had.
-  
-PyJEM solved these problems. Since PyJEM is a python library, 
-  we can interactively control TEM. 
-  In addition, functions available from existing TEMExt are powered up, enabling remote control.
+- python 3.9 : [vjem39.yml](vjem/vjem39.yml)
 
 
-What you can do with PyJEM
-----------------------------
-With PyJEM, it is relatively easy to control the TEM itself and acquire images. 
-By combining this with a rich Python library you can create a variety of applications.
-
-* **Electronic optical system control**： 
-  
-  Beam control, detector In / Out, magnification change, brightness change, etc..
-
-* **Stage control**：
-
-  Absolute position movement, Relative position movement, Piezoelectric movement, etc..
-
-* **Image acquisition**：
-
-  STEM or TEM image acquisition, image storage type change, resolution specification, etc..
-
-* **Auto function**：
-
-  Auto Focus、Auto Contrast Brightness、Auto Stigmator, etc..
 
