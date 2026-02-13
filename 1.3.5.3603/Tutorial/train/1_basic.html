@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting started &mdash; PyJEM Manual 1.3.5.3603
+ documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sample code (detector)" href="2_training_with_detector.html" />
+    <link rel="prev" title="Tutorial" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PyJEM Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3.5.3603
+
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Appendix/Installer.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#1.-Confirm-a-virtual-environment">1. Confirm a virtual environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#1.1-Verify-that-Miniconda-is-already-installed.">1.1 Verify that Miniconda is already installed.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#1.2-Verify-that-vjem-is-already-installed.">1.2 Verify that vjem is already installed.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2.-Activate-vjem-environment">2. Activate vjem environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3.-Import-the-PyJEM-library">3. Import the PyJEM library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#4.-Confirm-the-communication.">4. Confirm the communication.</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#4.1-TEM3-package">4.1 TEM3 package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#4.2-Other-package">4.2 Other package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2_training_with_detector.html">Sample code (detector)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_tarin_tem3.html">Sample code (TEM3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_train_eds_Get%20spectrum%20data.html">Sample code (eds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="More%20customize.html">More customize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/PyJEM.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Log/index.html">What is New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyJEM Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+      <li>Getting started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/Tutorial/train/1_basic.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Getting-started">
+<h1>Getting started<a class="headerlink" href="#Getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="1.-Confirm-a-virtual-environment">
+<h2>1. Confirm a virtual environment<a class="headerlink" href="#1.-Confirm-a-virtual-environment" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Confirm that the operating PC has the recommended environment(vjem) to run PyJEM.</p>
+<div class="section" id="1.1-Verify-that-Miniconda-is-already-installed.">
+<h3>1.1 Verify that Miniconda is already installed.<a class="headerlink" href="#1.1-Verify-that-Miniconda-is-already-installed." title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">conda</span></code></p>
+<p><strong>If the command raise error, please jump the</strong> <a class="reference external" href="../../Appendix/Installer.html#Install-Miniconda">Install Miniconda</a><strong>.</strong></p>
+</div>
+<div class="section" id="1.2-Verify-that-vjem-is-already-installed.">
+<h3>1.2 Verify that vjem is already installed.<a class="headerlink" href="#1.2-Verify-that-vjem-is-already-installed." title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code></p>
+<p><strong>If the command raise error or not exist vjem, please jump the</strong> <a class="reference external" href="../../Appendix/Installer.html#Create-vjem">Create vjem</a><strong>.</strong></p>
+</div>
+</div>
+<div class="section" id="2.-Activate-vjem-environment">
+<h2>2. Activate vjem environment<a class="headerlink" href="#2.-Activate-vjem-environment" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Activate the vjem on command line.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate ***
+</pre></div>
+</div>
+<div class="section" id="Example">
+<h3>Example<a class="headerlink" href="#Example" title="Permalink to this headline">¶</a></h3>
+<p>Activate python3.8 environment.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">JEOL</span>\<span class="n">Desktop</span><span class="o">&gt;</span><span class="n">conda</span> <span class="n">activate</span> <span class="n">vjem38</span>
+<span class="p">(</span><span class="n">vjem38</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">JEOL</span>\<span class="n">Desktop</span><span class="o">&gt;</span><span class="n">python</span>
+<span class="n">Python</span> <span class="mf">3.8.10</span> <span class="o">|</span> <span class="n">packaged</span> <span class="n">by</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">|</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">May</span> <span class="mi">12</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">49</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="mf">.1900</span> <span class="mi">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="3.-Import-the-PyJEM-library">
+<h2>3. Import the PyJEM library<a class="headerlink" href="#3.-Import-the-PyJEM-library" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Execute the following command on the command line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">PyJEM</span>
+</pre></div>
+</div>
+<p><strong>If output the following error on import, please jump the</strong> <a class="reference external" href="../../Appendix/Installer.html#Install-PyJEM">Install PyJEM</a><strong>.</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">PyJEM</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">ModuleNotFoundError</span>: <span class="n">No module named &#39;PyJEM&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="4.-Confirm-the-communication.">
+<h2>4. Confirm the communication.<a class="headerlink" href="#4.-Confirm-the-communication." title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="4.1-TEM3-package">
+<h3>4.1 TEM3 package<a class="headerlink" href="#4.1-TEM3-package" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">TEM3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If the result of the execution is True, it is successful. <strong>but if the result is False, please confirm the following.</strong></p>
+<ul class="simple">
+<li><p>TEMExternal is installed the operating PC.</p></li>
+</ul>
+</div>
+<div class="section" id="4.2-Other-package">
+<h3>4.2 Other package<a class="headerlink" href="#4.2-Other-package" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">detector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">get_attached_detector</span><span class="p">()</span>
+<span class="go">[&quot;HAADF&quot;]</span>
+</pre></div>
+</div>
+<p>If the result of the execution is</p>
+<p><code class="docutils literal notranslate"><span class="pre">ConnectionRefusedError:</span> <span class="pre">[WinError</span> <span class="pre">10061]</span></code></p>
+<p>Probably because the IPaddress in the package configuration is not corrected. please try the <a class="reference external" href="/More%20customize.html#Change-IP-address">Change IP address</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="2_training_with_detector.html" class="btn btn-neutral float-right" title="Sample code (detector)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2024 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Introduction &mdash; PyJEM Manual 1.3.6.3605
+ documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installation" href="../Appendix/Installer.html" />
+    <link rel="prev" title="PyJEM User Manual" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyJEM Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3.6.3605
+
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Environment">Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#OS">OS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Python-version">Python version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Relative-library">Relative library</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Electronic-optical-system-control">Electronic optical system control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Stage-control">Stage control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detector-control">detector control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Auto-function">Auto function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Connection-model">Connection model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#TEMPC">TEMPC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RemotePC">RemotePC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Forum-(Message-Board)">Forum (Message Board)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix/Installer.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface/PyJEM.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Log/index.html">What is New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyJEM Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/Forum/Introduction.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Introduction">
+<h1>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Summary">
+<h2>Summary<a class="headerlink" href="#Summary" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line">In recent years, there is an increasing demand to automatically control from TEM control to acquisition of images, and to control the TEM remotely. Until now, it was necessary to organize programs using TEM external control (TEMExt) written in C ++, but there are problems such as the high level of hurdling to create programs in C ++ language and few functions available in TEMExt had.</div>
+<div class="line">PyJEM solved these problems. Since PyJEM is a python library, we can interactively control TEM. In addition, functions available from existing TEMExt are powered up, enabling remote control.</div>
+</div>
+</div>
+<div class="section" id="Environment">
+<h2>Environment<a class="headerlink" href="#Environment" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="OS">
+<h3>OS<a class="headerlink" href="#OS" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Windows® 7 64bit</p></li>
+<li><p>Windows® 10 64bit</p></li>
+<li><p>Windows® 11 64bit</p></li>
+</ul>
+</div>
+<div class="section" id="Python-version">
+<h3>Python version<a class="headerlink" href="#Python-version" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Python 3.5 64bit</p></li>
+<li><p>Python 3.7 64bit</p></li>
+<li><p>Python 3.8 64bit</p></li>
+<li><p>Python 3.9 64bit</p></li>
+<li><p>Python 3.10 64bit</p></li>
+</ul>
+</div>
+<div class="section" id="Relative-library">
+<h3>Relative library<a class="headerlink" href="#Relative-library" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>opencv-python</p></li>
+<li><p>httplib2</p></li>
+<li><p>comtypes</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="Functions">
+<h2>Functions<a class="headerlink" href="#Functions" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>You can use the existing TEM External(TEM3) published by JEOL and control the detector. Below is an example of the functionality.</p>
+<div class="section" id="Electronic-optical-system-control">
+<h3>Electronic optical system control<a class="headerlink" href="#Electronic-optical-system-control" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Beam control</p></li>
+<li><p>magnification change</p></li>
+<li><p>brightness change</p></li>
+<li><p>etc..</p></li>
+</ul>
+</div>
+<div class="section" id="Stage-control">
+<h3>Stage control<a class="headerlink" href="#Stage-control" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Absolute position movement</p></li>
+<li><p>Relative position movement</p></li>
+<li><p>Piezoelectric movement</p></li>
+<li><p>etc..</p></li>
+</ul>
+</div>
+<div class="section" id="detector-control">
+<h3>detector control<a class="headerlink" href="#detector-control" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>capture image by JEOL camera and STEM detector.</p></li>
+<li><p>hardware insert / retract.</p></li>
+<li><p>change mage storage type</p></li>
+<li><p>Change of imaging conditions</p></li>
+<li><p>etc..</p></li>
+</ul>
+</div>
+<div class="section" id="Auto-function">
+<h3>Auto function<a class="headerlink" href="#Auto-function" title="Permalink to this headline">¶</a></h3>
+<p>Call functions available in the TEM Center.</p>
+<ul class="simple">
+<li><p>Auto Focus</p></li>
+<li><p>Auto Contrast Brightness</p></li>
+<li><p>Auto Stigmator</p></li>
+<li><p>etc..</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="Connection-model">
+<h2>Connection model<a class="headerlink" href="#Connection-model" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>You can use Python environment on TEM PC or another PC and use it on PC which installed PyJEM (python library). When you execute the script code including PyJEM, processing is thrown to TEM main unit via TEMCenter.</p>
+<p><img alt="image1" src="../_images/pyjem_rest.png" /></p>
+<div class="section" id="TEMPC">
+<h3>TEMPC<a class="headerlink" href="#TEMPC" title="Permalink to this headline">¶</a></h3>
+<p>The figure below shows the communication model when PyJEM is on the TEMPC. Since the communication is between the same, the IP address will be 127.0.0.1.</p>
+<p><img alt="image2" src="../_images/PyJEM_in_TEMPC.png" /></p>
+</div>
+<div class="section" id="RemotePC">
+<h3>RemotePC<a class="headerlink" href="#RemotePC" title="Permalink to this headline">¶</a></h3>
+<p>It is a model that builds a PyJEM environment on a PC other than TEMPC and controls TEM. It is possible to write python script code with NotePC (etc.) and execute it with Remote. When executing from a remote place, work such as having the TEM connected to the in-house LAN etc. may be necessary.</p>
+<p><img alt="TEMPC" src="../_images/PyJEM_in_OtherPC.png" /></p>
+</div>
+</div>
+<div class="section" id="Forum-(Message-Board)">
+<h2>Forum (Message Board)<a class="headerlink" href="#Forum-(Message-Board)" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Publish the sharing place(Forum) about PyJEM to GitHub. To use Forum, you need a GitHub account. In this Forum, you can share script code, exchange information, and browse. From JEOL, we will publish manuals such as how to use PyJEM and answer questions about PyJEM.</p>
+<p>PyJEM Forum URL： 　<a class="reference external" href="https://github.com/PyJEM">PyJEM Forum</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../Appendix/Installer.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="PyJEM User Manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2024 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

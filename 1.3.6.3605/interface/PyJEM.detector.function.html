@@ -1,0 +1,1006 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>PyJEM.detector.function module &mdash; PyJEM Manual 1.3.6.3605
+ documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PyJEM.detectorext package" href="PyJEM.detectorext.html" />
+    <link rel="prev" title="PyJEM.detector package" href="PyJEM.detector.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyJEM Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3.6.3605
+
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix/Installer.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="PyJEM.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="PyJEM.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="PyJEM.detector.html">PyJEM.detector package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="PyJEM.detector.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyJEM.detector.html#module-PyJEM.detector">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.detectorext.html">PyJEM.detectorext package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.html">PyJEM.eds package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.sightx.html">PyJEM.sightx package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.html">PyJEM.TEM3 module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.html#module-PyJEM">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Log/index.html">What is New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyJEM Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="PyJEM.html">API Reference</a> &raquo;</li>
+        
+          <li><a href="PyJEM.detector.html">PyJEM.detector package</a> &raquo;</li>
+        
+      <li>PyJEM.detector.function module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/interface/PyJEM.detector.function.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-PyJEM.detector.function">
+<span id="pyjem-detector-function-module"></span><h1>PyJEM.detector.function module<a class="headerlink" href="#module-PyJEM.detector.function" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="PyJEM.detector.function.Detector">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">Detector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">det</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.detector.function.Detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.AutoContrastBrightness">
+<code class="sig-name descname"><span class="pre">AutoContrastBrightness</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.AutoContrastBrightness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start AutoContrastBrightness function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execute status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.AutoFocus">
+<code class="sig-name descname"><span class="pre">AutoFocus</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.AutoFocus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start AutoFocus function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execute status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="s2">&quot;ADF1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">AutoFocus</span><span class="p">()</span>
+<span class="go">{&quot;status&quot;:...}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.AutoOrientation">
+<code class="sig-name descname"><span class="pre">AutoOrientation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.AutoOrientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start AutoOrientation function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execute status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.AutoStigmator">
+<code class="sig-name descname"><span class="pre">AutoStigmator</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.AutoStigmator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start AutoStigmator function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execute status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.AutoZ">
+<code class="sig-name descname"><span class="pre">AutoZ</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.AutoZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start AutoZ function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execute status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.get_detectorsetting">
+<code class="sig-name descname"><span class="pre">get_detectorsetting</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.get_detectorsetting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtaining setting information of selected detector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>get the selected detector’s info.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="s2">&quot;ADF1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_detectorsetting</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">&quot;ExposureTimeValue&quot;:100,</span>
+<span class="go">&quot;GainIndex&quot;:100, ...</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.get_image_cache">
+<code class="sig-name descname"><span class="pre">get_image_cache</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bytes</span><a class="headerlink" href="#PyJEM.detector.function.Detector.get_image_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a cached image of a Live image without using SnapShot.
+Can only be used if the flag to leave the cache is ON</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bytes array.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.get_insert_state">
+<code class="sig-name descname"><span class="pre">get_insert_state</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.get_insert_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get detector in/out status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execute status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.insert">
+<code class="sig-name descname"><span class="pre">insert</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a select detector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execute status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.livesnapshot">
+<code class="sig-name descname"><span class="pre">livesnapshot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.detector.function.Detector.livesnapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take an image with the specified extension. Obtaining images faster than “snapshot”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
+Only available when ‘save’ is True.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – show the Image file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>if enter argument is only “extention”, return value is image data stream (bytes).
+else return value is saved file name.</p>
+<p>File stream saved with the selected extension</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes or str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.livestart">
+<code class="sig-name descname"><span class="pre">livestart</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.livestart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start live.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execution result</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="s2">&quot;ADF1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">det</span><span class="o">.</span><span class="n">livestart</span><span class="p">()</span>
+<span class="go">{&quot;status&quot;:&quot;OK&quot;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.livestop">
+<code class="sig-name descname"><span class="pre">livestop</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.livestop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop live.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execution result</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.retract">
+<code class="sig-name descname"><span class="pre">retract</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.retract" title="Permalink to this definition">¶</a></dt>
+<dd><p>retract a select detector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execute status</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_areamode_imagingarea">
+<code class="sig-name descname"><span class="pre">set_areamode_imagingarea</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Width</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Height</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_areamode_imagingarea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the beam position when ScanMode is “Area”.
+Sets which part of the scanning range set by ImagingArea is scanned.
+The top left vertex is (0, 0).
+If no value is entered for the argument, the value is not changed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>int</em>) – 0-4096</p></li>
+<li><p><strong>Y</strong> (<em>int</em>) – 0-4096</p></li>
+<li><p><strong>Width</strong> (<em>int</em>) – 0-4096</p></li>
+<li><p><strong>Height</strong> (<em>int</em>) – 0-4096</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_binningindex">
+<code class="sig-name descname"><span class="pre">set_binningindex</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_binningindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the Binning value as index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – 0-4</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>value(Args)’s range sdepends on TEM model</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function corresponds to camera only.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_detectorsetting">
+<code class="sig-name descname"><span class="pre">set_detectorsetting</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_detectorsetting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wild card method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>body</strong> (<em>dict</em>) – “key” is function name you want to use. “value” is to change value.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ExposureTimeValue&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot;GainIndex&quot;</span><span class="p">:</span><span class="mi">8000</span><span class="p">,</span><span class="s2">&quot;OffsetIndex&quot;</span><span class="p">:</span><span class="mi">8000</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="s2">&quot;ADF1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_detectorsetting</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_digitalrotation">
+<code class="sig-name descname"><span class="pre">set_digitalrotation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_digitalrotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the digital rotation angle as absolute value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>float</em>) – 0.0-360.0</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_exposuretime_index">
+<code class="sig-name descname"><span class="pre">set_exposuretime_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_exposuretime_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the exposure time as index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – exposure time index. range is 0-65535</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="s2">&quot;ADF1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_exposuretime_index</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">{&quot;ExposureTimeIndex&quot;:100}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>value(Args)’s range sdepends on TEM model</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_exposuretime_value">
+<code class="sig-name descname"><span class="pre">set_exposuretime_value</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_exposuretime_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the exposure time as usec value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>float</em>) – 0.0-1000.0(μsec)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>value(Args)’s range sdepends on TEM model</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_frameintegration">
+<code class="sig-name descname"><span class="pre">set_frameintegration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_frameintegration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the accumulation count.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – frame integration value. range is 0-255.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>value(Args)’s range sdepends on TEM model</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_gainindex">
+<code class="sig-name descname"><span class="pre">set_gainindex</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_gainindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the gain value as index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – 0- 4095</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>value(Args)’s range sdepends on TEM model</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_imaging_area">
+<code class="sig-name descname"><span class="pre">set_imaging_area</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Width</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Height</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_imaging_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of pixels of the live image.
+x and y are the coordinates of the starting pixel of the read image.
+width and height are the coordinates of the end pixel of the read image.
+If no value is entered for the argument, the value is not changed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>int</em>) – 0-4096</p></li>
+<li><p><strong>Y</strong> (<em>int</em>) – 0-4096</p></li>
+<li><p><strong>Width</strong> (<em>int</em>) – 0-4096</p></li>
+<li><p><strong>Height</strong> (<em>int</em>) – 0-4096</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_offsetindex">
+<code class="sig-name descname"><span class="pre">set_offsetindex</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_offsetindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the offset value as index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – 0- 4095</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>value(Args)’s range sdepends on TEM model</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_scanmode">
+<code class="sig-name descname"><span class="pre">set_scanmode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_scanmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the scanMode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>) – 0= Scan, 1= Area, 3= Spot</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_scanrotation">
+<code class="sig-name descname"><span class="pre">set_scanrotation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_scanrotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the scanRotation angle as absolute value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>float</em>) – 0.0-360.0</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_scanrotation_step">
+<code class="sig-name descname"><span class="pre">set_scanrotation_step</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_scanrotation_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the minimum variation of scanRotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>float</em>) – 0.0-20.0</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.set_spotposition">
+<code class="sig-name descname"><span class="pre">set_spotposition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.Detector.set_spotposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the beam position when ScanMode is “Spot”.
+Sets which part of the scanning range set by ImagingArea is scanned.
+The top left vertex is (0, 0).
+If no value is entered for the argument, the value is not changed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>int</em>) – 0-4096</p></li>
+<li><p><strong>Y</strong> (<em>int</em>) – 0-4096</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value set to TEM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.snapshot">
+<code class="sig-name descname"><span class="pre">snapshot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.detector.function.Detector.snapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acquire image about the args “extension”.
+The image is taken with the selected detector and the acquired image array is output or saved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
+Only available when ‘save’ is True.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – show the Image file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>if enter argument is only “extention”, return value is image data stream (bytes).
+else return value is saved file name.</p>
+<p>File stream saved with the selected extension. (If there is
+an input in an argument other than ‘extention’, None is returned.)</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.snapshot_rawdata">
+<code class="sig-name descname"><span class="pre">snapshot_rawdata</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bytes</span><a class="headerlink" href="#PyJEM.detector.function.Detector.snapshot_rawdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raw data of the image acquired by the specified detector. the raw data is returned as a byte array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>2 dimensional byte array of acquired image data.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PyJEM.detector.function.Detector.snapshotframe">
+<code class="sig-name descname"><span class="pre">snapshotframe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.detector.function.Detector.snapshotframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is output the acquired image array.
+this function does not acquire the new image, to return the image array acquired with the snapshotall() function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extention</strong> (<em>str</em>) – “jpg”, “bmp”, “tiff”</p></li>
+<li><p><strong>save</strong> (<em>bool</em>) – ‘True’ is save capture file.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Name of file to save. It is possible to include an absolute path.
+Only available when ‘save’ is True.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – show the Image file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>if enter argument is only “extention”, return value is image data stream (bytes).
+else return value is saved file name (str).</p>
+<p>File stream saved with the selected extension</p>
+</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function does not acquire new image, to return the image array acquired with the snapshotall() function.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.assign_channel">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">assign_channel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detectorName</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.assign_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign the selected detector to a channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>detectorName</strong> (<em>str</em>) – “ADF1”</p></li>
+<li><p><strong>channel</strong> (<em>int</em>) – Channel number to assign the detector. (Only multiple channles)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Execution result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.get_assignChannels">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">get_assignChannels</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.get_assignChannels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get activate detectors list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>activate detectors dict.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">get_assignChannels</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">  &quot;0&quot;: “BF”,</span>
+<span class="go">  &quot;1&quot;: “ADF1”,</span>
+<span class="go">  &quot;2&quot;: “ADF2”,</span>
+<span class="go">  &quot;3&quot;: “None”,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.get_attached_detector">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">get_attached_detector</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#PyJEM.detector.function.get_attached_detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acquisition of “ADF1”s currently available in TEMCenter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of available “ADF1”s.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.get_config">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the package’s settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>service info.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+<span class="go">{&#39;name&#39;: &#39;---&#39;, &#39;ip&#39;: &#39;---&#39;, &#39;port&#39;: ---, &#39;uri&#39;: &#39;---&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.set_ip">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">set_ip</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#PyJEM.detector.function.set_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function can modify the IP Address which is URI of this package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – ip address.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.set_port">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">set_port</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#PyJEM.detector.function.set_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function can modify the port number which is URI of this package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>int</em>) – port numnber.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please do not use it except for JEOL service.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.snapshotall">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">snapshotall</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.snapshotall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acquire all available detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execution result</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this function is only STEM mode.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To get the acquired image data by this function, please to use snapshotframe() function.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.start_accumulate_image_cache">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">start_accumulate_image_cache</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.start_accumulate_image_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn on the flag to keep the cached image of the Live image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execution result</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">start_accumulate_image_cache</span><span class="p">()</span>
+<span class="go">{&quot;status&quot;:&quot;OK&quot;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.detector.function.stop_accumulate_image_cache">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.detector.function.</span></code><code class="sig-name descname"><span class="pre">stop_accumulate_image_cache</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.detector.function.stop_accumulate_image_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn off the flag to keep the cached image of the Live image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execution result</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">detector</span><span class="o">.</span><span class="n">stop_accumulate_image_cache</span><span class="p">()</span>
+<span class="go">{&quot;status&quot;:&quot;OK&quot;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="PyJEM.detectorext.html" class="btn btn-neutral float-right" title="PyJEM.detectorext package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="PyJEM.detector.html" class="btn btn-neutral float-left" title="PyJEM.detector package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2024 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

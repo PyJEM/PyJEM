@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Installation &mdash; PyJEM Manual 1.3.3.3601
+ documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial" href="../Tutorial/index.html" />
+    <link rel="prev" title="Introduction" href="../Forum/Introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyJEM Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3.3.3601
+
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#1.-Install-Miniconda">1. Install Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.-Create-vjem">2. Create vjem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#2.1-Open-the-Forum-page.-Click-the-vjem38.yml-link.">2.1 Open the Forum page. Click the vjem38.yml link.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.2-Download-the-yml-file">2.2 Download the yml file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.3-Execute-the-following-on-the-command-line">2.3 Execute the following on the command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.4-Confirm-the-vjem-has-been-created.">2.4 Confirm the vjem has been created.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3.-Install-PyJEM">3. Install PyJEM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#3.1-Select-virtual-env-name">3.1 Select virtual env name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.2-Select-to-install-the-PyJEM.zip">3.2 Select to install the PyJEM.zip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.3-Click-the-install-button">3.3 Click the install button</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Download-PyJEM-(package-file)">Download PyJEM (package file)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#1.-Click-“Tags”-on-forum-page">1. Click “Tags” on forum page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.-Select-the-version-you-want-to-download,-and-click-“Downloads”">2. Select the version you want to download, and click “Downloads”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.-Click-zip-file">3. Click zip file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface/PyJEM.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Log/index.html">What is New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyJEM Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/Appendix/Installer.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Installation">
+<h1>Installation<a class="headerlink" href="#Installation" title="Permalink to this headline">¶</a></h1>
+<p>PyJEM supports Anaconda or Miniconda environments.</p>
+<div class="section" id="1.-Install-Miniconda">
+<h2>1. Install Miniconda<a class="headerlink" href="#1.-Install-Miniconda" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>For users experienced with Python, the recommended way to install PyJEM with <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>. Miniconda provides a very compact development environment using python. You can create a virtual environment on Miniconda. therefore, if you can download a recomend virtual environment file from <a class="reference external" href="https://github.com/PyJEM/PyJEM">Forum</a>, you can easiest make a recommendate virtual environment.</p>
+</div>
+<div class="section" id="2.-Create-vjem">
+<h2>2. Create vjem<a class="headerlink" href="#2.-Create-vjem" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line">vjem is a recommendate virtual python environment. PyJEM supports multiple python versions, so please download the environment you wish to use from <a class="reference external" href="https://github.com/PyJEM/PyJEM#vjem-python-virtual-environment">Forum</a>.</div>
+<div class="line">The following is a procedure using vjem38 as an example.</div>
+</div>
+<p><strong>※ Prerequisite</strong>: you must be connected to the Internet.</p>
+<div class="section" id="2.1-Open-the-Forum-page.-Click-the-vjem38.yml-link.">
+<h3>2.1 Open the <a class="reference external" href="https://github.com/PyJEM/PyJEM">Forum page</a>. Click the vjem38.yml link.<a class="headerlink" href="#2.1-Open-the-Forum-page.-Click-the-vjem38.yml-link." title="Permalink to this headline">¶</a></h3>
+<p><img alt="ee2b3538728f4f52bb3f6d01bfcdcc6a" class="no-scaled-link" src="../_images/forum_vjem_page.png" style="width: 50%;" /></p>
+</div>
+<div class="section" id="2.2-Download-the-yml-file">
+<h3>2.2 Download the yml file<a class="headerlink" href="#2.2-Download-the-yml-file" title="Permalink to this headline">¶</a></h3>
+<p><img alt="067f1249d08843779203a6e92aa39190" class="no-scaled-link" src="../_images/download_vjem38.png" style="width: 50%;" /></p>
+</div>
+<div class="section" id="2.3-Execute-the-following-on-the-command-line">
+<h3>2.3 Execute the following on the command line<a class="headerlink" href="#2.3-Execute-the-following-on-the-command-line" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">vjem_yml</span></code></p>
+<p>※ <em>vjem_yml</em> is yml file’s absolute path that has downloaded.</p>
+</div>
+<div class="section" id="2.4-Confirm-the-vjem-has-been-created.">
+<h3>2.4 Confirm the vjem has been created.<a class="headerlink" href="#2.4-Confirm-the-vjem-has-been-created." title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; conda activate vjem38
+(vjem38) &gt;
+</pre></div>
+</div>
+<p>If there is no error in activate, the environment has been successfully built.</p>
+</div>
+</div>
+<div class="section" id="3.-Install-PyJEM">
+<h2>3. Install PyJEM<a class="headerlink" href="#3.-Install-PyJEM" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>It is installer to upgrade/downgrade the PyJEM library. please download the PyJEM.zip from the <a class="reference external" href="https://github.com/PyJEM/PyJEM">Forum</a>.</p>
+<p><img alt="75ac4c00f04a43d0be71a4e9578af5d5" class="no-scaled-link" src="../_images/インストール手順.png" style="width: 40%;" /></p>
+<p><strong>※This installer is included in the equipment package purchased.</strong></p>
+<div class="section" id="3.1-Select-virtual-env-name">
+<h3>3.1 Select virtual env name<a class="headerlink" href="#3.1-Select-virtual-env-name" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Select the python virtual environment name to install the PyJEM library in the combo-box.</div>
+<div class="line">※ If the virtual environment name don’t exist in box-list, please input the virtual environment name.</div>
+</div>
+<p><img alt="image1" src="../_images/仮想環境の選択.png" /></p>
+</div>
+<div class="section" id="3.2-Select-to-install-the-PyJEM.zip">
+<h3>3.2 Select to install the PyJEM.zip<a class="headerlink" href="#3.2-Select-to-install-the-PyJEM.zip" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Default</strong> : install the PyJEM library configured in the installer.</p></li>
+<li><p><strong>[…]</strong> : It is able to install the downloaded PyJEM library. Please refer <a class="reference external" href="#anchor">here</a> for download instructions.</p></li>
+</ul>
+<p><img alt="8a0ff23bbcc641caa291123516638180" class="no-scaled-link" src="../_images/ライブラリの選択.png" style="width: 40%;" /></p>
+</div>
+<div class="section" id="3.3-Click-the-install-button">
+<h3>3.3 Click the install button<a class="headerlink" href="#3.3-Click-the-install-button" title="Permalink to this headline">¶</a></h3>
+<p>When click the “Install” button, start the install method and output the install process message.</p>
+<p><img alt="7a545c7fd657477a87fa30e199a55e9e" class="no-scaled-link" src="../_images/インストールボタンの押下.png" style="width: 40%;" /></p>
+</div>
+</div>
+<div class="section" id="Download-PyJEM-(package-file)">
+<h2>Download PyJEM (package file)<a class="headerlink" href="#Download-PyJEM-(package-file)" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="1.-Click-“Tags”-on-forum-page">
+<h3>1. Click “Tags” on forum page<a class="headerlink" href="#1.-Click-“Tags”-on-forum-page" title="Permalink to this headline">¶</a></h3>
+<p><img alt="426370b547574c93b413b3637f23b803" class="no-scaled-link" src="../_images/download_pyjem_1.png" style="width: 50%;" /></p>
+</div>
+<div class="section" id="2.-Select-the-version-you-want-to-download,-and-click-“Downloads”">
+<h3>2. Select the version you want to download, and click “Downloads”<a class="headerlink" href="#2.-Select-the-version-you-want-to-download,-and-click-“Downloads”" title="Permalink to this headline">¶</a></h3>
+<p><img alt="376983c8c1fc48df8aa6b615599d7499" class="no-scaled-link" src="../_images/download_pyjem_2.png" style="width: 50%;" /></p>
+</div>
+<div class="section" id="3.-Click-zip-file">
+<h3>3. Click zip file<a class="headerlink" href="#3.-Click-zip-file" title="Permalink to this headline">¶</a></h3>
+<p><img alt="e95558a7af4749d192a77c1fc8d87318" class="no-scaled-link" src="../_images/download_pyjem_3.png" style="width: 50%;" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../Tutorial/index.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../Forum/Introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2024 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

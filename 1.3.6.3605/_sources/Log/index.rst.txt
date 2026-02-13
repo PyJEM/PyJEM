@@ -1,0 +1,15 @@
+﻿
+What is New
+=============================
+
+Shows a PyJEM's update log.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   Logs/*
+
+
+
+

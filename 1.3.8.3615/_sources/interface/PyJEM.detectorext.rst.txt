@@ -1,0 +1,18 @@
+PyJEM.detectorext package
+=========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   PyJEM.detectorext.function
+
+Module contents
+---------------
+
+.. automodule:: PyJEM.detectorext
+   :members:
+   :undoc-members:
+   :show-inheritance:

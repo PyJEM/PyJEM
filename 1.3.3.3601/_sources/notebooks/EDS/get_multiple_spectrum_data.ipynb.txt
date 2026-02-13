@@ -1,0 +1,221 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "b4c41d08",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from PyJEM import detectorext\n",
+    "from PyJEM import eds\n",
+    "\n",
+    "import PyJEM\n",
+    "PyJEM.__version__\n",
+    "\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "8370ffa0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'status': 'OK'}"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# 検出器の選択\n",
+    "detectorext.function.assign_channel('HAADF', 1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "893fba41",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'status': 'OK'}"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# アノテーション配置する\n",
+    "args = {'LUTScanSetting': {'LookUpTable': '[]',\n",
+    "  'Shape': 2,#Line\n",
+    "  'Position': [[-0.5, -0.5], [0.5, 0.5]],\n",
+    "  'PixelResolution': 2,\n",
+    "  'IgnorePixelCount': 0,\n",
+    "  'BlankingCount': 0}}\n",
+    "\n",
+    "detectorext.set_LUTscansetting(args)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "0722c15f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'ProcessTime': ['T1', None, None, None],\n",
+       " 'DwellTime': 4700.0,\n",
+       " 'CollectionMode': 3,\n",
+       " 'SweepCount': 1,\n",
+       " 'EnableScanSync': False,\n",
+       " 'EDSSelected': True}"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# EDS の各種パラメタ設定\n",
+    "args2 = {'ProcessTime': ['T1', None, None, None],\n",
+    " 'DwellTime': 4700.0,\n",
+    " 'CollectionMode': 3,\n",
+    " 'SweepCount': 1,\n",
+    " 'EnableScanSync': False,\n",
+    " 'EDSSelected': True}\n",
+    "\n",
+    "eds.set_acquisition_settings(args2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "4048655b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Version': '08', 'DataID': '7498587e-cfbd-43a9-9ed4-79b3f7b9117d'}"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# スタート\n",
+    "data_id = eds.start_acquisition()\n",
+    "data_id"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0da796e1",
+   "metadata": {},
+   "source": [
+    "## get_spectrum_data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "0f248400",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# get spectrum data\n",
+    "binary_spectrum_data = eds.get_multiple_spectrum_data({\"TargetDataID\" : data_id[\"DataID\"]})"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "67d8ddc0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "image/png": "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\n",
+      "text/plain": [
+       "<Figure size 432x288 with 1 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "def to_graph(binary):\n",
+    "    # Divide binary data into 4-byte units\n",
+    "    binary_intensity_list = [binary[i:i+4] for i in range(0, len(binary), 4)]\n",
+    "\n",
+    "    # バイナリデータをintegerに変換する\n",
+    "    intnum = []\n",
+    "    for intensity in binary_intensity_list:\n",
+    "        intnum.append( int.from_bytes(intensity, byteorder=\"little\"))\n",
+    "\n",
+    "    data = np.array_split(intnum, len(intnum) / 2048)\n",
+    "    ans = data[0] # 適当に初期化\n",
+    "    len(data)\n",
+    "    \n",
+    "    # 全部足したらEDS Whole Spectrumと一致\n",
+    "    for i in range(0, len(data)):\n",
+    "        ans = ans + data[i]\n",
+    "        \n",
+    "    # EDS Whole Spectrumと一致する\n",
+    "    %matplotlib inline\n",
+    "    plt.plot(intnum)\n",
+    "    \n",
+    "to_graph(binary_spectrum_data)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "925414c1",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
