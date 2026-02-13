@@ -1,0 +1,3015 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>PyJEM.eds.function module &mdash; PyJEM Manual 1.3.9.3617
+ documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PyJEM.sightx package" href="PyJEM.sightx.html" />
+    <link rel="prev" title="PyJEM.eds package" href="PyJEM.eds.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PyJEM Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3.9.3617
+
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Appendix/Installer.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="PyJEM.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="PyJEM.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.detector.html">PyJEM.detector package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.detectorext.html">PyJEM.detectorext package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="PyJEM.eds.html">PyJEM.eds package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="PyJEM.eds.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PyJEM.eds.html#module-PyJEM.eds">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.sightx.html">PyJEM.sightx package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.html">PyJEM.TEM3 module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.html#module-PyJEM">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Log/index.html">What is New</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyJEM Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="PyJEM.html">API Reference</a> &raquo;</li>
+        
+          <li><a href="PyJEM.eds.html">PyJEM.eds package</a> &raquo;</li>
+        
+      <li>PyJEM.eds.function module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/interface/PyJEM.eds.function.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-PyJEM.eds.function">
+<span id="pyjem-eds-function-module"></span><h1>PyJEM.eds.function module<a class="headerlink" href="#module-PyJEM.eds.function" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="PyJEM.eds.function.check_communication">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">check_communication</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.check_communication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks HTTP connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>Result:</dt><dd><p>Returns OK when the communication established.</p>
+</dd>
+<dt>Version:</dt><dd><p>A version number of this specification.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">check_communication</span><span class="p">()</span>
+<span class="go">{&#39;Result&#39;: &#39;OK&#39;, &#39;Version&#39;: &#39;11&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.create_count_map">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">create_count_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.create_count_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates gross count mapping data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Elements (ElementsKey):</dt><dd><p>A dictionary of elements that contains elemental numbers and shell names.</p>
+<ul>
+<li><dl>
+<dt>List of Line:</dt><dd><p>None, K, L, M, N, O, or Default.</p>
+<p>Default is an automatically selected line.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (integer):</dt><dd><p>0: Total, 1: FirstDetector, 2: SecondDetector, 3: ThirdDetector, 4: ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (string):</dt><dd><p>An array of IDs detected.
+<em>E.g.,</em> [‘aaaa-aaaa-aaaa-aaaa’, ‘bbbb-bbbb-bbbb-bbbb’, ‘cccc-cccc-cccc-cccc’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">create_count_map</span><span class="p">({</span>
+<span class="go">    &#39;TargetDataID&#39; : &#39;xxxx-xxxx-xxxx-xxxx&#39;,</span>
+<span class="go">    &#39;Elements&#39; : [</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 8, &#39;Line&#39; : &#39;K&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 14, &#39;Line&#39; : &#39;L&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 21, &#39;Line&#39; : &#39;L&#39;},],</span>
+<span class="go">    &#39;TargetDetector&#39; : 1</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.create_net_count_map">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">create_net_count_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.create_net_count_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings of net count mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Elements (ElementsKey):</dt><dd><p>A dictionary of elements that contains elemental numbers and shell names.</p>
+<ul>
+<li><dl>
+<dt>List of Line:</dt><dd><p>None, K, L, M, N, O, or Default.</p>
+<p>Default is an automatically selected line.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (integer):</dt><dd><p>0: Total, 1: FirstDetector, 2: SecondDetector, 3: ThirdDetector, 4: ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (string):</dt><dd><p>An array of IDs detected.
+<em>E.g.,</em> [‘aaaa-aaaa-aaaa-aaaa’, ‘bbbb-bbbb-bbbb-bbbb’, ‘cccc-cccc-cccc-cccc’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">create_net_count_map</span><span class="p">({</span>
+<span class="go">    &#39;TargetDataID&#39; : &#39;xxxx-xxxx-xxxx-xxxx&#39;,</span>
+<span class="go">    &#39;Elements&#39; : [</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 8, &#39;Line&#39; : &#39;K&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 14, &#39;Line&#39; : &#39;L&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 21, &#39;Line&#39; : &#39;L&#39;},],</span>
+<span class="go">    &#39;TargetDetector&#39; : 1</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.create_quantitative_map">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">create_quantitative_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.create_quantitative_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates quantitative mapping data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Elements (ElementsKey):</dt><dd><p>A dictionary of elements that contains elemental numbers and shell names.</p>
+<ul>
+<li><dl>
+<dt>List of Line:</dt><dd><p>None, K, L, M, N, O, or Default.</p>
+<p>Default is an automatically selected line.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (integer):</dt><dd><p>0: Total, 1: FirstDetector, 2: SecondDetector, 3: ThirdDetector, 4: ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (string):</dt><dd><p>An array of IDs detected.
+<em>E.g.,</em> [‘aaaa-aaaa-aaaa-aaaa’, ‘bbbb-bbbb-bbbb-bbbb’, ‘cccc-cccc-cccc-cccc’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">create_quantitative_map</span><span class="p">({</span>
+<span class="go">    &#39;TargetDataID&#39; : &#39;xxxx-xxxx-xxxx-xxxx&#39;,</span>
+<span class="go">    &#39;Elements&#39; : [</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 8, &#39;Line&#39; : &#39;K&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 14, &#39;Line&#39; : &#39;L&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 21, &#39;Line&#39; : &#39;L&#39;},],</span>
+<span class="go">    &#39;TargetDetector&#39; : 1</span>
+<span class="go">    })</span>
+<span class="go">{&#39;DataIDs&#39;: [&#39;aaaa-aaaa-aaaa-aaaa&#39;,</span>
+<span class="go">             &#39;bbbb-bbbb-bbbb-bbbb&#39;,</span>
+<span class="go">             &#39;cccc-cccc-cccc-cccc&#39;],</span>
+<span class="go"> &#39;Result&#39;: &#39;OK&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_autoqualitative_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_autoqualitative_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.execute_autoqualitative_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes auto qualitative analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (integer):</dt><dd><p>0: Total, 1: FirstDetector, 2: SecondDetector, 3: ThirdDetector, 4: ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul>
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Elements (dict):</dt><dd><p>Searched elements containing elemental numbers and shell names.</p>
+<ul>
+<li><dl>
+<dt>List of Line:</dt><dd><p>None, K, L, M, N, O, or Default.</p>
+<p>Default is an automatically selected line.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">execute_autoqualitative_analysis</span><span class="p">({</span><span class="s1">&#39;TargetDataID&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxx-xxxx-xxxx-xxxx&#39;</span><span class="p">,</span><span class="s1">&#39;TargetDetector&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,})</span>
+<span class="go">{&#39;Message&#39; : &#39;A free text from EDS system.&#39;,</span>
+<span class="go"> &#39;Elements&#39; :[&#39;aaaa-aaaa-aaaa-aaaa&#39;, &#39;bbbb-bbbb-bbbb-bbbb&#39;,&#39;cccc-cccc-cccc-cccc&#39;],</span>
+<span class="go"> &#39;Result&#39;: &#39;OK&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_count_line_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_count_line_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.execute_count_line_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes gross count data of line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Elements (ElementsKey):</dt><dd><p>A dictionary of elements that contains elemental numbers and shell names.</p>
+<ul>
+<li><dl>
+<dt>List of Line:</dt><dd><p>None, K, L, M, N, O, or Default.</p>
+<p>Default is an automatically selected line.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (integer):</dt><dd><p>0: Total, 1: FirstDetector, 2: SecondDetector, 3: ThirdDetector, 4: ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.
+<em>E.g.,</em> [‘aaaa-aaaa-aaaa-aaaa’, ‘bbbb-bbbb-bbbb-bbbb’, ‘cccc-cccc-cccc-cccc’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">execute_count_line_analysis</span><span class="p">({</span>
+<span class="go">    &#39;TargetDataID&#39; : &#39;xxxx-xxxx-xxxx-xxxx&#39;,</span>
+<span class="go">    &#39;Elements&#39; : [</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 8, &#39;Line&#39; : &#39;K&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 14, &#39;Line&#39; : &#39;L&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 21, &#39;Line&#39; : &#39;L&#39;},],</span>
+<span class="go">    &#39;TargetDetector&#39; : 1</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_net_count_line_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_net_count_line_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.execute_net_count_line_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes net count data of line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Elements (ElementsKey):</dt><dd><p>A dictionary of elements that contains elemental numbers and shell names.</p>
+<ul>
+<li><dl>
+<dt>List of Line:</dt><dd><p>None, K, L, M, N, O, or Default.</p>
+<p>Default is an automatically selected line.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (integer):</dt><dd><p>0: Total, 1: FirstDetector, 2: SecondDetector, 3: ThirdDetector, 4: ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.
+<em>E.g.,</em> [‘aaaa-aaaa-aaaa-aaaa’, ‘bbbb-bbbb-bbbb-bbbb’, ‘cccc-cccc-cccc-cccc’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">execute_net_count_line_analysis</span><span class="p">({</span>
+<span class="go">    &#39;TargetDataID&#39; : &#39;xxxx-xxxx-xxxx-xxxx&#39;,</span>
+<span class="go">    &#39;Elements&#39; : [</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 8, &#39;Line&#39; : &#39;K&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 14, &#39;Line&#39; : &#39;L&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 21, &#39;Line&#39; : &#39;L&#39;},],</span>
+<span class="go">    &#39;TargetDetector&#39; : 1</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_quantitative_line_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_quantitative_line_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.execute_quantitative_line_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes quantitative data of line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Elements (ElementsKey):</dt><dd><p>A dictionary of elements that contains elemental numbers and shell names.</p>
+<ul>
+<li><dl>
+<dt>List of Line:</dt><dd><p>None, K, L, M, N, O, or Default.</p>
+<p>Default is an automatically selected line.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (integer):</dt><dd><p>0: Total, 1: FirstDetector, 2: SecondDetector, 3: ThirdDetector, 4: ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataIDs (string):</dt><dd><p>An array of IDs detected.
+<em>E.g.,</em> [‘aaaa-aaaa-aaaa-aaaa’, ‘bbbb-bbbb-bbbb-bbbb’, ‘cccc-cccc-cccc-cccc’]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">execute_quantitative_line_analysis</span><span class="p">({</span>
+<span class="go">    &#39;TargetDataID&#39; : &#39;xxxx-xxxx-xxxx-xxxx&#39;,</span>
+<span class="go">    &#39;Elements&#39; : [</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 8, &#39;Line&#39; : &#39;K&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 14, &#39;Line&#39; : &#39;L&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 21, &#39;Line&#39; : &#39;L&#39;},],</span>
+<span class="go">    &#39;TargetDetector&#39; : 1</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.execute_quantitative_spectrum_analysis">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">execute_quantitative_spectrum_analysis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.execute_quantitative_spectrum_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes quantitative spectrum analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Elements (ElementsKey):</dt><dd><p>A dictionary of elements that contains elemental numbers and shell names.</p>
+<ul>
+<li><dl>
+<dt>List of Line:</dt><dd><p>None, K, L, M, N, O, or Default.</p>
+<p>Default is an automatically selected line.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TargetDetector (integer):</dt><dd><p>0: Total, 1: FirstDetector, 2: SecondDetector, 3: ThirdDetector, 4: ForthDetector</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Quantities (string):</dt><dd><p>An array of elemental quantity.</p>
+<ul>
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>Mass%</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK :</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail :</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">execute_quantitative_spectrum_analysis</span><span class="p">({</span>
+<span class="go">    &#39;TargetDataID&#39; : &#39;xxxx-xxxx-xxxx-xxxx&#39;,</span>
+<span class="go">    &#39;Elements&#39; : [</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 8, &#39;Line&#39; : &#39;K&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 14, &#39;Line&#39; : &#39;L&#39;},</span>
+<span class="go">        {&#39;ElementalNumber&#39; : 21, &#39;Line&#39; : &#39;L&#39;},],</span>
+<span class="go">    &#39;TargetDetector&#39; : 1</span>
+<span class="go">    })</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.extract_area_spectrum">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">extract_area_spectrum</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.extract_area_spectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts ID of spectrum data of area analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SpectrumDataID (string):</dt><dd><p>An ID of spectrum data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.extract_line_spectrum">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">extract_line_spectrum</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.extract_line_spectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts ID of spectrum data of line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message (string):</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SpectrumDataID (string):</dt><dd><p>An ID of line spectrum.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result (string):</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_acquisition_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_acquisition_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_acquisition_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the settings of EDS acquisition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessTime:</dt><dd><p>A list of process time for each detector.</p>
+<ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DwellTime:</dt><dd><ul>
+<li><p>Time for staying on the sample.</p></li>
+<li><p>Actual time depends on <em>CollectionMode</em>.</p></li>
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>μsec</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CollectionMode:</dt><dd><p>0: Endless, 1: LiveTime, 2: RealTime, 3: Sweep</p>
+<ul>
+<li><dl class="simple">
+<dt>Endless:</dt><dd><p>Ignores DwellTime.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Real time:</dt><dd><p>Stays in a certain time at each scanning point.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Live time:</dt><dd><p>Effective measurement time at each scanning point.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Sweep:</dt><dd><p>Number of times collecting data over an analytical area.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SweepCount:</dt><dd><ul>
+<li><p>Number of sweeps for integrating acquired data.</p></li>
+<li><p>Available in <em>Full</em>, <em>Area</em> and <em>Line</em> analysis.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EDSOutput:</dt><dd><p>0: DataCube, 1: Spectrum, 2: Playback</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EDSSelected:</dt><dd><ul>
+<li><dl class="simple">
+<dt>True:</dt><dd><p>Selects the EDS button.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>False:</dt><dd><p>Deselects the EDS button.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_acquisition_settings</span><span class="p">()</span>
+<span class="go">{&#39;ProcessTime&#39;: [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;],</span>
+<span class="go"> &#39;DwellTime&#39;: 1000.0,</span>
+<span class="go"> &#39;CollectionMode&#39;: 3,</span>
+<span class="go"> &#39;SweepCount&#39;: 0,</span>
+<span class="go"> &#39;EDSOutput&#39;: 0,</span>
+<span class="go"> &#39;EDSSelected&#39;: False,</span>
+<span class="go"> &#39;Version&#39;: &#39;1.0&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_acquisition_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_acquisition_status</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_acquisition_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the status of an EDS acquisition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Version (string):</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>AcquisitionRunning (bool):</dt><dd><p>True : Running, False : Stopped</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ElapsedLiveTime (integer[]):</dt><dd><ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>sec</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ElapsedRealTime (integer[]):</dt><dd><ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>sec</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SweepCount (integer):</dt><dd><p>A current number of sweeps during an analysis.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_acquisition_status</span><span class="p">()</span>
+<span class="go">{&#39;AcquisitionRunning&#39;: False,</span>
+<span class="go"> &#39;ElapsedLiveTime&#39;: 0,</span>
+<span class="go"> &#39;ElapsedRealTime&#39;: 0,</span>
+<span class="go"> &#39;SweepCount&#39;: 1,</span>
+<span class="go"> &#39;Version&#39;: &#39;1.0&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the settings for analyzing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul>
+<li><dl class="simple">
+<dt>Version (string):</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><p>LengthOfSpectrum (integer):</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>10 eV/ch</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>UserCategories (string[]):</dt><dd><p>A list of standard data that user created</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DisableElements (object[]):</dt><dd><p>A list of disable elements.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>QualitativeSensitivity (string):</dt><dd><p>Sensitivity of qualitative analysis. It returns Low, Middle or High.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ZAFEnable (bool):</dt><dd><p>True: Enable, False: Disable</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PRZEnable (bool):</dt><dd><p>True: Enable, False: Disable</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Cliff-LorimerEnable (bool):</dt><dd><p>True: Enable, False: Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_analysis_settings</span><span class="p">()</span>
+<span class="go">{&#39;UserCategories&#39;: [],</span>
+<span class="go"> &#39;DisableElements&#39;: {&#39;ElementalNumber&#39;: [1,2,3,]},</span>
+<span class="go"> &#39;QualitativeSensitivity&#39;: &#39;Middle&#39;,</span>
+<span class="go"> &#39;ZAFEnable&#39;: True,</span>
+<span class="go"> &#39;PRZEnable&#39;: True,</span>
+<span class="go"> &#39;Cliff-Lorimer&#39;: True,</span>
+<span class="go"> &#39;LengthOfSpectrum&#39;: 4096,</span>
+<span class="go"> &#39;Version&#39;: &#39;1.0&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_analysis_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_analysis_status</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_analysis_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the status of execution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Version (string):</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ExecutingAnalysis (bool):</dt><dd><p>True: Executing, False: Stopped</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_analysis_status</span><span class="p">()</span>
+<span class="go">{&#39;Version&#39;: &#39;1.0&#39;, &#39;ExecutingAnalysis&#39;: False}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_analyzer_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_analyzer_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_analyzer_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the settings of EDS analyzers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessTime:</dt><dd><p>A list of process time for each detector.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_analyzer_settings</span><span class="p">()</span>
+<span class="go">{&#39;ProcessTime&#39;: [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;], &#39;Version&#39;: &#39;1.0&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_analyzer_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_analyzer_status</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_analyzer_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the status of EDS analyzers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>InputCountRate:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>%</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OutputCountRate:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>%</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DeadTime:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>%</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_analyzer_status</span><span class="p">()</span>
+<span class="go">{&#39;InputCountRate&#39;: [4986, 4977, 0, 0, 9963],</span>
+<span class="go"> &#39;OutputCountRate&#39;: [3982, 3983, 0, 0, 7965],</span>
+<span class="go"> &#39;DeadTime&#39;: [9.0, 9.0, 0.0, 0.0, 18.0]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_config">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_config</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns settings of this package.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_config</span><span class="p">()</span>
+<span class="go">{&#39;name&#39;: &#39;femtus_eds&#39;, &#39;ip&#39;: &#39;localhost&#39;, &#39;port&#39;: 49306}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_detector_configuration">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_detector_configuration</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_detector_configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the configurations of EDS detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Enabled:</dt><dd><p>True: Enabled, False: Disabled</p>
+<ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Retractable:</dt><dd><p>True: Retractable, False: Not Retractable</p>
+<ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_detector_configuration</span><span class="p">()</span>
+<span class="go">{&#39;Enabled&#39;: [True, True, False, False],</span>
+<span class="go"> &#39;Retractable&#39;: [True, True, False, False],</span>
+<span class="go"> &#39;Version&#39;: &#39;1.0&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_detector_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_detector_status</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_detector_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the status of EDS detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Position:</dt><dd><p>-1: Unknown, 0: Bake, 1: SampleChange, 2: Retract, 3: Insert</p>
+<ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>MovingPosition:</dt><dd><p>0: Stopped, 1: Moving</p>
+<ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors) + 1 (Total count rate).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth, Total]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DetectorErrorCode:</dt><dd><p>Returns error codes when something went wrong.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_detector_status</span><span class="p">()</span>
+<span class="go">{&#39;Version&#39;: &#39;1.0&#39;,</span>
+<span class="go"> &#39;DetectorErrorCode&#39;: [&#39;E.11&#39;],</span>
+<span class="go"> &#39;Position&#39;: [1, 1, None, None],</span>
+<span class="go"> &#39;MovingPosition&#39;: [1, 1, None, None]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_map_data">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_map_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bin</span><a class="headerlink" href="#PyJEM.eds.function.get_map_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets map data of specified elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em> and <em>AreaImageID</em>; or <em>create_count_map()</em>, <em>create_net_count_map()</em>, and <em>create_quantitative_map()</em> return as <em>DataIDs</em>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Returns map data in binary format.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Intensity:</dt><dd><p>4 bytes floating point.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>Depends on a map size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>First of array:</dt><dd><p>Top-left pixel.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Byte order:</dt><dd><p>Little endian.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bin</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><em>Drawing Map Data as a Heat Map</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">byteorder</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">struct</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">start_acquisition</span><span class="p">()</span>
+<span class="go">{&#39;DataID&#39;: &#39;aaaa-aaaa-aaaa-aaaa&#39;,&#39;WorksheetID&#39;: &#39;bbbb-bbbb-bbbb-bbbb&#39;,&#39;AreaImageID&#39;: &#39;cccc-cccc-cccc-cccc&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">create_quantitative_map</span><span class="p">({</span><span class="s1">&#39;TargetDataID&#39;</span> <span class="p">:</span> <span class="s1">&#39;aaaa-aaaa-aaaa-aaaa&#39;</span><span class="p">,</span>
+<span class="go">                                 &#39;Elements&#39; : [</span>
+<span class="go">                                     {&#39;ElementalNumber&#39; : 8, &#39;Line&#39; : &#39;K&#39;},</span>
+<span class="go">                                     {&#39;ElementalNumber&#39; : 14, &#39;Line&#39; : &#39;L&#39;},</span>
+<span class="go">                                     {&#39;ElementalNumber&#39; : 13, &#39;Line&#39; : &#39;L&#39;},],</span>
+<span class="go">                                 &#39;TargetDetector&#39; : 1})</span>
+<span class="go">{&#39;DataIDs&#39;: [&#39;AAAA-AAAA-AAAA-AAAA&#39;,&#39;BBBB-BBBB-BBBB-BBBB&#39;,&#39;CCCC-CCCC-CCCC-CCCC&#39;],</span>
+<span class="go"> &#39;Result&#39;: &#39;OK&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get binary data using *DataIDs*.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_spectrum_data</span> <span class="o">=</span> <span class="n">eds</span><span class="o">.</span><span class="n">get_map_data</span><span class="p">({</span><span class="s1">&#39;TargetDataID&#39;</span> <span class="p">:</span> <span class="s1">&#39;AAAA-AAAA-AAAA-AAAA&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Divide binary data into 4 bytes segments.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_intensity_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">binary_spectrum_data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">binary_spectrum_data</span><span class="p">),</span> <span class="mi">4</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Convert 4 bytes to float in little-endian.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">floatnum</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">intensity</span> <span class="ow">in</span> <span class="n">binary_intensity_list</span><span class="p">:</span>
+<span class="go">        floatnum.append(struct.unpack(&#39;&lt;f&#39;, intensity)[0])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pixels_y</span> <span class="o">=</span> <span class="n">eds</span><span class="o">.</span><span class="n">get_map_image_size</span><span class="p">({</span><span class="s1">&#39;TargetDataID&#39;</span><span class="p">:</span><span class="s1">&#39;AAAA-AAAA-AAAA-AAAA&#39;</span><span class="p">})[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">floatnum</span><span class="p">,</span> <span class="n">pixels_y</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Draw a graph of the map data.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_map_image_size">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_map_image_size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_map_image_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets width and height of an acquired map image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID that <em>create_count_map()</em>, <em>create_net_count_map()</em>, and <em>create_quantitative_map()</em> return as <em>DataIDs</em>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Width:</dt><dd><p>A width of an acquired map image.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Height:</dt><dd><p>A height of an acquired map image.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_map_image_size</span><span class="p">({</span><span class="s1">&#39;TargetDataID&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxx-xxxx-xxxx-xxxx&#39;</span><span class="p">})</span>
+<span class="go">{&#39;Version&#39;: &#39;1.0&#39;, &#39;Width&#39;: 120, &#39;Height&#39;: 100,}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_multiple_line_data">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_multiple_line_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bin</span><a class="headerlink" href="#PyJEM.eds.function.get_multiple_line_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets spectral data of the specified lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StartLine (integer):</dt><dd><p>A number of start line for getting spectrum imaging data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EndLine (integer):</dt><dd><p>A number of end line for getting spectrum imaging data.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns spectral data in binary format containing multiple lines.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_multiple_spectrum_data">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_multiple_spectrum_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bin</span><a class="headerlink" href="#PyJEM.eds.function.get_multiple_spectrum_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets spectrum data of line analysis of the specified position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StartPosition (integer):</dt><dd><p>An index of the first pixel for getting spectrum data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EndPosition (integer):</dt><dd><p>An index of the end pixel for getting spectrum data.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns spectral data in binary format containing spectrum for each pixel.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_net_count_line_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_net_count_line_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_net_count_line_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the settings of net count line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul>
+<li><dl class="simple">
+<dt>Version (string):</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0: None, 1: Speed, 2: Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0: None, 1: DEFSPC, 2: NORM, 3: COMMON, 4: USER, 5: External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_net_count_line_analysis_settings</span><span class="p">()</span>
+<span class="go">{&#39;Version&#39;: &#39;1.0&#39;,</span>
+<span class="go"> &#39;ProcessingMethod&#39;: 0,</span>
+<span class="go"> &#39;StandardDataType&#39;: 0}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_net_count_map_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_net_count_map_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_net_count_map_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the settings of net count mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul>
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelWidth (integer):</dt><dd><p>Width in pixels.
+Select a size from the list [64, 128, 256, 512, 1024, 2048, 4096].
+Make sure that the size is less than the original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelHeight (integer):</dt><dd><p>Height in pixels.
+Select a size from the list [64, 128, 256, 512, 1024, 2048, 4096].
+Make sure that the size is less than the original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0: None, 1: Speed, 2: Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_net_count_map_analysis_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;PixelWidth&#39; : 128,</span>
+<span class="go">    &#39;PixelHeight&#39; : 128,</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 0,</span>
+<span class="go">    &#39;StandardDataType&#39; : 0,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_quantitative_line_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_quantitative_line_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_quantitative_line_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the settings of quantitative line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul>
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0: None, 1: Speed, 2: Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (string):</dt><dd><p>A category name of the standard data. It is available when StandardDataType is <em>USER</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>CorrectionType (integer):</dt><dd><p>0: None, 1: ZAF, 2: PRZ, 3: Cliff-Lorimer, 4: ZETA</p>
+<p><em>ZAF</em>, <em>PRZ</em> and <em>Cliff-Lorimer</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ConversionType (integer):</dt><dd><p>0: None, 1: Metal, 2: Oxide, 3: Compound</p>
+<p><em>Metal</em> and <em>Oxide</em> are available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (integer):</dt><dd><p>A cation number of the oxide. It is available in oxide mode of the conversion type.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableSumPeakRemoval (bool):</dt><dd><p>True: Enable, False: Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_quantitative_line_analysis_settings</span><span class="p">()</span>
+<span class="go">{&#39;ProcessingMethod&#39; : 0,</span>
+<span class="go"> &#39;StandardDataType&#39; : 0,</span>
+<span class="go"> &#39;UserCategoryName&#39; : &#39;&#39;,</span>
+<span class="go"> &#39;CorrectionType&#39; : 3,</span>
+<span class="go"> &#39;ConversionType&#39; : 1,</span>
+<span class="go"> &#39;OxideCation&#39;:1,</span>
+<span class="go"> &#39;EnableSumPeakRemoval&#39; : True}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_quantitative_map_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_quantitative_map_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_quantitative_map_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the settings of quantitative mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul>
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelWidth (integer):</dt><dd><p>Width in pixels.
+Select a size from the list [64, 128, 256, 512, 1024, 2048, 4096].
+Make sure that the size is less than the original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelHeight (integer):</dt><dd><p>Height in pixels.
+Select a size from the list [64, 128, 256, 512, 1024, 2048, 4096].
+Make sure that the size is less than the original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0: None, 1: Speed, 2: Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (string):</dt><dd><p>A category name of the standard data. It is available when StandardDataType is <em>USER</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>CorrectionType (integer):</dt><dd><p>0: None, 1: ZAF, 2: PRZ, 3: Cliff-Lorimer, 4: ZETA</p>
+<p><em>ZAF</em>, <em>PRZ</em> and <em>Cliff-Lorimer</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ConversionType (integer):</dt><dd><p>0: None, 1: Metal, 2: Oxide, 3: Compound</p>
+<p><em>Metal</em> and <em>Oxide</em> are available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (integer):</dt><dd><p>A cation number of the oxide. It is available in oxide mode of the conversion type.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableSumPeakRemoval (bool):</dt><dd><p>True: Enable, False: Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_quantitative_map_analysis_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;PixelWidth&#39; : 128,</span>
+<span class="go">    &#39;PixelHeight&#39; : 128,</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 0,</span>
+<span class="go">    &#39;StandardDataType&#39; : 0,</span>
+<span class="go">    &#39;UserCategoryName&#39; : &#39;&#39;,</span>
+<span class="go">    &#39;CorrectionType&#39; : 3,</span>
+<span class="go">    &#39;ConversionType&#39; : 1,</span>
+<span class="go">    &#39;EnableSumPeakRemoval&#39; : True,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_quantitative_spectrum_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_quantitative_spectrum_analysis_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_quantitative_spectrum_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the settings of quantitative spectrum analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul>
+<li><dl class="simple">
+<dt>Version (string):</dt><dd><p>A version number of this function.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0: None, 1: DEFSPC, 2: NORM, 3: COMMON, 4: USER, 5: External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (string):</dt><dd><p>A category name of the standard data. It is available when StandardDataType is <em>USER</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>CorrectionType (integer):</dt><dd><p>0 : None, 1 : ZAF, 2 : PRZ, 3 : Cliff-Lorimer, 4 : ZETA</p>
+<p><em>ZAF</em>, <em>PRZ</em> and <em>Cliff-Lorimer</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>EnableAbsorptionCorrection (bool):</dt><dd><p>True: Enable, False: Disable</p>
+<p>Available in Cliff-Lorimer mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Thickness (integer):</dt><dd><p>Available in the CorrectionType <em>Cliff-Lorimer</em> and <em>EnableAbsorptionCorrection</em> true.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>nm</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Density (integer):</dt><dd><p>Available in the CorrectionType <em>Cliff-Lorimer</em> and <em>EnableAbsorptionCorrection</em> true.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>g/cm3</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>EnableFluorescenceCorrection (bool):</dt><dd><p>True: Enable, False: Disable</p>
+<p>Available in Cliff-Lorimer mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ConversionType (integer):</dt><dd><p>0 : None, 1 : Metal, 2 : Oxide, 3 : Compound</p>
+<p><em>Metal</em> and <em>Oxide</em> are available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (integer):</dt><dd><p>A cation number of the oxide. It is available in oxide mode of the conversion type.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_quantitative_spectrum_analysis_settings</span><span class="p">()()</span>
+<span class="go">{&#39;Version&#39;: &#39;1.0&#39;,</span>
+<span class="go"> &#39;StandardDataType&#39;: 2,</span>
+<span class="go"> &#39;CorrectionType&#39;: 3,</span>
+<span class="go"> &#39;EnableAbsorptionCorrection&#39;: False,</span>
+<span class="go"> &#39;Thickness&#39;: 100.0,</span>
+<span class="go"> &#39;Density&#39;: 2.33,</span>
+<span class="go"> &#39;EnableFluorescenceCorrection&#39;: False,</span>
+<span class="go"> &#39;ConversionType&#39;: 1,</span>
+<span class="go"> &#39;OxideCation&#39;: 24}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_specification">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_specification</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.get_specification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the specifications of process time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Version:</dt><dd><p>A version number of this specification.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ProcessTimeList:</dt><dd><p>Lists of selectable process time for each detector.
+Its time is an index of the EDS analysis whether
+focusing on energy resolution or throughput time.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_specification</span><span class="p">()</span>
+<span class="go">{&#39;ProcessTimeList&#39;: {&#39;FirstDetector&#39;: [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;, &#39;T5&#39;],</span>
+<span class="go">  &#39;SecondDetector&#39;: [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;, &#39;T5&#39;],</span>
+<span class="go">  &#39;ThirdDetector&#39;: [],</span>
+<span class="go">  &#39;FourthDetector&#39;: []},</span>
+<span class="go"> &#39;Version&#39;: &#39;11&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.get_spectrum_data">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">get_spectrum_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bin</span><a class="headerlink" href="#PyJEM.eds.function.get_spectrum_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets spectrum data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>TargetDataID (string):</dt><dd><p>An ID <em>start_acquisition()</em> returns as <em>DataID</em>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Returns spectrum data in binary format.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Intensity:</dt><dd><p>4 bytes integer.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Energy length:</dt><dd><p>4096 pixels.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Lowest energy:</dt><dd><p>Beginning of data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Number of spectra:</dt><dd><p>Depends on the specified position of the line data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Byte order:</dt><dd><p>Little endian.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bin</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p><em>Drawing Spectrum Data as a Plotting Graph</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get a *DataID*.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_id</span> <span class="o">=</span> <span class="n">eds</span><span class="o">.</span><span class="n">start_acquisition</span><span class="p">()[</span><span class="s1">&#39;DataID&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get binary data using *DataID*.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_spectrum_data</span> <span class="o">=</span> <span class="n">eds</span><span class="o">.</span><span class="n">get_spectrum_data</span><span class="p">({</span><span class="s1">&#39;TargetDataID&#39;</span><span class="p">:</span> <span class="n">data_id</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Divide binary data into 4 byte segments.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_intensity_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">binary_spectrum_data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">binary_spectrum_data</span><span class="p">),</span> <span class="mi">4</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Convert 4 bytes to integer in little-endian.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">intnum</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">intensity</span> <span class="ow">in</span> <span class="n">binary_intensity_list</span><span class="p">:</span>
+<span class="go">        intnum.append(int.from_bytes(intensity, byteorder=&#39;little&#39;))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Draw a graph of the spectrum data.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intnum</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.reset_detector">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">reset_detector</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.reset_detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Result:</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Failed:</dt><dd><p>Something went wrong.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">reset_detector</span><span class="p">()</span>
+<span class="go">{&#39;Result&#39;: &#39;OK&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_acquisition_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_acquisition_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.set_acquisition_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings of EDS acquisition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>ProcessTime (string[]):</dt><dd><p>A list of process time for each detector.
+Select a time from <em>ProcessTimeList</em>. For details, see <em>get_specification()</em>.</p>
+<ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DwellTime (integer):</dt><dd><ul>
+<li><p>Time for staying on the sample.</p></li>
+<li><p>Actual time depends on CollectionMode.</p></li>
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>μsec</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>CollectionMode (integer):</dt><dd><p>0: Endless, 1: LiveTime, 2: RealTime, 3: Sweep</p>
+<ul>
+<li><dl class="simple">
+<dt>Endless:</dt><dd><p>Ignores dwell time.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Real time:</dt><dd><p>Stays in a certain time at each scanning point.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Live time:</dt><dd><p>Effective measurement time at each scanning point.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Sweep:</dt><dd><p>Number of times collecting data over an analytical area.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SweepCount (integer):</dt><dd><ul>
+<li><p>Number of sweeps for integrating acquired data.</p></li>
+<li><p>Available in <em>Full</em>, <em>Area</em> and <em>Line</em> analysis.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EDSOutput (integer):</dt><dd><p>0: DataCube, 1: Spectrum, 2: Playback</p>
+<ul>
+<li><dl class="simple">
+<dt>Playback:</dt><dd><p>Not supported acquiring data through <em>EDS REST Service</em>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EDSSelected (bool):</dt><dd><ul>
+<li><dl class="simple">
+<dt>True:</dt><dd><p>Selects the EDS button.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>False:</dt><dd><p>Deselects the EDS button.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Corresponds to <em>get_acquisition_settings()</em>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_acquisition_settings</span><span class="p">({</span><span class="s1">&#39;ProcessTime&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T2&#39;</span><span class="p">,</span> <span class="s1">&#39;T3&#39;</span><span class="p">,</span> <span class="s1">&#39;T4&#39;</span><span class="p">],</span><span class="s1">&#39;DwellTime&#39;</span><span class="p">:</span> <span class="mf">1000.0</span><span class="p">,</span><span class="s1">&#39;CollectionMode&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="s1">&#39;SweepCount&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;EDSOutput&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;EDSSelected&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,})</span>
+<span class="go">{&#39;ProcessTime&#39;: [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;],</span>
+<span class="go"> &#39;DwellTime&#39;: 1000.0,</span>
+<span class="go"> &#39;CollectionMode&#39;: 3,</span>
+<span class="go"> &#39;SweepCount&#39;: 0,</span>
+<span class="go"> &#39;EDSOutput&#39;: 0,</span>
+<span class="go"> &#39;EDSSelected&#39;: False}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_analyzer_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_analyzer_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.set_analyzer_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings of EDS analyzers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>ProcessTime (string[]):</dt><dd><p>A list of process time for each detector.
+Select a time from <em>ProcessTimeList</em>. For details, see <em>get_specification()</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Corresponds to <em>get_analyzer_settings()</em>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_analyzer_settings</span><span class="p">({</span><span class="s1">&#39;ProcessTime&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;T1&#39;</span><span class="p">,</span><span class="s1">&#39;T2&#39;</span><span class="p">,</span><span class="s1">&#39;T3&#39;</span><span class="p">,</span><span class="s1">&#39;T4&#39;</span><span class="p">]})</span>
+<span class="go">{&#39;ProcessTime&#39;: [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_detector_status">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_detector_status</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.set_detector_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the status of EDS detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>Position (integer[]):</dt><dd><p>-1: Unknown, 0: Bake, 1: SampleChange, 2: Retract, 3: Insert</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Position:</dt><dd><p>-1: Unknown, 0: Bake, 1: SampleChange, 2: Retract, 3: Insert</p>
+<ul>
+<li><dl class="simple">
+<dt>Length of array:</dt><dd><p>4 (Maximum number of detectors)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Order:</dt><dd><p>[First, Second, Third, Fourth]</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result:</dt><dd><dl class="simple">
+<dt>OK:</dt><dd><p>Success.</p>
+</dd>
+<dt>Failed:</dt><dd><p>Something went wrong.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_detector_status</span><span class="p">({</span><span class="s1">&#39;Position&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">]})</span>
+<span class="go">{&#39;Position&#39;: [1, 1], &#39;Result&#39;: &#39;OK&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_ip">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_ip</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#PyJEM.eds.function.set_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the IP address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>integer</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>val:</dt><dd><p>An IP address.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_net_count_line_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_net_count_line_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.set_net_count_line_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings of net count line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0: None, 1: Speed, 2: Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0: None, 1: DEFSPC, 2: NORM, 3: COMMON, 4: USER, 5: External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Corresponds to <em>get_net_count_line_analysis_settings()</em>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_net_count_line_analysis_settings</span><span class="p">({</span><span class="s1">&#39;ProcessingMethod&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;StandardDataType&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,})</span>
+<span class="go">{&#39;ProcessingMethod&#39;: 0,</span>
+<span class="go"> &#39;StandardDataType&#39;: 0}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_net_count_map_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_net_count_map_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.set_net_count_map_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings of net count mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>PixelWidth (integer):</dt><dd><p>Width in pixels.
+Select a size from the list [64, 128, 256, 512, 1024, 2048, 4096].
+Make sure that the size is less than the original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelHeight (integer):</dt><dd><p>Height in pixels.
+Select a size from the list [64, 128, 256, 512, 1024, 2048, 4096].
+Make sure that the size is less than the original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0: None, 1: Speed, 2: Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>StandardDataType (integer):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Corresponds to <em>get_net_count_map_analysis_settings()</em>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_net_count_map_analysis_settings</span><span class="p">({</span>
+<span class="go">    &#39;PixelWidth&#39; : 128,</span>
+<span class="go">    &#39;PixelHeight&#39; : 128,</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 2,</span>
+<span class="go">    &#39;StandardDataType&#39; : 3,})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_port">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_port</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#PyJEM.eds.function.set_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a port number of this package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>integer</em>) – <ul class="simple">
+<li><dl class="simple">
+<dt>val:</dt><dd><p>A port number.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not granted to users.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_quantitative_line_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_quantitative_line_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.set_quantitative_line_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings of quantitative line analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0 : None, 1 : Speed, 2 : Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>CorrectionType (integer):</dt><dd><p>0 : None, 1 : ZAF, 2 : PRZ, 3 : Cliff-Lorimer, 4 : ZETA</p>
+<p><em>ZAF</em>, <em>PRZ</em> and <em>Cliff-Lorimer</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ConversionType (integer):</dt><dd><p>0 : None, 1 : Metal, 2 : Oxide, 3 : Compound</p>
+<p><em>Metal</em> and <em>Oxide</em> are available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (integer):</dt><dd><p>A cation number of the oxide. It is available in oxide mode of the conversion type.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableSumPeakRemoval (bool):</dt><dd><p>True: Enable, False: Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Corresponds to <em>get_quantitative_line_analysis_settings()</em>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_quantitative_line_analysis_settings</span><span class="p">({</span>
+<span class="go">    &#39;ProcessingMethod&#39; : 1,</span>
+<span class="go">    &#39;StandardDataType&#39; : 2,</span>
+<span class="go">    &#39;CorrectionType&#39; : 3,</span>
+<span class="go">    &#39;ConversionType&#39; : 1,</span>
+<span class="go">    &#39;OxideCation&#39; : 24,</span>
+<span class="go">    &#39;EnableSumPeakRemoval&#39; : True,</span>
+</pre></div>
+</div>
+<p>})</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_quantitative_map_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_quantitative_map_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.set_quantitative_map_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings of quantitative mapping.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl class="simple">
+<dt>PixelWidth (integer):</dt><dd><p>Width in pixels.
+Select a size from the list [64, 128, 256, 512, 1024, 2048, 4096].
+Make sure that the size is less than the original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>PixelHeight (integer):</dt><dd><p>Height in pixels.
+Select a size from the list [64, 128, 256, 512, 1024, 2048, 4096].
+Make sure that the size is less than the original size.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0: None, 1: Speed, 2: Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0 : None, 1 : DEFSPC, 2 : NORM, 3 : COMMON, 4 : USER, 5 : External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (string):</dt><dd><p>A category name of the standard data. It is available when StandardDataType is <em>USER</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>CorrectionType (integer):</dt><dd><p>0: None, 1: ZAF, 2: PRZ, 3: Cliff-Lorimer, 4: ZETA</p>
+<p><em>ZAF</em>, <em>PRZ</em> and <em>Cliff-Lorimer</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ConversionType (integer):</dt><dd><p>0: None, 1: Metal, 2: Oxide, 3: Compound</p>
+<p><em>Metal</em> and <em>Oxide</em> are available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (integer):</dt><dd><p>A cation number of the oxide. It is available in oxide mode of the conversion type.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>EnableSumPeakRemoval (bool):</dt><dd><p>True: Enable, False: Disable</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Corresponds to <em>get_quantitative_map_analysis_settings()</em>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.set_quantitative_spectrum_analysis_settings">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">set_quantitative_spectrum_analysis_settings</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.set_quantitative_spectrum_analysis_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings of quantitative spectrum analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <ul>
+<li><dl>
+<dt>ProcessingMethod (integer):</dt><dd><p>0: None, 1: Speed, 2: Precise</p>
+<p><em>Speed</em> and <em>Precise</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>StandardDataType (integer):</dt><dd><p>0: None, 1: DEFSPC, 2: NORM, 3: COMMON, 4: USER, 5: External</p>
+<p><em>NORM</em>, <em>COMMON</em> and <em>USER</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>UserCategoryName (string):</dt><dd><p>A category name of the standard data. It is available when StandardDataType is <em>USER</em>.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>CorrectionType (integer):</dt><dd><p>0: None, 1: ZAF, 2: PRZ, 3: Cliff-Lorimer, 4: ZETA</p>
+<p><em>ZAF</em>, <em>PRZ</em> and <em>Cliff-Lorimer</em> are supported.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>EnableAbsorptionCorrection (bool):</dt><dd><p>True: Enable, False: Disable</p>
+<p>Available in Cliff-Lorimer mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Thickness (integer):</dt><dd><p>Available in the CorrectionType <em>Cliff-Lorimer</em> and <em>EnableAbsorptionCorrection</em> true.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>nm</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Density (integer):</dt><dd><p>Available in the CorrectionType <em>Cliff-Lorimer</em> and <em>EnableAbsorptionCorrection</em> true.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Unit:</dt><dd><p>g/cm3</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>EnableFluorescenceCorrection (bool):</dt><dd><p>True: Enable, False: Disable</p>
+<p>Available in Cliff-Lorimer mode.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>ConversionType (integer):</dt><dd><p>0: None, 1: Metal, 2: Oxide, 3: Compound</p>
+<p><em>Metal</em> and <em>Oxide</em> are available.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>OxideCation (integer):</dt><dd><p>A cation number of the oxide.
+It is available in oxide mode of the conversion type.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Corresponds to <em>get_quantitative_spectrum_analysis_settings()</em>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.start_acquisition">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">start_acquisition</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.start_acquisition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts an acquisition of EDS signals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message:</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DataID:</dt><dd><p>An ID of acquired data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>AreaImageID:</dt><dd><p>An ID of a selected area-scan image.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>WorksheetID:</dt><dd><p>An ID of a worksheet.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">start_acquisition</span><span class="p">()</span>
+<span class="go">{&#39;DataID&#39;: &#39;aaaa-aaaa-aaaa-aaaa&#39;,&#39;WorksheetID&#39;: &#39;bbbb-bbbb-bbbb-bbbb&#39;,&#39;AreaImageID&#39;: &#39;cccc-cccc-cccc-cccc&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="PyJEM.eds.function.stop_acquisition">
+<code class="sig-prename descclassname"><span class="pre">PyJEM.eds.function.</span></code><code class="sig-name descname"><span class="pre">stop_acquisition</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#PyJEM.eds.function.stop_acquisition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops an acquisition of EDS signals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><dl class="simple">
+<dt>Message:</dt><dd><p>A free text from EDS system.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Result:</dt><dd><ul>
+<li><dl class="simple">
+<dt>OK:</dt><dd><p>Success</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fail:</dt><dd><p>Failure</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyJEM</span> <span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">stop_acquisition</span><span class="p">()</span>
+<span class="go">{&#39;Result&#39;: &#39;OK&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="PyJEM.sightx.html" class="btn btn-neutral float-right" title="PyJEM.sightx package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="PyJEM.eds.html" class="btn btn-neutral float-left" title="PyJEM.eds package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright 2016-2024 JEOL Ltd..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
