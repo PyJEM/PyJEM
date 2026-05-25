@@ -1,0 +1,142 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "9b8dfda8",
+   "metadata": {},
+   "source": "# TEM3: Exception handling & change timeout period\n\nThis tutorial explains the exception mechanism of PyJEM TEM3.\n\nWhen a TEM API call fails, a `TEMError` exception is raised.  \n`TEMError` contains two pieces of information decoded from the error code returned by the equipment:\n\n| Attribute | Type | Description |\n|-----------|------|-------------|\n| `code` | `int` | Raw error code returned from the equipment |\n| `kind` | `ErrorCodeKind` | Category of the error (e.g. timeout, argument error) |\n| `label` | `str` | Human-readable description of the error |\n\nThe error message format is:\n\n```\n[<ErrorTypeKind>] <ErrorCodeKind description>\n```\n\nFor example: `[EOS] Timeout error.`\n\n## Exception class structure\n\n```\nTEMError (Exception)\n  ├─ code   : int            — raw error code\n  ├─ kind   : ErrorCodeKind  — error category\n  └─ label  : str            — description\n\nErrorTypeKind (Enum)  — subsystem that raised the error\nErrorCodeKind (Enum)  — type of error\n```\n"
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f44912b0",
+   "metadata": {},
+   "source": "## 1. Import\n"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "01afc408",
+   "metadata": {},
+   "outputs": [],
+   "source": "from PyJEM import TEM3\nfrom PyJEM.TEM3.exception import TEMError, ErrorTypeKind, ErrorCodeKind"
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4d66a47a",
+   "metadata": {},
+   "source": "## 2. ErrorTypeKind — subsystem that raised the error\n\n`ErrorTypeKind` identifies which TEM subsystem raised the error.  \nIt is decoded from the upper bits of the raw error code.\n"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "8d254dee",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "ErrorTypeKind members:\n  TEM          = 1\n  EOS          = 2\n  Lens         = 3\n  Def          = 4\n  Screen       = 5\n  Camera       = 6\n  Gonio        = 7\n  PASYS        = 10\n  HT           = 16\n  GUN          = 17\n  FEG          = 18\n  Filter       = 19\n  Stage        = 20\n  Detector     = 21\n  Apt          = 22\n  Scan         = 23\n  MDS          = 24\n  VACUUM       = 25\n  NITROGEN     = 26\n  Notify       = 30\n  general      = 31\n"
+    }
+   ],
+   "source": "print(\"ErrorTypeKind members:\")\nfor member in ErrorTypeKind:\n    print(f\"  {member.name:12} = {member.value}\")"
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d22e1608",
+   "metadata": {},
+   "source": "## 3. ErrorCodeKind — category of the error\n\n`ErrorCodeKind` identifies what kind of error occurred.  \nIt is decoded from the lower bits of the raw error code.\n"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "19117990",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "ErrorCodeKind members:\n  ARG        =   1  — Argment error.\n  BUSY       =   3  — Socket busy.\n  TIMEOUT    =  10  — Timeout error.\n  ALLOC      =  11  — Memory allocation error.\n  SOCKET     =  12  — There is no socket connected or was cut off\n  TEMERR     =  13  — An error was returned from the equipment.\n  NETDATA    =  14  — Data packet error.\n  GUNTYPE    =  16  — GUN type error. This module cannot be used with gun.\n  I_ARG      = 100  — Internal parameter error\n"
+    }
+   ],
+   "source": "print(\"ErrorCodeKind members:\")\nfor member in ErrorCodeKind:\n    print(f\"  {member.name:10} = {member.value:3}  — {member.label}\")"
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e46926e",
+   "metadata": {},
+   "source": "## 4. Triggering a real TEMError with `EOS3.UpSelector()`\n\n`EOS3.UpSelector()` increments the magnification selector and waits for the `ChgMag` event (timeout: 3 seconds).  \nWhen the TEM is not in a state where the selector can be changed (e.g. already at maximum, or not connected), a `TEMError` is raised.\n\nThe `try / except TEMError` block below catches the error and inspects its attributes.\n\n```{note}\nThis requires a live TEM3 connection.  \nIf TEM3 is not connected, a `TEMError` with `ErrorCodeKind.SOCKET` or `ErrorCodeKind.TIMEOUT` is expected.\n```\n"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "11481877",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "TEMError caught!\n  message : [EOS] An error was returned from the equipment.\n  code    : 2061\n  kind    : ErrorCodeKind.TEMERR\n  label   : An error was returned from the equipment.\n"
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": "2026-04-03 17:59:00,584 INFO execute: UpSelector, args=None\n2026-04-03 17:59:00,643 INFO return check: <class 'int'>, expected=None\n"
+    }
+   ],
+   "source": "eos = TEM3.EOS3()\n\ntry:\n    eos.UpSelector()\n    print(\"UpSelector succeeded.\")\nexcept TEMError as e:\n    print(\"TEMError caught!\")\n    print(f\"  message : {e}\")\n    print(f\"  code    : {e.code}\")\n    print(f\"  kind    : {e.kind}\")\n    print(f\"  label   : {e.label}\")"
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b35ca28d",
+   "metadata": {},
+   "source": "## 5. Branching on error kind\n\nYou can branch on `e.kind` to handle specific error categories differently.\n\n```python\nexcept TEMError as e:\n    if e.kind == ErrorCodeKind.TIMEOUT:\n        # retry or notify timeout\n    elif e.kind == ErrorCodeKind.SOCKET:\n        # reconnect\n    else:\n        raise  # re-raise unexpected errors\n```\n"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "eec504bd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "Equipment error: the TEM returned an error.\n"
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": "2026-04-03 17:59:25,399 INFO execute: UpSelector, args=None\n2026-04-03 17:59:25,458 INFO return check: <class 'int'>, expected=None\n"
+    }
+   ],
+   "source": "try:\n    eos.UpSelector()\n    print(\"UpSelector succeeded.\")\nexcept TEMError as e:\n    if e.kind == ErrorCodeKind.TIMEOUT:\n        print(\"Timeout: the equipment did not respond in time.\")\n    elif e.kind == ErrorCodeKind.SOCKET:\n        print(\"Socket error: TEM3 is not connected.\")\n    elif e.kind == ErrorCodeKind.TEMERR:\n        print(\"Equipment error: the TEM returned an error.\")\n    else:\n        print(f\"Unhandled TEMError — kind={e.kind.name}, label={e.label}\")\n        raise"
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e79e16d",
+   "metadata": {},
+   "source": "## 6. Extending the timeout with `TEM3.SetRecvTimeout()`\n\nWhen a `TEMError` with `ErrorCodeKind.TIMEOUT` is raised, it means the TEM equipment did not respond within the communication timeout period.  \nYou can extend the timeout by calling `TEM3.SetRecvTimeout()` before retrying the operation.\n\n```python\nTEM3.SetRecvTimeout(value)  # value: timeout in milliseconds (ms)\n```\n\nThe default timeout is typically 3000 ms (3 seconds).  \nIncrease the value if the equipment requires more time to complete the operation.\n\n```{note}\n`SetRecvTimeout` affects all subsequent TEM3 API calls in the session.  \nRestore the original value after the operation if needed.\n```\n"
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "215cc557",
+   "metadata": {},
+   "outputs": [],
+   "source": "DEFAULT_TIMEOUT_MS = 3000   # default timeout\nEXTENDED_TIMEOUT_MS = 10000  # 10 seconds\n\ntry:\n    eos.UpSelector()\n    print(\"UpSelector succeeded.\")\nexcept TEMError as e:\n    if e.kind == ErrorCodeKind.TIMEOUT:\n        print(f\"Timeout occurred. Extending timeout to {EXTENDED_TIMEOUT_MS} ms and retrying...\")\n        TEM3.SetRecvTimeout(EXTENDED_TIMEOUT_MS)"
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

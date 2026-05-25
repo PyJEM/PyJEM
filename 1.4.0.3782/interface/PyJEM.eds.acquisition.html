@@ -1,0 +1,1396 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="PyJEM.eds.analysis" href="PyJEM.eds.analysis.html"><link rel="prev" title="PyJEM.eds" href="PyJEM.eds.html">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+        <title>PyJEM.eds.acquisition - PyJEM 1.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/graph.css?v=93825b67" />
+    <link rel="stylesheet" type="text/css" href="../_static/notebook_io.css?v=410734c9" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">PyJEM 1.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">PyJEM 1.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Installation/index.html">Setup</a><input aria-label="Toggle navigation of Setup" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/Miniconda.html">Step 1. Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/vjem.html">Step 2. vjem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/PyJEM.html">Step 3. PyJEM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/Appendix/index.html">Appendix:</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a><input aria-label="Toggle navigation of Tutorial" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/0_getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/1_service_check.html">Service connectivity check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/2_control_detector_packages.html">About detector/camera control packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/3_tarin_tem3.html">TEM3: control magnification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/4_TEM3_Exception.html">TEM3: Exception handling &amp; change timeout period</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/5_tem3_autoflashing.html">TEM3: AutoFlashing Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/6_tem3_event.html">TEM3: event tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/8_eels_acquisition.html">EELS: Acquisition and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/9_femtus_sheet.html">FEMTUS: worksheet / repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.detector.html">PyJEM.detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.detectorext.html">PyJEM.detectorext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.edm.html">PyJEM.edm</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="PyJEM.eds.html">PyJEM.eds</a><input aria-label="Toggle navigation of PyJEM.eds" checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">PyJEM.eds.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.analysis.html">PyJEM.eds.analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.interface.html">PyJEM.eds.interface</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.eels.html">PyJEM.eels</a><input aria-label="Toggle navigation of PyJEM.eels" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.acquisition.html">PyJEM.eels.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.line.html">PyJEM.eels.line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.sicube.html">PyJEM.eels.sicube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.spectrum.html">PyJEM.eels.spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.eftem.html">PyJEM.eftem</a><input aria-label="Toggle navigation of PyJEM.eftem" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eftem.analysis.html">PyJEM.eftem.analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.femtus.html">PyJEM.femtus</a><input aria-label="Toggle navigation of PyJEM.femtus" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.acquisition.html">PyJEM.femtus.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.detector.html">PyJEM.femtus.detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.image_color.html">PyJEM.femtus.image_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.log.html">PyJEM.femtus.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.output.html">PyJEM.femtus.output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.params.html">PyJEM.femtus.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.process.html">PyJEM.femtus.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.repository.html">PyJEM.femtus.repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.worksheet.html">PyJEM.femtus.worksheet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.sightx.html">PyJEM.sightx</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.stem4d.html">PyJEM.stem4d</a><input aria-label="Toggle navigation of PyJEM.stem4d" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.stem4d.acquisition.html">PyJEM.stem4d.acquisition</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.TEM3.html">PyJEM.TEM3</a><input aria-label="Toggle navigation of PyJEM.TEM3" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__apt.html">PyJEM.TEM3.__apt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__camera.html">PyJEM.TEM3.__camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__deflector.html">PyJEM.TEM3.__deflector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__detector.html">PyJEM.TEM3.__detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__eos.html">PyJEM.TEM3.__eos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__feg.html">PyJEM.TEM3.__feg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__fil.html">PyJEM.TEM3.__fil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__gun.html">PyJEM.TEM3.__gun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__ht.html">PyJEM.TEM3.__ht</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__lens.html">PyJEM.TEM3.__lens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__mds.html">PyJEM.TEM3.__mds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__nitro.html">PyJEM.TEM3.__nitro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__scan.html">PyJEM.TEM3.__scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__stage.html">PyJEM.TEM3.__stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__vacuum.html">PyJEM.TEM3.__vacuum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.event.html">PyJEM.TEM3.event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.exception.html">PyJEM.TEM3.exception</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TEM3IF.html">PyJEM.TEM3 Interface Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Log/index.html">What is New</a><input aria-label="Toggle navigation of What is New" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.4.0.html">Version 1.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.3.14.html">Version 1.3.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.3.0.html">Version 1.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.2.0.html">Version 1.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.1.1.html">Version 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.1.0.html">Version 1.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/interface/PyJEM.eds.acquisition.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="module-PyJEM.eds.acquisition">
+<span id="pyjem-eds-acquisition"></span><h1>PyJEM.eds.acquisition<a class="headerlink" href="#module-PyJEM.eds.acquisition" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.check_communication">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">check_communication</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.check_communication" title="Link to this definition">¶</a></dt>
+<dd><p>Checks HTTP connection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Result</p></td>
+<td><p>str</p></td>
+<td><p>Returns <code class="docutils literal notranslate"><span class="pre">&quot;OK&quot;</span></code> when the communication is established.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">check_communication</span><span class="p">()</span>
+<span class="go">{&#39;Result&#39;: &#39;OK&#39;, &#39;Version&#39;: &#39;11&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.get_specification">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">get_specification</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.get_specification" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve device specifications for the EDS system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ProcessTimeList</p></td>
+<td><p>dict</p></td>
+<td><p>Dictionary of available ProcessTime options for each detector.
+If a detector is not configured, its list will be empty.</p>
+<p>⇒ See <a class="reference internal" href="#get-specification-processtimelist-items"><span class="std std-ref">ProcessTimeList items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-specification-processtimelist-items"></span><p><strong>ProcessTimeList items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FirstDetector</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of ProcessTime values available for detector 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SecondDetector</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of ProcessTime values available for detector 2.</p></td>
+</tr>
+<tr class="row-even"><td><p>ThirdDetector</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of ProcessTime values available for detector 3.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FourthDetector</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of ProcessTime values available for detector 4.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_specification</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;ProcessTimeList&quot;: {</span>
+<span class="go">        &quot;FirstDetector&quot;: [</span>
+<span class="go">            &quot;T1&quot;,</span>
+<span class="go">            &quot;T2&quot;,</span>
+<span class="go">            &quot;T3&quot;,</span>
+<span class="go">            &quot;T4&quot;,</span>
+<span class="go">            &quot;T5&quot;</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;FourthDetector&quot;: [],</span>
+<span class="go">        &quot;SecondDetector&quot;: [</span>
+<span class="go">            &quot;T1&quot;,</span>
+<span class="go">            &quot;T2&quot;,</span>
+<span class="go">            &quot;T3&quot;,</span>
+<span class="go">            &quot;T4&quot;,</span>
+<span class="go">            &quot;T5&quot;</span>
+<span class="go">        ],</span>
+<span class="go">        &quot;ThirdDetector&quot;: []</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.get_analyzer_settings">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">get_analyzer_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.get_analyzer_settings" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve analyzer settings for the EDS system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ProcessTime</p></td>
+<td><p>list[list[str]]</p></td>
+<td><p>List of ProcessTime settings for each detector.
+The outer list contains 4 elements, corresponding to detectors 1 through 4.
+Each inner list contains available ProcessTime values for that detector.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_analyzer_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;ProcessTime&quot;: [</span>
+<span class="go">        &quot;T3&quot;,</span>
+<span class="go">        &quot;T3&quot;,</span>
+<span class="go">        &quot;T3&quot;,</span>
+<span class="go">        &quot;T3&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.set_analyzer_settings">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">set_analyzer_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.set_analyzer_settings" title="Link to this definition">¶</a></dt>
+<dd><p>Change the EDS Analyzer settings.
+Pass a ProcessTime array with 4 elements to the Body parameter.
+Each array element corresponds to a detector and is applied in the order Detector 1, 2, 3, 4.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>Analyzer settings payload.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ProcessTime</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of ProcessTime values to apply to detectors 1 through 4.
+The list must contain exactly 4 elements.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ProcessTime</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of ProcessTime values applied to detectors 1 through 4.
+The list contains exactly 4 elements, each corresponding to a detector in order.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the array contains more than 4 elements, any additional elements are ignored.
+If it contains fewer than 4 elements, an error occurs.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Passing <code class="docutils literal notranslate"><span class="pre">[&quot;T2&quot;,</span> <span class="pre">&quot;T2&quot;]</span></code> will result in an error response after the settings are applied to detectors 1 and 2.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<p class="rubric">Notes</p>
+<p>The settings apply even when any arbitrary string is entered.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Passing <code class="docutils literal notranslate"><span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;a&quot;,</span> <span class="pre">&quot;a&quot;,</span> <span class="pre">&quot;a&quot;]</span></code> sets <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> as the ProcessTime for detectors 1, 2, 3, and 4.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_analyzer_settings</span><span class="p">({</span><span class="s1">&#39;ProcessTime&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;T1&#39;</span><span class="p">,</span><span class="s1">&#39;T2&#39;</span><span class="p">,</span><span class="s1">&#39;T3&#39;</span><span class="p">,</span><span class="s1">&#39;T4&#39;</span><span class="p">]})</span>
+<span class="go">{</span>
+<span class="go">    &quot;ProcessTime&quot;: [</span>
+<span class="go">        &quot;T3&quot;,</span>
+<span class="go">        &quot;T3&quot;,</span>
+<span class="go">        &quot;T3&quot;,</span>
+<span class="go">        &quot;T3&quot;</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.get_analyzer_status">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">get_analyzer_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.get_analyzer_status" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve the current status of the EDS Analyzer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DeadTime</p></td>
+<td><p>list[float]</p></td>
+<td><p>DeadTime values for each detector and their total.
+The list contains 5 elements in the following order:
+<code class="docutils literal notranslate"><span class="pre">[Detector1,</span> <span class="pre">Detector2,</span> <span class="pre">Detector3,</span> <span class="pre">Detector4,</span> <span class="pre">Total]</span></code>.
+Values are expressed as percentages.</p></td>
+</tr>
+<tr class="row-even"><td><p>InputCountRate</p></td>
+<td><p>list[float]</p></td>
+<td><p>Input count rate values for each detector and their total.
+Same order and format as <code class="docutils literal notranslate"><span class="pre">DeadTime</span></code>.
+Values are expressed as percentages.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OutputCountRate</p></td>
+<td><p>list[float]</p></td>
+<td><p>Output count rate values for each detector and their total.
+Same order and format as <code class="docutils literal notranslate"><span class="pre">DeadTime</span></code>.
+Values are expressed as percentages.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_analyzer_status</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;DeadTime&quot;: [</span>
+<span class="go">        10,</span>
+<span class="go">        11,</span>
+<span class="go">        0,</span>
+<span class="go">        0,</span>
+<span class="go">        10</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;InputCountRate&quot;: [</span>
+<span class="go">        4983,</span>
+<span class="go">        5012,</span>
+<span class="go">        0,</span>
+<span class="go">        0,</span>
+<span class="go">        10015</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;OutputCountRate&quot;: [</span>
+<span class="go">        3991,</span>
+<span class="go">        3999,</span>
+<span class="go">        0,</span>
+<span class="go">        0,</span>
+<span class="go">        7985</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.get_detector_configuration">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">get_detector_configuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.get_detector_configuration" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve configuration settings for EDS detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enabled</p></td>
+<td><p>list[bool]</p></td>
+<td><p>List indicating whether each detector is enabled.
+The list contains 4 elements corresponding to detectors 1 through 4.</p></td>
+</tr>
+<tr class="row-even"><td><p>Retractable</p></td>
+<td><p>list[bool]</p></td>
+<td><p>List indicating whether each detector is retractable.
+The list contains 4 elements corresponding to detectors 1 through 4.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_detector_configuration</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;Enabled&quot;: [</span>
+<span class="go">        True,</span>
+<span class="go">        True,</span>
+<span class="go">        False,</span>
+<span class="go">        False</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Retractable&quot;: [</span>
+<span class="go">        True,</span>
+<span class="go">        True,</span>
+<span class="go">        False,</span>
+<span class="go">        False</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Version&quot;: &quot;1.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.get_detector_status">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">get_detector_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.get_detector_status" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve the current status of EDS detectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Position</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of position states for each detector.
+The list contains 4 elements in the following order:
+<code class="docutils literal notranslate"><span class="pre">[Detector1,</span> <span class="pre">Detector2,</span> <span class="pre">Detector3,</span> <span class="pre">Detector4]</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Possible values<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;-1&quot;</span></code>: Unknown</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code>: Bake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>: SampleChanged</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code>: Retract</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span></code>: Insert</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>MovingPosition</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of movement states for each detector.
+The list contains 4 elements in the same order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Possible values<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;-1&quot;</span></code>: Unknown</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code>: Stopped</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>: Moving</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>DetectorErrorCode</p></td>
+<td><p>list[str]</p></td>
+<td><p>List of error codes for each detector.
+The list contains 4 elements corresponding to detectors 1 through 4.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_detector_status</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;DetectorErrorCode&quot;: [</span>
+<span class="go">        [],</span>
+<span class="go">        [],</span>
+<span class="go">        [],</span>
+<span class="go">        []</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;MovingPosition&quot;: [</span>
+<span class="go">        0,</span>
+<span class="go">        0,</span>
+<span class="go">        -1,</span>
+<span class="go">        -1</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Position&quot;: [</span>
+<span class="go">        3,</span>
+<span class="go">        3,</span>
+<span class="go">        -1,</span>
+<span class="go">        -1</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Version&quot;: &quot;1.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.set_detector_status">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">set_detector_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.set_detector_status" title="Link to this definition">¶</a></dt>
+<dd><p>Set the position status for each EDS detector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>Detector status payload.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Position</p></td>
+<td><p>list[int]</p></td>
+<td><p>List of position values to apply to detectors 1 through 4.
+The list must contain exactly 4 elements.
+Both numeric strings (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span></code>) and symbolic strings (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;Insert&quot;</span></code>) are accepted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-1</span></code>: Unknown</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Bake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: SampleChanged</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>: Retract</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code>: Insert</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Position</p></td>
+<td><p>list[int]</p></td>
+<td><p>List of applied position values for detectors 1 through 4, represented as ints.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_detector_status</span><span class="p">({</span><span class="s1">&#39;Position&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">]})</span>
+<span class="go">{</span>
+<span class="go">    &quot;Position&quot;: [</span>
+<span class="go">        3,</span>
+<span class="go">        3,</span>
+<span class="go">        -1,</span>
+<span class="go">        -1</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Version&quot;: &quot;1.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.reset_detector">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">reset_detector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.reset_detector" title="Link to this definition">¶</a></dt>
+<dd><p>Reset the error detector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">reset_detector</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.get_acquisition_settings">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">get_acquisition_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.get_acquisition_settings" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve acquisition settings from the EDS detector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CollectionMode</p></td>
+<td><p>str</p></td>
+<td><p>Data acquisition mode.
+One of <code class="docutils literal notranslate"><span class="pre">&quot;LiveTime&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;RealTime&quot;</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;LiveTime&quot;</span></code>: Effective measurement time per scan point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;RealTime&quot;</span></code>: Fixed duration per operation point.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>EDSOutput</p></td>
+<td><p>str</p></td>
+<td><p>Output format of the data.
+One of <code class="docutils literal notranslate"><span class="pre">&quot;Spectrum&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;DataCube&quot;</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Spectrum&quot;</span></code>: Outputs only spectrum data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;DataCube&quot;</span></code>: Outputs both spectrum and cube data.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SpectrumEnergyRange</p></td>
+<td><p>int</p></td>
+<td><p>Energy range of the spectrum data.
+One of <code class="docutils literal notranslate"><span class="pre">1024</span></code>, <code class="docutils literal notranslate"><span class="pre">2048</span></code>, or <code class="docutils literal notranslate"><span class="pre">4096</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>EnableCubeExport</p></td>
+<td><p>bool</p></td>
+<td><p>Whether to enable cube data export.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, a 2D image integrated along the energy axis is returned.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_acquisition_settings</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;CollectionMode&quot;: &quot;RealTime&quot;,</span>
+<span class="go">    &quot;EDSOutput&quot;: &quot;DataCube&quot;,</span>
+<span class="go">    &quot;SpectrumEnergyRange&quot;: 2048,</span>
+<span class="go">    &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.set_acquisition_settings">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">set_acquisition_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.set_acquisition_settings" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the settings of EDS acquisition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>dict</em>) – <p>Acquisition settings payload.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CollectionMode</p></td>
+<td><p>str</p></td>
+<td><p>Data acquisition mode.
+One of <code class="docutils literal notranslate"><span class="pre">&quot;LiveTime&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;RealTime&quot;</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;LiveTime&quot;</span></code>: Effective measurement time per scan point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;RealTime&quot;</span></code>: Fixed duration per operation point.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>EDSOutput</p></td>
+<td><p>str</p></td>
+<td><p>Output format of the data.
+One of <code class="docutils literal notranslate"><span class="pre">&quot;Spectrum&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;DataCube&quot;</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Spectrum&quot;</span></code>: Outputs only spectrum data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;DataCube&quot;</span></code>: Outputs both spectrum and cube data.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>SpectrumEnergyRange</p></td>
+<td><p>int</p></td>
+<td><p>Energy range of the spectrum data.
+One of <code class="docutils literal notranslate"><span class="pre">1024</span></code>, <code class="docutils literal notranslate"><span class="pre">2048</span></code>, or <code class="docutils literal notranslate"><span class="pre">4096</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>EnableCubeExport</p></td>
+<td><p>bool</p></td>
+<td><p>Whether to enable cube data export.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, a 2D image integrated along the energy axis is returned.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CollectionMode</p></td>
+<td><p>str</p></td>
+<td><p>Data acquisition mode.
+One of <code class="docutils literal notranslate"><span class="pre">&quot;LiveTime&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;RealTime&quot;</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;LiveTime&quot;</span></code>: Effective measurement time per scan point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;RealTime&quot;</span></code>: Fixed duration per operation point.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>EDSOutput</p></td>
+<td><p>str</p></td>
+<td><p>Output format of the data.
+One of <code class="docutils literal notranslate"><span class="pre">&quot;Spectrum&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;DataCube&quot;</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Spectrum&quot;</span></code>: Outputs only spectrum data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;DataCube&quot;</span></code>: Outputs both spectrum and cube data.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SpectrumEnergyRange</p></td>
+<td><p>int</p></td>
+<td><p>Energy range of the spectrum data.
+One of <code class="docutils literal notranslate"><span class="pre">1024</span></code>, <code class="docutils literal notranslate"><span class="pre">2048</span></code>, or <code class="docutils literal notranslate"><span class="pre">4096</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>EnableCubeExport</p></td>
+<td><p>bool</p></td>
+<td><p>Whether to enable cube data export.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, a 2D image integrated along the energy axis is returned.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">set_acquisition_settings</span><span class="p">({</span><span class="s1">&#39;ProcessTime&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T2&#39;</span><span class="p">,</span> <span class="s1">&#39;T3&#39;</span><span class="p">,</span> <span class="s1">&#39;T4&#39;</span><span class="p">],</span><span class="s1">&#39;DwellTime&#39;</span><span class="p">:</span> <span class="mf">1000.0</span><span class="p">,</span><span class="s1">&#39;CollectionMode&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span><span class="s1">&#39;SweepCount&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;EDSOutput&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;EDSSelected&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,})</span>
+<span class="go">{&#39;ProcessTime&#39;: [&#39;T1&#39;, &#39;T2&#39;, &#39;T3&#39;, &#39;T4&#39;],</span>
+<span class="go"> &#39;DwellTime&#39;: 1000.0,</span>
+<span class="go"> &#39;CollectionMode&#39;: 3,</span>
+<span class="go"> &#39;SweepCount&#39;: 0,</span>
+<span class="go"> &#39;EDSOutput&#39;: 0,</span>
+<span class="go"> &#39;EDSSelected&#39;: False}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.get_acquisition_status">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">get_acquisition_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.get_acquisition_status" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve the current acquisition status from the EDS system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>AcquisitionRunning</p></td>
+<td><p>bool</p></td>
+<td><p>Indicates whether data acquisition is currently in progress.</p></td>
+</tr>
+<tr class="row-even"><td><p>ElapsedLiveTime</p></td>
+<td><p>float</p></td>
+<td><p>Elapsed live time in seconds.
+If acquisition is not running, this reflects the previous acquisition.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ElapsedRealTime</p></td>
+<td><p>float</p></td>
+<td><p>Elapsed real time in seconds.
+If acquisition is not running, this reflects the previous acquisition.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">AcquisitionRunning</span> <span class="pre">==</span> <span class="pre">False</span></code>, the returned time fields represent the previous acquisition result.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_acquisition_status</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;AcquisitionRunning&quot;: False,</span>
+<span class="go">    &quot;ElapsedLiveTime&quot;: 0,</span>
+<span class="go">    &quot;ElapsedRealTime&quot;: 0,</span>
+<span class="go">    &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.eds.acquisition.get_acquisition_result">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.eds.acquisition.</span></span><span class="sig-name descname"><span class="pre">get_acquisition_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.eds.acquisition.get_acquisition_result" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve the acquisition result for the specified EDS acquisition ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Unique identifier for the acquisition session.
+Typically obtained from the AcquisitionREST Start API.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>The returned value is a dictionary. A description of each item is provided below.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>API version string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Results</p></td>
+<td><p>list[dict]</p></td>
+<td><p>List of <a class="reference internal" href="#get-eds-acquisition-result-items"><span class="std std-ref">Results items</span></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-eds-acquisition-result-items"></span><p><strong>Results items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>key</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the result data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DataType</p></td>
+<td><p>str</p></td>
+<td><p>Format of the result data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">eds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eds</span><span class="o">.</span><span class="n">get_acquisition_result</span><span class="p">(</span><span class="s2">&quot;84c84756-639c-4cec-863b-0772e9c52185&quot;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;Results&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;DataType&quot;: &quot;EDS_Line&quot;,</span>
+<span class="go">            &quot;Id&quot;: &quot;ed8c008a-ee32-4e03-a01e-e586c21f2591&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;DataType&quot;: &quot;EDS_CountLine&quot;,</span>
+<span class="go">            &quot;Id&quot;: &quot;636b94cb-0a8e-45d8-9870-e682324ffd39&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;DataType&quot;: &quot;EDS_CountLine&quot;,</span>
+<span class="go">            &quot;Id&quot;: &quot;88b1dd29-7f65-4558-96fb-79b690e0eeec&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;DataType&quot;: &quot;EDS_CountLine&quot;,</span>
+<span class="go">            &quot;Id&quot;: &quot;f1a709a6-fbee-40bc-906d-b850347dd03c&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;DataType&quot;: &quot;EDS_CountLine&quot;,</span>
+<span class="go">            &quot;Id&quot;: &quot;f4e67088-a9be-4df8-bc7e-dbf28586b37e&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;DataType&quot;: &quot;EDS_Line_WholeSpectrum&quot;,</span>
+<span class="go">            &quot;Id&quot;: &quot;bbbda4db-bd52-4bf0-9e35-c2819c86bad0&quot;</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="PyJEM.eds.analysis.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">PyJEM.eds.analysis</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="PyJEM.eds.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">PyJEM.eds</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; Copyright 2016-2026 JEOL Ltd.
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">PyJEM.eds.acquisition</a><ul>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.check_communication"><code class="docutils literal notranslate"><span class="pre">check_communication()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.get_specification"><code class="docutils literal notranslate"><span class="pre">get_specification()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.get_analyzer_settings"><code class="docutils literal notranslate"><span class="pre">get_analyzer_settings()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.set_analyzer_settings"><code class="docutils literal notranslate"><span class="pre">set_analyzer_settings()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.get_analyzer_status"><code class="docutils literal notranslate"><span class="pre">get_analyzer_status()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.get_detector_configuration"><code class="docutils literal notranslate"><span class="pre">get_detector_configuration()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.get_detector_status"><code class="docutils literal notranslate"><span class="pre">get_detector_status()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.set_detector_status"><code class="docutils literal notranslate"><span class="pre">set_detector_status()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.reset_detector"><code class="docutils literal notranslate"><span class="pre">reset_detector()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.get_acquisition_settings"><code class="docutils literal notranslate"><span class="pre">get_acquisition_settings()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.set_acquisition_settings"><code class="docutils literal notranslate"><span class="pre">set_acquisition_settings()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.get_acquisition_status"><code class="docutils literal notranslate"><span class="pre">get_acquisition_status()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.eds.acquisition.get_acquisition_result"><code class="docutils literal notranslate"><span class="pre">get_acquisition_result()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=8b21d8d7"></script>
+    </body>
+</html>

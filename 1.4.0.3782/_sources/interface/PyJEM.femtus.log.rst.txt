@@ -1,0 +1,8 @@
+PyJEM.femtus.log
+================
+
+.. automodule:: PyJEM.femtus.log
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

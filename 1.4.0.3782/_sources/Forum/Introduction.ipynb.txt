@@ -1,0 +1,77 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Introduction"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Summary\n\n  In recent years, there is an increasing demand to automatically control from \nTEM control to acquisition of images, and to control the TEM remotely. \nUntil now, it was necessary to organize programs using TEM external control \n(TEMExt) written in C ++, but there are problems such as the high level of \nhurdling to create programs in C ++ language and few functions available in TEMExt had.  \n PyJEM solved these problems. Since PyJEM is a python library, \nwe can interactively control TEM. \nIn addition, functions available from existing TEMExt are powered up, enabling remote control.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Environment\n\n### OS\n* ~~Windows&reg; 7 64bit~~ ※1\n* Windows&reg; 10 64bit \n* Windows&reg; 11 64bit \n\n### Python version\n * ~~Python 3.5 64bit~~ ※1\n * ~~Python 3.7 64bit~~ ※1\n * ~~Python 3.8 64bit~~ ※1\n * Python 3.9 64bit\n * Python 3.10 64bit\n * Python 3.11 64bit\n * Python 3.12 64bit\n   \n#### Relative library\n * opencv-python\n * httplib2\n * comtypes\n \n ※1 Support ends in FY2025"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Functions\n\nUse the following guide to choose packages by purpose.\nFor function-level details, see [**API Reference**](../interface/index.rst).\n\n(detector-camera-control)=\n### 1) Detector/Camera control\n- **Packages**: [`detector`](../interface/PyJEM.detector.rst), [`detectorext`](../interface/PyJEM.detectorext.rst), [`sightx`](../interface/PyJEM.sightx.rst), [`femtus.acquisition`](../interface/PyJEM.femtus.acquisition.rst)\n- **Purpose**: Control JEOL detectors and cameras\n- **Typical use**:\n  - Image acquisition\n  - Auto-focus execution\n  - Get/Set detector and camera conditions\n- **Note**: \n  - Since the available features differ between packages, please refer to each package's API for details.\n\n### 2) TEM control\n- **Package**: [`TEM3`](../interface/PyJEM.TEM3.rst)\n- **Purpose**: Control TEM functions exposed via TEMExternal\n- **Typical use**:\n  - Beam control\n  - Stage movement\n  - Aperture operations\n  - EOS/GUN/Lens/Vacuum related control\n- **Note**: TEMExternal setup is required.\n\n### 3) EDM control\n- **Package**: [`edm`](../interface/PyJEM.edm.rst)\n- **Purpose**: Control EDM (Signal Combiner hardware control)\n- **Typical use**:\n  - Beam blanking control\n  - Reduction of beam exposure\n  - Related EDM control operations\n  - Get EDM settings\n- **Note**: Availability depends on system configuration.\n\n### 4) FEMTUS control\n- **Packages**: [`femtus`](../interface/PyJEM.femtus.rst), [`eels`](../interface/PyJEM.eels.rst), [`eds`](../interface/PyJEM.eds.rst)\n- **Purpose**: Acquisition and analysis workflows for FEMTUS\n- **Typical use**:\n  - Scan and detector data acquisition\n  - Worksheet creation, loading, and related operations\n  - Image processing, worksheet/output/log operations\n- **Note**: Available features depend on connected software/hardware and options.\n\n### 5) EDS/EELS control\n- **Packages**: [`eels`](../interface/PyJEM.eels.rst), [`eds`](../interface/PyJEM.eds.rst)\n- **Purpose**: The acquired image data is analyzed (EELS/EDS).\n- **Typical use**:\n  - EELS/EDS data handling and analysis\n- **Note**: \n  - Only the EELS/EDS systems that can be controlled via FEMTUS are supported.\n  - Image acquisition is performed through the [Detector/Camera control](#detector-camera-control).\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Connection model\n\nPyJEM communicates with JEOL software through REST API and COM communication.\nThe required setup depends on where the Python script is executed.\n\n### Overview\nPyJEM does not control the microscope hardware directly.\nIt sends commands to the software running on TEMPC, and that software controls the detector or TEM functions.\n\n<img src=\"../_static/connect.png\" width=\"70%\">\n\n*Overall communication flow between PyJEM, TEMPC, and JEOL control software.*\n\n### 1) Run PyJEM on TEMPC\nUse this configuration when the Python script is executed on the same PC as TEMPC.\n\n- PyJEM and the JEOL control software run on the same machine.\n- PyJEM can use the default communication settings.\n\n<img src=\"../_static/connect_local.png\" width=\"60%\">\n\n*Local execution on TEMPC.*\n\n### 2) Run PyJEM on another PC\nUse this configuration when the Python script is executed on a PC different from TEMPC.\n\n- Install TEMExternal on the PC that executes the script.\n  - Remote configuration is required.\n- Change the PyJEM communication setting so that `IPAddress` points to TEMPC.\n\n<img src=\"../_static/connect_otherpc.png\" width=\"70%\">\n\n*Remote execution from another PC to TEMPC.*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Forum\n\nThe PyJEM Forum is hosted on GitHub and serves as a place for users to share scripts, ask questions, and exchange information about PyJEM.\n\nTo acceess the forum page: [Forum page](https://github.com/PyJEM/PyJEM).\n\n### Issue page\nJEOL publishes the following through the [issue page](https://github.com/PyJEM/PyJEM/issues):\n\n<img src=\"../_static/issue_page.png\" width=\"70%\">\n\n*Example: announce on the PyJEM Forum.*\n\n**Features**\n- PyJEM release notes and update information\n- Usage guides and tutorials\n- Answers to frequently asked questions\n\n**To access and use the issue page:**\n1. Sign in to GitHub.\n2. Navigate to the [issue page](https://github.com/PyJEM/PyJEM/issues).\n3. Open or create an appropriate topic (Issue or Discussion).\n\n### Sharing scripts\nUsers can share their own PyJEM scripts with the [Script sharing page](https://github.com/PyJEM/ScriptCode).\n\n<img src=\"../_static/forum_share_script.png\" width=\"65%\">\n\n*Example: sharing a script on the PyJEM Forum.*\n\n**To access and use share a script:**\n1. Sign in to GitHub.\n2. Navigate to the [Script sharing](https://github.com/PyJEM/ScriptCode).\n3. Paste your script in the message body, or attach it as a file."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

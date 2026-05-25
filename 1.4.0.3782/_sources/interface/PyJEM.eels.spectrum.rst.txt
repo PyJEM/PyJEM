@@ -1,0 +1,8 @@
+PyJEM.eels.spectrum
+===================
+
+.. automodule:: PyJEM.eels.spectrum
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

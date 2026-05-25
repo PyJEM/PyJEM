@@ -1,0 +1,8 @@
+PyJEM.TEM3.\_\_camera
+=====================
+
+.. automodule:: PyJEM.TEM3.__camera
+   :members:
+   :undoc-members:
+   :private-members:
+   :exclude-members: _instance, _initialized

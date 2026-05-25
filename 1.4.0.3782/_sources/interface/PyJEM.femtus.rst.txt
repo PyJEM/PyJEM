@@ -1,0 +1,23 @@
+PyJEM.femtus
+============
+
+
+.. toctree::
+   :maxdepth: 2
+
+   PyJEM.femtus.acquisition
+   PyJEM.femtus.detector
+   PyJEM.femtus.image_color
+   PyJEM.femtus.log
+   PyJEM.femtus.output
+   PyJEM.femtus.params
+   PyJEM.femtus.process
+   PyJEM.femtus.repository
+   PyJEM.femtus.worksheet
+
+
+.. automodule:: PyJEM.femtus
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

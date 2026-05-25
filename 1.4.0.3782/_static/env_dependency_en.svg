@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+  <style>
+    .box { fill:#ffffff; stroke:#1f77b4; stroke-width:2; rx:8; }
+    .label { font-family: 'Segoe UI', Arial, sans-serif; font-size:16px; fill:#1a1a1a; }
+    .sub { font-family: 'Segoe UI', Arial, sans-serif; font-size:12px; fill:#555555; }
+    .arrow { stroke:#1f77b4; stroke-width:3; fill:none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1f77b4" />
+    </marker>
+  </defs>
+
+  <!-- Miniconda -->
+  <rect x="40" y="40" width="220" height="100" class="box" />
+  <text x="150" y="75" text-anchor="middle" class="label">Miniconda</text>
+  <text x="150" y="100" text-anchor="middle" class="sub">Base environment manager</text>
+
+  <!-- vjem environment -->
+  <rect x="290" y="40" width="220" height="100" class="box" />
+  <text x="400" y="75" text-anchor="middle" class="label">vjem (virtual env)</text>
+  <text x="400" y="100" text-anchor="middle" class="sub">Isolated Python environment</text>
+
+  <!-- PyJEM lib -->
+  <rect x="540" y="40" width="220" height="100" class="box" />
+  <text x="650" y="75" text-anchor="middle" class="label">PyJEM (Python lib)</text>
+  <text x="650" y="100" text-anchor="middle" class="sub">Library installed into vjem</text>
+
+  <!-- arrows -->
+  <path d="M260 90 L290 90" class="arrow" />
+  <path d="M510 90 L540 90" class="arrow" />
+
+  <!-- notes -->
+  <text x="150" y="170" class="sub">1) Install Miniconda once per machine</text>
+  <text x="150" y="190" class="sub">2) Create a named virtual environment (vjem)</text>
+  <text x="150" y="210" class="sub">3) Install PyJEM and its Python dependencies into vjem</text>
+
+  <rect x="40" y="165" width="700" height="60" fill="#f8f9fb" rx="6" stroke="#e6eef8" />
+
+</svg>

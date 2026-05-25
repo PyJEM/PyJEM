@@ -1,0 +1,8 @@
+PyJEM.femtus.image\_color
+=========================
+
+.. automodule:: PyJEM.femtus.image_color
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

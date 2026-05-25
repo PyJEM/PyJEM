@@ -1,0 +1,8 @@
+PyJEM.femtus.detector
+=====================
+
+.. automodule:: PyJEM.femtus.detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

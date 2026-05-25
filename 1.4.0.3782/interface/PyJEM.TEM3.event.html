@@ -1,0 +1,1142 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="PyJEM.TEM3.exception" href="PyJEM.TEM3.exception.html"><link rel="prev" title="PyJEM.TEM3.__vacuum" href="PyJEM.TEM3.__vacuum.html">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+        <title>PyJEM.TEM3.event - PyJEM 1.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/graph.css?v=93825b67" />
+    <link rel="stylesheet" type="text/css" href="../_static/notebook_io.css?v=410734c9" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">PyJEM 1.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">PyJEM 1.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Installation/index.html">Setup</a><input aria-label="Toggle navigation of Setup" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/Miniconda.html">Step 1. Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/vjem.html">Step 2. vjem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/PyJEM.html">Step 3. PyJEM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/Appendix/index.html">Appendix:</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a><input aria-label="Toggle navigation of Tutorial" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/0_getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/1_service_check.html">Service connectivity check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/2_control_detector_packages.html">About detector/camera control packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/3_tarin_tem3.html">TEM3: control magnification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/4_TEM3_Exception.html">TEM3: Exception handling &amp; change timeout period</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/5_tem3_autoflashing.html">TEM3: AutoFlashing Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/6_tem3_event.html">TEM3: event tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/8_eels_acquisition.html">EELS: Acquisition and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/9_femtus_sheet.html">FEMTUS: worksheet / repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.detector.html">PyJEM.detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.detectorext.html">PyJEM.detectorext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.edm.html">PyJEM.edm</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.eds.html">PyJEM.eds</a><input aria-label="Toggle navigation of PyJEM.eds" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.acquisition.html">PyJEM.eds.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.analysis.html">PyJEM.eds.analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.interface.html">PyJEM.eds.interface</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.eels.html">PyJEM.eels</a><input aria-label="Toggle navigation of PyJEM.eels" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.acquisition.html">PyJEM.eels.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.line.html">PyJEM.eels.line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.sicube.html">PyJEM.eels.sicube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.spectrum.html">PyJEM.eels.spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.eftem.html">PyJEM.eftem</a><input aria-label="Toggle navigation of PyJEM.eftem" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eftem.analysis.html">PyJEM.eftem.analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.femtus.html">PyJEM.femtus</a><input aria-label="Toggle navigation of PyJEM.femtus" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.acquisition.html">PyJEM.femtus.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.detector.html">PyJEM.femtus.detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.image_color.html">PyJEM.femtus.image_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.log.html">PyJEM.femtus.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.output.html">PyJEM.femtus.output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.params.html">PyJEM.femtus.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.process.html">PyJEM.femtus.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.repository.html">PyJEM.femtus.repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.worksheet.html">PyJEM.femtus.worksheet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.sightx.html">PyJEM.sightx</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.stem4d.html">PyJEM.stem4d</a><input aria-label="Toggle navigation of PyJEM.stem4d" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.stem4d.acquisition.html">PyJEM.stem4d.acquisition</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="PyJEM.TEM3.html">PyJEM.TEM3</a><input aria-label="Toggle navigation of PyJEM.TEM3" checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__apt.html">PyJEM.TEM3.__apt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__camera.html">PyJEM.TEM3.__camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__deflector.html">PyJEM.TEM3.__deflector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__detector.html">PyJEM.TEM3.__detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__eos.html">PyJEM.TEM3.__eos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__feg.html">PyJEM.TEM3.__feg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__fil.html">PyJEM.TEM3.__fil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__gun.html">PyJEM.TEM3.__gun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__ht.html">PyJEM.TEM3.__ht</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__lens.html">PyJEM.TEM3.__lens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__mds.html">PyJEM.TEM3.__mds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__nitro.html">PyJEM.TEM3.__nitro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__scan.html">PyJEM.TEM3.__scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__stage.html">PyJEM.TEM3.__stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__vacuum.html">PyJEM.TEM3.__vacuum</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">PyJEM.TEM3.event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.exception.html">PyJEM.TEM3.exception</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TEM3IF.html">PyJEM.TEM3 Interface Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Log/index.html">What is New</a><input aria-label="Toggle navigation of What is New" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.4.0.html">Version 1.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.3.14.html">Version 1.3.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.3.0.html">Version 1.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.2.0.html">Version 1.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.1.1.html">Version 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.1.0.html">Version 1.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/interface/PyJEM.TEM3.event.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="module-PyJEM.TEM3.event">
+<span id="pyjem-tem3-event"></span><h1>PyJEM.TEM3.event<a class="headerlink" href="#module-PyJEM.TEM3.event" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyJEM.TEM3.event.</span></span><span class="sig-name descname"><span class="pre">EventKind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventKind" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Types of TEM events that can be received.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangeSpectrumMode">
+<span class="sig-name descname"><span class="pre">ChangeSpectrumMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangeSpectrumMode" title="Link to this definition">¶</a></dt>
+<dd><p>Spectrum mode changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedAcdHeatEnd">
+<span class="sig-name descname"><span class="pre">ChangedAcdHeatEnd</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedAcdHeatEnd" title="Link to this definition">¶</a></dt>
+<dd><p>ACD heating ended.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedAcdHeatStart">
+<span class="sig-name descname"><span class="pre">ChangedAcdHeatStart</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedAcdHeatStart" title="Link to this definition">¶</a></dt>
+<dd><p>ACD heating started.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedBakeOutEnd">
+<span class="sig-name descname"><span class="pre">ChangedBakeOutEnd</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedBakeOutEnd" title="Link to this definition">¶</a></dt>
+<dd><p>Bake-out ended.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedBakeOutStart">
+<span class="sig-name descname"><span class="pre">ChangedBakeOutStart</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedBakeOutStart" title="Link to this definition">¶</a></dt>
+<dd><p>Bake-out started.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedGIFMode">
+<span class="sig-name descname"><span class="pre">ChangedGIFMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedGIFMode" title="Link to this definition">¶</a></dt>
+<dd><p>GIF mode changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedHomePositionOfDeflector">
+<span class="sig-name descname"><span class="pre">ChangedHomePositionOfDeflector</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedHomePositionOfDeflector" title="Link to this definition">¶</a></dt>
+<dd><p>Deflector home position changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedRelativeValueOfDeflector">
+<span class="sig-name descname"><span class="pre">ChangedRelativeValueOfDeflector</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedRelativeValueOfDeflector" title="Link to this definition">¶</a></dt>
+<dd><p>Deflector relative value changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedSaafLimitStatus">
+<span class="sig-name descname"><span class="pre">ChangedSaafLimitStatus</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedSaafLimitStatus" title="Link to this definition">¶</a></dt>
+<dd><p>SAAF limit status changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedSaafMode">
+<span class="sig-name descname"><span class="pre">ChangedSaafMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedSaafMode" title="Link to this definition">¶</a></dt>
+<dd><p>SAAF mode changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedSaafPosition">
+<span class="sig-name descname"><span class="pre">ChangedSaafPosition</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedSaafPosition" title="Link to this definition">¶</a></dt>
+<dd><p>SAAF position changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedSaafRotationAngle">
+<span class="sig-name descname"><span class="pre">ChangedSaafRotationAngle</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedSaafRotationAngle" title="Link to this definition">¶</a></dt>
+<dd><p>SAAF rotation angle changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedSaafRotationStatus">
+<span class="sig-name descname"><span class="pre">ChangedSaafRotationStatus</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedSaafRotationStatus" title="Link to this definition">¶</a></dt>
+<dd><p>SAAF rotation status changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedStageNeutralStart">
+<span class="sig-name descname"><span class="pre">ChangedStageNeutralStart</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedStageNeutralStart" title="Link to this definition">¶</a></dt>
+<dd><p>Stage neutral start changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangedTemStemMode">
+<span class="sig-name descname"><span class="pre">ChangedTemStemMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangedTemStemMode" title="Link to this definition">¶</a></dt>
+<dd><p>TEM/STEM mode changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChangingTemStemMode">
+<span class="sig-name descname"><span class="pre">ChangingTemStemMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChangingTemStemMode" title="Link to this definition">¶</a></dt>
+<dd><p>TEM/STEM mode is changing.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgAlpha">
+<span class="sig-name descname"><span class="pre">ChgAlpha</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgAlpha" title="Link to this definition">¶</a></dt>
+<dd><p>Alpha value changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgApertureEx">
+<span class="sig-name descname"><span class="pre">ChgApertureEx</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgApertureEx" title="Link to this definition">¶</a></dt>
+<dd><p>Aperture (extended) changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgBrightnessZoomOnOff">
+<span class="sig-name descname"><span class="pre">ChgBrightnessZoomOnOff</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgBrightnessZoomOnOff" title="Link to this definition">¶</a></dt>
+<dd><p>Brightness zoom on/off changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgContBrtInfo">
+<span class="sig-name descname"><span class="pre">ChgContBrtInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgContBrtInfo" title="Link to this definition">¶</a></dt>
+<dd><p>Contrast/brightness information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgCorrectorSw">
+<span class="sig-name descname"><span class="pre">ChgCorrectorSw</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">21</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgCorrectorSw" title="Link to this definition">¶</a></dt>
+<dd><p>Corrector switch changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgDefADInfo">
+<span class="sig-name descname"><span class="pre">ChgDefADInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">22</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgDefADInfo" title="Link to this definition">¶</a></dt>
+<dd><p>Deflector AD information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgDefImgShift1">
+<span class="sig-name descname"><span class="pre">ChgDefImgShift1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgDefImgShift1" title="Link to this definition">¶</a></dt>
+<dd><p>Deflector image shift 1 changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgDefImgShift2">
+<span class="sig-name descname"><span class="pre">ChgDefImgShift2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgDefImgShift2" title="Link to this definition">¶</a></dt>
+<dd><p>Deflector image shift 2 changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgDefInfo">
+<span class="sig-name descname"><span class="pre">ChgDefInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">25</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgDefInfo" title="Link to this definition">¶</a></dt>
+<dd><p>Deflector information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgDefObjStig">
+<span class="sig-name descname"><span class="pre">ChgDefObjStig</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">26</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgDefObjStig" title="Link to this definition">¶</a></dt>
+<dd><p>Deflector objective stig changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgDefocus">
+<span class="sig-name descname"><span class="pre">ChgDefocus</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">27</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgDefocus" title="Link to this definition">¶</a></dt>
+<dd><p>Defocus changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgDetStts">
+<span class="sig-name descname"><span class="pre">ChgDetStts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">28</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgDetStts" title="Link to this definition">¶</a></dt>
+<dd><p>Detector status changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgDispersion">
+<span class="sig-name descname"><span class="pre">ChgDispersion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">29</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgDispersion" title="Link to this definition">¶</a></dt>
+<dd><p>Dispersion changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgEngShift">
+<span class="sig-name descname"><span class="pre">ChgEngShift</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgEngShift" title="Link to this definition">¶</a></dt>
+<dd><p>Energy shift changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgEngShiftSw">
+<span class="sig-name descname"><span class="pre">ChgEngShiftSw</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">31</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgEngShiftSw" title="Link to this definition">¶</a></dt>
+<dd><p>Energy shift switch changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgFunctionMode">
+<span class="sig-name descname"><span class="pre">ChgFunctionMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgFunctionMode" title="Link to this definition">¶</a></dt>
+<dd><p>Function mode changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgHT">
+<span class="sig-name descname"><span class="pre">ChgHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">33</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgHT" title="Link to this definition">¶</a></dt>
+<dd><p>High tension value changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgHtCurrentInfo">
+<span class="sig-name descname"><span class="pre">ChgHtCurrentInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">34</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgHtCurrentInfo" title="Link to this definition">¶</a></dt>
+<dd><p>High tension current information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgIlmMode">
+<span class="sig-name descname"><span class="pre">ChgIlmMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">35</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgIlmMode" title="Link to this definition">¶</a></dt>
+<dd><p>Illumination mode changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgImageSwStts">
+<span class="sig-name descname"><span class="pre">ChgImageSwStts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">36</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgImageSwStts" title="Link to this definition">¶</a></dt>
+<dd><p>Image switch status changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgLensADInfo">
+<span class="sig-name descname"><span class="pre">ChgLensADInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">37</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgLensADInfo" title="Link to this definition">¶</a></dt>
+<dd><p>Lens AD information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgLensInfo">
+<span class="sig-name descname"><span class="pre">ChgLensInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">38</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgLensInfo" title="Link to this definition">¶</a></dt>
+<dd><p>Lens information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgLensRelaxation">
+<span class="sig-name descname"><span class="pre">ChgLensRelaxation</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">39</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgLensRelaxation" title="Link to this definition">¶</a></dt>
+<dd><p>Lens relaxation changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgMag">
+<span class="sig-name descname"><span class="pre">ChgMag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">40</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgMag" title="Link to this definition">¶</a></dt>
+<dd><p>Magnification changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgOLSuperFine">
+<span class="sig-name descname"><span class="pre">ChgOLSuperFine</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">41</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgOLSuperFine" title="Link to this definition">¶</a></dt>
+<dd><p>Objective lens super fine changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgOmegaAutoTune">
+<span class="sig-name descname"><span class="pre">ChgOmegaAutoTune</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">42</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgOmegaAutoTune" title="Link to this definition">¶</a></dt>
+<dd><p>Omega auto-tune changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgPegInfo">
+<span class="sig-name descname"><span class="pre">ChgPegInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">43</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgPegInfo" title="Link to this definition">¶</a></dt>
+<dd><p>PEG information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgPenningInfo">
+<span class="sig-name descname"><span class="pre">ChgPenningInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">44</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgPenningInfo" title="Link to this definition">¶</a></dt>
+<dd><p>Penning information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgPhasePlateState">
+<span class="sig-name descname"><span class="pre">ChgPhasePlateState</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">45</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgPhasePlateState" title="Link to this definition">¶</a></dt>
+<dd><p>Phase plate state changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgPiezoX">
+<span class="sig-name descname"><span class="pre">ChgPiezoX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">46</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgPiezoX" title="Link to this definition">¶</a></dt>
+<dd><p>Piezo X position changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgPiezoY">
+<span class="sig-name descname"><span class="pre">ChgPiezoY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">47</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgPiezoY" title="Link to this definition">¶</a></dt>
+<dd><p>Piezo Y position changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgPiezoZ">
+<span class="sig-name descname"><span class="pre">ChgPiezoZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">48</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgPiezoZ" title="Link to this definition">¶</a></dt>
+<dd><p>Piezo Z position changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgPigInfo">
+<span class="sig-name descname"><span class="pre">ChgPigInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">49</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgPigInfo" title="Link to this definition">¶</a></dt>
+<dd><p>PIG information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgPiraniInfo">
+<span class="sig-name descname"><span class="pre">ChgPiraniInfo</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">50</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgPiraniInfo" title="Link to this definition">¶</a></dt>
+<dd><p>Pirani information changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgRefillStatus">
+<span class="sig-name descname"><span class="pre">ChgRefillStatus</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">51</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgRefillStatus" title="Link to this definition">¶</a></dt>
+<dd><p>Refill status changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgScanRotationAngleEx">
+<span class="sig-name descname"><span class="pre">ChgScanRotationAngleEx</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">52</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgScanRotationAngleEx" title="Link to this definition">¶</a></dt>
+<dd><p>Scan rotation angle (extended) changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgScenarioStatus">
+<span class="sig-name descname"><span class="pre">ChgScenarioStatus</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">53</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgScenarioStatus" title="Link to this definition">¶</a></dt>
+<dd><p>Scenario status changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgSlitPosition">
+<span class="sig-name descname"><span class="pre">ChgSlitPosition</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">54</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgSlitPosition" title="Link to this definition">¶</a></dt>
+<dd><p>Slit position changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgSlitWidth">
+<span class="sig-name descname"><span class="pre">ChgSlitWidth</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">55</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgSlitWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Slit width changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgSpotsize">
+<span class="sig-name descname"><span class="pre">ChgSpotsize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">56</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgSpotsize" title="Link to this definition">¶</a></dt>
+<dd><p>Spot size changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageR">
+<span class="sig-name descname"><span class="pre">ChgStageR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">57</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageR" title="Link to this definition">¶</a></dt>
+<dd><p>Stage R position changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageRotationCorrectionAngle">
+<span class="sig-name descname"><span class="pre">ChgStageRotationCorrectionAngle</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">58</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageRotationCorrectionAngle" title="Link to this definition">¶</a></dt>
+<dd><p>Stage rotation correction angle changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageStts">
+<span class="sig-name descname"><span class="pre">ChgStageStts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">59</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageStts" title="Link to this definition">¶</a></dt>
+<dd><p>Stage status changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageSttsEx">
+<span class="sig-name descname"><span class="pre">ChgStageSttsEx</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">60</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageSttsEx" title="Link to this definition">¶</a></dt>
+<dd><p>Stage status (extended) changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageTX">
+<span class="sig-name descname"><span class="pre">ChgStageTX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">61</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageTX" title="Link to this definition">¶</a></dt>
+<dd><p>Stage tilt X changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageTY">
+<span class="sig-name descname"><span class="pre">ChgStageTY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">62</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageTY" title="Link to this definition">¶</a></dt>
+<dd><p>Stage tilt Y changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageX">
+<span class="sig-name descname"><span class="pre">ChgStageX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">63</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageX" title="Link to this definition">¶</a></dt>
+<dd><p>Stage X changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageY">
+<span class="sig-name descname"><span class="pre">ChgStageY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">64</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageY" title="Link to this definition">¶</a></dt>
+<dd><p>Stage Y changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStageZ">
+<span class="sig-name descname"><span class="pre">ChgStageZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStageZ" title="Link to this definition">¶</a></dt>
+<dd><p>Stage Z changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgStemCam">
+<span class="sig-name descname"><span class="pre">ChgStemCam</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">66</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgStemCam" title="Link to this definition">¶</a></dt>
+<dd><p>STEM camera setting changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ChgTemStemMode">
+<span class="sig-name descname"><span class="pre">ChgTemStemMode</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">67</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ChgTemStemMode" title="Link to this definition">¶</a></dt>
+<dd><p>TEM/STEM mode changed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.NotReadyCommunication">
+<span class="sig-name descname"><span class="pre">NotReadyCommunication</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">68</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.NotReadyCommunication" title="Link to this definition">¶</a></dt>
+<dd><p>Communication is not ready.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventKind.ReadyCommunication">
+<span class="sig-name descname"><span class="pre">ReadyCommunication</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">69</span></em><a class="headerlink" href="#PyJEM.TEM3.event.EventKind.ReadyCommunication" title="Link to this definition">¶</a></dt>
+<dd><p>Communication is ready.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyJEM.TEM3.event.</span></span><span class="sig-name descname"><span class="pre">EventManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.set_enabled">
+<span class="sig-name descname"><span class="pre">set_enabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.set_enabled" title="Link to this definition">¶</a></dt>
+<dd><p>Configure whether events specified by ‘event_name’ should be queued.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_name</strong> (<em>str</em>) – Event name. refer to EventKind Enum.</p></li>
+<li><p><strong>enabled</strong> (<em>bool</em>) – set to True to enable queuing, False to disable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">set_enabled</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">queue_info</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;enabled&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.set_maxsize">
+<span class="sig-name descname"><span class="pre">set_maxsize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxsize</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.set_maxsize" title="Link to this definition">¶</a></dt>
+<dd><p>Set max size of the queue for the selected event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_name</strong> (<em>str</em>) – Event name. refer to EventKind Enum.</p></li>
+<li><p><strong>maxsize</strong> (<em>int</em>) – queue size. default is 10.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">set_maxsize</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">queue_info</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;maxsize&quot;</span><span class="p">)</span>
+<span class="go">100</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.put_event">
+<span class="sig-name descname"><span class="pre">put_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.put_event" title="Link to this definition">¶</a></dt>
+<dd><p>Add an event to the queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_name</strong> (<em>str</em>) – Event name. Refer to EventKind Enum.</p></li>
+<li><p><strong>data</strong> (<em>object</em><em>, </em><em>optional</em>) – Data associated with the event, by default None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.get_event">
+<span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.get_event" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve an event from the queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event_name</strong> (<em>str</em>) – Event name. Refer to EventKind Enum.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>EventData object if an event is available in the queue, None otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#PyJEM.TEM3.event.EventData" title="PyJEM.TEM3.event.EventData">EventData</a> or None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eventdata</span> <span class="o">=</span> <span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">get_event</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">EventData</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eventdata</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;ChgMag&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eventdata</span><span class="o">.</span><span class="n">data</span>
+<span class="go">(300000, &#39;X&#39;, &#39;x300k&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.qsize">
+<span class="sig-name descname"><span class="pre">qsize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.qsize" title="Link to this definition">¶</a></dt>
+<dd><p>Get the current number of events in the queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event_name</strong> (<em>str</em>) – Event name. Refer to EventKind Enum.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of events currently in the queue.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">qsize</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.queue_info">
+<span class="sig-name descname"><span class="pre">queue_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.queue_info" title="Link to this definition">¶</a></dt>
+<dd><p>Get information about all event queues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary containing queue information for all events,
+including data size, max size, and enabled status.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">queue_info</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &#39;ChangeSpectrumMode&#39;: {</span>
+<span class="go">        &#39;datasize&#39;: 0,</span>
+<span class="go">        &#39;maxsize&#39;: 10,</span>
+<span class="go">        &#39;enabled&#39;: True</span>
+<span class="go">    },</span>
+<span class="go">    &#39;ChangedAcdHeatEnd&#39;: {</span>
+<span class="go">        &#39;datasize&#39;: 0,</span>
+<span class="go">        &#39;maxsize&#39;: 10,</span>
+<span class="go">        &#39;enabled&#39;: True</span>
+<span class="go">    }, ...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.regist_method">
+<span class="sig-name descname"><span class="pre">regist_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.regist_method" title="Link to this definition">¶</a></dt>
+<dd><p>Register a callback method for a specific event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_name</strong> (<em>str</em>) – Event name. Refer to EventKind Enum.</p></li>
+<li><p><strong>callback</strong> (<em>callable</em>) – Callback function to be executed when the event occurs.</p></li>
+<li><p><strong>nname</strong> (<em>str</em>) – Unique identifier for the callback.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing all registered callbacks for the event.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">hook_method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Event occurred:&quot;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">regist_method</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">,</span> <span class="n">hook_method</span><span class="p">,</span> <span class="s2">&quot;my_hook&quot;</span><span class="p">)</span>
+<span class="go">{&#39;my_hook&#39;: &lt;function hook_method at 0x...&gt;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EOS3</span><span class="p">()</span><span class="o">.</span><span class="n">UpSelector</span><span class="p">()</span>  <span class="c1"># This will trigger the event and call hook_method</span>
+<span class="go">Event occurred: (300000, &#39;X&#39;, &#39;x300k&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.unregist_method">
+<span class="sig-name descname"><span class="pre">unregist_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.unregist_method" title="Link to this definition">¶</a></dt>
+<dd><p>Unregister a callback method from a specific event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_name</strong> (<em>str</em>) – Event name. Refer to EventKind Enum.</p></li>
+<li><p><strong>nname</strong> (<em>str</em>) – Unique identifier for the callback to remove.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">unregist_method</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">,</span> <span class="s2">&quot;my_hook&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EOS3</span><span class="p">()</span><span class="o">.</span><span class="n">UpSelector</span><span class="p">()</span> <span class="c1"># This will no longer trigger the hook_method</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventManager.method_list">
+<span class="sig-name descname"><span class="pre">method_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventManager.method_list" title="Link to this definition">¶</a></dt>
+<dd><p>Get list of all callback methods registered for a specific event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event_name</strong> (<em>str</em>) – Event name. Refer to EventKind Enum.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of callback functions registered for the event.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TEM3</span><span class="o">.</span><span class="n">EventManager</span><span class="p">()</span><span class="o">.</span><span class="n">method_list</span><span class="p">(</span><span class="s2">&quot;ChgMag&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PyJEM.TEM3.event.EventData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyJEM.TEM3.event.</span></span><span class="sig-name descname"><span class="pre">EventData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.TEM3.event.EventData" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Event queue data format.</p>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="PyJEM.TEM3.exception.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">PyJEM.TEM3.exception</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="PyJEM.TEM3.__vacuum.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">PyJEM.TEM3.__vacuum</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; Copyright 2016-2026 JEOL Ltd.
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">PyJEM.TEM3.event</a><ul>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind"><code class="docutils literal notranslate"><span class="pre">EventKind</span></code></a><ul>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangeSpectrumMode"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangeSpectrumMode</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedAcdHeatEnd"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedAcdHeatEnd</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedAcdHeatStart"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedAcdHeatStart</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedBakeOutEnd"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedBakeOutEnd</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedBakeOutStart"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedBakeOutStart</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedGIFMode"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedGIFMode</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedHomePositionOfDeflector"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedHomePositionOfDeflector</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedRelativeValueOfDeflector"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedRelativeValueOfDeflector</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedSaafLimitStatus"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedSaafLimitStatus</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedSaafMode"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedSaafMode</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedSaafPosition"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedSaafPosition</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedSaafRotationAngle"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedSaafRotationAngle</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedSaafRotationStatus"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedSaafRotationStatus</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedStageNeutralStart"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedStageNeutralStart</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangedTemStemMode"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangedTemStemMode</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChangingTemStemMode"><code class="docutils literal notranslate"><span class="pre">EventKind.ChangingTemStemMode</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgAlpha"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgAlpha</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgApertureEx"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgApertureEx</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgBrightnessZoomOnOff"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgBrightnessZoomOnOff</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgContBrtInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgContBrtInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgCorrectorSw"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgCorrectorSw</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgDefADInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgDefADInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgDefImgShift1"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgDefImgShift1</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgDefImgShift2"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgDefImgShift2</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgDefInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgDefInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgDefObjStig"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgDefObjStig</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgDefocus"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgDefocus</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgDetStts"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgDetStts</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgDispersion"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgDispersion</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgEngShift"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgEngShift</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgEngShiftSw"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgEngShiftSw</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgFunctionMode"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgFunctionMode</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgHT"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgHT</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgHtCurrentInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgHtCurrentInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgIlmMode"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgIlmMode</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgImageSwStts"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgImageSwStts</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgLensADInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgLensADInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgLensInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgLensInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgLensRelaxation"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgLensRelaxation</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgMag"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgMag</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgOLSuperFine"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgOLSuperFine</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgOmegaAutoTune"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgOmegaAutoTune</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgPegInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgPegInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgPenningInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgPenningInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgPhasePlateState"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgPhasePlateState</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgPiezoX"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgPiezoX</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgPiezoY"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgPiezoY</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgPiezoZ"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgPiezoZ</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgPigInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgPigInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgPiraniInfo"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgPiraniInfo</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgRefillStatus"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgRefillStatus</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgScanRotationAngleEx"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgScanRotationAngleEx</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgScenarioStatus"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgScenarioStatus</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgSlitPosition"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgSlitPosition</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgSlitWidth"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgSlitWidth</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgSpotsize"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgSpotsize</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageR"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageR</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageRotationCorrectionAngle"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageRotationCorrectionAngle</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageStts"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageStts</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageSttsEx"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageSttsEx</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageTX"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageTX</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageTY"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageTY</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageX"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageX</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageY"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageY</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStageZ"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStageZ</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgStemCam"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgStemCam</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ChgTemStemMode"><code class="docutils literal notranslate"><span class="pre">EventKind.ChgTemStemMode</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.NotReadyCommunication"><code class="docutils literal notranslate"><span class="pre">EventKind.NotReadyCommunication</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventKind.ReadyCommunication"><code class="docutils literal notranslate"><span class="pre">EventKind.ReadyCommunication</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager"><code class="docutils literal notranslate"><span class="pre">EventManager</span></code></a><ul>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.set_enabled"><code class="docutils literal notranslate"><span class="pre">EventManager.set_enabled()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.set_maxsize"><code class="docutils literal notranslate"><span class="pre">EventManager.set_maxsize()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.put_event"><code class="docutils literal notranslate"><span class="pre">EventManager.put_event()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.get_event"><code class="docutils literal notranslate"><span class="pre">EventManager.get_event()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.qsize"><code class="docutils literal notranslate"><span class="pre">EventManager.qsize()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.queue_info"><code class="docutils literal notranslate"><span class="pre">EventManager.queue_info()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.regist_method"><code class="docutils literal notranslate"><span class="pre">EventManager.regist_method()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.unregist_method"><code class="docutils literal notranslate"><span class="pre">EventManager.unregist_method()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventManager.method_list"><code class="docutils literal notranslate"><span class="pre">EventManager.method_list()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#PyJEM.TEM3.event.EventData"><code class="docutils literal notranslate"><span class="pre">EventData</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=8b21d8d7"></script>
+    </body>
+</html>

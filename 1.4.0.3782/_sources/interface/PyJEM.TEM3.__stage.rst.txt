@@ -1,0 +1,8 @@
+PyJEM.TEM3.\_\_stage
+====================
+
+.. automodule:: PyJEM.TEM3.__stage
+   :members:
+   :undoc-members:
+   :private-members:
+   :exclude-members: _instance, _initialized

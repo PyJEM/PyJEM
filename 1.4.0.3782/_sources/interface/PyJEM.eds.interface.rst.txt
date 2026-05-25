@@ -1,0 +1,8 @@
+PyJEM.eds.interface
+===================
+
+.. automodule:: PyJEM.eds.interface
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

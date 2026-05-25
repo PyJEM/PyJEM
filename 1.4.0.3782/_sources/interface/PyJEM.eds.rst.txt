@@ -1,0 +1,17 @@
+PyJEM.eds
+=========
+
+
+.. toctree::
+   :maxdepth: 2
+
+   PyJEM.eds.acquisition
+   PyJEM.eds.analysis
+   PyJEM.eds.interface
+
+
+.. automodule:: PyJEM.eds
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

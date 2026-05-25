@@ -1,0 +1,8 @@
+PyJEM.femtus.params
+===================
+
+.. automodule:: PyJEM.femtus.params
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

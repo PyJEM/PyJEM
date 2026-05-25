@@ -1,0 +1,8 @@
+PyJEM.eels.line
+===============
+
+.. automodule:: PyJEM.eels.line
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

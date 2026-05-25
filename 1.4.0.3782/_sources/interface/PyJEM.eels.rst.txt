@@ -1,0 +1,18 @@
+PyJEM.eels
+==========
+
+
+.. toctree::
+   :maxdepth: 2
+
+   PyJEM.eels.acquisition
+   PyJEM.eels.line
+   PyJEM.eels.sicube
+   PyJEM.eels.spectrum
+
+
+.. automodule:: PyJEM.eels
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

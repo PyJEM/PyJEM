@@ -1,0 +1,8 @@
+PyJEM.femtus.acquisition
+========================
+
+.. automodule:: PyJEM.femtus.acquisition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

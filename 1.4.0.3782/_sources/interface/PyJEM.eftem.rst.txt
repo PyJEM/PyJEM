@@ -1,0 +1,15 @@
+PyJEM.eftem
+===========
+
+
+.. toctree::
+   :maxdepth: 2
+
+   PyJEM.eftem.analysis
+
+
+.. automodule:: PyJEM.eftem
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

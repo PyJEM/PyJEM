@@ -1,0 +1,8 @@
+PyJEM.eftem.analysis
+====================
+
+.. automodule:: PyJEM.eftem.analysis
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

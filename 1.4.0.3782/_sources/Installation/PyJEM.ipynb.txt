@@ -1,0 +1,330 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "555e053c",
+   "metadata": {},
+   "source": [
+    "## Step 3. PyJEM\n",
+    "\n",
+    "This document explains the procedure for installing PyJEM using **setup.exe**.  \n",
+    "Simply follow the on-screen instructions and the installation will be complete.\n",
+    "We provide the setup.exe [here](https://github.com/PyJEM/PyJEM).\n",
+    "\n",
+    "---\n",
+    "\n",
+    "### Prerequisites\n",
+    "\n",
+    "Before starting the installation, confirm the following:\n",
+    "\n",
+    "| Item | Description |\n",
+    "|------|-------------|\n",
+    "| **Installer** | `setup.exe` released on the forum |\n",
+    "| **License Key** | Included in media VEM1342-07 or later, or VEM2066-00 or later  |\n",
+    "| **Python Environment** | Either `vjem310` / `vjem312` (or any `python.exe`) |\n",
+    "\n",
+    "> **About License Key**  \n",
+    "> Depending on your media version (VEM1342), the files `setup.exe` and `LICENSE_KEY` may differ.\n",
+    "> See the installation steps for details.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "### Steps\n",
+    "\n",
+    "#### Step 0: Launch the Installer\n",
+    "\n",
+    "Double-click `setup.exe` to launch it."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f22c1375",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "---\n",
+    "\n",
+    "#### Step 1: License Agreement\n",
+    "\n",
+    "First, the **License Agreement** screen will be displayed."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aca83e61",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "1. Scroll through and read the entire agreement\n",
+    "2. Check the **\"I Agree\"** checkbox\n",
+    "3. The **\"Next\"** button will become enabled, so click it\n",
+    "\n",
+    "> The \"Next\" button cannot be clicked without checking this box.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "#### Step 2: PyJEM Package and License Key Selection\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9fdb9094",
+   "metadata": {},
+   "source": [
+    "<img src=\"../_static/PyJEM_installer/vem1342-17_1.png\" width=\"50%\">"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "977204b2",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "**■ PyJEM Package Selection:**\n",
+    "\n",
+    "| Option | Description |\n",
+    "|--------|-------------|\n",
+    "| Use included | Use the package bundled with the installer (normally select this) |\n",
+    "| Use other | Use `.whl` / `.zip` files published on the forum |\n",
+    "\n",
+    "> **Note:** PyJEM libraries are published on the [Forum](https://github.com/PyJEM/PyJEM/releases).\n",
+    "\n",
+    "**■ License Key Configuration:**\n",
+    "\n",
+    "1. Click the **\"...\"** button to open file selection dialog\n",
+    "2. Depending on your media version, refer to the table below to select the file\n",
+    "\n",
+    "fig: File Selection by Media Version\n",
+    "\n",
+    "| Media Version | ISO Structure | FILE to Select for LICENSE |\n",
+    "|--------------|---------------|----------------|\n",
+    "| VEM1342-07 ～ 10 | `VEM1342-**.iso` > PyJEM > `library` > `LICENSE_KEY` | Select `LICENSE_KEY` file directly |\n",
+    "| VEM1342-11 ～ 12 | `VEM1342-**.iso` > PyJEM > `media` > `library` > `LICENSE_KEY` | Select `LICENSE_KEY` file directly |\n",
+    "| VEM1342-13 ～ VEM2066-01 | `VEM1342-**.iso` > PyJEM > `setup.exe` (LICENSE_KEY embedded) | Select `setup.exe` (auto-extracted) |\n",
+    "| VEM2066-02 and later | `VEM2066-**.iso` > PyJEM > `setup.exe` + `LICENSE_KEY` (separate file) | Select `LICENSE_KEY` file directly |\n",
+    "\n",
+    "> **Note:** If you have media VEM1342-13 ～ VEM2066-01, select `setup.exe` for License.\n",
+    "\n",
+    "> **Note:** For VEM2066-02 and later, the media includes a separate `LICENSE_KEY` file along with `setup.exe`. Select the `LICENSE_KEY` file directly.\n",
+    "\n",
+    "**■ Options:**\n",
+    "\n",
+    "| Option | Description |\n",
+    "|--------|-------------|\n",
+    "| Make document shortcut on Desktop | Create a shortcut to documentation on the desktop |\n",
+    "| Setup on remote PC | Use when setting up on a remote PC |\n",
+    "\n",
+    "3. Once configured, click **\"Next\"**\n",
+    "\n",
+    "---\n",
+    "\n",
+    "#### Step 3: Python Environment Selection\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ad897af3",
+   "metadata": {},
+   "source": [
+    "<img src=\"../_static/PyJEM_installer/vem1342-17_2.png\" width=\"50%\">"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "77f27898",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "1. Check the Python environment where you want to install\n",
+    "   - By default, `vjem310` / `vjem312` are displayed in the list\n",
+    "   - You can also add any `python.exe` using the **\"Add\"** button\n",
+    "2. Select at least one and click **\"Next\"**\n",
+    "\n",
+    "> **Warning:** Clicking \"Next\" without selecting an environment will show an error.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "#### Step 4: Confirm Installation Contents\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9db4a9fa",
+   "metadata": {},
+   "source": [
+    "<img src=\"../_static/PyJEM_installer/vem1342-17_3.png\" width=\"50%\">"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "339ddadb",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "Confirm the installation contents.  \n",
+    "If everything looks correct, click **\"Install\"** to begin the installation.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "#### Step 5: Installation Execution\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ec95bb63",
+   "metadata": {},
+   "source": [
+    "<img src=\"../_static/PyJEM_installer/vem1342-17_4.png\" width=\"50%\">"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e878309a",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "The log will scroll as installation progresses. Wait until completion.\n",
+    "\n",
+    "> **Warning:** Do not close the window during installation.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "#### Step 6: Verify Installation Results\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "80a43e87",
+   "metadata": {},
+   "source": [
+    "<img src=\"../_static/PyJEM_installer/vem1342-17_result.png\" width=\"50%\">"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ba44be97",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "| Result | Meaning |\n",
+    "|--------|---------|\n",
+    "| ✅ **Success** | Installation successful |\n",
+    "| ❌ **Failed** | Installation failed (click **\"Log\"** button to check details) |\n",
+    "\n",
+    "Click **\"Close\"** to close the installer.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "### Verification after Installation\n",
+    "\n",
+    "You can verify a successful installation by running the following in Python:\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "bfa5f6f1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1.3.15.3769\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "import PyJEM\n",
+    "print(PyJEM.__version__)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b3b3bcca",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "If the version number is displayed, the installation is successful! 🎉\n",
+    "\n",
+    "---\n",
+    "\n",
+    "### ❓ Troubleshooting\n",
+    "\n",
+    "| Symptom | Solution |\n",
+    "|---------|----------|\n",
+    "| \"Next\" button cannot be clicked (License screen) | Check the \"I Agree\" checkbox |\n",
+    "| LICENSE_KEY not found error | Try selecting the `setup.exe` file itself |\n",
+    "| Environment not displayed in list | Manually add `python.exe` using the \"Add\" button |\n",
+    "| Installation Failed | Check error details with the \"Log\" button and retry with administrator privileges |\n",
+    "\n",
+    "---\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d7ece9ec",
+   "metadata": {},
+   "source": [
+    "### Old Installer \n",
+    "**Installer Types:**\n",
+    "- **VEM1342-12～16**\n",
+    "  - Released: 2024/1/24 ～\n",
+    "  - Support upgrade install\n",
+    "  - The installation is performed via the UI.\n",
+    "- **VEM1342-11～12**\n",
+    "  - Released: 2022/4/26 ～ \n",
+    "  - Support upgrade install\n",
+    "  - The installation is performed via the command line.\n",
+    "- **VEM1342-07～10**\n",
+    "  - Released: 2021/7/20 ～ \n",
+    "  - Support upgrade install\n",
+    "  - The installation is performed via the bat file.\n",
+    "- **VEM1342-02～06**\n",
+    "  - Released: 2018/1/17 ～ 2021/6/9 \n",
+    "  - **Unsupport upgrade install**\n",
+    "\n",
+    "**Notes:**\n",
+    "- Some older installers do not support updates.\n",
+    "- Please contact your JEOL sales representative for applicability and details."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "work_312",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.11"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

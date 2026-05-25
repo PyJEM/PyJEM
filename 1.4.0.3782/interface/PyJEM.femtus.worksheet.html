@@ -1,0 +1,2495 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="PyJEM.sightx" href="PyJEM.sightx.html"><link rel="prev" title="PyJEM.femtus.repository" href="PyJEM.femtus.repository.html">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+        <title>PyJEM.femtus.worksheet - PyJEM 1.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/graph.css?v=93825b67" />
+    <link rel="stylesheet" type="text/css" href="../_static/notebook_io.css?v=410734c9" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">PyJEM 1.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">PyJEM 1.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Installation/index.html">Setup</a><input aria-label="Toggle navigation of Setup" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/Miniconda.html">Step 1. Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/vjem.html">Step 2. vjem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/PyJEM.html">Step 3. PyJEM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation/Appendix/index.html">Appendix:</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/index.html">Tutorial</a><input aria-label="Toggle navigation of Tutorial" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/0_getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/1_service_check.html">Service connectivity check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/2_control_detector_packages.html">About detector/camera control packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/3_tarin_tem3.html">TEM3: control magnification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/4_TEM3_Exception.html">TEM3: Exception handling &amp; change timeout period</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/5_tem3_autoflashing.html">TEM3: AutoFlashing Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/6_tem3_event.html">TEM3: event tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/8_eels_acquisition.html">EELS: Acquisition and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/train/9_femtus_sheet.html">FEMTUS: worksheet / repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.detector.html">PyJEM.detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.detectorext.html">PyJEM.detectorext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.edm.html">PyJEM.edm</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.eds.html">PyJEM.eds</a><input aria-label="Toggle navigation of PyJEM.eds" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.acquisition.html">PyJEM.eds.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.analysis.html">PyJEM.eds.analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eds.interface.html">PyJEM.eds.interface</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.eels.html">PyJEM.eels</a><input aria-label="Toggle navigation of PyJEM.eels" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.acquisition.html">PyJEM.eels.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.line.html">PyJEM.eels.line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.sicube.html">PyJEM.eels.sicube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eels.spectrum.html">PyJEM.eels.spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.eftem.html">PyJEM.eftem</a><input aria-label="Toggle navigation of PyJEM.eftem" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.eftem.analysis.html">PyJEM.eftem.analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="PyJEM.femtus.html">PyJEM.femtus</a><input aria-label="Toggle navigation of PyJEM.femtus" checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.acquisition.html">PyJEM.femtus.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.detector.html">PyJEM.femtus.detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.image_color.html">PyJEM.femtus.image_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.log.html">PyJEM.femtus.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.output.html">PyJEM.femtus.output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.params.html">PyJEM.femtus.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.process.html">PyJEM.femtus.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.femtus.repository.html">PyJEM.femtus.repository</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">PyJEM.femtus.worksheet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PyJEM.sightx.html">PyJEM.sightx</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.stem4d.html">PyJEM.stem4d</a><input aria-label="Toggle navigation of PyJEM.stem4d" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.stem4d.acquisition.html">PyJEM.stem4d.acquisition</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="PyJEM.TEM3.html">PyJEM.TEM3</a><input aria-label="Toggle navigation of PyJEM.TEM3" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__apt.html">PyJEM.TEM3.__apt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__camera.html">PyJEM.TEM3.__camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__deflector.html">PyJEM.TEM3.__deflector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__detector.html">PyJEM.TEM3.__detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__eos.html">PyJEM.TEM3.__eos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__feg.html">PyJEM.TEM3.__feg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__fil.html">PyJEM.TEM3.__fil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__gun.html">PyJEM.TEM3.__gun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__ht.html">PyJEM.TEM3.__ht</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__lens.html">PyJEM.TEM3.__lens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__mds.html">PyJEM.TEM3.__mds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__nitro.html">PyJEM.TEM3.__nitro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__scan.html">PyJEM.TEM3.__scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__stage.html">PyJEM.TEM3.__stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.__vacuum.html">PyJEM.TEM3.__vacuum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.event.html">PyJEM.TEM3.event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PyJEM.TEM3.exception.html">PyJEM.TEM3.exception</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TEM3IF.html">PyJEM.TEM3 Interface Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Log/index.html">What is New</a><input aria-label="Toggle navigation of What is New" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.4.0.html">Version 1.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.3.14.html">Version 1.3.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.3.0.html">Version 1.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.2.0.html">Version 1.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.1.1.html">Version 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Log/Logs/Version%201.1.0.html">Version 1.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/interface/PyJEM.femtus.worksheet.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="module-PyJEM.femtus.worksheet">
+<span id="pyjem-femtus-worksheet"></span><h1>PyJEM.femtus.worksheet<a class="headerlink" href="#module-PyJEM.femtus.worksheet" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_worksheets">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_worksheets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_worksheets" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve all worksheets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>List of worksheet groups.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the worksheet group.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>str</p></td>
+<td><p>Display title of the worksheet group.</p></td>
+</tr>
+<tr class="row-even"><td><p>Children</p></td>
+<td><p>list[dict]</p></td>
+<td><p>Child worksheet list.</p>
+<p>=&gt; See <a class="reference internal" href="#get-worksheets-return-children-items"><span class="std std-ref">Children items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-worksheets-return-children-items"></span><p><strong>Children items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the child worksheet.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>str</p></td>
+<td><p>Display title of the child worksheet.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[dict]</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_worksheets</span><span class="p">()</span>
+<span class="go">[{</span>
+<span class="go">    &#39;Id&#39;: &#39;71e87c6b-96ee-4ee4-857d-267c309acfdb&#39;,</span>
+<span class="go">    &#39;Title&#39;: &#39;Live&#39;,</span>
+<span class="go">    &#39;Children&#39;: [{</span>
+<span class="go">        &#39;Id&#39;: &#39;10645fdc-2966-4d6a-ae2d-8e2d12e10ffc&#39;,</span>
+<span class="go">        &#39;Title&#39;: &#39;Test Camera Name 0&#39;</span>
+<span class="go">    }]</span>
+<span class="go">}]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_worksheet">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_worksheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_worksheet" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a worksheet by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_id</strong> (<em>str</em>) – The ID of the worksheet.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Worksheet metadata and child content summaries.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the worksheet.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>str</p></td>
+<td><p>Worksheet title.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsActive</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet is currently active.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IsEdited</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet has unsaved modifications.</p></td>
+</tr>
+<tr class="row-even"><td><p>Children</p></td>
+<td><p>list[dict]</p></td>
+<td><p>Child worksheet elements.</p>
+<p>=&gt; See <a class="reference internal" href="#get-worksheet-return-children-items"><span class="std std-ref">Worksheet child items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-worksheet-return-children-items"></span><p><strong>Worksheet child items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the child worksheet element.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>str</p></td>
+<td><p>Title of the child worksheet element.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsActive</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the child worksheet element is active.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IsEdited</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the child worksheet element has unsaved modifications.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsLive</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the child worksheet element is live.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ContentSummary</p></td>
+<td><p>dict</p></td>
+<td><p>Content summary for the child worksheet element.</p>
+<p>=&gt; See <a class="reference internal" href="#get-worksheet-element-return-contentsummary-items"><span class="std std-ref">Worksheet element content summary items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_worksheet</span><span class="p">(</span><span class="s2">&quot;ba3829a2-78d9-476e-b633-a7c11124e125&quot;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;Children&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;ContentSummary&quot;: {</span>
+<span class="go">                &quot;ContentType&quot;: &quot;ImageContent&quot;,</span>
+<span class="go">                &quot;Id&quot;: &quot;ba3829a2-78d9-476e-b633-a7c11124e125&quot;</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Id&quot;: &quot;7521de2a-18cf-4d54-8922-e9d282aafa38&quot;,</span>
+<span class="go">            &quot;IsActive&quot;: False,</span>
+<span class="go">            &quot;IsEdited&quot;: False,</span>
+<span class="go">            &quot;IsLive&quot;: False,</span>
+<span class="go">            &quot;Title&quot;: &quot;Test Camera Name 0 20251215_110818&quot;</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            &quot;ContentSummary&quot;: {</span>
+<span class="go">                &quot;ContentType&quot;: &quot;GraphContent&quot;,</span>
+<span class="go">                &quot;Id&quot;: &quot;2ac7c2a1-fa0b-460a-9a2f-0d7909c96230&quot;</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Id&quot;: &quot;19162f86-19ce-4bf8-b956-0b1d7c1fe3f5&quot;,</span>
+<span class="go">            &quot;IsActive&quot;: False,</span>
+<span class="go">            &quot;IsEdited&quot;: False,</span>
+<span class="go">            &quot;IsLive&quot;: False,</span>
+<span class="go">            &quot;Title&quot;: &quot;EELS Live Spectrum&quot;</span>
+<span class="go">        },</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Id&quot;: &quot;a4fef4e1-90d9-4334-bedf-671b575e2db4&quot;,</span>
+<span class="go">    &quot;IsActive&quot;: True,</span>
+<span class="go">    &quot;IsEdited&quot;: True,</span>
+<span class="go">    &quot;Title&quot;: &quot;sample_sheet&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.create_worksheet">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">create_worksheet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.create_worksheet" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new worksheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>Newly created worksheet metadata.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>maked new worksheet id.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IsActive</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet is active.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsEdited</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet has been edited.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>str</p></td>
+<td><p>Worksheet title.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">create_worksheet</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    &quot;Id&quot;: &quot;6917eaf6-337c-4135-9cdd-aeaf1d341ddb&quot;,</span>
+<span class="go">    &quot;IsActive&quot;: True,</span>
+<span class="go">    &quot;IsEdited&quot;: True,</span>
+<span class="go">    &quot;Title&quot;: &quot;1216_152330&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.delete_worksheet">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">delete_worksheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.delete_worksheet" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a worksheet by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_id</strong> (<em>str</em>) – The ID of the worksheet.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">delete_worksheet</span><span class="p">(</span><span class="s1">&#39;c759972f-75b9-4777-9048-ee2799e0f1dd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.activate_worksheet">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">activate_worksheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.activate_worksheet" title="Link to this definition">¶</a></dt>
+<dd><p>Activate a worksheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_id</strong> (<em>str</em>) – The ID of the worksheet.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">activate_worksheet</span><span class="p">(</span><span class="s1">&#39;a4fef4e1-90d9-4334-bedf-671b575e2db4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.update_worksheet">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">update_worksheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.update_worksheet" title="Link to this definition">¶</a></dt>
+<dd><p>Update a worksheet by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>worksheet_id</strong> (<em>str</em>) – The ID of the worksheet.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – The title of a worksheet.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Updated worksheet metadata.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the worksheet.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IsActive</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet is active.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsEdited</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet has been edited.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>str</p></td>
+<td><p>Updated worksheet title.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">update_worksheet</span><span class="p">(</span><span class="s1">&#39;a4fef4e1-90d9-4334-bedf-671b575e2db4&#39;</span><span class="p">,</span> <span class="s1">&#39;test_20251216_152332&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.copy_active_worksheet">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">copy_active_worksheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.copy_active_worksheet" title="Link to this definition">¶</a></dt>
+<dd><p>Copy a worksheet by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_id</strong> (<em>str</em>) – The ID of the worksheet.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">copy_worksheet</span><span class="p">(</span><span class="s1">&#39;a4fef4e1-90d9-4334-bedf-671b575e2db4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.paste_to_worksheet">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">paste_to_worksheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.paste_to_worksheet" title="Link to this definition">¶</a></dt>
+<dd><p>Paste data into a worksheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_id</strong> (<em>str</em>) – The ID of the worksheet.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Paste result.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the created worksheet element.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">paste_to_worksheet</span><span class="p">(</span><span class="s1">&#39;a4fef4e1-90d9-4334-bedf-671b575e2db4&#39;</span><span class="p">)</span>
+<span class="go">{&#39;Id&#39;: &#39;5fec9050-5ae9-4594-b435-6b3ee90d77ca&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_worksheet_element">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_worksheet_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_element_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_worksheet_element" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a worksheet element by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_element_id</strong> (<em>str</em>) – The ID of the worksheet element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Worksheet element metadata.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the worksheet element.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>str</p></td>
+<td><p>Title of the worksheet element.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsActive</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet element is active.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IsEdited</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet element has been edited.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsLive</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the worksheet element is live.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ContentSummary</p></td>
+<td><p>dict</p></td>
+<td><p>Content summary metadata.</p>
+<p>=&gt; See <a class="reference internal" href="#get-worksheet-element-return-contentsummary-items"><span class="std std-ref">Worksheet element content summary items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-worksheet-element-return-contentsummary-items"></span><p><strong>Worksheet element content summary items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ContentType</p></td>
+<td><p>str</p></td>
+<td><p>Content type such as <code class="docutils literal notranslate"><span class="pre">ImageContent</span></code> or <code class="docutils literal notranslate"><span class="pre">GraphContent</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the content object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_worksheet_element</span><span class="p">(</span><span class="s1">&#39;7521de2a-18cf-4d54-8922-e9d282aafa38&#39;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;ContentSummary&quot;: {</span>
+<span class="go">        &quot;ContentType&quot;: &quot;ImageContent&quot;,</span>
+<span class="go">        &quot;Id&quot;: &quot;ba3829a2-78d9-476e-b633-a7c11124e125&quot;</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Id&quot;: &quot;7521de2a-18cf-4d54-8922-e9d282aafa38&quot;,</span>
+<span class="go">    &quot;IsActive&quot;: False,</span>
+<span class="go">    &quot;IsEdited&quot;: True,</span>
+<span class="go">    &quot;IsLive&quot;: False,</span>
+<span class="go">    &quot;Title&quot;: &quot;Test Camera Name 0 20251215_110818&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.activate_worksheet_element">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">activate_worksheet_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_element_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.activate_worksheet_element" title="Link to this definition">¶</a></dt>
+<dd><p>Activate a worksheet element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_element_id</strong> (<em>str</em>) – The ID of the worksheet element.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">activate_worksheet_element</span><span class="p">(</span><span class="s1">&#39;7521de2a-18cf-4d54-8922-e9d282aafa38&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_image_content">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_image_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_content_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_image_content" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve image content by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_content_id</strong> (<em>str</em>) – The ID of the image content.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Image content and child dataset metadata.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the parent image content.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Children</p></td>
+<td><p>list[dict]</p></td>
+<td><p>Child dataset entries.</p>
+<p>=&gt; See <a class="reference internal" href="#worksheet-dataset-child-items"><span class="std std-ref">Worksheet dataset child items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_image_content</span><span class="p">(</span><span class="s2">&quot;img1&quot;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;Children&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Clump&quot;: {</span>
+<span class="go">                &quot;Id&quot;: &quot;fb858046-312b-4128-93fa-504ceb719345&quot;,</span>
+<span class="go">                &quot;Information&quot;: {</span>
+<span class="go">                    &quot;DataInformation&quot;: {</span>
+<span class="go">                        &quot;Channel&quot;: 1,</span>
+<span class="go">                        &quot;ChannelType&quot;: &quot;GrayScale&quot;,</span>
+<span class="go">                        &quot;DataBytes&quot;: 2,</span>
+<span class="go">                        &quot;DimensionLength&quot;: 2,</span>
+<span class="go">                        &quot;Dimensions&quot;: [</span>
+<span class="go">                            512,</span>
+<span class="go">                            512</span>
+<span class="go">                        ],</span>
+<span class="go">                        &quot;IsRangeFixed&quot;: False,</span>
+<span class="go">                        &quot;MaximumPossibleIntensity&quot;: 1.7976931348623157e+308,</span>
+<span class="go">                        &quot;MinimumPossibleIntensity&quot;: -1.7976931348623157e+308,</span>
+<span class="go">                        &quot;TypeInfo&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Header&quot;: {</span>
+<span class="go">                        &quot;ClumpId&quot;: &quot;fb858046-312b-4128-93fa-504ceb719345&quot;,</span>
+<span class="go">                        &quot;ClumpType&quot;: &quot;Clump&quot;,</span>
+<span class="go">                        &quot;DataSubType&quot;: &quot;&quot;,</span>
+<span class="go">                        &quot;DataType&quot;: &quot;EELS_Camera&quot;,</span>
+<span class="go">                        &quot;DetectorType&quot;: 1,</span>
+<span class="go">                        &quot;Name&quot;: &quot;&quot;,</span>
+<span class="go">                        &quot;Version&quot;: &quot;1.0.0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;MeasurementInformation&quot;: {</span>
+<span class="go">                        &quot;CalibrationCoefficients&quot;: [</span>
+<span class="go">                            {</span>
+<span class="go">                                &quot;Offset&quot;: 0,</span>
+<span class="go">                                &quot;Scale&quot;: 66.66666666666667,</span>
+<span class="go">                                &quot;Unit&quot;: &quot;Nanometer&quot;</span>
+<span class="go">                            },</span>
+<span class="go">                            {</span>
+<span class="go">                                &quot;Offset&quot;: 0,</span>
+<span class="go">                                &quot;Scale&quot;: 66.66666666666667,</span>
+<span class="go">                                &quot;Unit&quot;: &quot;Nanometer&quot;</span>
+<span class="go">                            }</span>
+<span class="go">                        ]</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Tags&quot;: {</span>
+<span class="go">                        &quot;Detector&quot;: {</span>
+<span class="go">                            &quot;BinningSize&quot;: {</span>
+<span class="go">                                &quot;X&quot;: 2,</span>
+<span class="go">                                &quot;Y&quot;: 2</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;DetectorKind&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;ExposureTimeValue&quot;: 123.456,</span>
+<span class="go">                            &quot;FrameIntegration&quot;: 1,</span>
+<span class="go">                            &quot;GainIndex&quot;: 0,</span>
+<span class="go">                            &quot;ImagingArea&quot;: {</span>
+<span class="go">                                &quot;Height&quot;: 512,</span>
+<span class="go">                                &quot;Width&quot;: 512,</span>
+<span class="go">                                &quot;X&quot;: 256,</span>
+<span class="go">                                &quot;Y&quot;: 128</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Manufacturer&quot;: &quot;Test Vendor&quot;,</span>
+<span class="go">                            &quot;ModelCode&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;ModelDisplayName&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;OffsetIndex&quot;: 0,</span>
+<span class="go">                            &quot;PixelsPerMeter&quot;: {</span>
+<span class="go">                                &quot;Horizontal&quot;: 2500,</span>
+<span class="go">                                &quot;Vertical&quot;: 2500</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;SoftwareBinningSize&quot;: {</span>
+<span class="go">                                &quot;X&quot;: 1,</span>
+<span class="go">                                &quot;Y&quot;: 1</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;SoftwareCroppingArea&quot;: {</span>
+<span class="go">                                &quot;Height&quot;: 512,</span>
+<span class="go">                                &quot;Width&quot;: 512,</span>
+<span class="go">                                &quot;X&quot;: 0,</span>
+<span class="go">                                &quot;Y&quot;: 0</span>
+<span class="go">                            }</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;EELS&quot;: {</span>
+<span class="go">                            &quot;CameraLengthCoefficient&quot;: 1,</span>
+<span class="go">                            &quot;DataType&quot;: &quot;Image&quot;,</span>
+<span class="go">                            &quot;Dispersion&quot;: 0,</span>
+<span class="go">                            &quot;DriftTubeVoltage&quot;: 0,</span>
+<span class="go">                            &quot;EnergyLossOffset&quot;: 0,</span>
+<span class="go">                            &quot;EntranceApertureHoleString&quot;: &quot;Out&quot;,</span>
+<span class="go">                            &quot;EntranceApertureInserted&quot;: False,</span>
+<span class="go">                            &quot;FilterMode&quot;: &quot;STEM-EELS&quot;,</span>
+<span class="go">                            &quot;FilterSubmode&quot;: &quot;align&quot;,</span>
+<span class="go">                            &quot;HighTensionOffset&quot;: 0,</span>
+<span class="go">                            &quot;MagnificationValue&quot;: 1,</span>
+<span class="go">                            &quot;SectorOffset&quot;: 0,</span>
+<span class="go">                            &quot;SlitInserted&quot;: False,</span>
+<span class="go">                            &quot;SlitMode&quot;: &quot;Out&quot;,</span>
+<span class="go">                            &quot;SlitWidth&quot;: 0</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;EOS&quot;: {</span>
+<span class="go">                            &quot;CameraLength&quot;: 1,</span>
+<span class="go">                            &quot;CameraLengthString&quot;: &quot;1m&quot;,</span>
+<span class="go">                            &quot;ConvergenceAngleAlphaNumber&quot;: 0,</span>
+<span class="go">                            &quot;ImageFormingMode&quot;: &quot;MAG&quot;,</span>
+<span class="go">                            &quot;MagnificationString&quot;: &quot;x3000&quot;,</span>
+<span class="go">                            &quot;MagnificationValue&quot;: 3000,</span>
+<span class="go">                            &quot;OperationMode&quot;: &quot;TEM&quot;,</span>
+<span class="go">                            &quot;RockingAngle&quot;: 0,</span>
+<span class="go">                            &quot;SpotSizeNumber&quot;: 0</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;General&quot;: {</span>
+<span class="go">                            &quot;AcquisitionDateTime&quot;: &quot;20251215110818759&quot;,</span>
+<span class="go">                            &quot;AcquisitionId&quot;: &quot;7c9ccd64-7579-48f1-b85d-364732fc9052&quot;,</span>
+<span class="go">                            &quot;AnalysisDateTime&quot;: &quot;20251215110818759&quot;,</span>
+<span class="go">                            &quot;AnalysisId&quot;: &quot;bdb049ce-0ce3-449c-b178-c7c7cf74e4f1&quot;,</span>
+<span class="go">                            &quot;Comment&quot;: &quot;&quot;,</span>
+<span class="go">                            &quot;DateTime&quot;: &quot;20251215110818759&quot;,</span>
+<span class="go">                            &quot;Instrument&quot;: &quot;JEM-ARM200F&quot;,</span>
+<span class="go">                            &quot;Manufacturer&quot;: &quot;JEOL Ltd.&quot;,</span>
+<span class="go">                            &quot;Operator&quot;: &quot;User&quot;,</span>
+<span class="go">                            &quot;ProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                            &quot;ProductVersion&quot;: &quot;2.0.0&quot;,</span>
+<span class="go">                            &quot;Specimen&quot;: &quot;Specimen&quot;,</span>
+<span class="go">                            &quot;UpdateDateTime&quot;: &quot;20251215110818759&quot;,</span>
+<span class="go">                            &quot;UpdateProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                            &quot;UpdateProductVersion&quot;: &quot;2.0.0&quot;</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;HT&quot;: {</span>
+<span class="go">                            &quot;AccelerationVoltage&quot;: 200000,</span>
+<span class="go">                            &quot;EnergyShift&quot;: 0,</span>
+<span class="go">                            &quot;GunType&quot;: &quot;Cfeg&quot;</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;Stage&quot;: {</span>
+<span class="go">                            &quot;PX&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;PY&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;PZ&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TX&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TY&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TZ&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;X&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Y&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Z&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            }</span>
+<span class="go">                        }</span>
+<span class="go">                    }</span>
+<span class="go">                },</span>
+<span class="go">                &quot;ViewInformation&quot;: {</span>
+<span class="go">                    &quot;Header&quot;: {</span>
+<span class="go">                        &quot;ClumpId&quot;: &quot;fb858046-312b-4128-93fa-504ceb719345&quot;,</span>
+<span class="go">                        &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Tags&quot;: {}</span>
+<span class="go">                }</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Id&quot;: &quot;781519d9-9063-4fb3-a392-8f27d837c6d4&quot;,</span>
+<span class="go">            &quot;IsSelected&quot;: False</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Id&quot;: &quot;ba3829a2-78d9-476e-b633-a7c11124e125&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_graph_content">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_graph_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_content_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_graph_content" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve graph content by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>graph_content_id</strong> (<em>str</em>) – The ID of the graph content.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Graph content and child dataset metadata.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the parent graph content.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Children</p></td>
+<td><p>list[dict]</p></td>
+<td><p>Child dataset entries.</p>
+<p>=&gt; See <a class="reference internal" href="#worksheet-dataset-child-items"><span class="std std-ref">Worksheet dataset child items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_graph_content</span><span class="p">(</span><span class="s1">&#39;2ac7c2a1-fa0b-460a-9a2f-0d7909c96230&#39;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;Children&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Clump&quot;: {</span>
+<span class="go">                &quot;Id&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">                &quot;Information&quot;: {</span>
+<span class="go">                    &quot;DataInformation&quot;: {</span>
+<span class="go">                        &quot;Channel&quot;: 1,</span>
+<span class="go">                        &quot;ChannelType&quot;: &quot;GrayScale&quot;,</span>
+<span class="go">                        &quot;DataBytes&quot;: 4,</span>
+<span class="go">                        &quot;DimensionLength&quot;: 1,</span>
+<span class="go">                        &quot;Dimensions&quot;: [</span>
+<span class="go">                            512</span>
+<span class="go">                        ],</span>
+<span class="go">                        &quot;IsRangeFixed&quot;: False,</span>
+<span class="go">                        &quot;MaximumPossibleIntensity&quot;: 1.7976931348623157e+308,</span>
+<span class="go">                        &quot;MinimumPossibleIntensity&quot;: -1.7976931348623157e+308,</span>
+<span class="go">                        &quot;TypeInfo&quot;: 2</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Header&quot;: {</span>
+<span class="go">                        &quot;ClumpId&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">                        &quot;ClumpType&quot;: &quot;Clump&quot;,</span>
+<span class="go">                        &quot;DataSubType&quot;: &quot;&quot;,</span>
+<span class="go">                        &quot;DataType&quot;: &quot;EELS_Point_Spectrum&quot;,</span>
+<span class="go">                        &quot;DetectorType&quot;: 1,</span>
+<span class="go">                        &quot;Name&quot;: &quot;Spectrum&quot;,</span>
+<span class="go">                        &quot;Version&quot;: &quot;1.0.0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;MeasurementInformation&quot;: {</span>
+<span class="go">                        &quot;CalibrationCoefficients&quot;: [</span>
+<span class="go">                            {</span>
+<span class="go">                                &quot;Offset&quot;: 0,</span>
+<span class="go">                                &quot;Scale&quot;: 200000,</span>
+<span class="go">                                &quot;Unit&quot;: &quot;Nanometer&quot;</span>
+<span class="go">                            }</span>
+<span class="go">                        ]</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Tags&quot;: {</span>
+<span class="go">                        &quot;Aperture&quot;: {</span>
+<span class="go">                            &quot;CL&quot;: {</span>
+<span class="go">                                &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;CL2&quot;: {</span>
+<span class="go">                                &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;OL&quot;: {</span>
+<span class="go">                                &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;SA&quot;: {</span>
+<span class="go">                                &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                            }</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;Detector&quot;: {</span>
+<span class="go">                            &quot;BinningSize&quot;: {</span>
+<span class="go">                                &quot;X&quot;: 2,</span>
+<span class="go">                                &quot;Y&quot;: 2</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;DetectorKind&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;ExposureTimeValue&quot;: 123.456,</span>
+<span class="go">                            &quot;FrameIntegration&quot;: 1,</span>
+<span class="go">                            &quot;ImagingArea&quot;: {</span>
+<span class="go">                                &quot;Height&quot;: 512,</span>
+<span class="go">                                &quot;Width&quot;: 512,</span>
+<span class="go">                                &quot;X&quot;: 256,</span>
+<span class="go">                                &quot;Y&quot;: 128</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Manufacturer&quot;: &quot;Test Vendor&quot;,</span>
+<span class="go">                            &quot;ModelCode&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;ModelDisplayName&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;PixelsPerMeter&quot;: {</span>
+<span class="go">                                &quot;Horizontal&quot;: 200000,</span>
+<span class="go">                                &quot;Vertical&quot;: 200000</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;SoftwareBinningSize&quot;: {</span>
+<span class="go">                                &quot;X&quot;: 1,</span>
+<span class="go">                                &quot;Y&quot;: 1</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;SoftwareCroppingArea&quot;: {</span>
+<span class="go">                                &quot;Height&quot;: 512,</span>
+<span class="go">                                &quot;Width&quot;: 512,</span>
+<span class="go">                                &quot;X&quot;: 0,</span>
+<span class="go">                                &quot;Y&quot;: 0</span>
+<span class="go">                            }</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;EELS&quot;: {</span>
+<span class="go">                            &quot;CameraLengthCoefficient&quot;: 1,</span>
+<span class="go">                            &quot;DataType&quot;: &quot;Image&quot;,</span>
+<span class="go">                            &quot;Dispersion&quot;: 0,</span>
+<span class="go">                            &quot;DriftTubeVoltage&quot;: 0,</span>
+<span class="go">                            &quot;EnergyLossOffset&quot;: 0,</span>
+<span class="go">                            &quot;EntranceApertureHoleString&quot;: &quot;Out&quot;,</span>
+<span class="go">                            &quot;EntranceApertureInserted&quot;: False,</span>
+<span class="go">                            &quot;FilterMode&quot;: &quot;STEM-EELS&quot;,</span>
+<span class="go">                            &quot;FilterSubmode&quot;: &quot;align&quot;,</span>
+<span class="go">                            &quot;HighTensionOffset&quot;: 0,</span>
+<span class="go">                            &quot;MagnificationValue&quot;: 1,</span>
+<span class="go">                            &quot;SectorOffset&quot;: 0,</span>
+<span class="go">                            &quot;SlitInserted&quot;: False,</span>
+<span class="go">                            &quot;SlitMode&quot;: &quot;Out&quot;,</span>
+<span class="go">                            &quot;SlitWidth&quot;: 0</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;EOS&quot;: {</span>
+<span class="go">                            &quot;CameraLength&quot;: 0.015,</span>
+<span class="go">                            &quot;CameraLengthString&quot;: &quot;1.5cm&quot;,</span>
+<span class="go">                            &quot;ConvergenceAngleAlphaNumber&quot;: 0,</span>
+<span class="go">                            &quot;ImageFormingMode&quot;: &quot;MAG&quot;,</span>
+<span class="go">                            &quot;MagnificationString&quot;: &quot;x20k&quot;,</span>
+<span class="go">                            &quot;MagnificationValue&quot;: 20000,</span>
+<span class="go">                            &quot;OperationMode&quot;: &quot;Scanning&quot;,</span>
+<span class="go">                            &quot;RockingAngle&quot;: 0,</span>
+<span class="go">                            &quot;SpotSizeNumber&quot;: 0</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;General&quot;: {</span>
+<span class="go">                            &quot;AcquisitionDateTime&quot;: &quot;20251216135747868&quot;,</span>
+<span class="go">                            &quot;AcquisitionId&quot;: &quot;93642131-d88c-4016-8390-8f05088a6c2d&quot;,</span>
+<span class="go">                            &quot;AnalysisDateTime&quot;: &quot;20251216135747868&quot;,</span>
+<span class="go">                            &quot;AnalysisId&quot;: &quot;dd22b600-b04b-4675-8c1d-758f7d3e15fc&quot;,</span>
+<span class="go">                            &quot;Comment&quot;: &quot;&quot;,</span>
+<span class="go">                            &quot;DateTime&quot;: &quot;20251216135747873&quot;,</span>
+<span class="go">                            &quot;Instrument&quot;: &quot;JEM-ARM200F&quot;,</span>
+<span class="go">                            &quot;Manufacturer&quot;: &quot;JEOL Ltd.&quot;,</span>
+<span class="go">                            &quot;ProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                            &quot;ProductVersion&quot;: &quot;2.0.0.0&quot;,</span>
+<span class="go">                            &quot;UpdateDateTime&quot;: &quot;20251216135747873&quot;,</span>
+<span class="go">                            &quot;UpdateProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                            &quot;UpdateProductVersion&quot;: &quot;2.0.0.0&quot;</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;HT&quot;: {</span>
+<span class="go">                            &quot;AccelerationVoltage&quot;: 200000,</span>
+<span class="go">                            &quot;EnergyShift&quot;: 0,</span>
+<span class="go">                            &quot;GunType&quot;: &quot;Cfeg&quot;</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;SAAF&quot;: {</span>
+<span class="go">                            &quot;DPC&quot;: {</span>
+<span class="go">                                &quot;RotationCorrectionAngle&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;OBF&quot;: {</span>
+<span class="go">                                &quot;DefocusMode&quot;: &quot;WPOA_zero&quot;,</span>
+<span class="go">                                &quot;IncidentHalfAngle&quot;: 24,</span>
+<span class="go">                                &quot;SampleThickness&quot;: 10</span>
+<span class="go">                            }</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;ScanGenerator&quot;: {},</span>
+<span class="go">                        &quot;Stage&quot;: {</span>
+<span class="go">                            &quot;PX&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;PY&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;PZ&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TX&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TY&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TZ&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;X&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Y&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Z&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            }</span>
+<span class="go">                        }</span>
+<span class="go">                    }</span>
+<span class="go">                },</span>
+<span class="go">                &quot;ViewInformation&quot;: {</span>
+<span class="go">                    &quot;Header&quot;: {</span>
+<span class="go">                        &quot;ClumpId&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">                        &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Tags&quot;: {}</span>
+<span class="go">                }</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Id&quot;: &quot;f5a51464-ac63-4af8-b370-bcfe3b72847c&quot;,</span>
+<span class="go">            &quot;IsSelected&quot;: False</span>
+<span class="go">        }</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;Id&quot;: &quot;2ac7c2a1-fa0b-460a-9a2f-0d7909c96230&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_data_set">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_data_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_data_set" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a data set by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_set_id</strong> (<em>str</em>) – The ID of the data set.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Data set metadata and clump information.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the data set.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IsSelected</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the data set is currently selected.</p></td>
+</tr>
+<tr class="row-even"><td><p>Clump</p></td>
+<td><p>dict</p></td>
+<td><p>Clump metadata.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-items"><span class="std std-ref">Clump items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_data_set</span><span class="p">(</span><span class="s1">&#39;f5a51464-ac63-4af8-b370-bcfe3b72847c&#39;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;Clump&quot;: {</span>
+<span class="go">        &quot;Id&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">        &quot;Information&quot;: {</span>
+<span class="go">            &quot;DataInformation&quot;: {</span>
+<span class="go">                &quot;Channel&quot;: 1,</span>
+<span class="go">                &quot;ChannelType&quot;: &quot;GrayScale&quot;,</span>
+<span class="go">                &quot;DataBytes&quot;: 4,</span>
+<span class="go">                &quot;DimensionLength&quot;: 1,</span>
+<span class="go">                &quot;Dimensions&quot;: [</span>
+<span class="go">                    512</span>
+<span class="go">                ],</span>
+<span class="go">                &quot;IsRangeFixed&quot;: False,</span>
+<span class="go">                &quot;MaximumPossibleIntensity&quot;: 1.7976931348623157e+308,</span>
+<span class="go">                &quot;MinimumPossibleIntensity&quot;: -1.7976931348623157e+308,</span>
+<span class="go">                &quot;TypeInfo&quot;: 2</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Header&quot;: {</span>
+<span class="go">                &quot;ClumpId&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">                &quot;ClumpType&quot;: &quot;Clump&quot;,</span>
+<span class="go">                &quot;DataSubType&quot;: &quot;&quot;,</span>
+<span class="go">                &quot;DataType&quot;: &quot;EELS_Point_Spectrum&quot;,</span>
+<span class="go">                &quot;DetectorType&quot;: 1,</span>
+<span class="go">                &quot;Name&quot;: &quot;Spectrum&quot;,</span>
+<span class="go">                &quot;Version&quot;: &quot;1.0.0&quot;</span>
+<span class="go">            },</span>
+<span class="go">            &quot;MeasurementInformation&quot;: {</span>
+<span class="go">                &quot;CalibrationCoefficients&quot;: [</span>
+<span class="go">                    {</span>
+<span class="go">                        &quot;Offset&quot;: 0,</span>
+<span class="go">                        &quot;Scale&quot;: 200000,</span>
+<span class="go">                        &quot;Unit&quot;: &quot;Nanometer&quot;</span>
+<span class="go">                    }</span>
+<span class="go">                ]</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Tags&quot;: {</span>
+<span class="go">                &quot;Aperture&quot;: {</span>
+<span class="go">                    &quot;CL&quot;: {</span>
+<span class="go">                        &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;CL2&quot;: {</span>
+<span class="go">                        &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;OL&quot;: {</span>
+<span class="go">                        &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;SA&quot;: {</span>
+<span class="go">                        &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                    }</span>
+<span class="go">                },</span>
+<span class="go">                &quot;Detector&quot;: {</span>
+<span class="go">                    &quot;BinningSize&quot;: {</span>
+<span class="go">                        &quot;X&quot;: 2,</span>
+<span class="go">                        &quot;Y&quot;: 2</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;DetectorKind&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                    &quot;ExposureTimeValue&quot;: 123.456,</span>
+<span class="go">                    &quot;FrameIntegration&quot;: 1,</span>
+<span class="go">                    &quot;ImagingArea&quot;: {</span>
+<span class="go">                        &quot;Height&quot;: 512,</span>
+<span class="go">                        &quot;Width&quot;: 512,</span>
+<span class="go">                        &quot;X&quot;: 256,</span>
+<span class="go">                        &quot;Y&quot;: 128</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Manufacturer&quot;: &quot;Test Vendor&quot;,</span>
+<span class="go">                    &quot;ModelCode&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                    &quot;ModelDisplayName&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                    &quot;PixelsPerMeter&quot;: {</span>
+<span class="go">                        &quot;Horizontal&quot;: 200000,</span>
+<span class="go">                        &quot;Vertical&quot;: 200000</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;SoftwareBinningSize&quot;: {</span>
+<span class="go">                        &quot;X&quot;: 1,</span>
+<span class="go">                        &quot;Y&quot;: 1</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;SoftwareCroppingArea&quot;: {</span>
+<span class="go">                        &quot;Height&quot;: 512,</span>
+<span class="go">                        &quot;Width&quot;: 512,</span>
+<span class="go">                        &quot;X&quot;: 0,</span>
+<span class="go">                        &quot;Y&quot;: 0</span>
+<span class="go">                    }</span>
+<span class="go">                },</span>
+<span class="go">                &quot;EELS&quot;: {</span>
+<span class="go">                    &quot;CameraLengthCoefficient&quot;: 1,</span>
+<span class="go">                    &quot;DataType&quot;: &quot;Image&quot;,</span>
+<span class="go">                    &quot;Dispersion&quot;: 0,</span>
+<span class="go">                    &quot;DriftTubeVoltage&quot;: 0,</span>
+<span class="go">                    &quot;EnergyLossOffset&quot;: 0,</span>
+<span class="go">                    &quot;EntranceApertureHoleString&quot;: &quot;Out&quot;,</span>
+<span class="go">                    &quot;EntranceApertureInserted&quot;: False,</span>
+<span class="go">                    &quot;FilterMode&quot;: &quot;STEM-EELS&quot;,</span>
+<span class="go">                    &quot;FilterSubmode&quot;: &quot;align&quot;,</span>
+<span class="go">                    &quot;HighTensionOffset&quot;: 0,</span>
+<span class="go">                    &quot;MagnificationValue&quot;: 1,</span>
+<span class="go">                    &quot;SectorOffset&quot;: 0,</span>
+<span class="go">                    &quot;SlitInserted&quot;: False,</span>
+<span class="go">                    &quot;SlitMode&quot;: &quot;Out&quot;,</span>
+<span class="go">                    &quot;SlitWidth&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;EOS&quot;: {</span>
+<span class="go">                    &quot;CameraLength&quot;: 0.015,</span>
+<span class="go">                    &quot;CameraLengthString&quot;: &quot;1.5cm&quot;,</span>
+<span class="go">                    &quot;ConvergenceAngleAlphaNumber&quot;: 0,</span>
+<span class="go">                    &quot;ImageFormingMode&quot;: &quot;MAG&quot;,</span>
+<span class="go">                    &quot;MagnificationString&quot;: &quot;x20k&quot;,</span>
+<span class="go">                    &quot;MagnificationValue&quot;: 20000,</span>
+<span class="go">                    &quot;OperationMode&quot;: &quot;Scanning&quot;,</span>
+<span class="go">                    &quot;RockingAngle&quot;: 0,</span>
+<span class="go">                    &quot;SpotSizeNumber&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;General&quot;: {</span>
+<span class="go">                    &quot;AcquisitionDateTime&quot;: &quot;20251216135747868&quot;,</span>
+<span class="go">                    &quot;AcquisitionId&quot;: &quot;93642131-d88c-4016-8390-8f05088a6c2d&quot;,</span>
+<span class="go">                    &quot;AnalysisDateTime&quot;: &quot;20251216135747868&quot;,</span>
+<span class="go">                    &quot;AnalysisId&quot;: &quot;dd22b600-b04b-4675-8c1d-758f7d3e15fc&quot;,</span>
+<span class="go">                    &quot;Comment&quot;: &quot;&quot;,</span>
+<span class="go">                    &quot;DateTime&quot;: &quot;20251216135747873&quot;,</span>
+<span class="go">                    &quot;Instrument&quot;: &quot;JEM-ARM200F&quot;,</span>
+<span class="go">                    &quot;Manufacturer&quot;: &quot;JEOL Ltd.&quot;,</span>
+<span class="go">                    &quot;ProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                    &quot;ProductVersion&quot;: &quot;2.0.0.0&quot;,</span>
+<span class="go">                    &quot;UpdateDateTime&quot;: &quot;20251216135747873&quot;,</span>
+<span class="go">                    &quot;UpdateProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                    &quot;UpdateProductVersion&quot;: &quot;2.0.0.0&quot;</span>
+<span class="go">                },</span>
+<span class="go">                &quot;HT&quot;: {</span>
+<span class="go">                    &quot;AccelerationVoltage&quot;: 200000,</span>
+<span class="go">                    &quot;EnergyShift&quot;: 0,</span>
+<span class="go">                    &quot;GunType&quot;: &quot;Cfeg&quot;</span>
+<span class="go">                },</span>
+<span class="go">                &quot;SAAF&quot;: {</span>
+<span class="go">                    &quot;DPC&quot;: {</span>
+<span class="go">                        &quot;RotationCorrectionAngle&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;OBF&quot;: {</span>
+<span class="go">                        &quot;DefocusMode&quot;: &quot;WPOA_zero&quot;,</span>
+<span class="go">                        &quot;IncidentHalfAngle&quot;: 24,</span>
+<span class="go">                        &quot;SampleThickness&quot;: 10</span>
+<span class="go">                    }</span>
+<span class="go">                },</span>
+<span class="go">                &quot;ScanGenerator&quot;: {},</span>
+<span class="go">                &quot;Stage&quot;: {</span>
+<span class="go">                    &quot;PX&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;PY&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;PZ&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;TX&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;TY&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;TZ&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;X&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Y&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Z&quot;: {</span>
+<span class="go">                        &quot;Position&quot;: 0</span>
+<span class="go">                    }</span>
+<span class="go">                }</span>
+<span class="go">            }</span>
+<span class="go">        },</span>
+<span class="go">        &quot;ViewInformation&quot;: {</span>
+<span class="go">            &quot;Header&quot;: {</span>
+<span class="go">                &quot;ClumpId&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">                &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Tags&quot;: {}</span>
+<span class="go">        }</span>
+<span class="go">    },</span>
+<span class="go">    &quot;Id&quot;: &quot;f5a51464-ac63-4af8-b370-bcfe3b72847c&quot;,</span>
+<span class="go">    &quot;IsSelected&quot;: False</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_data_set_processor">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_data_set_processor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_set_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_data_set_processor" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a data set by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_set_id</strong> (<em>str</em>) – The ID of the data set.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Parent data set metadata.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ParentDataSets</p></td>
+<td><p>list[dict]</p></td>
+<td><p>Parent dataset entries.</p>
+<p>=&gt; See <a class="reference internal" href="#worksheet-dataset-child-items"><span class="std std-ref">Worksheet dataset child items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature requires the input datasetid to be a child dataset.
+If it is not a child, a 404 error will be returned.
+The only way to verify if a dataset is a child is by checking the UI.</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_data_set_processor</span><span class="p">(</span><span class="s1">&#39;31ee57a2-b9eb-45a9-a2f3-1818ef1d37ac&#39;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;ParentDataSets&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">            &quot;Clump&quot;: {</span>
+<span class="go">                &quot;Id&quot;: &quot;fb858046-312b-4128-93fa-504ceb719345&quot;,</span>
+<span class="go">                &quot;Information&quot;: {</span>
+<span class="go">                    &quot;DataInformation&quot;: {</span>
+<span class="go">                        &quot;Channel&quot;: 1,</span>
+<span class="go">                        &quot;ChannelType&quot;: &quot;GrayScale&quot;,</span>
+<span class="go">                        &quot;DataBytes&quot;: 2,</span>
+<span class="go">                        &quot;DimensionLength&quot;: 2,</span>
+<span class="go">                        &quot;Dimensions&quot;: [</span>
+<span class="go">                            512,</span>
+<span class="go">                            512</span>
+<span class="go">                        ],</span>
+<span class="go">                        &quot;IsRangeFixed&quot;: False,</span>
+<span class="go">                        &quot;MaximumPossibleIntensity&quot;: 1.7976931348623157e+308,</span>
+<span class="go">                        &quot;MinimumPossibleIntensity&quot;: -1.7976931348623157e+308,</span>
+<span class="go">                        &quot;TypeInfo&quot;: 0</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Header&quot;: {</span>
+<span class="go">                        &quot;ClumpId&quot;: &quot;fb858046-312b-4128-93fa-504ceb719345&quot;,</span>
+<span class="go">                        &quot;ClumpType&quot;: &quot;Clump&quot;,</span>
+<span class="go">                        &quot;DataSubType&quot;: &quot;&quot;,</span>
+<span class="go">                        &quot;DataType&quot;: &quot;EELS_Camera&quot;,</span>
+<span class="go">                        &quot;DetectorType&quot;: 1,</span>
+<span class="go">                        &quot;Name&quot;: &quot;&quot;,</span>
+<span class="go">                        &quot;Version&quot;: &quot;1.0.0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;MeasurementInformation&quot;: {</span>
+<span class="go">                        &quot;CalibrationCoefficients&quot;: [</span>
+<span class="go">                            {</span>
+<span class="go">                                &quot;Offset&quot;: 0,</span>
+<span class="go">                                &quot;Scale&quot;: 66.66666666666667,</span>
+<span class="go">                                &quot;Unit&quot;: &quot;Nanometer&quot;</span>
+<span class="go">                            },</span>
+<span class="go">                            {</span>
+<span class="go">                                &quot;Offset&quot;: 0,</span>
+<span class="go">                                &quot;Scale&quot;: 66.66666666666667,</span>
+<span class="go">                                &quot;Unit&quot;: &quot;Nanometer&quot;</span>
+<span class="go">                            }</span>
+<span class="go">                        ]</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Tags&quot;: {</span>
+<span class="go">                        &quot;Detector&quot;: {</span>
+<span class="go">                            &quot;BinningSize&quot;: {</span>
+<span class="go">                                &quot;X&quot;: 2,</span>
+<span class="go">                                &quot;Y&quot;: 2</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;DetectorKind&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;ExposureTimeValue&quot;: 123.456,</span>
+<span class="go">                            &quot;FrameIntegration&quot;: 1,</span>
+<span class="go">                            &quot;GainIndex&quot;: 0,</span>
+<span class="go">                            &quot;ImagingArea&quot;: {</span>
+<span class="go">                                &quot;Height&quot;: 512,</span>
+<span class="go">                                &quot;Width&quot;: 512,</span>
+<span class="go">                                &quot;X&quot;: 256,</span>
+<span class="go">                                &quot;Y&quot;: 128</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Manufacturer&quot;: &quot;Test Vendor&quot;,</span>
+<span class="go">                            &quot;ModelCode&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;ModelDisplayName&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                            &quot;OffsetIndex&quot;: 0,</span>
+<span class="go">                            &quot;PixelsPerMeter&quot;: {</span>
+<span class="go">                                &quot;Horizontal&quot;: 2500,</span>
+<span class="go">                                &quot;Vertical&quot;: 2500</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;SoftwareBinningSize&quot;: {</span>
+<span class="go">                                &quot;X&quot;: 1,</span>
+<span class="go">                                &quot;Y&quot;: 1</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;SoftwareCroppingArea&quot;: {</span>
+<span class="go">                                &quot;Height&quot;: 512,</span>
+<span class="go">                                &quot;Width&quot;: 512,</span>
+<span class="go">                                &quot;X&quot;: 0,</span>
+<span class="go">                                &quot;Y&quot;: 0</span>
+<span class="go">                            }</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;EELS&quot;: {</span>
+<span class="go">                            &quot;CameraLengthCoefficient&quot;: 1,</span>
+<span class="go">                            &quot;DataType&quot;: &quot;Image&quot;,</span>
+<span class="go">                            &quot;Dispersion&quot;: 0,</span>
+<span class="go">                            &quot;DriftTubeVoltage&quot;: 0,</span>
+<span class="go">                            &quot;EnergyLossOffset&quot;: 0,</span>
+<span class="go">                            &quot;EntranceApertureHoleString&quot;: &quot;Out&quot;,</span>
+<span class="go">                            &quot;EntranceApertureInserted&quot;: False,</span>
+<span class="go">                            &quot;FilterMode&quot;: &quot;STEM-EELS&quot;,</span>
+<span class="go">                            &quot;FilterSubmode&quot;: &quot;align&quot;,</span>
+<span class="go">                            &quot;HighTensionOffset&quot;: 0,</span>
+<span class="go">                            &quot;MagnificationValue&quot;: 1,</span>
+<span class="go">                            &quot;SectorOffset&quot;: 0,</span>
+<span class="go">                            &quot;SlitInserted&quot;: False,</span>
+<span class="go">                            &quot;SlitMode&quot;: &quot;Out&quot;,</span>
+<span class="go">                            &quot;SlitWidth&quot;: 0</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;EOS&quot;: {</span>
+<span class="go">                            &quot;CameraLength&quot;: 1,</span>
+<span class="go">                            &quot;CameraLengthString&quot;: &quot;1m&quot;,</span>
+<span class="go">                            &quot;ConvergenceAngleAlphaNumber&quot;: 0,</span>
+<span class="go">                            &quot;ImageFormingMode&quot;: &quot;MAG&quot;,</span>
+<span class="go">                            &quot;MagnificationString&quot;: &quot;x3000&quot;,</span>
+<span class="go">                            &quot;MagnificationValue&quot;: 3000,</span>
+<span class="go">                            &quot;OperationMode&quot;: &quot;TEM&quot;,</span>
+<span class="go">                            &quot;RockingAngle&quot;: 0,</span>
+<span class="go">                            &quot;SpotSizeNumber&quot;: 0</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;General&quot;: {</span>
+<span class="go">                            &quot;AcquisitionDateTime&quot;: &quot;20251215110818759&quot;,</span>
+<span class="go">                            &quot;AcquisitionId&quot;: &quot;7c9ccd64-7579-48f1-b85d-364732fc9052&quot;,</span>
+<span class="go">                            &quot;AnalysisDateTime&quot;: &quot;20251215110818759&quot;,</span>
+<span class="go">                            &quot;AnalysisId&quot;: &quot;bdb049ce-0ce3-449c-b178-c7c7cf74e4f1&quot;,</span>
+<span class="go">                            &quot;Comment&quot;: &quot;&quot;,</span>
+<span class="go">                            &quot;DateTime&quot;: &quot;20251215110818759&quot;,</span>
+<span class="go">                            &quot;Instrument&quot;: &quot;JEM-ARM200F&quot;,</span>
+<span class="go">                            &quot;Manufacturer&quot;: &quot;JEOL Ltd.&quot;,</span>
+<span class="go">                            &quot;Operator&quot;: &quot;User&quot;,</span>
+<span class="go">                            &quot;ProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                            &quot;ProductVersion&quot;: &quot;2.0.0&quot;,</span>
+<span class="go">                            &quot;Specimen&quot;: &quot;Specimen&quot;,</span>
+<span class="go">                            &quot;UpdateDateTime&quot;: &quot;20251215110818759&quot;,</span>
+<span class="go">                            &quot;UpdateProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                            &quot;UpdateProductVersion&quot;: &quot;2.0.0&quot;</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;HT&quot;: {</span>
+<span class="go">                            &quot;AccelerationVoltage&quot;: 200000,</span>
+<span class="go">                            &quot;EnergyShift&quot;: 0,</span>
+<span class="go">                            &quot;GunType&quot;: &quot;Cfeg&quot;</span>
+<span class="go">                        },</span>
+<span class="go">                        &quot;Stage&quot;: {</span>
+<span class="go">                            &quot;PX&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;PY&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;PZ&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TX&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TY&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;TZ&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;X&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Y&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            },</span>
+<span class="go">                            &quot;Z&quot;: {</span>
+<span class="go">                                &quot;Position&quot;: 0</span>
+<span class="go">                            }</span>
+<span class="go">                        }</span>
+<span class="go">                    }</span>
+<span class="go">                },</span>
+<span class="go">                &quot;ViewInformation&quot;: {</span>
+<span class="go">                    &quot;Header&quot;: {</span>
+<span class="go">                        &quot;ClumpId&quot;: &quot;fb858046-312b-4128-93fa-504ceb719345&quot;,</span>
+<span class="go">                        &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">                    },</span>
+<span class="go">                    &quot;Tags&quot;: {}</span>
+<span class="go">                }</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Id&quot;: &quot;781519d9-9063-4fb3-a392-8f27d837c6d4&quot;,</span>
+<span class="go">            &quot;IsSelected&quot;: False</span>
+<span class="go">        }</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_clump">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_clump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clump_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_clump" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a clump by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>clump_id</strong> (<em>str</em>) – The ID of the clump.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Clump metadata and view information.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the clump.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Information</p></td>
+<td><p>dict</p></td>
+<td><p>Clump metadata block.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-information-items"><span class="std std-ref">Clump information items</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>ViewInformation</p></td>
+<td><p>dict</p></td>
+<td><p>View-specific metadata block.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-viewinformation-items"><span class="std std-ref">Clump view information items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="worksheet-dataset-child-items"></span><p><strong>Worksheet dataset child items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the child data set.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IsSelected</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the child data set is selected.</p></td>
+</tr>
+<tr class="row-even"><td><p>Clump</p></td>
+<td><p>dict</p></td>
+<td><p>Clump metadata for the child data set.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-items"><span class="std std-ref">Clump items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-clump-return-items"></span><p><strong>Clump items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Id</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the clump.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Information</p></td>
+<td><p>dict</p></td>
+<td><p>Clump metadata block.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-information-items"><span class="std std-ref">Clump information items</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>ViewInformation</p></td>
+<td><p>dict</p></td>
+<td><p>View-specific metadata block.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-viewinformation-items"><span class="std std-ref">Clump view information items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-clump-return-information-items"></span><p><strong>Clump information items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DataInformation</p></td>
+<td><p>dict</p></td>
+<td><p>Data structure and numeric representation details.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-datainformation-items"><span class="std std-ref">Clump data information items</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Header</p></td>
+<td><p>dict</p></td>
+<td><p>Clump header metadata.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-header-items"><span class="std std-ref">Clump header items</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>MeasurementInformation</p></td>
+<td><p>dict</p></td>
+<td><p>Measurement calibration metadata.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-measurementinformation-items"><span class="std std-ref">Clump measurement information items</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Tags</p></td>
+<td><p>dict</p></td>
+<td><p>Acquisition metadata blocks such as detector, optical system, and stage information.</p>
+<p>=&gt; See <a class="reference internal" href="#get-clump-return-tags-items"><span class="std std-ref">Clump tag items</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-clump-return-datainformation-items"></span><p><strong>Clump data information items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Channel</p></td>
+<td><p>int</p></td>
+<td><p>Channel index.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ChannelType</p></td>
+<td><p>str</p></td>
+<td><p>Channel representation such as <code class="docutils literal notranslate"><span class="pre">GrayScale</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>DataBytes</p></td>
+<td><p>int</p></td>
+<td><p>Number of bytes per sample.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DimensionLength</p></td>
+<td><p>int</p></td>
+<td><p>Number of dimensions in the data.</p></td>
+</tr>
+<tr class="row-even"><td><p>Dimensions</p></td>
+<td><p>list[int]</p></td>
+<td><p>Length of each dimension.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IsRangeFixed</p></td>
+<td><p>bool</p></td>
+<td><p>Whether the numeric range is fixed.</p></td>
+</tr>
+<tr class="row-even"><td><p>MaximumPossibleIntensity</p></td>
+<td><p>float</p></td>
+<td><p>Maximum representable intensity value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MinimumPossibleIntensity</p></td>
+<td><p>float</p></td>
+<td><p>Minimum representable intensity value.</p></td>
+</tr>
+<tr class="row-even"><td><p>TypeInfo</p></td>
+<td><p>int</p></td>
+<td><p>Numeric type identifier.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-clump-return-header-items"></span><p><strong>Clump header items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ClumpId</p></td>
+<td><p>str</p></td>
+<td><p>Identifier of the clump.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ClumpType</p></td>
+<td><p>str</p></td>
+<td><p>Clump kind such as <code class="docutils literal notranslate"><span class="pre">Clump</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>DataSubType</p></td>
+<td><p>str</p></td>
+<td><p>Optional subtype for the data payload.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DataType</p></td>
+<td><p>str</p></td>
+<td><p>Data type name such as <code class="docutils literal notranslate"><span class="pre">EELS_Camera</span></code> or <code class="docutils literal notranslate"><span class="pre">EELS_Point_Spectrum</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>DetectorType</p></td>
+<td><p>int</p></td>
+<td><p>Detector type identifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>str</p></td>
+<td><p>Display name of the clump.</p></td>
+</tr>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>str</p></td>
+<td><p>Clump metadata version.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-clump-return-measurementinformation-items"></span><p><strong>Clump measurement information items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CalibrationCoefficients</p></td>
+<td><p>list[dict]</p></td>
+<td><p>Calibration coefficient entries containing <code class="docutils literal notranslate"><span class="pre">Offset</span></code>, <code class="docutils literal notranslate"><span class="pre">Scale</span></code>, and <code class="docutils literal notranslate"><span class="pre">Unit</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-clump-return-tags-items"></span><p><strong>Clump tag items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Detector</p></td>
+<td><p>dict</p></td>
+<td><p>Detector metadata including binning, imaging area, and pixel scaling.</p></td>
+</tr>
+<tr class="row-odd"><td><p>EELS</p></td>
+<td><p>dict</p></td>
+<td><p>EELS acquisition metadata such as filter mode and slit settings.</p></td>
+</tr>
+<tr class="row-even"><td><p>EOS</p></td>
+<td><p>dict</p></td>
+<td><p>Electron optical system metadata such as camera length and magnification.</p></td>
+</tr>
+<tr class="row-odd"><td><p>General</p></td>
+<td><p>dict</p></td>
+<td><p>General acquisition metadata such as time, instrument, and product information.</p></td>
+</tr>
+<tr class="row-even"><td><p>HT</p></td>
+<td><p>dict</p></td>
+<td><p>High tension metadata such as acceleration voltage and gun type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stage</p></td>
+<td><p>dict</p></td>
+<td><p>Stage position metadata.</p></td>
+</tr>
+<tr class="row-even"><td><p>Aperture</p></td>
+<td><p>dict</p></td>
+<td><p>Aperture metadata when included in the result.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SAAF</p></td>
+<td><p>dict</p></td>
+<td><p>STEM alignment and focusing metadata when included in the result.</p></td>
+</tr>
+<tr class="row-even"><td><p>ScanGenerator</p></td>
+<td><p>dict</p></td>
+<td><p>Scan generator metadata when included in the result.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<span class="target" id="get-clump-return-viewinformation-items"></span><p><strong>Clump view information items</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Header</p></td>
+<td><p>dict</p></td>
+<td><p>View metadata containing <code class="docutils literal notranslate"><span class="pre">ClumpId</span></code> and <code class="docutils literal notranslate"><span class="pre">Version</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tags</p></td>
+<td><p>dict</p></td>
+<td><p>Reserved view-specific annotations.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_clump</span><span class="p">(</span><span class="s1">&#39;8040c4c1-1bd2-4df8-a449-3eaa92438347&#39;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;Id&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">    &quot;Information&quot;: {</span>
+<span class="go">        &quot;DataInformation&quot;: {</span>
+<span class="go">            &quot;Channel&quot;: 1,</span>
+<span class="go">            &quot;ChannelType&quot;: &quot;GrayScale&quot;,</span>
+<span class="go">            &quot;DataBytes&quot;: 4,</span>
+<span class="go">            &quot;DimensionLength&quot;: 1,</span>
+<span class="go">            &quot;Dimensions&quot;: [</span>
+<span class="go">                512</span>
+<span class="go">            ],</span>
+<span class="go">            &quot;IsRangeFixed&quot;: False,</span>
+<span class="go">            &quot;MaximumPossibleIntensity&quot;: 1.7976931348623157e+308,</span>
+<span class="go">            &quot;MinimumPossibleIntensity&quot;: -1.7976931348623157e+308,</span>
+<span class="go">            &quot;TypeInfo&quot;: 2</span>
+<span class="go">        },</span>
+<span class="go">        &quot;Header&quot;: {</span>
+<span class="go">            &quot;ClumpId&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">            &quot;ClumpType&quot;: &quot;Clump&quot;,</span>
+<span class="go">            &quot;DataSubType&quot;: &quot;&quot;,</span>
+<span class="go">            &quot;DataType&quot;: &quot;EELS_Point_Spectrum&quot;,</span>
+<span class="go">            &quot;DetectorType&quot;: 1,</span>
+<span class="go">            &quot;Name&quot;: &quot;Spectrum&quot;,</span>
+<span class="go">            &quot;Version&quot;: &quot;1.0.0&quot;</span>
+<span class="go">        },</span>
+<span class="go">        &quot;MeasurementInformation&quot;: {</span>
+<span class="go">            &quot;CalibrationCoefficients&quot;: [</span>
+<span class="go">                {</span>
+<span class="go">                    &quot;Offset&quot;: 0,</span>
+<span class="go">                    &quot;Scale&quot;: 200000,</span>
+<span class="go">                    &quot;Unit&quot;: &quot;Nanometer&quot;</span>
+<span class="go">                }</span>
+<span class="go">            ]</span>
+<span class="go">        },</span>
+<span class="go">        &quot;Tags&quot;: {</span>
+<span class="go">            &quot;Aperture&quot;: {</span>
+<span class="go">                &quot;CL&quot;: {</span>
+<span class="go">                    &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                },</span>
+<span class="go">                &quot;CL2&quot;: {</span>
+<span class="go">                    &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                },</span>
+<span class="go">                &quot;OL&quot;: {</span>
+<span class="go">                    &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                },</span>
+<span class="go">                &quot;SA&quot;: {</span>
+<span class="go">                    &quot;ApertureHoleString&quot;: &quot;0&quot;</span>
+<span class="go">                }</span>
+<span class="go">            },</span>
+<span class="go">            &quot;Detector&quot;: {</span>
+<span class="go">                &quot;BinningSize&quot;: {</span>
+<span class="go">                    &quot;X&quot;: 2,</span>
+<span class="go">                    &quot;Y&quot;: 2</span>
+<span class="go">                },</span>
+<span class="go">                &quot;DetectorKind&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                &quot;ExposureTimeValue&quot;: 123.456,</span>
+<span class="go">                &quot;FrameIntegration&quot;: 1,</span>
+<span class="go">                &quot;ImagingArea&quot;: {</span>
+<span class="go">                    &quot;Height&quot;: 512,</span>
+<span class="go">                    &quot;Width&quot;: 512,</span>
+<span class="go">                    &quot;X&quot;: 256,</span>
+<span class="go">                    &quot;Y&quot;: 128</span>
+<span class="go">                },</span>
+<span class="go">                &quot;Manufacturer&quot;: &quot;Test Vendor&quot;,</span>
+<span class="go">                &quot;ModelCode&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                &quot;ModelDisplayName&quot;: &quot;Test Camera Name 0&quot;,</span>
+<span class="go">                &quot;PixelsPerMeter&quot;: {</span>
+<span class="go">                    &quot;Horizontal&quot;: 200000,</span>
+<span class="go">                    &quot;Vertical&quot;: 200000</span>
+<span class="go">                },</span>
+<span class="go">                &quot;SoftwareBinningSize&quot;: {</span>
+<span class="go">                    &quot;X&quot;: 1,</span>
+<span class="go">                    &quot;Y&quot;: 1</span>
+<span class="go">                },</span>
+<span class="go">                &quot;SoftwareCroppingArea&quot;: {</span>
+<span class="go">                    &quot;Height&quot;: 512,</span>
+<span class="go">                    &quot;Width&quot;: 512,</span>
+<span class="go">                    &quot;X&quot;: 0,</span>
+<span class="go">                    &quot;Y&quot;: 0</span>
+<span class="go">                }</span>
+<span class="go">            },</span>
+<span class="go">            &quot;EELS&quot;: {</span>
+<span class="go">                &quot;CameraLengthCoefficient&quot;: 1,</span>
+<span class="go">                &quot;DataType&quot;: &quot;Image&quot;,</span>
+<span class="go">                &quot;Dispersion&quot;: 0,</span>
+<span class="go">                &quot;DriftTubeVoltage&quot;: 0,</span>
+<span class="go">                &quot;EnergyLossOffset&quot;: 0,</span>
+<span class="go">                &quot;EntranceApertureHoleString&quot;: &quot;Out&quot;,</span>
+<span class="go">                &quot;EntranceApertureInserted&quot;: False,</span>
+<span class="go">                &quot;FilterMode&quot;: &quot;STEM-EELS&quot;,</span>
+<span class="go">                &quot;FilterSubmode&quot;: &quot;align&quot;,</span>
+<span class="go">                &quot;HighTensionOffset&quot;: 0,</span>
+<span class="go">                &quot;MagnificationValue&quot;: 1,</span>
+<span class="go">                &quot;SectorOffset&quot;: 0,</span>
+<span class="go">                &quot;SlitInserted&quot;: False,</span>
+<span class="go">                &quot;SlitMode&quot;: &quot;Out&quot;,</span>
+<span class="go">                &quot;SlitWidth&quot;: 0</span>
+<span class="go">            },</span>
+<span class="go">            &quot;EOS&quot;: {</span>
+<span class="go">                &quot;CameraLength&quot;: 0.015,</span>
+<span class="go">                &quot;CameraLengthString&quot;: &quot;1.5cm&quot;,</span>
+<span class="go">                &quot;ConvergenceAngleAlphaNumber&quot;: 0,</span>
+<span class="go">                &quot;ImageFormingMode&quot;: &quot;MAG&quot;,</span>
+<span class="go">                &quot;MagnificationString&quot;: &quot;x20k&quot;,</span>
+<span class="go">                &quot;MagnificationValue&quot;: 20000,</span>
+<span class="go">                &quot;OperationMode&quot;: &quot;Scanning&quot;,</span>
+<span class="go">                &quot;RockingAngle&quot;: 0,</span>
+<span class="go">                &quot;SpotSizeNumber&quot;: 0</span>
+<span class="go">            },</span>
+<span class="go">            &quot;General&quot;: {</span>
+<span class="go">                &quot;AcquisitionDateTime&quot;: &quot;20251216135747868&quot;,</span>
+<span class="go">                &quot;AcquisitionId&quot;: &quot;93642131-d88c-4016-8390-8f05088a6c2d&quot;,</span>
+<span class="go">                &quot;AnalysisDateTime&quot;: &quot;20251216135747868&quot;,</span>
+<span class="go">                &quot;AnalysisId&quot;: &quot;dd22b600-b04b-4675-8c1d-758f7d3e15fc&quot;,</span>
+<span class="go">                &quot;Comment&quot;: &quot;&quot;,</span>
+<span class="go">                &quot;DateTime&quot;: &quot;20251216135747873&quot;,</span>
+<span class="go">                &quot;Instrument&quot;: &quot;JEM-ARM200F&quot;,</span>
+<span class="go">                &quot;Manufacturer&quot;: &quot;JEOL Ltd.&quot;,</span>
+<span class="go">                &quot;ProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                &quot;ProductVersion&quot;: &quot;2.0.0.0&quot;,</span>
+<span class="go">                &quot;UpdateDateTime&quot;: &quot;20251216135747873&quot;,</span>
+<span class="go">                &quot;UpdateProductName&quot;: &quot;FEMTUS&quot;,</span>
+<span class="go">                &quot;UpdateProductVersion&quot;: &quot;2.0.0.0&quot;</span>
+<span class="go">            },</span>
+<span class="go">            &quot;HT&quot;: {</span>
+<span class="go">                &quot;AccelerationVoltage&quot;: 200000,</span>
+<span class="go">                &quot;EnergyShift&quot;: 0,</span>
+<span class="go">                &quot;GunType&quot;: &quot;Cfeg&quot;</span>
+<span class="go">            },</span>
+<span class="go">            &quot;SAAF&quot;: {</span>
+<span class="go">                &quot;DPC&quot;: {</span>
+<span class="go">                    &quot;RotationCorrectionAngle&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;OBF&quot;: {</span>
+<span class="go">                    &quot;DefocusMode&quot;: &quot;WPOA_zero&quot;,</span>
+<span class="go">                    &quot;IncidentHalfAngle&quot;: 24,</span>
+<span class="go">                    &quot;SampleThickness&quot;: 10</span>
+<span class="go">                }</span>
+<span class="go">            },</span>
+<span class="go">            &quot;ScanGenerator&quot;: {},</span>
+<span class="go">            &quot;Stage&quot;: {</span>
+<span class="go">                &quot;PX&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;PY&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;PZ&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;TX&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;TY&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;TZ&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;X&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;Y&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                },</span>
+<span class="go">                &quot;Z&quot;: {</span>
+<span class="go">                    &quot;Position&quot;: 0</span>
+<span class="go">                }</span>
+<span class="go">            }</span>
+<span class="go">        }</span>
+<span class="go">    },</span>
+<span class="go">    &quot;ViewInformation&quot;: {</span>
+<span class="go">        &quot;Header&quot;: {</span>
+<span class="go">            &quot;ClumpId&quot;: &quot;8040c4c1-1bd2-4df8-a449-3eaa92438347&quot;,</span>
+<span class="go">            &quot;Version&quot;: &quot;2.0.0&quot;</span>
+<span class="go">        },</span>
+<span class="go">        &quot;Tags&quot;: {}</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_clump_num_array">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_clump_num_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clump_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_clump_num_array" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve the NumArray of a clump.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>clump_id</strong> (<em>str</em>) – The ID of the clump.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Array shape, type, and memory usage.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-left" style="width: 90%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Dimensions</p></td>
+<td><p>list[int]</p></td>
+<td><p>Shape of the array. Example: <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">512]</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ElementCount</p></td>
+<td><p>int</p></td>
+<td><p>Total number of elements in the array.</p></td>
+</tr>
+<tr class="row-even"><td><p>ElementSize</p></td>
+<td><p>int</p></td>
+<td><p>Size of each element in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ElementType</p></td>
+<td><p>str</p></td>
+<td><p>Data type of each element.</p></td>
+</tr>
+<tr class="row-even"><td><p>IsEdited</p></td>
+<td><p>bool</p></td>
+<td><p>Indicates whether the array has been modified.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MemoryLoadableSize</p></td>
+<td><p>int</p></td>
+<td><p>Size in bytes required to load the array into memory.</p></td>
+</tr>
+<tr class="row-even"><td><p>WholeSize</p></td>
+<td><p>int</p></td>
+<td><p>Total size of the array in bytes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_clump_num_array</span><span class="p">(</span><span class="s1">&#39;8040c4c1-1bd2-4df8-a449-3eaa92438347&#39;</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    &quot;Dimensions&quot;: [</span>
+<span class="go">        1,</span>
+<span class="go">        512</span>
+<span class="go">    ],</span>
+<span class="go">    &quot;ElementCount&quot;: 512,</span>
+<span class="go">    &quot;ElementSize&quot;: 4,</span>
+<span class="go">    &quot;ElementType&quot;: &quot;Single&quot;,</span>
+<span class="go">    &quot;IsEdited&quot;: False,</span>
+<span class="go">    &quot;MemoryLoadableSize&quot;: 2048,</span>
+<span class="go">    &quot;WholeSize&quot;: 2048</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.get_clump_num_array_accessor">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">get_clump_num_array_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clump_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.get_clump_num_array_accessor" title="Link to this definition">¶</a></dt>
+<dd><p>Get the NumArray accessor of a clump.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>clump_id</strong> (<em>str</em>) – clump id</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The accessor data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">get_clump_num_array_accessor</span><span class="p">(</span><span class="s2">&quot;2e8d2104-28cb-47c7-ab19-6970ce0e1774&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bytes&#39;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.put_clump_num_array_accessor">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">put_clump_num_array_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clump_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.put_clump_num_array_accessor" title="Link to this definition">¶</a></dt>
+<dd><p>Put the NumArray accessor of a clump.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>clump_id</strong> (<em>str</em>) – clump id</p></li>
+<li><p><strong>chunk</strong> (<em>byte</em>) – chunk</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The access result</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">get_clump_num_array_accessor</span><span class="p">(</span><span class="s1">&#39;683d9362-0096-4334-84ef-c426e0818abc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">put_clump_num_array_accessor</span><span class="p">(</span><span class="s2">&quot;2e8d2104-28cb-47c7-ab19-6970ce0e1774&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="go">&#39;Success.&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.hide_worksheet_element">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">hide_worksheet_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_element_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.hide_worksheet_element" title="Link to this definition">¶</a></dt>
+<dd><p>Hide a worksheet element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_element_id</strong> (<em>str</em>) – The ID of the worksheet element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dict</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing the result.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hide_worksheet_element</span><span class="p">(</span><span class="s1">&#39;7521de2a-18cf-4d54-8922-e9d282aafa38&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyJEM.femtus.worksheet.show_worksheet_element">
+<span class="sig-prename descclassname"><span class="pre">PyJEM.femtus.worksheet.</span></span><span class="sig-name descname"><span class="pre">show_worksheet_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worksheet_element_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyJEM.femtus.worksheet.show_worksheet_element" title="Link to this definition">¶</a></dt>
+<dd><p>Show a worksheet element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worksheet_element_id</strong> (<em>str</em>) – The ID of the worksheet element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dict</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing the result.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">show_worksheet_element</span><span class="p">(</span><span class="s1">&#39;7521de2a-18cf-4d54-8922-e9d282aafa38&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="PyJEM.sightx.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">PyJEM.sightx</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="PyJEM.femtus.repository.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">PyJEM.femtus.repository</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; Copyright 2016-2026 JEOL Ltd.
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">PyJEM.femtus.worksheet</a><ul>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_worksheets"><code class="docutils literal notranslate"><span class="pre">get_worksheets()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_worksheet"><code class="docutils literal notranslate"><span class="pre">get_worksheet()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.create_worksheet"><code class="docutils literal notranslate"><span class="pre">create_worksheet()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.delete_worksheet"><code class="docutils literal notranslate"><span class="pre">delete_worksheet()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.activate_worksheet"><code class="docutils literal notranslate"><span class="pre">activate_worksheet()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.update_worksheet"><code class="docutils literal notranslate"><span class="pre">update_worksheet()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.copy_active_worksheet"><code class="docutils literal notranslate"><span class="pre">copy_active_worksheet()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.paste_to_worksheet"><code class="docutils literal notranslate"><span class="pre">paste_to_worksheet()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_worksheet_element"><code class="docutils literal notranslate"><span class="pre">get_worksheet_element()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.activate_worksheet_element"><code class="docutils literal notranslate"><span class="pre">activate_worksheet_element()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_image_content"><code class="docutils literal notranslate"><span class="pre">get_image_content()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_graph_content"><code class="docutils literal notranslate"><span class="pre">get_graph_content()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_data_set"><code class="docutils literal notranslate"><span class="pre">get_data_set()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_data_set_processor"><code class="docutils literal notranslate"><span class="pre">get_data_set_processor()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_clump"><code class="docutils literal notranslate"><span class="pre">get_clump()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_clump_num_array"><code class="docutils literal notranslate"><span class="pre">get_clump_num_array()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.get_clump_num_array_accessor"><code class="docutils literal notranslate"><span class="pre">get_clump_num_array_accessor()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.put_clump_num_array_accessor"><code class="docutils literal notranslate"><span class="pre">put_clump_num_array_accessor()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.hide_worksheet_element"><code class="docutils literal notranslate"><span class="pre">hide_worksheet_element()</span></code></a></li>
+<li><a class="reference internal" href="#PyJEM.femtus.worksheet.show_worksheet_element"><code class="docutils literal notranslate"><span class="pre">show_worksheet_element()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=8b21d8d7"></script>
+    </body>
+</html>

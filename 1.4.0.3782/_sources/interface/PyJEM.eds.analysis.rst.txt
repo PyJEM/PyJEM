@@ -1,0 +1,8 @@
+PyJEM.eds.analysis
+==================
+
+.. automodule:: PyJEM.eds.analysis
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

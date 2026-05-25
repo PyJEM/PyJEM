@@ -1,0 +1,8 @@
+PyJEM.stem4d.acquisition
+========================
+
+.. automodule:: PyJEM.stem4d.acquisition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

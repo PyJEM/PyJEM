@@ -1,0 +1,49 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "8d6f87bf-fb2c-4a9a-bebb-656e849832b9",
+   "metadata": {},
+   "source": [
+    "## Step 1. Miniconda\n\n\nFor users experienced with Python, the recommended way to install PyJEM with [Miniconda](https://docs.conda.io/en/latest/miniconda.html). Miniconda provides a very compact development environment using python. You can create a virtual environment on Miniconda. therefore, if you can download a recomend virtual environment file from [Forum](https://github.com/PyJEM/PyJEM), you can easiest make a recommendate virtual environment.   "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e24422f0-7fac-476e-9fb3-57a528b7df6d",
+   "metadata": {},
+   "source": [
+    "Please refer to the [Miniconda install guide](https://www.anaconda.com/docs/getting-started/miniconda/install#windows-installation)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "13c259a2-adcc-46dd-af2a-e38239844952",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

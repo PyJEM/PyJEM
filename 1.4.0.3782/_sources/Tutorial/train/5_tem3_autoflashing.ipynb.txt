@@ -1,0 +1,269 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "74d49a61",
+   "metadata": {},
+   "source": [
+    "### TEM3: AutoFlashing Tutorial\n",
+    "\n",
+    "This tutorial explains how to run FEG AutoFlashing in a safe sequence.\n",
+    "\n",
+    "Target flow:\n",
+    "1. `SetBeamValve(0)`\n",
+    "2. `SetFEGEmissionOff()`\n",
+    "3. Poll `GetEmissionOnStatus()` until it returns `(0, 0)`\n",
+    "4. `ExecAutoFlashing(1)`\n",
+    "5. Poll `GetAutoFlashingStatus()` until it returns `0`\n",
+    "6. `ExecEmissionOn(1)`\n",
+    "7. Poll `GetEmissionOnStatus()` until it returns `(0, 1)`\n",
+    "\n",
+    "Notes:\n",
+    "- This procedure modifies the actual instrument state. Follow your facility's operating rules before executing.\n",
+    "- Some `FEG3` functions are available only on CFEG instruments.\n",
+    "- `GetAutoFlashingStatus()` may temporarily return `0` immediately after `ExecAutoFlashing(1)` is called. This tutorial therefore separates the start-confirmation and completion-confirmation steps."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "ec9f9583",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from datetime import datetime, timedelta\n",
+    "import time\n",
+    "\n",
+    "from PyJEM import TEM3\n",
+    "\n",
+    "feg = TEM3.FEG3()\n",
+    "\n",
+    "def poll_until(check_func, expected_value, timeout_seconds=60, interval_seconds=1, label=\"status\"):\n",
+    "    deadline = datetime.now() + timedelta(seconds=timeout_seconds)\n",
+    "    while datetime.now() < deadline:\n",
+    "        value = check_func()\n",
+    "        print(f\"{label}: {value}\")\n",
+    "        if value == expected_value:\n",
+    "            return value\n",
+    "        time.sleep(interval_seconds)\n",
+    "    raise TimeoutError(f\"Timed out waiting for {label} == {expected_value}\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7026841f",
+   "metadata": {},
+   "source": [
+    "#### Step 1. Close beam valve\n",
+    "\n",
+    "Close the beam valve first to block the beam before changing the emission state."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "839dba5b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Beam valve closed.\n"
+     ]
+    }
+   ],
+   "source": [
+    "feg.SetBeamValve(0)\n",
+    "print(\"Beam valve closed.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "95b78eb3",
+   "metadata": {},
+   "source": [
+    "#### Step 2. Turn emission off\n",
+    "\n",
+    "Stop the FEG emission before starting AutoFlashing."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d21438c7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "FEG emission off command sent.\n"
+     ]
+    }
+   ],
+   "source": [
+    "feg.SetFEGEmissionOff(1)\n",
+    "print(\"FEG emission off command sent.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d76cf9c1",
+   "metadata": {},
+   "source": [
+    "#### Step 3. Wait until emission is fully off\n",
+    "\n",
+    "`GetEmissionOnStatus()` returns `(phase, status)`.  \n",
+    "Poll until the value is `(0, 0)` to confirm that the emission-off sequence has completed."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f66a2ae6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "poll_until(\n",
+    "    feg.GetEmissionOnStatus,\n",
+    "    (0, 0),\n",
+    "    timeout_seconds=120,\n",
+    "    interval_seconds=1,\n",
+    "    label=\"GetEmissionOnStatus\"\n",
+    " )"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "debaeeb6",
+   "metadata": {},
+   "source": [
+    "#### Step 4. Start auto flashing\n",
+    "\n",
+    "Start AutoFlashing.  \n",
+    "The return value is checked as an indicator that the command was accepted."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0904c2f6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "result = feg.ExecAutoFlashing(1)\n",
+    "print(\"ExecAutoFlashing(1):\", result)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "12dc7685",
+   "metadata": {},
+   "source": [
+    "#### Step 5. Wait until auto flashing completes\n",
+    "\n",
+    "`GetAutoFlashingStatus()` may return `0` (Idle) immediately after `ExecAutoFlashing(1)` because the flashing has not yet started.  \n",
+    "This step therefore first waits until `1` (Running) is observed to confirm the start, then waits for the status to return to `0` (Idle) to confirm completion."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a42f6a33",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "startup_deadline = datetime.now() + timedelta(seconds=30)\n",
+    "finish_deadline = datetime.now() + timedelta(minutes=10)\n",
+    "seen_running = False\n",
+    "\n",
+    "while datetime.now() < finish_deadline:\n",
+    "    status = feg.GetAutoFlashingStatus()\n",
+    "    print(\"GetAutoFlashingStatus:\", status)\n",
+    "\n",
+    "    if status == 1:\n",
+    "        seen_running = True\n",
+    "\n",
+    "    if seen_running and status == 0:\n",
+    "        print(\"AutoFlashing finished.\")\n",
+    "        break\n",
+    "\n",
+    "    if (not seen_running) and datetime.now() > startup_deadline:\n",
+    "        raise TimeoutError(\"AutoFlashing did not enter running state within 30 seconds.\")\n",
+    "\n",
+    "    time.sleep(1)\n",
+    "else:\n",
+    "    raise TimeoutError(\"AutoFlashing did not finish within 10 minutes.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "988b9e80",
+   "metadata": {},
+   "source": [
+    "#### Step 6. Turn emission on\n",
+    "\n",
+    "Resume FEG emission after AutoFlashing has completed."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fc384c4b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "result = feg.ExecEmissionOn(1)\n",
+    "print(\"ExecEmissionOn(1):\", result)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "611715d2",
+   "metadata": {},
+   "source": [
+    "#### Step 7. Wait until emission is fully on\n",
+    "\n",
+    "Poll `GetEmissionOnStatus()` until it returns `(0, 1)` to confirm that the emission-on sequence has completed."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3be4cb2c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "poll_until(\n",
+    "    feg.GetEmissionOnStatus,\n",
+    "    (0, 1),\n",
+    "    timeout_seconds=180,\n",
+    "    interval_seconds=1,\n",
+    "    label=\"GetEmissionOnStatus\"\n",
+    " )"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "vjem310",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

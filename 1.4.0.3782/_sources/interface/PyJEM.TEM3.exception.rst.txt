@@ -1,0 +1,8 @@
+PyJEM.TEM3.exception
+====================
+
+.. automodule:: PyJEM.TEM3.exception
+   :members:
+   :undoc-members:
+   :private-members:
+   :exclude-members: _instance, _initialized

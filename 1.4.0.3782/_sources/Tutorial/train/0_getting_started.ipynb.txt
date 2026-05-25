@@ -1,0 +1,116 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "5fc6e851",
+   "metadata": {},
+   "source": [
+    "## Getting Started\n",
+    "\n",
+    "**Standard startup flow:**\n",
+    "\n",
+    "1. Activate the vjem environment and start Python\n",
+    "2. Import PyJEM and the target packages\n",
+    "\n",
+    "**Prerequisites**\n",
+    "\n",
+    "- Miniconda is installed.\n",
+    "- A vjem environment is available (for example: vjem38, vjem310).\n",
+    "- PyJEM is already installed in the target vjem environment.\n",
+    "- For online operation, TEMCenter/TEMServer (or required services) are running."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "057d45f5",
+   "metadata": {},
+   "source": [
+    "### Step 1: Activate vjem and Start Python\n\n\nOpen a command prompt and run:\n\n```bash\nconda activate vjem38\npython\n```\n\nReplace `vjem38` with the name of your environment (e.g., `vjem310`).\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da666397",
+   "metadata": {},
+   "source": [
+    "### Step 2: Verify that PyJEM is importable"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "d2a5f402",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "PyJEM import: OK\n",
+      "PyJEM version: 1.3.14.3753\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "import PyJEM\n",
+    "print('PyJEM import: OK')\n",
+    "print('PyJEM version:', PyJEM.__version__)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "63bf65bd",
+   "metadata": {},
+   "source": [
+    "### Step 3: Import the packages\n\n\nImport the packages needed for your workflow.\nFor `femtus`, import its submodules individually."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "fe9f5bf5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Packages imported successfully.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Step 3: Import the packages for your workflow\n",
+    "from PyJEM import detector, detectorext, TEM3, eds, sightx, eels, eftem, stem4d\n",
+    "\n",
+    "# For femtus, import submodules individually:\n",
+    "# from PyJEM.femtus import acquisition, detector as femtus_detector, process\n",
+    "\n",
+    "print(\"Packages imported successfully.\")\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "vjem310",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

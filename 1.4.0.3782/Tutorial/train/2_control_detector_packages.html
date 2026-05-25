@@ -1,0 +1,947 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="TEM3: control magnification" href="3_tarin_tem3.html"><link rel="prev" title="Service connectivity check" href="1_service_check.html">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 -->
+        <title>About detector/camera control packages - PyJEM 1.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graph.css?v=93825b67" />
+    <link rel="stylesheet" type="text/css" href="../../_static/notebook_io.css?v=410734c9" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">PyJEM 1.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">PyJEM 1.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Installation/index.html">Setup</a><input aria-label="Toggle navigation of Setup" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Installation/Miniconda.html">Step 1. Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Installation/vjem.html">Step 2. vjem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Installation/PyJEM.html">Step 3. PyJEM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Installation/Appendix/index.html">Appendix:</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Tutorial</a><input aria-label="Toggle navigation of Tutorial" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0_getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_service_check.html">Service connectivity check</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">About detector/camera control packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_tarin_tem3.html">TEM3: control magnification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_TEM3_Exception.html">TEM3: Exception handling &amp; change timeout period</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_tem3_autoflashing.html">TEM3: AutoFlashing Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_tem3_event.html">TEM3: event tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8_eels_acquisition.html">EELS: Acquisition and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="9_femtus_sheet.html">FEMTUS: worksheet / repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../interface/index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../interface/PyJEM.detector.html">PyJEM.detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interface/PyJEM.detectorext.html">PyJEM.detectorext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../interface/PyJEM.edm.html">PyJEM.edm</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../interface/PyJEM.eds.html">PyJEM.eds</a><input aria-label="Toggle navigation of PyJEM.eds" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.eds.acquisition.html">PyJEM.eds.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.eds.analysis.html">PyJEM.eds.analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.eds.interface.html">PyJEM.eds.interface</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../interface/PyJEM.eels.html">PyJEM.eels</a><input aria-label="Toggle navigation of PyJEM.eels" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.eels.acquisition.html">PyJEM.eels.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.eels.line.html">PyJEM.eels.line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.eels.sicube.html">PyJEM.eels.sicube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.eels.spectrum.html">PyJEM.eels.spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../interface/PyJEM.eftem.html">PyJEM.eftem</a><input aria-label="Toggle navigation of PyJEM.eftem" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.eftem.analysis.html">PyJEM.eftem.analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../interface/PyJEM.femtus.html">PyJEM.femtus</a><input aria-label="Toggle navigation of PyJEM.femtus" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.acquisition.html">PyJEM.femtus.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.detector.html">PyJEM.femtus.detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.image_color.html">PyJEM.femtus.image_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.log.html">PyJEM.femtus.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.output.html">PyJEM.femtus.output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.params.html">PyJEM.femtus.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.process.html">PyJEM.femtus.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.repository.html">PyJEM.femtus.repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.femtus.worksheet.html">PyJEM.femtus.worksheet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../interface/PyJEM.sightx.html">PyJEM.sightx</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../interface/PyJEM.stem4d.html">PyJEM.stem4d</a><input aria-label="Toggle navigation of PyJEM.stem4d" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.stem4d.acquisition.html">PyJEM.stem4d.acquisition</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../interface/PyJEM.TEM3.html">PyJEM.TEM3</a><input aria-label="Toggle navigation of PyJEM.TEM3" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__apt.html">PyJEM.TEM3.__apt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__camera.html">PyJEM.TEM3.__camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__deflector.html">PyJEM.TEM3.__deflector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__detector.html">PyJEM.TEM3.__detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__eos.html">PyJEM.TEM3.__eos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__feg.html">PyJEM.TEM3.__feg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__fil.html">PyJEM.TEM3.__fil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__gun.html">PyJEM.TEM3.__gun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__ht.html">PyJEM.TEM3.__ht</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__lens.html">PyJEM.TEM3.__lens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__mds.html">PyJEM.TEM3.__mds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__nitro.html">PyJEM.TEM3.__nitro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__scan.html">PyJEM.TEM3.__scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__stage.html">PyJEM.TEM3.__stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.__vacuum.html">PyJEM.TEM3.__vacuum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.event.html">PyJEM.TEM3.event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interface/PyJEM.TEM3.exception.html">PyJEM.TEM3.exception</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../interface/TEM3IF.html">PyJEM.TEM3 Interface Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Log/index.html">What is New</a><input aria-label="Toggle navigation of What is New" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Log/Logs/Version%201.4.0.html">Version 1.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Log/Logs/Version%201.3.14.html">Version 1.3.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Log/Logs/Version%201.3.0.html">Version 1.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Log/Logs/Version%201.2.0.html">Version 1.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Log/Logs/Version%201.1.1.html">Version 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Log/Logs/Version%201.1.0.html">Version 1.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/Tutorial/train/2_control_detector_packages.ipynb.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="about-detector-camera-control-packages">
+<h1>About detector/camera control packages<a class="headerlink" href="#about-detector-camera-control-packages" title="Link to this heading">¶</a></h1>
+<p>There are 4 packages available for controlling detectors: <code class="docutils literal notranslate"><span class="pre">detector</span></code>, <code class="docutils literal notranslate"><span class="pre">detectorext</span></code>, <code class="docutils literal notranslate"><span class="pre">sightx</span></code>, and <code class="docutils literal notranslate"><span class="pre">femtus.acquisition</span></code>.<br />
+Select the appropriate package based on your system configuration.</p>
+<a class="reference internal image-reference" href="../../_images/about_detector_camera_control_pacakge.png"><img alt="../../_images/about_detector_camera_control_pacakge.png" src="../../_images/about_detector_camera_control_pacakge.png" style="width: 60%;" />
+</a>
+<section id="package-summary">
+<h2>Package summary<a class="headerlink" href="#package-summary" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Package</p></th>
+<th class="head"><p>Target</p></th>
+<th class="head"><p>Configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">detector</span></code></strong></p></td>
+<td><p>Cameras and detectors (general)</p></td>
+<td><p>FEMTUS <strong>not</strong> configured</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">detectorext</span></code></strong></p></td>
+<td><p>JEOL cameras</p></td>
+<td><p>FEMTUS configured</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">femtus.acquisition</span></code></strong></p></td>
+<td><p>STEM detectors</p></td>
+<td><p>FEMTUS configured</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">sightx</span></code></strong></p></td>
+<td><p>Cameras controlled by SightX</p></td>
+<td><p>SightX configured on the PC</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="how-to-use-this-page">
+<h2>How to use this page<a class="headerlink" href="#how-to-use-this-page" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>For <code class="docutils literal notranslate"><span class="pre">detector</span></code>, <code class="docutils literal notranslate"><span class="pre">detectorext</span></code>, and <code class="docutils literal notranslate"><span class="pre">sightx</span></code>: follow the tutorial steps in <strong>Section A</strong> below.</p></li>
+<li><p>If FEMTUS is configured and you acquire STEM detector / EDS / EELS images: follow <strong>Section B</strong> below.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because FEMTUS does not support this feature, images captured with detectorext are not saved to the FEMTUS worksheet.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can verify that each service is reachable in Step 2 of <a class="reference internal" href="1_service_check.html"><span class="std std-doc">check connection</span></a>.</p>
+</div>
+</section>
+<section id="section-a-detector-detectorext-sightx">
+<h2>Section A: <code class="docutils literal notranslate"><span class="pre">detector</span></code>, <code class="docutils literal notranslate"><span class="pre">detectorext</span></code>, <code class="docutils literal notranslate"><span class="pre">sightx</span></code><a class="headerlink" href="#section-a-detector-detectorext-sightx" title="Link to this heading">¶</a></h2>
+<p>This section describes a standard camera control workflow.</p>
+<ul class="simple">
+<li><p>For <code class="docutils literal notranslate"><span class="pre">detector</span></code>, use the sample code as-is.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">detectorext</span></code> and <code class="docutils literal notranslate"><span class="pre">sightx</span></code>, use the same flow and replace the imported package/module and constructor according to each API.</p></li>
+</ul>
+<section id="import-package">
+<h3>0. Import package<a class="headerlink" href="#import-package" title="Link to this heading">¶</a></h3>
+<p>Import one of the target packages.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">detector</span></code>: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">PyJEM</span> <span class="pre">import</span> <span class="pre">detector</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">detectorext</span></code>: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">PyJEM</span> <span class="pre">import</span> <span class="pre">detectorext</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sightx</span></code>: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">PyJEM</span> <span class="pre">import</span> <span class="pre">sightx</span></code></p></li>
+<li><p>Offline test example: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">PyJEM.offline</span> <span class="pre">import</span> <span class="pre">detector</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># Example for detector (Ver. 1.3.0)</span>
+<span class="linenos">2</span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM</span><span class="w"> </span><span class="kn">import</span> <span class="n">detector</span>
+<span class="linenos">3</span><span class="c1"># from PyJEM import detectorext</span>
+<span class="linenos">4</span><span class="c1"># from PyJEM import sightx</span>
+<span class="linenos">5</span><span class="c1"># from PyJEM.offline import detector  # offline</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-usable-detector-camera-names">
+<h3>1. Get usable detector/camera names<a class="headerlink" href="#get-usable-detector-camera-names" title="Link to this heading">¶</a></h3>
+<p>Retrieve detector/camera names that can be controlled by this package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">detector</span><span class="o">.</span><span class="n">get_attached_detector</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;HAADF&#39;,
+ &#39;LAADF&#39;,
+ &#39;BF&#39;,
+ &#39;None&#39;,
+ &#39;SAAF CH1&#39;,
+ &#39;SAAF CH2&#39;,
+ &#39;SAAF CH3&#39;,
+ &#39;SAAF CH4&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-detector-camera-information">
+<h3>2. Get detector/camera information<a class="headerlink" href="#get-detector-camera-information" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Set the detector/camera name in <code class="docutils literal notranslate"><span class="pre">detector.Detector(&quot;camera/detector&quot;)</span></code>.</p></li>
+<li><p>Get current settings with <code class="docutils literal notranslate"><span class="pre">get_detectorsetting()</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">haadf</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="s1">&#39;HAADF&#39;</span><span class="p">)</span>  <span class="c1"># example for HAADF detector; use the appropriate name for your detector</span>
+<span class="linenos">2</span><span class="n">haadf</span><span class="o">.</span><span class="n">get_detectorsetting</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;AreaModeImagingArea&#39;: {&#39;Top&#39;: 128, &#39;Left&#39;: 128, &#39;Width&#39;: 256, &#39;Height&#39;: 256},
+ &#39;LiveStatus&#39;: &#39;LiveStopped&#39;,
+ &#39;AreaModeImagingAreaMaximum&#39;: &#39;4096, 4096&#39;,
+ &#39;AreaModeImagingAreaMinimum&#39;: &#39;8, 8&#39;,
+ &#39;CanBinning&#39;: False,
+ &#39;CanGain&#39;: True,
+ &#39;CanOffset&#39;: True,
+ &#39;ExposureTime&#39;: [],
+ &#39;ExposureTimeIndex&#39;: 159,
+ &#39;ExposureTimeIndexMaximum&#39;: 65533,
+ &#39;ExposureTimeIndexMinimum&#39;: 31,
+ &#39;ExposureTimeString&#39;: &#39;3.33&#39;,
+ &#39;ExposureTimeValue&#39;: 3.3333333333333335,
+ &#39;frameIntegration&#39;: 20,
+ &#39;frameIntegrationMaximum&#39;: 255,
+ &#39;frameIntegrationMinimum&#39;: 1,
+ &#39;FrameRate&#39;: [],
+ &#39;GainIndex&#39;: 0,
+ &#39;GainIndexMaximum&#39;: 4095,
+ &#39;GainIndexMinimum&#39;: 0,
+ &#39;HorizontalLineNo&#39;: 1,
+ &#39;horizontalLineNoMaximum&#39;: 512,
+ &#39;horizontalLineNoMinimum&#39;: 1,
+ &#39;ImagingArea&#39;: {&#39;X&#39;: 0, &#39;Y&#39;: 0, &#39;Width&#39;: 512, &#39;Height&#39;: 512},
+ &#39;ImagingAreaMaximum&#39;: &#39;4096, 4096&#39;,
+ &#39;ImagingAreaMinimum&#39;: &#39;4, 1&#39;,
+ &#39;MultiDetectorMode&#39;: 2,
+ &#39;OffsetIndex&#39;: 4095,
+ &#39;OffsetIndexMaximum&#39;: 4095,
+ &#39;OffsetIndexMinimum&#39;: 0,
+ &#39;OutputImageInformation&#39;: {&#39;DataBits&#39;: 16,
+  &#39;EffectBits&#39;: 16,
+  &#39;ImageSize&#39;: {&#39;Width&#39;: 512, &#39;Height&#39;: 512},
+  &#39;PixelsPerMeter&#39;: {&#39;Horizontal&#39;: 2560, &#39;Vertical&#39;: 2560}},
+ &#39;scanMode&#39;: 0,
+ &#39;ScanRotation&#39;: 0.0,
+ &#39;scanRotationMaximum&#39;: 360.0,
+ &#39;scanRotationMinimum&#39;: 0.0,
+ &#39;scanRotationStep&#39;: 0.1,
+ &#39;SpotPosition&#39;: {&#39;X&#39;: 0, &#39;Y&#39;: 0},
+ &#39;spotPositionMaximum&#39;: &#39;4095, 4095&#39;,
+ &#39;spotPositionMinimum&#39;: &#39;0, 0&#39;,
+ &#39;SyncMode&#39;: 0,
+ &#39;Version&#39;: &#39;1.00&#39;,
+ &#39;ScanFrameTime&#39;: {&#39;FrameTime50Hz&#39;: 1337.3066666666668,
+  &#39;FrameTime60Hz&#39;: 1337.3066666666668,
+  &#39;LineTime50Hz&#39;: 2.586666666666667,
+  &#39;LineTime60Hz&#39;: 2.586666666666667}}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="change-detector-camera-setting-example-gain">
+<h3>3. Change detector/camera setting (example: gain)<a class="headerlink" href="#change-detector-camera-setting-example-gain" title="Link to this heading">¶</a></h3>
+<p>You can update detector/camera settings such as gain index.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Available setting functions may differ depending on the package you use. Please check each API document for details:
+<a href="../../interface/PyJEM.detector.html"><code class="docutils literal notranslate"><span class="pre">detector</span></code></a>, <a href="../../interface/PyJEM.detectorext.html"><code class="docutils literal notranslate"><span class="pre">detectorext</span></code></a>, <a href="../../interface/PyJEM.sightx.html"><code class="docutils literal notranslate"><span class="pre">sightx</span></code></a>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">haadf</span><span class="o">.</span><span class="n">set_gainindex</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GainIndex&#39;: 1234}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="capture-image-with-selected-detector-camera">
+<h3>4. Capture image with selected detector/camera<a class="headerlink" href="#capture-image-with-selected-detector-camera" title="Link to this heading">¶</a></h3>
+<p>Capture and display an image from the selected detector/camera.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">file</span><span class="o">=</span><span class="n">haadf</span><span class="o">.</span><span class="n">snapshot</span><span class="p">(</span><span class="s2">&quot;jpg&quot;</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/acdc324f4f247d9e8e360684ba465f3d21d85e9411b01911bf0a274e381106d2.png" src="../../_images/acdc324f4f247d9e8e360684ba465f3d21d85e9411b01911bf0a274e381106d2.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="section-b-femtus-acquisition">
+<h2>Section B: <code class="docutils literal notranslate"><span class="pre">femtus.acquisition</span></code><a class="headerlink" href="#section-b-femtus-acquisition" title="Link to this heading">¶</a></h2>
+<p>This tutorial is based on the <code class="docutils literal notranslate"><span class="pre">femtus.acquisition</span></code> TODO example and explains each step.</p>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>The Scan Area is configured in the FEMTUS UI.</p></li>
+<li><p>Services required for your workflow are running.</p></li>
+<li><p>Use this section when FEMTUS is configured and you acquire STEM / EDS / EELS data.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># 0) Import packages and confirm connectivity</span>
+<span class="linenos">2</span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM.femtus</span><span class="w"> </span><span class="kn">import</span> <span class="n">acquisition</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="check-available-detectors">
+<h3>1) Check available detectors<a class="headerlink" href="#check-available-detectors" title="Link to this heading">¶</a></h3>
+<p>First, confirm which detector names are available for acquisition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">detectors</span> <span class="o">=</span> <span class="n">acquisition</span><span class="o">.</span><span class="n">get_detectors</span><span class="p">()</span>
+<span class="linenos">2</span><span class="n">detectors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Detectors&#39;: [&#39;EDS&#39;, &#39;EELS&#39;, &#39;SAAF&#39;, &#39;Image&#39;, &#39;4DSTEM&#39;], &#39;Version&#39;: &#39;1.0.0&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="check-acquisition-status">
+<h3>2) Check acquisition status<a class="headerlink" href="#check-acquisition-status" title="Link to this heading">¶</a></h3>
+<p>Check whether acquisition is already running and inspect current status.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">status</span> <span class="o">=</span> <span class="n">acquisition</span><span class="o">.</span><span class="n">get_status</span><span class="p">()</span>
+<span class="linenos">2</span><span class="n">status</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Status&#39;: {&#39;AcquisitionID&#39;: &#39;00000000-0000-0000-0000-000000000000&#39;,
+  &#39;AcquisitionRunning&#39;: False,
+  &#39;SweepCount&#39;: 0,
+  &#39;ElapsedSeconds&#39;: 0},
+ &#39;Version&#39;: &#39;1.0.0&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-settings-and-create-a-payload">
+<h3>3) Get settings and create a payload<a class="headerlink" href="#get-settings-and-create-a-payload" title="Link to this heading">¶</a></h3>
+<p>Get current settings from FEMTUS, then edit one setting dictionary and use it as the <code class="docutils literal notranslate"><span class="pre">start()</span></code> payload.</p>
+<ul class="simple">
+<li><p>Example below updates detector list, region size, and dwell time.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no imaging area is selected in the FEMTUS UI, <code class="docutils literal notranslate"><span class="pre">get_settings()</span></code> cannot retrieve the settings.
+If nothing is configured, you need to refer to the <a href="../../interface/PyJEM.femtus.acquisition.html"><code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">page</span></code></a> and create the parameters manually.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">result</span> <span class="o">=</span> <span class="n">acquisition</span><span class="o">.</span><span class="n">get_settings</span><span class="p">()</span>
+<span class="linenos"> 2</span><span class="n">setting</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;Settings&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1"># Example customization</span>
+<span class="linenos"> 5</span><span class="n">setting</span><span class="p">[</span><span class="s2">&quot;Detectors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Image&quot;</span><span class="p">]</span>
+<span class="linenos"> 6</span><span class="n">setting</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">][</span><span class="s2">&quot;Width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="linenos"> 7</span><span class="n">setting</span><span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">][</span><span class="s2">&quot;Height&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="linenos"> 8</span><span class="n">setting</span><span class="p">[</span><span class="s2">&quot;Conditions&quot;</span><span class="p">][</span><span class="s2">&quot;DwellTime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">setting</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Id&#39;: &#39;08274fde-dd82-44c0-906c-d045552c6a43&#39;,
+ &#39;Detectors&#39;: [&#39;Image&#39;],
+ &#39;Region&#39;: {&#39;Left&#39;: 229,
+  &#39;Top&#39;: 206,
+  &#39;Width&#39;: 128,
+  &#39;Height&#39;: 128,
+  &#39;Points&#39;: None,
+  &#39;Shape&#39;: &#39;Rectangle&#39;},
+ &#39;Conditions&#39;: {&#39;DwellTime&#39;: 100,
+  &#39;PixelResolution&#39;: 1,
+  &#39;IsPlayback&#39;: False,
+  &#39;CollectionMode&#39;: {&#39;Mode&#39;: &#39;Sweep&#39;, &#39;Count&#39;: 1}},
+ &#39;DriftCorrection&#39;: {&#39;Type&#39;: &#39;None&#39;, &#39;Interval&#39;: 1, &#39;CorrectionRegion&#39;: None}}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="start-acquisition">
+<h3>4) Start acquisition<a class="headerlink" href="#start-acquisition" title="Link to this heading">¶</a></h3>
+<p>Run <code class="docutils literal notranslate"><span class="pre">start(setting)</span></code> with the payload created above.</p>
+<ul class="simple">
+<li><p>This call starts acquisition immediately.</p></li>
+<li><p>Execute only when your hardware and scan area are ready.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">start_status</span> <span class="o">=</span> <span class="n">acquisition</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">setting</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">start_status</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;AcquisitionID&#39;: &#39;f0e78d07-01e2-405a-bea7-ea4031fbe0db&#39;,
+ &#39;WorksheetID&#39;: &#39;64f4b900-1c58-41f7-8062-08e24cc41d47&#39;,
+ &#39;ReferenceDetector&#39;: &#39;VP_ADF_1&#39;,
+ &#39;Version&#39;: &#39;1.0.0&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stop-acquisition">
+<h3>4.1) Stop acquisition<a class="headerlink" href="#stop-acquisition" title="Link to this heading">¶</a></h3>
+<p>After starting acquisition, check status and stop when needed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">acquisition</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Result&#39;: &#39;OK&#39;, &#39;Version&#39;: &#39;1.0.0&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-acquisition-result">
+<h3>5) Get acquisition result<a class="headerlink" href="#get-acquisition-result" title="Link to this heading">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">get_acquisition_result</span></code> to retrieve information for the acquired data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">acquisition_result</span> <span class="o">=</span> <span class="n">acquisition</span><span class="o">.</span><span class="n">get_acquisition_result</span><span class="p">(</span><span class="n">start_status</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AcquisitionID&quot;</span><span class="p">))</span>
+<span class="linenos">2</span><span class="n">acquisition_result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Results&#39;: [{&#39;Id&#39;: &#39;050000f2-0944-4e2a-9e00-c5bc4b73642f&#39;,
+   &#39;DataType&#39;: &#39;STEM_Survey&#39;},
+  {&#39;Id&#39;: &#39;6f0ffc15-2f69-40ee-bcd0-8f61e4b0ccdb&#39;,
+   &#39;DataType&#39;: &#39;STEM_HAADF_SeleArea&#39;}]}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-get-image-information-from-acquisition-results">
+<h3>6) How to get image information from acquisition results<a class="headerlink" href="#how-to-get-image-information-from-acquisition-results" title="Link to this heading">¶</a></h3>
+<p>Use the following steps to get image information from <code class="docutils literal notranslate"><span class="pre">acquisition_result</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Extract the data ID from <code class="docutils literal notranslate"><span class="pre">acquisition_result[&quot;Results&quot;][0][&quot;Id&quot;]</span></code>.</p></li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">worksheet.get_data_set(data_id)</span></code> to retrieve dataset information.</p></li>
+<li><p>Read <code class="docutils literal notranslate"><span class="pre">Clump</span></code> and <code class="docutils literal notranslate"><span class="pre">DataBytes</span></code> in <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, then proceed to retrieve and decode image bytes.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span><span class="w"> </span><span class="nn">PyJEM.femtus</span><span class="w"> </span><span class="kn">import</span> <span class="n">worksheet</span>
+<span class="linenos">2</span><span class="n">dataset</span> <span class="o">=</span> <span class="n">worksheet</span><span class="o">.</span><span class="n">get_data_set</span><span class="p">(</span><span class="n">acquisition_result</span><span class="p">[</span><span class="s2">&quot;Results&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;Id&quot;</span><span class="p">])</span>
+<span class="linenos">3</span><span class="n">dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Id&#39;: &#39;050000f2-0944-4e2a-9e00-c5bc4b73642f&#39;,
+ &#39;IsSelected&#39;: False,
+ &#39;Clump&#39;: {&#39;Id&#39;: &#39;4456ca54-c67f-4942-8953-311de9fa7af7&#39;,
+  &#39;Information&#39;: {&#39;Header&#39;: {&#39;Version&#39;: &#39;1.0.0&#39;,
+    &#39;ClumpId&#39;: &#39;4456ca54-c67f-4942-8953-311de9fa7af7&#39;,
+    &#39;DataType&#39;: &#39;STEM_Survey&#39;,
+    &#39;DataSubType&#39;: &#39;&#39;,
+    &#39;DetectorType&#39;: 2,
+    &#39;ClumpType&#39;: &#39;Clump&#39;,
+    &#39;Name&#39;: &#39;&#39;},
+   &#39;DataInformation&#39;: {&#39;TypeInfo&#39;: 0,
+    &#39;DataBytes&#39;: 2,
+    &#39;Channel&#39;: 1,
+    &#39;DimensionLength&#39;: 2,
+    &#39;Dimensions&#39;: [512, 512],
+    &#39;ChannelType&#39;: &#39;&#39;,
+    &#39;IsRangeFixed&#39;: False,
+    &#39;MinimumPossibleIntensity&#39;: -1.7976931348623157e+308,
+    &#39;MaximumPossibleIntensity&#39;: 1.7976931348623157e+308},
+   &#39;MeasurementInformation&#39;: {&#39;CalibrationCoefficients&#39;: [{&#39;Scale&#39;: 14.6875,
+      &#39;Offset&#39;: 0,
+      &#39;Unit&#39;: &#39;Nanometer&#39;},
+     {&#39;Scale&#39;: 14.697265625, &#39;Offset&#39;: 0, &#39;Unit&#39;: &#39;Nanometer&#39;}]},
+   &#39;Tags&#39;: {&#39;General&#39;: {&#39;Manufacturer&#39;: &#39;JEOL Ltd.&#39;,
+     &#39;Comment&#39;: &#39;&#39;,
+     &#39;Specimen&#39;: &#39;Specimen&#39;,
+     &#39;Operator&#39;: &#39;User&#39;,
+     &#39;DateTime&#39;: &#39;20260402105656758&#39;,
+     &#39;ProductName&#39;: &#39;FEMTUS&#39;,
+     &#39;ProductVersion&#39;: &#39;2.0.0&#39;,
+     &#39;UpdateDateTime&#39;: &#39;20260402105656758&#39;,
+     &#39;UpdateProductName&#39;: &#39;FEMTUS&#39;,
+     &#39;UpdateProductVersion&#39;: &#39;2.0.0&#39;,
+     &#39;AnalysisId&#39;: &#39;f4355252-cdf5-49c8-9858-f1d0fb5761b9&#39;,
+     &#39;AnalysisDateTime&#39;: &#39;20260402164541555&#39;,
+     &#39;AcquisitionId&#39;: &#39;f0e78d07-01e2-405a-bea7-ea4031fbe0db&#39;,
+     &#39;AcquisitionDateTime&#39;: &#39;20260402164541555&#39;,
+     &#39;Instrument&#39;: &#39;JEM-ARM200F&#39;},
+    &#39;HT&#39;: {&#39;GunType&#39;: &#39;Cfeg&#39;, &#39;AccelerationVoltage&#39;: 200000, &#39;EnergyShift&#39;: 0},
+    &#39;EOS&#39;: {&#39;OperationMode&#39;: &#39;Scanning&#39;,
+     &#39;SpotSizeNumber&#39;: 0,
+     &#39;ConvergenceAngleAlphaNumber&#39;: 0,
+     &#39;ImageFormingMode&#39;: &#39;MAG&#39;,
+     &#39;RockingAngle&#39;: 0,
+     &#39;MagnificationValue&#39;: 20000,
+     &#39;MagnificationString&#39;: &#39;x20000&#39;,
+     &#39;CameraLength&#39;: 15,
+     &#39;CameraLengthString&#39;: &#39;0.015m&#39;},
+    &#39;Stage&#39;: {&#39;X&#39;: {&#39;Position&#39;: 0},
+     &#39;Y&#39;: {&#39;Position&#39;: 0},
+     &#39;Z&#39;: {&#39;Position&#39;: 0},
+     &#39;TX&#39;: {&#39;Position&#39;: 0},
+     &#39;TY&#39;: {&#39;Position&#39;: 0},
+     &#39;TZ&#39;: {&#39;Position&#39;: 0},
+     &#39;PX&#39;: {&#39;Position&#39;: 0},
+     &#39;PY&#39;: {&#39;Position&#39;: 0},
+     &#39;PZ&#39;: {&#39;Position&#39;: 0}},
+    &#39;ScanGenerator&#39;: {&#39;AreaModeImagingArea&#39;: {&#39;X&#39;: 0,
+      &#39;Y&#39;: 0,
+      &#39;Width&#39;: 512,
+      &#39;Height&#39;: 512},
+     &#39;SpotPosition&#39;: {&#39;X&#39;: 0, &#39;Y&#39;: 0},
+     &#39;ScanMode&#39;: &#39;Full&#39;,
+     &#39;PresetMode&#39;: &#39;Search&#39;,
+     &#39;ExposureTimeValue&#39;: 5,
+     &#39;FrameIntegration&#39;: 1,
+     &#39;ImagingArea&#39;: {&#39;X&#39;: 0, &#39;Y&#39;: 0, &#39;Width&#39;: 512, &#39;Height&#39;: 512},
+     &#39;ScanRotation&#39;: 0},
+    &#39;Detector&#39;: {&#39;DetectorKind&#39;: &#39;HAADF&#39;,
+     &#39;Manufacturer&#39;: &#39;Manufacture&#39;,
+     &#39;ModelCode&#39;: &#39;ModelCode&#39;,
+     &#39;ModelDisplayName&#39;: &#39;DisplayName&#39;,
+     &#39;GainIndex&#39;: 50,
+     &#39;OffsetIndex&#39;: 50,
+     &#39;PixelsPerMeter&#39;: {&#39;Horizontal&#39;: 3404.255319148936,
+      &#39;Vertical&#39;: 3401.9933554817276}}}},
+  &#39;ViewInformation&#39;: {&#39;Header&#39;: {&#39;Version&#39;: &#39;2.0.0&#39;,
+    &#39;ClumpId&#39;: &#39;4456ca54-c67f-4942-8953-311de9fa7af7&#39;},
+   &#39;Tags&#39;: {}}}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">img</span> <span class="o">=</span> <span class="n">worksheet</span><span class="o">.</span><span class="n">get_clump_num_array_accessor</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;Clump&quot;</span><span class="p">][</span><span class="s2">&quot;Id&quot;</span><span class="p">])</span>
+<span class="linenos">2</span><span class="nb">type</span><span class="p">(</span><span class="n">img</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(bytes, 524288)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="convert-byte-data-to-an-image-and-display">
+<h3>7) Convert byte data to an image and display<a class="headerlink" href="#convert-byte-data-to-an-image-and-display" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">get_clump_num_array_accessor</span></code> returns raw byte data.
+In the next cell, convert the bytes to a NumPy array, reshape to a 2D image, and display it with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1"># get_clump_num_array_accessor returns raw bytes.</span>
+<span class="linenos"> 5</span><span class="c1"># Select dtype from DataBytes when available: 1 -&gt; uint8, 2 -&gt; uint16.</span>
+<span class="linenos"> 6</span><span class="n">data_bytes</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;Clump&quot;</span><span class="p">][</span><span class="s2">&quot;Information&quot;</span><span class="p">][</span><span class="s2">&quot;DataInformation&quot;</span><span class="p">][</span><span class="s2">&quot;DataBytes&quot;</span><span class="p">]</span>
+<span class="linenos"> 7</span><span class="n">size</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;Clump&quot;</span><span class="p">][</span><span class="s2">&quot;Information&quot;</span><span class="p">][</span><span class="s2">&quot;DataInformation&quot;</span><span class="p">][</span><span class="s2">&quot;Dimensions&quot;</span><span class="p">]</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="k">if</span> <span class="n">data_bytes</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">10</span>    <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span>
+<span class="linenos">11</span><span class="k">elif</span> <span class="n">data_bytes</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="linenos">12</span>    <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint16</span>
+<span class="linenos">13</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">14</span>    <span class="c1"># Fallback when DataBytes is unavailable in the returned dataset structure.</span>
+<span class="linenos">15</span>    <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint16</span> <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="linenos">18</span><span class="k">if</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">arr</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+<span class="linenos">19</span>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot infer square image shape from element count: </span><span class="si">{</span><span class="n">arr</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="n">img_array</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">22</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x2a5596e24a0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/ab621e3ff7e3fabd320373d21dcf335e9c0d689cfc8bb25af2d775eb43c64add.png" src="../../_images/ab621e3ff7e3fabd320373d21dcf335e9c0d689cfc8bb25af2d775eb43c64add.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="3_tarin_tem3.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">TEM3: control magnification</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="1_service_check.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Service connectivity check</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; Copyright 2016-2026 JEOL Ltd.
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">About detector/camera control packages</a><ul>
+<li><a class="reference internal" href="#package-summary">Package summary</a></li>
+<li><a class="reference internal" href="#how-to-use-this-page">How to use this page</a></li>
+<li><a class="reference internal" href="#section-a-detector-detectorext-sightx">Section A: <code class="docutils literal notranslate"><span class="pre">detector</span></code>, <code class="docutils literal notranslate"><span class="pre">detectorext</span></code>, <code class="docutils literal notranslate"><span class="pre">sightx</span></code></a><ul>
+<li><a class="reference internal" href="#import-package">0. Import package</a></li>
+<li><a class="reference internal" href="#get-usable-detector-camera-names">1. Get usable detector/camera names</a></li>
+<li><a class="reference internal" href="#get-detector-camera-information">2. Get detector/camera information</a></li>
+<li><a class="reference internal" href="#change-detector-camera-setting-example-gain">3. Change detector/camera setting (example: gain)</a></li>
+<li><a class="reference internal" href="#capture-image-with-selected-detector-camera">4. Capture image with selected detector/camera</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#section-b-femtus-acquisition">Section B: <code class="docutils literal notranslate"><span class="pre">femtus.acquisition</span></code></a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#check-available-detectors">1) Check available detectors</a></li>
+<li><a class="reference internal" href="#check-acquisition-status">2) Check acquisition status</a></li>
+<li><a class="reference internal" href="#get-settings-and-create-a-payload">3) Get settings and create a payload</a></li>
+<li><a class="reference internal" href="#start-acquisition">4) Start acquisition</a></li>
+<li><a class="reference internal" href="#stop-acquisition">4.1) Stop acquisition</a></li>
+<li><a class="reference internal" href="#get-acquisition-result">5) Get acquisition result</a></li>
+<li><a class="reference internal" href="#how-to-get-image-information-from-acquisition-results">6) How to get image information from acquisition results</a></li>
+<li><a class="reference internal" href="#convert-byte-data-to-an-image-and-display">7) Convert byte data to an image and display</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=8b21d8d7"></script>
+    </body>
+</html>

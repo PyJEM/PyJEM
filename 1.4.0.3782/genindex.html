@@ -1,0 +1,2631 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#"><link rel="search" title="Search" href="search.html">
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2025.12.19 --><title>Index - PyJEM 1.4.0 documentation</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/graph.css?v=93825b67" />
+    <link rel="stylesheet" type="text/css" href="_static/notebook_io.css?v=410734c9" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">PyJEM 1.4.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">PyJEM 1.4.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="Forum/Introduction.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Installation/index.html">Setup</a><input aria-label="Toggle navigation of Setup" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Installation/Miniconda.html">Step 1. Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation/vjem.html">Step 2. vjem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation/PyJEM.html">Step 3. PyJEM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation/Appendix/index.html">Appendix:</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Tutorial/index.html">Tutorial</a><input aria-label="Toggle navigation of Tutorial" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/0_getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/1_service_check.html">Service connectivity check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/2_control_detector_packages.html">About detector/camera control packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/3_tarin_tem3.html">TEM3: control magnification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/4_TEM3_Exception.html">TEM3: Exception handling &amp; change timeout period</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/5_tem3_autoflashing.html">TEM3: AutoFlashing Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/6_tem3_event.html">TEM3: event tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/8_eels_acquisition.html">EELS: Acquisition and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial/train/9_femtus_sheet.html">FEMTUS: worksheet / repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interface/index.html">API Reference</a><input aria-label="Toggle navigation of API Reference" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="interface/PyJEM.detector.html">PyJEM.detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface/PyJEM.detectorext.html">PyJEM.detectorext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface/PyJEM.edm.html">PyJEM.edm</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="interface/PyJEM.eds.html">PyJEM.eds</a><input aria-label="Toggle navigation of PyJEM.eds" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.eds.acquisition.html">PyJEM.eds.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.eds.analysis.html">PyJEM.eds.analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.eds.interface.html">PyJEM.eds.interface</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="interface/PyJEM.eels.html">PyJEM.eels</a><input aria-label="Toggle navigation of PyJEM.eels" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.eels.acquisition.html">PyJEM.eels.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.eels.line.html">PyJEM.eels.line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.eels.sicube.html">PyJEM.eels.sicube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.eels.spectrum.html">PyJEM.eels.spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="interface/PyJEM.eftem.html">PyJEM.eftem</a><input aria-label="Toggle navigation of PyJEM.eftem" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.eftem.analysis.html">PyJEM.eftem.analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="interface/PyJEM.femtus.html">PyJEM.femtus</a><input aria-label="Toggle navigation of PyJEM.femtus" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.acquisition.html">PyJEM.femtus.acquisition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.detector.html">PyJEM.femtus.detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.image_color.html">PyJEM.femtus.image_color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.log.html">PyJEM.femtus.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.output.html">PyJEM.femtus.output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.params.html">PyJEM.femtus.params</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.process.html">PyJEM.femtus.process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.repository.html">PyJEM.femtus.repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.femtus.worksheet.html">PyJEM.femtus.worksheet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="interface/PyJEM.sightx.html">PyJEM.sightx</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="interface/PyJEM.stem4d.html">PyJEM.stem4d</a><input aria-label="Toggle navigation of PyJEM.stem4d" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.stem4d.acquisition.html">PyJEM.stem4d.acquisition</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="interface/PyJEM.TEM3.html">PyJEM.TEM3</a><input aria-label="Toggle navigation of PyJEM.TEM3" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__apt.html">PyJEM.TEM3.__apt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__camera.html">PyJEM.TEM3.__camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__deflector.html">PyJEM.TEM3.__deflector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__detector.html">PyJEM.TEM3.__detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__eos.html">PyJEM.TEM3.__eos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__feg.html">PyJEM.TEM3.__feg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__fil.html">PyJEM.TEM3.__fil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__gun.html">PyJEM.TEM3.__gun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__ht.html">PyJEM.TEM3.__ht</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__lens.html">PyJEM.TEM3.__lens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__mds.html">PyJEM.TEM3.__mds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__nitro.html">PyJEM.TEM3.__nitro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__scan.html">PyJEM.TEM3.__scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__stage.html">PyJEM.TEM3.__stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.__vacuum.html">PyJEM.TEM3.__vacuum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.event.html">PyJEM.TEM3.event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface/PyJEM.TEM3.exception.html">PyJEM.TEM3.exception</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="interface/TEM3IF.html">PyJEM.TEM3 Interface Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Log/index.html">What is New</a><input aria-label="Toggle navigation of What is New" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Log/Logs/Version%201.4.0.html">Version 1.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log/Logs/Version%201.3.14.html">Version 1.3.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log/Logs/Version%201.3.0.html">Version 1.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log/Logs/Version%201.2.0.html">Version 1.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log/Logs/Version%201.1.1.html">Version 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Log/Logs/Version%201.1.0.html">Version 1.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          
+<section class="genindex-section">
+  <h1 id="index">Index</h1>
+  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#Q"><strong>Q</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a> | <a href="#Z"><strong>Z</strong></a></div>
+</section>
+<section id="_" class="genindex-section">
+  <h2>_</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface._body_check">_body_check() (in module PyJEM.eds.interface)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params._dict_to_dataclass">_dict_to_dataclass() (in module PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params._list_to_dataclass">_list_to_dataclass() (in module PyJEM.femtus.params)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="A" class="genindex-section">
+  <h2>A</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.ColorParams.A">A (PyJEM.femtus.output.ColorParams attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Config.AccelarationVoltage">AccelarationVoltage (PyJEM.femtus.params.Config attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.acquire_image">acquire_image() (PyJEM.detectorext.Detector method)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.AcquisitionSettingParam">AcquisitionSettingParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.activate_worksheet">activate_worksheet() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.activate_worksheet_element">activate_worksheet_element() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.ALLOC">ALLOC (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.AnalyzerParam">AnalyzerParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Apt">Apt (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3">Apt3 (class in PyJEM.TEM3.__apt)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.ARG">ARG (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.assign_channel">assign_channel() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.assign_channel">(in module PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.assign_channel">(in module PyJEM.sightx)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestChemicalElement.AtomicNumber">AtomicNumber (PyJEM.femtus.params.RestChemicalElement attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.AutoContrastBrightness">AutoContrastBrightness() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.AutoContrastBrightness">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.AutoFocus">AutoFocus() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.AutoFocus">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.AutoOrientation">AutoOrientation() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.AutoOrientation">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.AutoqualitativeParam">AutoqualitativeParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.AutoStigmator">AutoStigmator() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.AutoStigmator">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.AutoZ">AutoZ() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.AutoZ">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.ColorParams.B">B (PyJEM.femtus.output.ColorParams attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.BinaryParam">BinaryParam (class in PyJEM.eds.interface)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.binning">binning() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.BUSY">BUSY (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.eels.spectrum.html#PyJEM.eels.spectrum.calculate_thickness">calculate_thickness() (in module PyJEM.eels.spectrum)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Camera">Camera (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3">Camera3 (class in PyJEM.TEM3.__camera)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.repository.html#PyJEM.femtus.repository.can_write_plainsheet">can_write_plainsheet() (in module PyJEM.femtus.repository)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedAcdHeatEnd">ChangedAcdHeatEnd (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedAcdHeatStart">ChangedAcdHeatStart (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedBakeOutEnd">ChangedBakeOutEnd (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedBakeOutStart">ChangedBakeOutStart (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedGIFMode">ChangedGIFMode (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedHomePositionOfDeflector">ChangedHomePositionOfDeflector (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedRelativeValueOfDeflector">ChangedRelativeValueOfDeflector (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedSaafLimitStatus">ChangedSaafLimitStatus (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedSaafMode">ChangedSaafMode (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedSaafPosition">ChangedSaafPosition (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedSaafRotationAngle">ChangedSaafRotationAngle (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedSaafRotationStatus">ChangedSaafRotationStatus (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedStageNeutralStart">ChangedStageNeutralStart (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangedTemStemMode">ChangedTemStemMode (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangeSpectrumMode">ChangeSpectrumMode (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChangingTemStemMode">ChangingTemStemMode (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.check_communication">check_communication() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.check_connection">check_connection() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.check_connection">(in module PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.edm.html#PyJEM.edm.check_connection">(in module PyJEM.edm)</a>
+</li>
+          <li><a href="interface/PyJEM.eds.html#PyJEM.eds.check_connection">(in module PyJEM.eds)</a>
+</li>
+          <li><a href="interface/PyJEM.eels.html#PyJEM.eels.check_connection">(in module PyJEM.eels)</a>
+</li>
+          <li><a href="interface/PyJEM.eftem.html#PyJEM.eftem.check_connection">(in module PyJEM.eftem)</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.html#PyJEM.femtus.check_connection">(in module PyJEM.femtus)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.check_connection">(in module PyJEM.sightx)</a>
+</li>
+          <li><a href="interface/PyJEM.stem4d.html#PyJEM.stem4d.check_connection">(in module PyJEM.stem4d)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestChemicalElementsParameter.ChemicalElements">ChemicalElements (PyJEM.femtus.params.RestChemicalElementsParameter attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgAlpha">ChgAlpha (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgApertureEx">ChgApertureEx (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgBrightnessZoomOnOff">ChgBrightnessZoomOnOff (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgContBrtInfo">ChgContBrtInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgCorrectorSw">ChgCorrectorSw (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgDefADInfo">ChgDefADInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgDefImgShift1">ChgDefImgShift1 (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgDefImgShift2">ChgDefImgShift2 (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgDefInfo">ChgDefInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgDefObjStig">ChgDefObjStig (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgDefocus">ChgDefocus (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgDetStts">ChgDetStts (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgDispersion">ChgDispersion (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgEngShift">ChgEngShift (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgEngShiftSw">ChgEngShiftSw (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgFunctionMode">ChgFunctionMode (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgHT">ChgHT (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgHtCurrentInfo">ChgHtCurrentInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgIlmMode">ChgIlmMode (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgImageSwStts">ChgImageSwStts (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgLensADInfo">ChgLensADInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgLensInfo">ChgLensInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgLensRelaxation">ChgLensRelaxation (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgMag">ChgMag (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgOLSuperFine">ChgOLSuperFine (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgOmegaAutoTune">ChgOmegaAutoTune (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgPegInfo">ChgPegInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgPenningInfo">ChgPenningInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgPhasePlateState">ChgPhasePlateState (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgPiezoX">ChgPiezoX (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgPiezoY">ChgPiezoY (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgPiezoZ">ChgPiezoZ (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgPigInfo">ChgPigInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgPiraniInfo">ChgPiraniInfo (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgRefillStatus">ChgRefillStatus (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgScanRotationAngleEx">ChgScanRotationAngleEx (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgScenarioStatus">ChgScenarioStatus (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgSlitPosition">ChgSlitPosition (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgSlitWidth">ChgSlitWidth (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgSpotsize">ChgSpotsize (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageR">ChgStageR (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageRotationCorrectionAngle">ChgStageRotationCorrectionAngle (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageStts">ChgStageStts (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageSttsEx">ChgStageSttsEx (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageTX">ChgStageTX (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageTY">ChgStageTY (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageX">ChgStageX (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageY">ChgStageY (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStageZ">ChgStageZ (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgStemCam">ChgStemCam (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ChgTemStemMode">ChgTemStemMode (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.OutputParams.Color">Color (PyJEM.femtus.output.OutputParams attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.ColorParams">ColorParams (class in PyJEM.femtus.output)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Config">Config (class in PyJEM.femtus.params)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestQuantitativeMapParameter.Config">(PyJEM.femtus.params.RestQuantitativeMapParameter attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.TEM3.html#PyJEM.TEM3.connect">connect() (in module PyJEM.TEM3)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.copy_active_worksheet">copy_active_worksheet() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Config.CoreLossCrossSection">CoreLossCrossSection (PyJEM.femtus.params.Config attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Config.CorrectionAngle">CorrectionAngle (PyJEM.femtus.params.Config attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.line.html#PyJEM.eels.line.create_count_line">create_count_line() (in module PyJEM.eels.line)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.create_count_map">create_count_map() (in module PyJEM.eds.analysis)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.eels.sicube.html#PyJEM.eels.sicube.create_count_map">(in module PyJEM.eels.sicube)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.eels.line.html#PyJEM.eels.line.create_line_whole_spectrum">create_line_whole_spectrum() (in module PyJEM.eels.line)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.create_net_count_map">create_net_count_map() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.line.html#PyJEM.eels.line.create_quantitative_line">create_quantitative_line() (in module PyJEM.eels.line)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.create_quantitative_map">create_quantitative_map() (in module PyJEM.eds.analysis)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.eels.sicube.html#PyJEM.eels.sicube.create_quantitative_map">(in module PyJEM.eels.sicube)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.eftem.analysis.html#PyJEM.eftem.analysis.create_quantitativemap_with_three_window">create_quantitativemap_with_three_window() (in module PyJEM.eftem.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eftem.analysis.html#PyJEM.eftem.analysis.create_quantitativemap_with_two_window">create_quantitativemap_with_two_window() (in module PyJEM.eftem.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.sicube.html#PyJEM.eels.sicube.create_si_cube_whole_spectrum">create_si_cube_whole_spectrum() (in module PyJEM.eels.sicube)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.line.html#PyJEM.eels.line.create_thickness_line">create_thickness_line() (in module PyJEM.eels.line)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.sicube.html#PyJEM.eels.sicube.create_thickness_map">create_thickness_map() (in module PyJEM.eels.sicube)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.eftem.analysis.html#PyJEM.eftem.analysis.create_thickness_map">(in module PyJEM.eftem.analysis)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.create_worksheet">create_worksheet() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.LogKind.Critical">Critical (PyJEM.femtus.log.LogKind attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="D" class="genindex-section">
+  <h2>D</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.dataclass_to_dict">dataclass_to_dict() (in module PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.dataclass_to_dict_recursive">dataclass_to_dict_recursive() (in module PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Def">Def (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3">Def3 (class in PyJEM.TEM3.__deflector)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.delete_outputs">delete_outputs() (in module PyJEM.femtus.output)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.delete_worksheet">delete_worksheet() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector">Detector (class in PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector">(class in PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector">(class in PyJEM.sightx)</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Detector">(PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3">Detector3 (class in PyJEM.TEM3.__detector)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.DetectorStatusParam">DetectorStatusParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.dict_to_dataclass">dict_to_dataclass() (in module PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestSetCalibrationResultParameter.Dispersion">Dispersion (PyJEM.femtus.params.RestSetCalibrationResultParameter attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.DownSelector">DownSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.DownSpctrSelector">DownSpctrSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.DownStemCamSelector">DownStemCamSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="E" class="genindex-section">
+  <h2>E</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestChemicalElement.ElectronShell">ElectronShell (PyJEM.femtus.params.RestChemicalElement attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.ElementParam">ElementParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateQuantDataResult.ElementShellName">ElementShellName (PyJEM.femtus.params.RestCalculateQuantDataResult attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__mds.html#PyJEM.TEM3.__mds.MDS3.EndMdsMode">EndMdsMode() (PyJEM.TEM3.__mds.MDS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.EOS">EOS (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3">EOS3 (class in PyJEM.TEM3.__eos)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.LogKind.Error">Error (PyJEM.femtus.log.LogKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind">ErrorCodeKind (class in PyJEM.TEM3.exception)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind">ErrorTypeKind (class in PyJEM.TEM3.exception)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventData">EventData (class in PyJEM.TEM3.event)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind">EventKind (class in PyJEM.TEM3.event)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager">EventManager (class in PyJEM.TEM3.event)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3.ExecAutoFlashing">ExecAutoFlashing() (PyJEM.TEM3.__feg.FEG3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3.ExecEmissionOn">ExecEmissionOn() (PyJEM.TEM3.__feg.FEG3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__nitro.html#PyJEM.TEM3.__nitro.Nitrogen3.ExecRefill">ExecRefill() (PyJEM.TEM3.__nitro.Nitrogen3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.execute_autoqualitative_analysis">execute_autoqualitative_analysis() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.execute_count_line_analysis">execute_count_line_analysis() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.execute_net_count_line_analysis">execute_net_count_line_analysis() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.execute_quantitative_line_analysis">execute_quantitative_line_analysis() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.execute_quantitative_spectrum_analysis">execute_quantitative_spectrum_analysis() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.ExposeShutter">ExposeShutter() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.extract">extract() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.extract_area_spectrum">extract_area_spectrum() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.extract_line_spectrum">extract_line_spectrum() (in module PyJEM.eds.analysis)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="F" class="genindex-section">
+  <h2>F</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.FEG">FEG (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3">FEG3 (class in PyJEM.TEM3.__feg)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.fft">fft() (in module PyJEM.femtus.process)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Filter">Filter (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3">Filter3 (class in PyJEM.TEM3.__fil)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestSetCalibrationResultParameter.FirstEnergyLoss">FirstEnergyLoss (PyJEM.femtus.params.RestSetCalibrationResultParameter attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.flip">flip() (in module PyJEM.femtus.process)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="G" class="genindex-section">
+  <h2>G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.ColorParams.G">G (PyJEM.femtus.output.ColorParams attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.general">general (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.get_acquired_image_count">get_acquired_image_count() (PyJEM.detectorext.Detector method)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.get_acquired_images">get_acquired_images() (PyJEM.detectorext.Detector method)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.get_acquisition_result">get_acquisition_result() (in module PyJEM.eds.acquisition)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.acquisition.html#PyJEM.femtus.acquisition.get_acquisition_result">(in module PyJEM.femtus.acquisition)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.get_acquisition_settings">get_acquisition_settings() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.get_acquisition_status">get_acquisition_status() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.get_analysis_settings">get_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.get_analysis_status">get_analysis_status() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.get_analyzer_settings">get_analyzer_settings() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.get_analyzer_status">get_analyzer_status() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.get_assignChannels">get_assignChannels() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.get_assignChannels">(in module PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.get_assignChannels">(in module PyJEM.sightx)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.get_attached_detector">get_attached_detector() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.get_attached_detector">(in module PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.get_attached_detector">(in module PyJEM.sightx)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_b1_enable">get_b1_enable() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_b2_enable">get_b2_enable() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_b3_enable">get_b3_enable() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_beam_blank">get_beam_blank() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.acquisition.html#PyJEM.eels.acquisition.get_camera">get_camera() (in module PyJEM.eels.acquisition)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.stem4d.acquisition.html#PyJEM.stem4d.acquisition.get_camera">(in module PyJEM.stem4d.acquisition)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.detector.html#PyJEM.femtus.detector.get_camera_command_names">get_camera_command_names() (in module PyJEM.femtus.detector)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.sicube.html#PyJEM.eels.sicube.get_chemical_elements">get_chemical_elements() (in module PyJEM.eels.sicube)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_clump">get_clump() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_clump_num_array">get_clump_num_array() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_clump_num_array_accessor">get_clump_num_array_accessor() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.get_config">get_config() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.get_config">(in module PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_config">(in module PyJEM.edm)</a>
+</li>
+          <li><a href="interface/PyJEM.eds.html#PyJEM.eds.get_config">(in module PyJEM.eds)</a>
+</li>
+          <li><a href="interface/PyJEM.eels.html#PyJEM.eels.get_config">(in module PyJEM.eels)</a>
+</li>
+          <li><a href="interface/PyJEM.eftem.html#PyJEM.eftem.get_config">(in module PyJEM.eftem)</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.html#PyJEM.femtus.get_config">(in module PyJEM.femtus)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.get_config">(in module PyJEM.sightx)</a>
+</li>
+          <li><a href="interface/PyJEM.stem4d.html#PyJEM.stem4d.get_config">(in module PyJEM.stem4d)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_data_set">get_data_set() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_data_set_processor">get_data_set_processor() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.get_default_image_filters">get_default_image_filters() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.detector.html#PyJEM.femtus.detector.get_detector_command_name">get_detector_command_name() (in module PyJEM.femtus.detector)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.get_detector_configuration">get_detector_configuration() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.get_detector_status">get_detector_status() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.acquisition.html#PyJEM.femtus.acquisition.get_detectors">get_detectors() (in module PyJEM.femtus.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.get_detectorsetting">get_detectorsetting() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.get_detectorsetting">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.get_detectorsetting">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_duty_percent">get_duty_percent() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_enable_modulation">get_enable_modulation() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.get_event">get_event() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_frequency_hz">get_frequency_hz() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_graph_content">get_graph_content() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_id_settings">get_id_settings() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.get_image_cache">get_image_cache() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.get_image_cache">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_image_content">get_image_content() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.get_insert_state">get_insert_state() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.get_insert_state">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.get_linedata">get_linedata() (PyJEM.detectorext.Detector method)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.get_lookuptable">get_lookuptable() (in module PyJEM.detectorext)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.get_LUTscansetting">get_LUTscansetting() (in module PyJEM.detectorext)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.get_map_image_size">get_map_image_size() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.get_net_count_line_analysis_settings">get_net_count_line_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.get_net_count_map_analysis_settings">get_net_count_map_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.get_quantitative_line_analysis_settings">get_quantitative_line_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.get_quantitative_map_analysis_settings">get_quantitative_map_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.get_quantitative_spectrum_analysis_settings">get_quantitative_spectrum_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.detector.html#PyJEM.femtus.detector.get_scan_detector_command_names">get_scan_detector_command_names() (in module PyJEM.femtus.detector)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.get_selectdata">get_selectdata() (PyJEM.detectorext.Detector method)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.acquisition.html#PyJEM.femtus.acquisition.get_settings">get_settings() (in module PyJEM.femtus.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.get_specification">get_specification() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.acquisition.html#PyJEM.femtus.acquisition.get_status">get_status() (in module PyJEM.femtus.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.get_use_id">get_use_id() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_worksheet">get_worksheet() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_worksheet_element">get_worksheet_element() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.get_worksheets">get_worksheets() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetAccelAndDclrRate">GetAccelAndDclrRate() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetAlpha">GetAlpha() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetAlphaSelectorEx">GetAlphaSelectorEx() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetAngBal">GetAngBal() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetAnode1CurrentValue">GetAnode1CurrentValue() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetAnode2CurrentValue">GetAnode2CurrentValue() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3.GetAutoFlashingStatus">GetAutoFlashingStatus() (PyJEM.TEM3.__feg.FEG3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetBeamBlank">GetBeamBlank() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetBeamSw">GetBeamSw() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3.GetBeamValve">GetBeamValve() (PyJEM.TEM3.__feg.FEG3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetBiasCurrentValue">GetBiasCurrentValue() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetBrightnessZoom">GetBrightnessZoom() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.GetBrt">GetBrt() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetCameraAir">GetCameraAir() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetCameraReady">GetCameraReady() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetCL1">GetCL1() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetCL2">GetCL2() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetCL3">GetCL3() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetCLA1">GetCLA1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetCLA2">GetCLA2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetCLs">GetCLs() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetCM">GetCM() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetColumnAir">GetColumnAir() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetColumnReady">GetColumnReady() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.GetCont">GetCont() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.GetContBrtInfo">GetContBrtInfo() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetCorrection">GetCorrection() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.GetCurrentDensity">GetCurrentDensity() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetCurrentMagSelectorID">GetCurrentMagSelectorID() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__nitro.html#PyJEM.TEM3.__nitro.Nitrogen3.GetCurrentScenarioStatus">GetCurrentScenarioStatus() (PyJEM.TEM3.__nitro.Nitrogen3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetDefInfo">GetDefInfo() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetDefocus">GetDefocus() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetDetAlign">GetDetAlign() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetDirection">GetDirection() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetDrvMode">GetDrvMode() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetEmissionCurrentValue">GetEmissionCurrentValue() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3.GetEmissionOnStatus">GetEmissionOnStatus() (PyJEM.TEM3.__feg.FEG3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.GetEnergyShift">GetEnergyShift() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.GetEnergyShiftRange">GetEnergyShiftRange() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.GetEnergyShiftSw">GetEnergyShiftSw() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.GetExpKind">GetExpKind() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.GetExpSize">GetExpSize() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.GetExpTime">GetExpTime() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3.GetExtScanMode">GetExtScanMode() (PyJEM.TEM3.__scan.Scan3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.Getf1OverRate">Getf1OverRate() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.Getf1OverRateTxNum">Getf1OverRateTxNum() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetFilamentCurrentValue">GetFilamentCurrentValue() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetFilamentVal">GetFilamentVal() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.GetFilmLoadingMode">GetFilmLoadingMode() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetFLA1">GetFLA1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetFLA2">GetFLA2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetFLc">GetFLc() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetFLCInfo">GetFLCInfo() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetFLcomp1">GetFLcomp1() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetFLcomp2">GetFLcomp2() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetFLf">GetFLf() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetFLs1">GetFLs1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetFLs2">GetFLs2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetFunctionMode">GetFunctionMode() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetGIF">GetGIF() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetGunA1">GetGunA1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetGunA2">GetGunA2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetGunTypeEx">GetGunTypeEx() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetHolderStts">GetHolderStts() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetHtCurrentValue">GetHtCurrentValue() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetHtMonitorValue">GetHtMonitorValue() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__ht.html#PyJEM.TEM3.__ht.HT3.GetHtRange">GetHtRange() (PyJEM.TEM3.__ht.HT3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetHtStts">GetHtStts() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.GetHtTargetValue">GetHtTargetValue() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__ht.html#PyJEM.TEM3.__ht.HT3.GetHtValue">GetHtValue() (PyJEM.TEM3.__ht.HT3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetIL1">GetIL1() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetIL2">GetIL2() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetIL3">GetIL3() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetIL4">GetIL4() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetILs">GetILs() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.GetImageSw">GetImageSw() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetIS1">GetIS1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetIS2">GetIS2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.GetKind">GetKind() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetLensInfo">GetLensInfo() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__nitro.html#PyJEM.TEM3.__nitro.Nitrogen3.GetLiquidLevel">GetLiquidLevel() (PyJEM.TEM3.__nitro.Nitrogen3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetMagAdjust">GetMagAdjust() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__nitro.html#PyJEM.TEM3.__nitro.Nitrogen3.GetMagazineExistStatus">GetMagazineExistStatus() (PyJEM.TEM3.__nitro.Nitrogen3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetMagValue">GetMagValue() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__mds.html#PyJEM.TEM3.__mds.MDS3.GetMdsMode">GetMdsMode() (PyJEM.TEM3.__mds.MDS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.GetMode">GetMode() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetMovementValueMeasurementMethod">GetMovementValueMeasurementMethod() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3.GetNoiseCancellerVal">GetNoiseCancellerVal() (PyJEM.TEM3.__scan.Scan3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetOffset">GetOffset() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetOLc">GetOLc() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetOLf">GetOLf() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetOLs">GetOLs() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetOLSuperFineSw">GetOLSuperFineSw() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetOLSuperFineValue">GetOLSuperFineValue() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetOM">GetOM() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetOM2">GetOM2() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetOM2Flag">GetOM2Flag() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.GetOmegaAutoTune">GetOmegaAutoTune() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetPegInfo">GetPegInfo() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.GetPhasePlateState">GetPhasePlateState() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.GetPhotoMode">GetPhotoMode() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetPiezoPosi">GetPiezoPosi() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetPigInfo">GetPigInfo() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetPL1">GetPL1() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetPL2">GetPL2() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.GetPL3">GetPL3() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetPLA">GetPLA() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetPos">GetPos() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetPosEx">GetPosEx() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.GetPosition">GetPosition() (PyJEM.TEM3.__apt.Apt3 method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.GetPosition">(PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetProbeMode">GetProbeMode() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__nitro.html#PyJEM.TEM3.__nitro.Nitrogen3.GetRefillStatus">GetRefillStatus() (PyJEM.TEM3.__nitro.Nitrogen3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetRotation">GetRotation() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3.GetRotationAngle">GetRotationAngle() (PyJEM.TEM3.__scan.Scan3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3.GetRotationAngleEx">GetRotationAngleEx() (PyJEM.TEM3.__scan.Scan3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__nitro.html#PyJEM.TEM3.__nitro.Nitrogen3.GetSampleInformation">GetSampleInformation() (PyJEM.TEM3.__nitro.Nitrogen3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetScan1">GetScan1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetScan2">GetScan2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.GetScreen">GetScreen() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetShifBal">GetShifBal() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.GetShutterPosition">GetShutterPosition() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.GetSize">GetSize() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.GetSlitPosition">GetSlitPosition() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.GetSlitWidth">GetSlitWidth() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.GetSlitWidthRange">GetSlitWidthRange() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetSpctrMode">GetSpctrMode() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetSpctrValue">GetSpctrValue() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetSpecimenAir">GetSpecimenAir() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetSpecimenPreEvacStart">GetSpecimenPreEvacStart() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetSpecimenReady">GetSpecimenReady() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetSpeedMode">GetSpeedMode() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetSpeedModeEx">GetSpeedModeEx() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetSpotA">GetSpotA() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetSpotSize">GetSpotSize() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.GetStatus">GetStatus() (PyJEM.TEM3.__camera.Camera3 method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetStatus">(PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.GetStatusEx">GetStatusEx() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetStemCamValue">GetStemCamValue() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetStemIS">GetStemIS() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.GetTemStemMode">GetTemStemMode() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.GetTiltBal">GetTiltBal() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.GetUnused">GetUnused() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3.GetV1Ready">GetV1Ready() (PyJEM.TEM3.__feg.FEG3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.GetValveStatus">GetValveStatus() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Gonio">Gonio (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.GUN">GUN (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3">GUN3 (class in PyJEM.TEM3.__gun)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.GUNTYPE">GUNTYPE (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="H" class="genindex-section">
+  <h2>H</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.hide_worksheet_element">hide_worksheet_element() (in module PyJEM.femtus.worksheet)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.HT">HT (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__ht.html#PyJEM.TEM3.__ht.HT3">HT3 (class in PyJEM.TEM3.__ht)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="I" class="genindex-section">
+  <h2>I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.I_ARG">I_ARG (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCommonParameter.Ids">Ids (PyJEM.femtus.params.RestCommonParameter attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.ifft">ifft() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.image_filters">image_filters() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.LogKind.Information">Information (PyJEM.femtus.log.LogKind attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.insert">insert() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.insert">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.integrate">integrate() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.html#PyJEM.TEM3.isconnect">isconnect() (in module PyJEM.TEM3)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Config.IsUseZlp">IsUseZlp (PyJEM.femtus.params.Config attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.label">label (PyJEM.TEM3.exception.ErrorCodeKind property)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Lens">Lens (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3">Lens3 (class in PyJEM.TEM3.__lens)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.ListField">ListField (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.livesnapshot">livesnapshot() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.livesnapshot">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.livesnapshot">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.livestart">livestart() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.livestart">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.livestart">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.livestop">livestop() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.livestop">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.livestop">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.LogKind">LogKind (class in PyJEM.femtus.log)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="M" class="genindex-section">
+  <h2>M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.MDS">MDS (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__mds.html#PyJEM.TEM3.__mds.MDS3">MDS3 (class in PyJEM.TEM3.__mds)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.OutputParams.Message">Message (PyJEM.femtus.output.OutputParams attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.method_list">method_list() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Spectrum.Mode">Mode (PyJEM.femtus.params.Spectrum attribute)</a>
+</li>
+        <li>
+    module
+
+        <ul>
+          <li><a href="interface/PyJEM.detector.html#module-PyJEM.detector">PyJEM.detector</a>
+</li>
+          <li><a href="interface/PyJEM.detectorext.html#module-PyJEM.detectorext">PyJEM.detectorext</a>
+</li>
+          <li><a href="interface/PyJEM.edm.html#module-PyJEM.edm">PyJEM.edm</a>
+</li>
+          <li><a href="interface/PyJEM.eds.html#module-PyJEM.eds">PyJEM.eds</a>
+</li>
+          <li><a href="interface/PyJEM.eds.acquisition.html#module-PyJEM.eds.acquisition">PyJEM.eds.acquisition</a>
+</li>
+          <li><a href="interface/PyJEM.eds.analysis.html#module-PyJEM.eds.analysis">PyJEM.eds.analysis</a>
+</li>
+          <li><a href="interface/PyJEM.eds.interface.html#module-PyJEM.eds.interface">PyJEM.eds.interface</a>
+</li>
+          <li><a href="interface/PyJEM.eels.html#module-PyJEM.eels">PyJEM.eels</a>
+</li>
+          <li><a href="interface/PyJEM.eels.acquisition.html#module-PyJEM.eels.acquisition">PyJEM.eels.acquisition</a>
+</li>
+          <li><a href="interface/PyJEM.eels.line.html#module-PyJEM.eels.line">PyJEM.eels.line</a>
+</li>
+          <li><a href="interface/PyJEM.eels.sicube.html#module-PyJEM.eels.sicube">PyJEM.eels.sicube</a>
+</li>
+          <li><a href="interface/PyJEM.eels.spectrum.html#module-PyJEM.eels.spectrum">PyJEM.eels.spectrum</a>
+</li>
+          <li><a href="interface/PyJEM.eftem.html#module-PyJEM.eftem">PyJEM.eftem</a>
+</li>
+          <li><a href="interface/PyJEM.eftem.analysis.html#module-PyJEM.eftem.analysis">PyJEM.eftem.analysis</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.html#module-PyJEM.femtus">PyJEM.femtus</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.acquisition.html#module-PyJEM.femtus.acquisition">PyJEM.femtus.acquisition</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.detector.html#module-PyJEM.femtus.detector">PyJEM.femtus.detector</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.image_color.html#module-PyJEM.femtus.image_color">PyJEM.femtus.image_color</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.log.html#module-PyJEM.femtus.log">PyJEM.femtus.log</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.output.html#module-PyJEM.femtus.output">PyJEM.femtus.output</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.params.html#module-PyJEM.femtus.params">PyJEM.femtus.params</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.process.html#module-PyJEM.femtus.process">PyJEM.femtus.process</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.repository.html#module-PyJEM.femtus.repository">PyJEM.femtus.repository</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.worksheet.html#module-PyJEM.femtus.worksheet">PyJEM.femtus.worksheet</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#module-PyJEM.sightx">PyJEM.sightx</a>
+</li>
+          <li><a href="interface/PyJEM.stem4d.html#module-PyJEM.stem4d">PyJEM.stem4d</a>
+</li>
+          <li><a href="interface/PyJEM.stem4d.acquisition.html#module-PyJEM.stem4d.acquisition">PyJEM.stem4d.acquisition</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.html#module-PyJEM.TEM3">PyJEM.TEM3</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__apt.html#module-PyJEM.TEM3.__apt">PyJEM.TEM3.__apt</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__camera.html#module-PyJEM.TEM3.__camera">PyJEM.TEM3.__camera</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__deflector.html#module-PyJEM.TEM3.__deflector">PyJEM.TEM3.__deflector</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__detector.html#module-PyJEM.TEM3.__detector">PyJEM.TEM3.__detector</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__eos.html#module-PyJEM.TEM3.__eos">PyJEM.TEM3.__eos</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__feg.html#module-PyJEM.TEM3.__feg">PyJEM.TEM3.__feg</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__fil.html#module-PyJEM.TEM3.__fil">PyJEM.TEM3.__fil</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__gun.html#module-PyJEM.TEM3.__gun">PyJEM.TEM3.__gun</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__ht.html#module-PyJEM.TEM3.__ht">PyJEM.TEM3.__ht</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__lens.html#module-PyJEM.TEM3.__lens">PyJEM.TEM3.__lens</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__mds.html#module-PyJEM.TEM3.__mds">PyJEM.TEM3.__mds</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__nitro.html#module-PyJEM.TEM3.__nitro">PyJEM.TEM3.__nitro</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__scan.html#module-PyJEM.TEM3.__scan">PyJEM.TEM3.__scan</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__stage.html#module-PyJEM.TEM3.__stage">PyJEM.TEM3.__stage</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__vacuum.html#module-PyJEM.TEM3.__vacuum">PyJEM.TEM3.__vacuum</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.event.html#module-PyJEM.TEM3.event">PyJEM.TEM3.event</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.exception.html#module-PyJEM.TEM3.exception">PyJEM.TEM3.exception</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.MultipleLineParam">MultipleLineParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.MultipleSpectrumParam">MultipleSpectrumParam (class in PyJEM.eds.interface)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="N" class="genindex-section">
+  <h2>N</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.NetCountLineParam">NetCountLineParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.NetCountMapParam">NetCountMapParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.NETDATA">NETDATA (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.NITROGEN">NITROGEN (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__nitro.html#PyJEM.TEM3.__nitro.Nitrogen3">Nitrogen3 (class in PyJEM.TEM3.__nitro)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Notify">Notify (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.NotReadyCommunication">NotReadyCommunication (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="O" class="genindex-section">
+  <h2>O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.OmegaAutoTuneExec">OmegaAutoTuneExec() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.OutputParams">OutputParams (class in PyJEM.femtus.output)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="P" class="genindex-section">
+  <h2>P</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.paste_to_worksheet">paste_to_worksheet() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.PASYS">PASYS (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.projection">projection() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.put_clump_num_array_accessor">put_clump_num_array_accessor() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.put_event">put_event() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+        <li>
+    PyJEM.detector
+
+        <ul>
+          <li><a href="interface/PyJEM.detector.html#module-PyJEM.detector">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.detectorext
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#module-PyJEM.detectorext">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.edm
+
+        <ul>
+          <li><a href="interface/PyJEM.edm.html#module-PyJEM.edm">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eds
+
+        <ul>
+          <li><a href="interface/PyJEM.eds.html#module-PyJEM.eds">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eds.acquisition
+
+        <ul>
+          <li><a href="interface/PyJEM.eds.acquisition.html#module-PyJEM.eds.acquisition">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eds.analysis
+
+        <ul>
+          <li><a href="interface/PyJEM.eds.analysis.html#module-PyJEM.eds.analysis">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eds.interface
+
+        <ul>
+          <li><a href="interface/PyJEM.eds.interface.html#module-PyJEM.eds.interface">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eels
+
+        <ul>
+          <li><a href="interface/PyJEM.eels.html#module-PyJEM.eels">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eels.acquisition
+
+        <ul>
+          <li><a href="interface/PyJEM.eels.acquisition.html#module-PyJEM.eels.acquisition">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eels.line
+
+        <ul>
+          <li><a href="interface/PyJEM.eels.line.html#module-PyJEM.eels.line">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eels.sicube
+
+        <ul>
+          <li><a href="interface/PyJEM.eels.sicube.html#module-PyJEM.eels.sicube">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eels.spectrum
+
+        <ul>
+          <li><a href="interface/PyJEM.eels.spectrum.html#module-PyJEM.eels.spectrum">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eftem
+
+        <ul>
+          <li><a href="interface/PyJEM.eftem.html#module-PyJEM.eftem">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.eftem.analysis
+
+        <ul>
+          <li><a href="interface/PyJEM.eftem.analysis.html#module-PyJEM.eftem.analysis">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.html#module-PyJEM.femtus">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus.acquisition
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.acquisition.html#module-PyJEM.femtus.acquisition">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus.detector
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.detector.html#module-PyJEM.femtus.detector">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus.image_color
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.image_color.html#module-PyJEM.femtus.image_color">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus.log
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.log.html#module-PyJEM.femtus.log">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus.output
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.output.html#module-PyJEM.femtus.output">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus.params
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.params.html#module-PyJEM.femtus.params">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    PyJEM.femtus.process
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.process.html#module-PyJEM.femtus.process">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus.repository
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.repository.html#module-PyJEM.femtus.repository">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.femtus.worksheet
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.worksheet.html#module-PyJEM.femtus.worksheet">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.sightx
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#module-PyJEM.sightx">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.stem4d
+
+        <ul>
+          <li><a href="interface/PyJEM.stem4d.html#module-PyJEM.stem4d">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.stem4d.acquisition
+
+        <ul>
+          <li><a href="interface/PyJEM.stem4d.acquisition.html#module-PyJEM.stem4d.acquisition">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.html#module-PyJEM.TEM3">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__apt
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__apt.html#module-PyJEM.TEM3.__apt">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__camera
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__camera.html#module-PyJEM.TEM3.__camera">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__deflector
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__deflector.html#module-PyJEM.TEM3.__deflector">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__detector
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__detector.html#module-PyJEM.TEM3.__detector">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__eos
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__eos.html#module-PyJEM.TEM3.__eos">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__feg
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__feg.html#module-PyJEM.TEM3.__feg">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__fil
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__fil.html#module-PyJEM.TEM3.__fil">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__gun
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__gun.html#module-PyJEM.TEM3.__gun">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__ht
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__ht.html#module-PyJEM.TEM3.__ht">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__lens
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__lens.html#module-PyJEM.TEM3.__lens">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__mds
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__mds.html#module-PyJEM.TEM3.__mds">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__nitro
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__nitro.html#module-PyJEM.TEM3.__nitro">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__scan
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__scan.html#module-PyJEM.TEM3.__scan">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__stage
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__stage.html#module-PyJEM.TEM3.__stage">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.__vacuum
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__vacuum.html#module-PyJEM.TEM3.__vacuum">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.event
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.event.html#module-PyJEM.TEM3.event">module</a>
+</li>
+        </ul></li>
+        <li>
+    PyJEM.TEM3.exception
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.exception.html#module-PyJEM.TEM3.exception">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="Q" class="genindex-section">
+  <h2>Q</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.qsize">qsize() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.spectrum.html#PyJEM.eels.spectrum.quantitative_analysis">quantitative_analysis() (in module PyJEM.eels.spectrum)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.QuantitativeLineParam">QuantitativeLineParam (class in PyJEM.eds.interface)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.QuantitativeMapParam">QuantitativeMapParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.QuantitativeSpectrumParam">QuantitativeSpectrumParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.queue_info">queue_info() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="R" class="genindex-section">
+  <h2>R</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.ColorParams.R">R (PyJEM.femtus.output.ColorParams attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.repository.html#PyJEM.femtus.repository.read_plainsheet">read_plainsheet() (in module PyJEM.femtus.repository)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.repository.html#PyJEM.femtus.repository.read_worksheet_element">read_worksheet_element() (in module PyJEM.femtus.repository)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventKind.ReadyCommunication">ReadyCommunication (PyJEM.TEM3.event.EventKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestErrorParameter.Reason">Reason (PyJEM.femtus.params.RestErrorParameter attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.regist_method">regist_method() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateThicknessResultParameter.RelativeThickness">RelativeThickness (PyJEM.femtus.params.RestCalculateThicknessResultParameter attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.reset_detector">reset_detector() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateQuantDataResult">RestCalculateQuantDataResult (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateThicknessResultParameter">RestCalculateThicknessResultParameter (class in PyJEM.femtus.params)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestChemicalElement">RestChemicalElement (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestChemicalElementsParameter">RestChemicalElementsParameter (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCommonParameter">RestCommonParameter (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestErrorParameter">RestErrorParameter (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestQuantitativeAnalysisParameter">RestQuantitativeAnalysisParameter (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestQuantitativeMapParameter">RestQuantitativeMapParameter (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestSetCalibrationResultParameter">RestSetCalibrationResultParameter (class in PyJEM.femtus.params)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestQuantitativeAnalysisParameter.Results">Results (PyJEM.femtus.params.RestQuantitativeAnalysisParameter attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.retract">retract() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.retract">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.rotation">rotation() (in module PyJEM.femtus.process)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Scan">Scan (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3">Scan3 (class in PyJEM.TEM3.__scan)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Screen">Screen (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestSetCalibrationResultParameter.SecondEnergyLoss">SecondEnergyLoss (PyJEM.femtus.params.RestSetCalibrationResultParameter attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SelDrvMode">SelDrvMode() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.sicube.html#PyJEM.eels.sicube.select_chemical_elements">select_chemical_elements() (in module PyJEM.eels.sicube)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.SelectExpKind">SelectExpKind() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.SelectFilmLoadingMode">SelectFilmLoadingMode() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SelectFunctionMode">SelectFunctionMode() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.SelectKind">SelectKind() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.SelectMode">SelectMode() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SelectProbMode">SelectProbMode() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SelectSpotSize">SelectSpotSize() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SelectTemStem">SelectTemStem() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.set_acquisition_settings">set_acquisition_settings() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.set_analyzer_settings">set_analyzer_settings() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_areamode_imagingarea">set_areamode_imagingarea() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_areamode_imagingarea">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_areamode_imagingarea">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_b1_enable">set_b1_enable() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_b2_enable">set_b2_enable() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_b3_enable">set_b3_enable() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_beam_blank">set_beam_blank() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_binningindex">set_binningindex() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_binningindex">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.eels.spectrum.html#PyJEM.eels.spectrum.set_calibration_result">set_calibration_result() (in module PyJEM.eels.spectrum)</a>
+</li>
+        <li><a href="interface/PyJEM.eels.acquisition.html#PyJEM.eels.acquisition.set_camera">set_camera() (in module PyJEM.eels.acquisition)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.stem4d.acquisition.html#PyJEM.stem4d.acquisition.set_camera">(in module PyJEM.stem4d.acquisition)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.eds.acquisition.html#PyJEM.eds.acquisition.set_detector_status">set_detector_status() (in module PyJEM.eds.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_detectorsetting">set_detectorsetting() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_detectorsetting">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_detectorsetting">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_digitalrotation">set_digitalrotation() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_digitalrotation">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_duty_percent">set_duty_percent() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_enable_modulation">set_enable_modulation() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.set_enabled">set_enabled() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_exposuretime_index">set_exposuretime_index() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_exposuretime_index">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_exposuretime_index">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_exposuretime_value">set_exposuretime_value() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_exposuretime_value">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_exposuretime_value">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_frameintegration">set_frameintegration() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_frameintegration">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_frequency_hz">set_frequency_hz() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_gainindex">set_gainindex() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_gainindex">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_gainindex">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_imaging_area">set_imaging_area() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_imaging_area">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_imaging_area">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.set_ip">set_ip() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.set_ip">(in module PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_ip">(in module PyJEM.edm)</a>
+</li>
+          <li><a href="interface/PyJEM.eds.html#PyJEM.eds.set_ip">(in module PyJEM.eds)</a>
+</li>
+          <li><a href="interface/PyJEM.eels.html#PyJEM.eels.set_ip">(in module PyJEM.eels)</a>
+</li>
+          <li><a href="interface/PyJEM.eftem.html#PyJEM.eftem.set_ip">(in module PyJEM.eftem)</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.html#PyJEM.femtus.set_ip">(in module PyJEM.femtus)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.set_ip">(in module PyJEM.sightx)</a>
+</li>
+          <li><a href="interface/PyJEM.stem4d.html#PyJEM.stem4d.set_ip">(in module PyJEM.stem4d)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.set_lookuptable">set_lookuptable() (in module PyJEM.detectorext)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.set_LUT_offset">set_LUT_offset() (in module PyJEM.detectorext)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.set_LUTscansetting">set_LUTscansetting() (in module PyJEM.detectorext)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.set_maxsize">set_maxsize() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.set_mdp_enable">set_mdp_enable() (in module PyJEM.detectorext)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.set_net_count_line_analysis_settings">set_net_count_line_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.set_net_count_map_analysis_settings">set_net_count_map_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_offsetindex">set_offsetindex() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_offsetindex">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_offsetindex">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.output.html#PyJEM.femtus.output.set_outputs">set_outputs() (in module PyJEM.femtus.output)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.image_color.html#PyJEM.femtus.image_color.set_overlay">set_overlay() (in module PyJEM.femtus.image_color)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.image_color.html#PyJEM.femtus.image_color.set_palette">set_palette() (in module PyJEM.femtus.image_color)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.set_port">set_port() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.set_port">(in module PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_port">(in module PyJEM.edm)</a>
+</li>
+          <li><a href="interface/PyJEM.eds.html#PyJEM.eds.set_port">(in module PyJEM.eds)</a>
+</li>
+          <li><a href="interface/PyJEM.eels.html#PyJEM.eels.set_port">(in module PyJEM.eels)</a>
+</li>
+          <li><a href="interface/PyJEM.eftem.html#PyJEM.eftem.set_port">(in module PyJEM.eftem)</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.html#PyJEM.femtus.set_port">(in module PyJEM.femtus)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.set_port">(in module PyJEM.sightx)</a>
+</li>
+          <li><a href="interface/PyJEM.stem4d.html#PyJEM.stem4d.set_port">(in module PyJEM.stem4d)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.set_quantitative_line_analysis_settings">set_quantitative_line_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.set_quantitative_map_analysis_settings">set_quantitative_map_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.analysis.html#PyJEM.eds.analysis.set_quantitative_spectrum_analysis_settings">set_quantitative_spectrum_analysis_settings() (in module PyJEM.eds.analysis)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_scanmode">set_scanmode() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_scanmode">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_scanmode">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_scanrotation">set_scanrotation() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_scanrotation">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_scanrotation">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_scanrotation_step">set_scanrotation_step() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_scanrotation_step">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.set_spotposition">set_spotposition() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_spotposition">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.set_spotposition">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.set_syncmode">set_syncmode() (PyJEM.detectorext.Detector method)</a>
+</li>
+        <li><a href="interface/PyJEM.edm.html#PyJEM.edm.set_use_id">set_use_id() (in module PyJEM.edm)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.SetA2Abs">SetA2Abs() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.SetA2Rel">SetA2Rel() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.SetA2Wobbler">SetA2Wobbler() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetAccelAndDclrRate">SetAccelAndDclrRate() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetAlphaSelector">SetAlphaSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetAngBal">SetAngBal() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetBeamBlank">SetBeamBlank() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.SetBeamSw">SetBeamSw() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3.SetBeamValve">SetBeamValve() (PyJEM.TEM3.__feg.FEG3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetBrightness">SetBrightness() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetBrightnessZoom">SetBrightnessZoom() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.SetBrt">SetBrt() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetCL3">SetCL3() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetCLA1">SetCLA1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetCLA2">SetCLA2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetCLs">SetCLs() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.SetCont">SetCont() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetDetAlign">SetDetAlign() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetDiffFocus">SetDiffFocus() (PyJEM.TEM3.__eos.EOS3 method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetDiffFocus">(PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.SetEnergyShift">SetEnergyShift() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.SetEnergyShiftRel">SetEnergyShiftRel() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.SetEnergyShiftSw">SetEnergyShiftSw() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.SetExpSize">SetExpSize() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.SetExpTime">SetExpTime() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3.SetExtScanMode">SetExtScanMode() (PyJEM.TEM3.__scan.Scan3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.Setf1OverRate">Setf1OverRate() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.Setf1OverRateTxNum">Setf1OverRateTxNum() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__feg.html#PyJEM.TEM3.__feg.FEG3.SetFEGEmissionOff">SetFEGEmissionOff() (PyJEM.TEM3.__feg.FEG3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.SetFilamentVal">SetFilamentVal() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetFLA1">SetFLA1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetFLA2">SetFLA2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetFLc">SetFLc() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetFLCAbs">SetFLCAbs() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetFLCRel">SetFLCRel() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetFLCSw">SetFLCSw() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetFLCSwAllLens">SetFLCSwAllLens() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetFLf">SetFLf() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetFLs1">SetFLs1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetFLs2">SetFLs2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__mds.html#PyJEM.TEM3.__mds.MDS3.SetFocusMode">SetFocusMode() (PyJEM.TEM3.__mds.MDS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetGIF">SetGIF() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetGunA1">SetGunA1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetGunA2">SetGunA2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.SetHtStts">SetHtStts() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__ht.html#PyJEM.TEM3.__ht.HT3.SetHtValue">SetHtValue() (PyJEM.TEM3.__ht.HT3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.SetHtWobbler">SetHtWobbler() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetILFocus">SetILFocus() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetILs">SetILs() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.SetImageSw">SetImageSw() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetIS1">SetIS1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetIS2">SetIS2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetMovementValueMeasurementMethod">SetMovementValueMeasurementMethod() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetNtrl">SetNtrl() (PyJEM.TEM3.__deflector.Def3 method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetNtrl">(PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetObjFocus">SetObjFocus() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetOLc">SetOLc() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetOLf">SetOLf() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetOLs">SetOLs() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetOLSuperFineNeutral">SetOLSuperFineNeutral() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetOLSuperFineSw">SetOLSuperFineSw() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetOLSuperFineValue">SetOLSuperFineValue() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetOM">SetOM() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.SetOmegaAutoTune">SetOmegaAutoTune() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetOrg">SetOrg() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.SetPegMonitorSw">SetPegMonitorSw() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.SetPhasePlateToNext">SetPhasePlateToNext() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__mds.html#PyJEM.TEM3.__mds.MDS3.SetPhotosetMode">SetPhotosetMode() (PyJEM.TEM3.__mds.MDS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3.SetPigMonitorSw">SetPigMonitorSw() (PyJEM.TEM3.__vacuum.VACUUM3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetPLA">SetPLA() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetPLFocus">SetPLFocus() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.SetPosition">SetPosition() (PyJEM.TEM3.__apt.Apt3 method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.SetPosition">(PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+          <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetPosition">(PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.TEM3.html#PyJEM.TEM3.SetRecvTimeout">SetRecvTimeout() (in module PyJEM.TEM3)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetRotation">SetRotation() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3.SetRotationAngle">SetRotationAngle() (PyJEM.TEM3.__scan.Scan3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3.SetRotationAngleEx">SetRotationAngleEx() (PyJEM.TEM3.__scan.Scan3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetRotationRel">SetRotationRel() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetScan1">SetScan1() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetScan2">SetScan2() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__scan.html#PyJEM.TEM3.__scan.Scan3.SetScanDataAbs">SetScanDataAbs() (PyJEM.TEM3.__scan.Scan3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__detector.html#PyJEM.TEM3.__detector.Detector3.SetScreen">SetScreen() (PyJEM.TEM3.__detector.Detector3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__mds.html#PyJEM.TEM3.__mds.MDS3.SetSearchMode">SetSearchMode() (PyJEM.TEM3.__mds.MDS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetSelector">SetSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__gun.html#PyJEM.TEM3.__gun.GUN3.SetSelfBias">SetSelfBias() (PyJEM.TEM3.__gun.GUN3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetShifBal">SetShifBal() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__camera.html#PyJEM.TEM3.__camera.Camera3.SetShutterPosition">SetShutterPosition() (PyJEM.TEM3.__camera.Camera3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__apt.html#PyJEM.TEM3.__apt.Apt3.SetSize">SetSize() (PyJEM.TEM3.__apt.Apt3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.SetSlitPosition">SetSlitPosition() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__fil.html#PyJEM.TEM3.__fil.Filter3.SetSlitWidth">SetSlitWidth() (PyJEM.TEM3.__fil.Filter3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetSpctrMode">SetSpctrMode() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetSpctrSelector">SetSpctrSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetSpeedMode">SetSpeedMode() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetSpeedModeEx">SetSpeedModeEx() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetSpotA">SetSpotA() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__lens.html#PyJEM.TEM3.__lens.Lens3.SetStdFocus">SetStdFocus() (PyJEM.TEM3.__lens.Lens3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetStemA1CoarseRel">SetStemA1CoarseRel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetStemBeamTiltRel">SetStemBeamTiltRel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.SetStemCamSelector">SetStemCamSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetStemIS">SetStemIS() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetStemStigA1Rel">SetStemStigA1Rel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetStemStigB2Rel">SetStemStigB2Rel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetStemUserBShiftRel">SetStemUserBShiftRel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetTemA1CoarseRel">SetTemA1CoarseRel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetTemDiStigRel">SetTemDiStigRel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetTemDShiftRel">SetTemDShiftRel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetTemStigA1Rel">SetTemStigA1Rel() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__deflector.html#PyJEM.TEM3.__deflector.Def3.SetTiltBal">SetTiltBal() (PyJEM.TEM3.__deflector.Def3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetTiltXAngle">SetTiltXAngle() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetTiltYAngle">SetTiltYAngle() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetTXRel">SetTXRel() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetTYRel">SetTYRel() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetX">SetX() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetXRel">SetXRel() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetY">SetY() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetYRel">SetYRel() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetZ">SetZ() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.SetZRel">SetZRel() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.show_worksheet_element">show_worksheet_element() (in module PyJEM.femtus.worksheet)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateQuantDataResult.Sigma">Sigma (PyJEM.femtus.params.RestCalculateQuantDataResult attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.snapshot">snapshot() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.snapshot">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.snapshot">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.snapshot_rawdata">snapshot_rawdata() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.snapshot_rawdata">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.snapshot_rawdata">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.snapshotall">snapshotall() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.snapshotall">(in module PyJEM.detectorext)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.snapshotall">(in module PyJEM.sightx)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.Detector.snapshotframe">snapshotframe() (PyJEM.detector.Detector method)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.detectorext.html#PyJEM.detectorext.Detector.snapshotframe">(PyJEM.detectorext.Detector method)</a>
+</li>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.Detector.snapshotframe">(PyJEM.sightx.Detector method)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.SOCKET">SOCKET (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Spectrum">Spectrum (class in PyJEM.femtus.params)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Config.Spectrum">(PyJEM.femtus.params.Config attribute)</a>
+</li>
+          <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.Spectrum.Spectrum">(PyJEM.femtus.params.Spectrum attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.spectrum_first_derivative">spectrum_first_derivative() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.process.html#PyJEM.femtus.process.spectrum_second_derivative">spectrum_second_derivative() (in module PyJEM.femtus.process)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.SpectrumAnalysisParam">SpectrumAnalysisParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.eds.interface.html#PyJEM.eds.interface.SpectrumSettingsParam">SpectrumSettingsParam (class in PyJEM.eds.interface)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.Stage">Stage (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3">Stage3 (class in PyJEM.TEM3.__stage)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.acquisition.html#PyJEM.femtus.acquisition.start">start() (in module PyJEM.femtus.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.start_accumulate_image_cache">start_accumulate_image_cache() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.start_accumulate_image_cache">(in module PyJEM.sightx)</a>
+</li>
+        </ul></li>
+        <li><a href="interface/PyJEM.femtus.acquisition.html#PyJEM.femtus.acquisition.stop">stop() (in module PyJEM.femtus.acquisition)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__stage.html#PyJEM.TEM3.__stage.Stage3.Stop">Stop() (PyJEM.TEM3.__stage.Stage3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.detector.html#PyJEM.detector.stop_accumulate_image_cache">stop_accumulate_image_cache() (in module PyJEM.detector)</a>
+
+        <ul>
+          <li><a href="interface/PyJEM.sightx.html#PyJEM.sightx.stop_accumulate_image_cache">(in module PyJEM.sightx)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="T" class="genindex-section">
+  <h2>T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.TEM">TEM (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.TEMERR">TEMERR (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.TEMError">TEMError</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorCodeKind.TIMEOUT">TIMEOUT (PyJEM.TEM3.exception.ErrorCodeKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateQuantDataResult.TotalSignalIntensity">TotalSignalIntensity (PyJEM.femtus.params.RestCalculateQuantDataResult attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateQuantDataResult.TotalZeroLossPeakIntensity">TotalZeroLossPeakIntensity (PyJEM.femtus.params.RestCalculateQuantDataResult attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__nitro.html#PyJEM.TEM3.__nitro.Nitrogen3.TransferCartridge">TransferCartridge() (PyJEM.TEM3.__nitro.Nitrogen3 method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="U" class="genindex-section">
+  <h2>U</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.event.html#PyJEM.TEM3.event.EventManager.unregist_method">unregist_method() (PyJEM.TEM3.event.EventManager method)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.worksheet.html#PyJEM.femtus.worksheet.update_worksheet">update_worksheet() (in module PyJEM.femtus.worksheet)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.UpSelector">UpSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.UpSpctrSelector">UpSpctrSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+        <li><a href="interface/PyJEM.TEM3.__eos.html#PyJEM.TEM3.__eos.EOS3.UpStemCamSelector">UpStemCamSelector() (PyJEM.TEM3.__eos.EOS3 method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="V" class="genindex-section">
+  <h2>V</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.exception.html#PyJEM.TEM3.exception.ErrorTypeKind.VACUUM">VACUUM (PyJEM.TEM3.exception.ErrorTypeKind attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.TEM3.__vacuum.html#PyJEM.TEM3.__vacuum.VACUUM3">VACUUM3 (class in PyJEM.TEM3.__vacuum)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.LogKind.Verbose">Verbose (PyJEM.femtus.log.LogKind attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="W" class="genindex-section">
+  <h2>W</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.LogKind.Warning">Warning (PyJEM.femtus.log.LogKind attribute)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.write">write() (in module PyJEM.femtus.log)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.repository.html#PyJEM.femtus.repository.write_plainsheet">write_plainsheet() (in module PyJEM.femtus.repository)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.repository.html#PyJEM.femtus.repository.write_worksheet_element">write_worksheet_element() (in module PyJEM.femtus.repository)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.writeexternal">writeexternal() (in module PyJEM.femtus.log)</a>
+</li>
+        <li><a href="interface/PyJEM.femtus.log.html#PyJEM.femtus.log.writeinternal">writeinternal() (in module PyJEM.femtus.log)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="Z" class="genindex-section">
+  <h2>Z</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateThicknessResultParameter.ZeroLossPeakIndex">ZeroLossPeakIndex (PyJEM.femtus.params.RestCalculateThicknessResultParameter attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="interface/PyJEM.femtus.params.html#PyJEM.femtus.params.RestCalculateThicknessResultParameter.ZeroLossPeakIntensity">ZeroLossPeakIntensity (PyJEM.femtus.params.RestCalculateThicknessResultParameter attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; Copyright 2016-2026 JEOL Ltd.
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=9172181d"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=8b21d8d7"></script>
+    </body>
+</html>

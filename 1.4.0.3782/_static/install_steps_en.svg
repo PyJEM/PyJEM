@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <style>
+    .step { fill:#ffffff; stroke:#4a90e2; stroke-width:2; rx:8; }
+    .label { font-family: 'Segoe UI', Arial, sans-serif; font-size:16px; fill:#1a1a1a; }
+    .desc { font-family: 'Segoe UI', Arial, sans-serif; font-size:12px; fill:#555555; }
+    .arrow { stroke:#4a90e2; stroke-width:3; fill:none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a90e2" />
+    </marker>
+  </defs>
+
+  <!-- Step 1 -->
+  <rect x="40" y="40" width="220" height="80" class="step" />
+  <text x="150" y="70" text-anchor="middle" class="label">Step 1</text>
+  <text x="150" y="90" text-anchor="middle" class="desc">Install Miniconda</text>
+
+  <!-- Step 2 -->
+  <rect x="320" y="40" width="220" height="80" class="step" />
+  <text x="430" y="70" text-anchor="middle" class="label">Step 2</text>
+  <text x="430" y="90" text-anchor="middle" class="desc">Create virtual env (vjem)</text>
+
+  <!-- Step 3 -->
+  <rect x="600" y="40" width="220" height="80" class="step" />
+  <text x="710" y="70" text-anchor="middle" class="label">Step 3</text>
+  <text x="710" y="90" text-anchor="middle" class="desc">Install PyJEM into vjem</text>
+
+  <!-- arrows -->
+  <path d="M260 80 L320 80" class="arrow" />
+  <path d="M540 80 L600 80" class="arrow" />
+
+  <!-- Optional notes -->
+  <rect x="40" y="150" width="780" height="160" rx="8" fill="#f7fbff" stroke="#e1f0ff" />
+  <text x="60" y="180" class="label">Quick Commands</text>
+  <text x="60" y="205" class="desc">1) Download and install Miniconda: run installer and add to PATH (recommended to use Miniconda installer)</text>
+  <text x="60" y="225" class="desc">2) Create env: <tspan font-family="monospace">conda create -n vjem python=3.10</tspan></text>
+  <text x="60" y="245" class="desc">3) Activate env: <tspan font-family="monospace">conda activate vjem</tspan></text>
+  <text x="60" y="265" class="desc">4) Install PyJEM: <tspan font-family="monospace">pip install pyjem</tspan> or use installer</text>
+
+</svg>

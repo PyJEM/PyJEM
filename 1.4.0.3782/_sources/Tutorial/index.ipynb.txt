@@ -1,0 +1,45 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "64dd41b0",
+   "metadata": {},
+   "source": [
+    "### Tutorial\n\nPyJEM is a Python package that provides TEM control, live image capture, and related workflows.\nThis section includes setup verification, quick-run examples, and package-specific tutorials.\n\n**Recommended start:** [Quick Start: Run PyJEM and Use Each Package](train/0_getting_started.ipynb)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a2143f87",
+   "metadata": {},
+   "source": [
+    "```{toctree}\n",
+    ":maxdepth: 2\n",
+    ":glob:\n",
+    "\n",
+    "train/*"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,8 @@
+PyJEM.TEM3.\_\_feg
+==================
+
+.. automodule:: PyJEM.TEM3.__feg
+   :members:
+   :undoc-members:
+   :private-members:
+   :exclude-members: _instance, _initialized

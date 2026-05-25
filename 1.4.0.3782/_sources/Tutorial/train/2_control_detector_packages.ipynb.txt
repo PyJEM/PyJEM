@@ -1,0 +1,696 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "c3866b93",
+   "metadata": {},
+   "source": [
+    "## About detector/camera control packages\n\nThere are 4 packages available for controlling detectors: `detector`, `detectorext`, `sightx`, and `femtus.acquisition`.  \nSelect the appropriate package based on your system configuration.\n\n<img src=\"../../_static/about_detector_camera_control_pacakge.png\" width=\"60%\">\n\n### Package summary\n\n| Package | Target | Configuration |\n|---|---|---|\n| **`detector`** | Cameras and detectors (general) | FEMTUS **not** configured |\n| **`detectorext`** | JEOL cameras | FEMTUS configured |\n| **`femtus.acquisition`** | STEM detectors | FEMTUS configured |\n| **`sightx`** | Cameras controlled by SightX | SightX configured on the PC |\n\n### How to use this page\n\n- For `detector`, `detectorext`, and `sightx`: follow the tutorial steps in **Section A** below.\n- If FEMTUS is configured and you acquire STEM detector / EDS / EELS images: follow **Section B** below.\n\n:::{note}\nBecause FEMTUS does not support this feature, images captured with detectorext are not saved to the FEMTUS worksheet.\n:::\n\n:::{tip}\nYou can verify that each service is reachable in Step 2 of [check connection](1_service_check.ipynb).\n:::"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "91f945db",
+   "metadata": {},
+   "source": [
+    "### Section A: `detector`, `detectorext`, `sightx`\n",
+    "\n",
+    "This section describes a standard camera control workflow.\n",
+    "\n",
+    "- For `detector`, use the sample code as-is.\n",
+    "- For `detectorext` and `sightx`, use the same flow and replace the imported package/module and constructor according to each API."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "808ecced",
+   "metadata": {},
+   "source": [
+    "#### 0. Import package\n\n\nImport one of the target packages.\n\n- `detector`: `from PyJEM import detector`\n- `detectorext`: `from PyJEM import detectorext`\n- `sightx`: `from PyJEM import sightx`\n- Offline test example: `from PyJEM.offline import detector`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "25420b0c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example for detector (Ver. 1.3.0)\n",
+    "from PyJEM import detector\n",
+    "# from PyJEM import detectorext\n",
+    "# from PyJEM import sightx\n",
+    "# from PyJEM.offline import detector  # offline"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "21a3d758",
+   "metadata": {},
+   "source": [
+    "#### 1. Get usable detector/camera names\n\n\nRetrieve detector/camera names that can be controlled by this package."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "3c4f7a3b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['HAADF',\n",
+       " 'LAADF',\n",
+       " 'BF',\n",
+       " 'None',\n",
+       " 'SAAF CH1',\n",
+       " 'SAAF CH2',\n",
+       " 'SAAF CH3',\n",
+       " 'SAAF CH4']"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "detector.get_attached_detector()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "07c2ea7e",
+   "metadata": {},
+   "source": [
+    "#### 2. Get detector/camera information\n\n\n1. Set the detector/camera name in `detector.Detector(\"camera/detector\")`.\n2. Get current settings with `get_detectorsetting()`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "f5157f5f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'AreaModeImagingArea': {'Top': 128, 'Left': 128, 'Width': 256, 'Height': 256},\n",
+       " 'LiveStatus': 'LiveStopped',\n",
+       " 'AreaModeImagingAreaMaximum': '4096, 4096',\n",
+       " 'AreaModeImagingAreaMinimum': '8, 8',\n",
+       " 'CanBinning': False,\n",
+       " 'CanGain': True,\n",
+       " 'CanOffset': True,\n",
+       " 'ExposureTime': [],\n",
+       " 'ExposureTimeIndex': 159,\n",
+       " 'ExposureTimeIndexMaximum': 65533,\n",
+       " 'ExposureTimeIndexMinimum': 31,\n",
+       " 'ExposureTimeString': '3.33',\n",
+       " 'ExposureTimeValue': 3.3333333333333335,\n",
+       " 'frameIntegration': 20,\n",
+       " 'frameIntegrationMaximum': 255,\n",
+       " 'frameIntegrationMinimum': 1,\n",
+       " 'FrameRate': [],\n",
+       " 'GainIndex': 0,\n",
+       " 'GainIndexMaximum': 4095,\n",
+       " 'GainIndexMinimum': 0,\n",
+       " 'HorizontalLineNo': 1,\n",
+       " 'horizontalLineNoMaximum': 512,\n",
+       " 'horizontalLineNoMinimum': 1,\n",
+       " 'ImagingArea': {'X': 0, 'Y': 0, 'Width': 512, 'Height': 512},\n",
+       " 'ImagingAreaMaximum': '4096, 4096',\n",
+       " 'ImagingAreaMinimum': '4, 1',\n",
+       " 'MultiDetectorMode': 2,\n",
+       " 'OffsetIndex': 4095,\n",
+       " 'OffsetIndexMaximum': 4095,\n",
+       " 'OffsetIndexMinimum': 0,\n",
+       " 'OutputImageInformation': {'DataBits': 16,\n",
+       "  'EffectBits': 16,\n",
+       "  'ImageSize': {'Width': 512, 'Height': 512},\n",
+       "  'PixelsPerMeter': {'Horizontal': 2560, 'Vertical': 2560}},\n",
+       " 'scanMode': 0,\n",
+       " 'ScanRotation': 0.0,\n",
+       " 'scanRotationMaximum': 360.0,\n",
+       " 'scanRotationMinimum': 0.0,\n",
+       " 'scanRotationStep': 0.1,\n",
+       " 'SpotPosition': {'X': 0, 'Y': 0},\n",
+       " 'spotPositionMaximum': '4095, 4095',\n",
+       " 'spotPositionMinimum': '0, 0',\n",
+       " 'SyncMode': 0,\n",
+       " 'Version': '1.00',\n",
+       " 'ScanFrameTime': {'FrameTime50Hz': 1337.3066666666668,\n",
+       "  'FrameTime60Hz': 1337.3066666666668,\n",
+       "  'LineTime50Hz': 2.586666666666667,\n",
+       "  'LineTime60Hz': 2.586666666666667}}"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "haadf = detector.Detector('HAADF')  # example for HAADF detector; use the appropriate name for your detector\n",
+    "haadf.get_detectorsetting()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "57e3a79e",
+   "metadata": {},
+   "source": [
+    "#### 3. Change detector/camera setting (example: gain)\n\n\nYou can update detector/camera settings such as gain index.\n\n:::{note}\nAvailable setting functions may differ depending on the package you use. Please check each API document for details:\n<a href=\"../../interface/PyJEM.detector.html\">`detector`</a>, <a href=\"../../interface/PyJEM.detectorext.html\">`detectorext`</a>, <a href=\"../../interface/PyJEM.sightx.html\">`sightx`</a>.\n:::"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "cd0e1b48",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'GainIndex': 1234}"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "haadf.set_gainindex(1234)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9318b598",
+   "metadata": {},
+   "source": [
+    "#### 4. Capture image with selected detector/camera\n\n\nCapture and display an image from the selected detector/camera."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "bda5fdf0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "image/png": "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",
+      "text/plain": [
+       "<Figure size 640x480 with 1 Axes>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "file=haadf.snapshot(\"jpg\", save=True, show=True)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dcf5743f",
+   "metadata": {},
+   "source": [
+    "### Section B: `femtus.acquisition`\n",
+    "\n",
+    "This tutorial is based on the `femtus.acquisition` TODO example and explains each step.\n",
+    "\n",
+    "#### Prerequisites\n",
+    "- The Scan Area is configured in the FEMTUS UI.\n",
+    "- Services required for your workflow are running.\n",
+    "- Use this section when FEMTUS is configured and you acquire STEM / EDS / EELS data."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "0f99eee4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 0) Import packages and confirm connectivity\n",
+    "from PyJEM.femtus import acquisition\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3c396fb3",
+   "metadata": {},
+   "source": [
+    "#### 1) Check available detectors\n",
+    "\n",
+    "First, confirm which detector names are available for acquisition."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "d7df9841",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Detectors': ['EDS', 'EELS', 'SAAF', 'Image', '4DSTEM'], 'Version': '1.0.0'}"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "detectors = acquisition.get_detectors()\n",
+    "detectors"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a114cf61",
+   "metadata": {},
+   "source": [
+    "#### 2) Check acquisition status\n",
+    "\n",
+    "Check whether acquisition is already running and inspect current status."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "bafe418c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Status': {'AcquisitionID': '00000000-0000-0000-0000-000000000000',\n",
+       "  'AcquisitionRunning': False,\n",
+       "  'SweepCount': 0,\n",
+       "  'ElapsedSeconds': 0},\n",
+       " 'Version': '1.0.0'}"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "status = acquisition.get_status()\n",
+    "status"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "21498b38",
+   "metadata": {},
+   "source": [
+    "#### 3) Get settings and create a payload\n",
+    "\n",
+    "Get current settings from FEMTUS, then edit one setting dictionary and use it as the `start()` payload.\n",
+    "\n",
+    "- Example below updates detector list, region size, and dwell time.\n",
+    "\n",
+    ":::{note}\n",
+    "If no imaging area is selected in the FEMTUS UI, `get_settings()` cannot retrieve the settings.\n",
+    "If nothing is configured, you need to refer to the <a href=\"../../interface/PyJEM.femtus.acquisition.html\">`API page`</a> and create the parameters manually.\n",
+    ":::"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "1018851f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Id': '08274fde-dd82-44c0-906c-d045552c6a43',\n",
+       " 'Detectors': ['Image'],\n",
+       " 'Region': {'Left': 229,\n",
+       "  'Top': 206,\n",
+       "  'Width': 128,\n",
+       "  'Height': 128,\n",
+       "  'Points': None,\n",
+       "  'Shape': 'Rectangle'},\n",
+       " 'Conditions': {'DwellTime': 100,\n",
+       "  'PixelResolution': 1,\n",
+       "  'IsPlayback': False,\n",
+       "  'CollectionMode': {'Mode': 'Sweep', 'Count': 1}},\n",
+       " 'DriftCorrection': {'Type': 'None', 'Interval': 1, 'CorrectionRegion': None}}"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "result = acquisition.get_settings()\n",
+    "setting = result[\"Settings\"][0]\n",
+    "\n",
+    "# Example customization\n",
+    "setting[\"Detectors\"] = [\"Image\"]\n",
+    "setting[\"Region\"][\"Width\"] = 128\n",
+    "setting[\"Region\"][\"Height\"] = 128\n",
+    "setting[\"Conditions\"][\"DwellTime\"] = 100\n",
+    "\n",
+    "setting"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "771b8094",
+   "metadata": {},
+   "source": [
+    "#### 4) Start acquisition\n",
+    "\n",
+    "Run `start(setting)` with the payload created above.\n",
+    "\n",
+    "- This call starts acquisition immediately.\n",
+    "- Execute only when your hardware and scan area are ready."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "ee3fd8e8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'AcquisitionID': 'f0e78d07-01e2-405a-bea7-ea4031fbe0db',\n",
+       " 'WorksheetID': '64f4b900-1c58-41f7-8062-08e24cc41d47',\n",
+       " 'ReferenceDetector': 'VP_ADF_1',\n",
+       " 'Version': '1.0.0'}"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "start_status = acquisition.start(setting)\n",
+    "start_status"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dbe97626",
+   "metadata": {},
+   "source": [
+    "#### 4.1) Stop acquisition\n",
+    "\n",
+    "After starting acquisition, check status and stop when needed."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "e827d5f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Result': 'OK', 'Version': '1.0.0'}"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "acquisition.stop()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9c6671f6",
+   "metadata": {},
+   "source": [
+    "#### 5) Get acquisition result\n",
+    "\n",
+    "Use `get_acquisition_result` to retrieve information for the acquired data."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "7a83e85e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Results': [{'Id': '050000f2-0944-4e2a-9e00-c5bc4b73642f',\n",
+       "   'DataType': 'STEM_Survey'},\n",
+       "  {'Id': '6f0ffc15-2f69-40ee-bcd0-8f61e4b0ccdb',\n",
+       "   'DataType': 'STEM_HAADF_SeleArea'}]}"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "acquisition_result = acquisition.get_acquisition_result(start_status.get(\"AcquisitionID\"))\n",
+    "acquisition_result"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1df24b82",
+   "metadata": {},
+   "source": [
+    "#### 6) How to get image information from acquisition results\n",
+    "\n",
+    "Use the following steps to get image information from `acquisition_result`.\n",
+    "\n",
+    "1. Extract the data ID from `acquisition_result[\"Results\"][0][\"Id\"]`.\n",
+    "2. Call `worksheet.get_data_set(data_id)` to retrieve dataset information.\n",
+    "3. Read `Clump` and `DataBytes` in `dataset`, then proceed to retrieve and decode image bytes."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "a23285bc",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Id': '050000f2-0944-4e2a-9e00-c5bc4b73642f',\n",
+       " 'IsSelected': False,\n",
+       " 'Clump': {'Id': '4456ca54-c67f-4942-8953-311de9fa7af7',\n",
+       "  'Information': {'Header': {'Version': '1.0.0',\n",
+       "    'ClumpId': '4456ca54-c67f-4942-8953-311de9fa7af7',\n",
+       "    'DataType': 'STEM_Survey',\n",
+       "    'DataSubType': '',\n",
+       "    'DetectorType': 2,\n",
+       "    'ClumpType': 'Clump',\n",
+       "    'Name': ''},\n",
+       "   'DataInformation': {'TypeInfo': 0,\n",
+       "    'DataBytes': 2,\n",
+       "    'Channel': 1,\n",
+       "    'DimensionLength': 2,\n",
+       "    'Dimensions': [512, 512],\n",
+       "    'ChannelType': '',\n",
+       "    'IsRangeFixed': False,\n",
+       "    'MinimumPossibleIntensity': -1.7976931348623157e+308,\n",
+       "    'MaximumPossibleIntensity': 1.7976931348623157e+308},\n",
+       "   'MeasurementInformation': {'CalibrationCoefficients': [{'Scale': 14.6875,\n",
+       "      'Offset': 0,\n",
+       "      'Unit': 'Nanometer'},\n",
+       "     {'Scale': 14.697265625, 'Offset': 0, 'Unit': 'Nanometer'}]},\n",
+       "   'Tags': {'General': {'Manufacturer': 'JEOL Ltd.',\n",
+       "     'Comment': '',\n",
+       "     'Specimen': 'Specimen',\n",
+       "     'Operator': 'User',\n",
+       "     'DateTime': '20260402105656758',\n",
+       "     'ProductName': 'FEMTUS',\n",
+       "     'ProductVersion': '2.0.0',\n",
+       "     'UpdateDateTime': '20260402105656758',\n",
+       "     'UpdateProductName': 'FEMTUS',\n",
+       "     'UpdateProductVersion': '2.0.0',\n",
+       "     'AnalysisId': 'f4355252-cdf5-49c8-9858-f1d0fb5761b9',\n",
+       "     'AnalysisDateTime': '20260402164541555',\n",
+       "     'AcquisitionId': 'f0e78d07-01e2-405a-bea7-ea4031fbe0db',\n",
+       "     'AcquisitionDateTime': '20260402164541555',\n",
+       "     'Instrument': 'JEM-ARM200F'},\n",
+       "    'HT': {'GunType': 'Cfeg', 'AccelerationVoltage': 200000, 'EnergyShift': 0},\n",
+       "    'EOS': {'OperationMode': 'Scanning',\n",
+       "     'SpotSizeNumber': 0,\n",
+       "     'ConvergenceAngleAlphaNumber': 0,\n",
+       "     'ImageFormingMode': 'MAG',\n",
+       "     'RockingAngle': 0,\n",
+       "     'MagnificationValue': 20000,\n",
+       "     'MagnificationString': 'x20000',\n",
+       "     'CameraLength': 15,\n",
+       "     'CameraLengthString': '0.015m'},\n",
+       "    'Stage': {'X': {'Position': 0},\n",
+       "     'Y': {'Position': 0},\n",
+       "     'Z': {'Position': 0},\n",
+       "     'TX': {'Position': 0},\n",
+       "     'TY': {'Position': 0},\n",
+       "     'TZ': {'Position': 0},\n",
+       "     'PX': {'Position': 0},\n",
+       "     'PY': {'Position': 0},\n",
+       "     'PZ': {'Position': 0}},\n",
+       "    'ScanGenerator': {'AreaModeImagingArea': {'X': 0,\n",
+       "      'Y': 0,\n",
+       "      'Width': 512,\n",
+       "      'Height': 512},\n",
+       "     'SpotPosition': {'X': 0, 'Y': 0},\n",
+       "     'ScanMode': 'Full',\n",
+       "     'PresetMode': 'Search',\n",
+       "     'ExposureTimeValue': 5,\n",
+       "     'FrameIntegration': 1,\n",
+       "     'ImagingArea': {'X': 0, 'Y': 0, 'Width': 512, 'Height': 512},\n",
+       "     'ScanRotation': 0},\n",
+       "    'Detector': {'DetectorKind': 'HAADF',\n",
+       "     'Manufacturer': 'Manufacture',\n",
+       "     'ModelCode': 'ModelCode',\n",
+       "     'ModelDisplayName': 'DisplayName',\n",
+       "     'GainIndex': 50,\n",
+       "     'OffsetIndex': 50,\n",
+       "     'PixelsPerMeter': {'Horizontal': 3404.255319148936,\n",
+       "      'Vertical': 3401.9933554817276}}}},\n",
+       "  'ViewInformation': {'Header': {'Version': '2.0.0',\n",
+       "    'ClumpId': '4456ca54-c67f-4942-8953-311de9fa7af7'},\n",
+       "   'Tags': {}}}}"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from PyJEM.femtus import worksheet\n",
+    "dataset = worksheet.get_data_set(acquisition_result[\"Results\"][0][\"Id\"])\n",
+    "dataset"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "b181fec5",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(bytes, 524288)"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "img = worksheet.get_clump_num_array_accessor(dataset[\"Clump\"][\"Id\"])\n",
+    "type(img), len(img)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "09e7add0",
+   "metadata": {},
+   "source": [
+    "#### 7) Convert byte data to an image and display\n",
+    "\n",
+    "`get_clump_num_array_accessor` returns raw byte data.\n",
+    "In the next cell, convert the bytes to a NumPy array, reshape to a 2D image, and display it with `matplotlib`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "21030f02",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<matplotlib.image.AxesImage at 0x2a5596e24a0>"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    },
+    {
+     "data": {
+      "image/png": "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3DmnT7rc3Fz5/f6UBgCYmEY0uObMmaNQKKSWlhZn28DAgA4dOqRwOCxJCofD6uvrU0dHh9PnwIEDisfjKisrG8nhAADGoayvKrxw4YLee+89Z/306dM6fvy4CgsLVVJSojVr1ugv/uIvdNddd2nOnDn62te+puLiYj388MOSpHvuuUef//zn9ZWvfEXf/va3FY1GVVdXpy9+8YtcUQgAuKasg+vo0aP63d/9XWe9vr5eklRTU6Pt27frT//0T3Xx4kU98cQT6uvr0wMPPKB9+/YpLy/Puc/3vvc91dXVadmyZXK73aqqqtJLL700AocDABjvsg6uz33uczLGXHG/y+XSpk2btGnTpiv2KSws1I4dO7J9agAA7LiqEACABIILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBgFYILAGAVggsAYBWCCwBglayCq7GxUffdd5+mTp2qoqIiPfzww+rq6krpc+nSJdXW1mratGnKz89XVVWVenp6Uvp0d3ersrJSkydPVlFRkdauXavh4eEbPxoAwLiXVXC1traqtrZW7e3tam5uVjQa1fLly3Xx4kWnz9NPP63XXntNu3btUmtrq95//3098sgjzv5YLKbKykoNDQ3p4MGDeuWVV7R9+3atX79+5I4KADBuebPpvG/fvpT17du3q6ioSB0dHfrt3/5t9ff3a+vWrdqxY4eWLl0qSdq2bZvuuecetbe3a8mSJdq/f79OnTqlN998U8FgUAsXLtTzzz+vZ555Rhs3bpTP5xu5owMAjDs39Duu/v5+SVJhYaEkqaOjQ9FoVOXl5U6fuXPnqqSkRG1tbZKktrY2zZs3T8Fg0OlTUVGhgYEBnTx5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2to0b948BYNBp09FRYUGBgZ08uTJjM83ODiogYGBlAYAmJi82d5h586deuedd3TkyJHL9kUiEfl8PhUUFKRsDwaDikQiTp/k0ErsT+zLpLGxUc8991y2QwUAjENZveM6c+aMnnrqKX3ve99TXl7ezRrTZRoaGtTf3++0M2fOjNpzAwBuLVkFV0dHh3p7e/XpT39aXq9XXq9Xra2teumll+T1ehUMBjU0NKS+vr6U+/X09CgUCkmSQqHQZVcZJtYTfdLl5ubK7/enNADAxJRVcC1btkydnZ06fvy40xYvXqzq6mpnOScnRy0tLc59urq61N3drXA4LEkKh8Pq7OxUb2+v06e5uVl+v1+lpaUjdFgAgPEqq99xTZ06Vffee2/KtilTpmjatGnO9pUrV6q+vl6FhYXy+/1avXq1wuGwlixZIklavny5SktL9fjjj2vz5s2KRCJat26damtrlZubO0KHBQAYr7K+OONaXnzxRbndblVVVWlwcFAVFRV6+eWXnf0ej0d79uzRqlWrFA6HNWXKFNXU1GjTpk0jPRQAwDh0w8H11ltvpazn5eWpqalJTU1NV7zP7NmztXfv3ht9agDABMRnFQIArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArEJwAQCsQnABAKxCcAEArJJVcG3cuFEulyulzZ0719l/6dIl1dbWatq0acrPz1dVVZV6enpSHqO7u1uVlZWaPHmyioqKtHbtWg0PD4/M0QAAxj1vtnf41Kc+pTfffPPXD+D99UM8/fTTev3117Vr1y4FAgHV1dXpkUce0U9+8hNJUiwWU2VlpUKhkA4ePKizZ8/qS1/6knJycvRXf/VX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",
+      "text/plain": [
+       "<Figure size 640x480 with 1 Axes>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "# get_clump_num_array_accessor returns raw bytes.\n",
+    "# Select dtype from DataBytes when available: 1 -> uint8, 2 -> uint16.\n",
+    "data_bytes = dataset[\"Clump\"][\"Information\"][\"DataInformation\"][\"DataBytes\"]\n",
+    "size = dataset[\"Clump\"][\"Information\"][\"DataInformation\"][\"Dimensions\"]\n",
+    "\n",
+    "if data_bytes == 1:\n",
+    "    dtype = np.uint8\n",
+    "elif data_bytes == 2:\n",
+    "    dtype = np.uint16\n",
+    "else:\n",
+    "    # Fallback when DataBytes is unavailable in the returned dataset structure.\n",
+    "    dtype = np.uint16 if (len(img) % 2 == 0) else np.uint8\n",
+    "\n",
+    "arr = np.frombuffer(img, dtype=dtype)\n",
+    "if size[0] * size[1] != arr.size:\n",
+    "    raise ValueError(f\"Cannot infer square image shape from element count: {arr.size}\")\n",
+    "\n",
+    "img_array = arr.reshape(size[0], size[1])\n",
+    "plt.imshow(img_array, cmap=\"gray\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "vjem310",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,202 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "5fc6e851",
+   "metadata": {},
+   "source": [
+    "## Service connectivity check\n",
+    "\n",
+    "**Standard startup flow:**\n",
+    "\n",
+    "1. Activate the vjem environment and start Python\n",
+    "2. Confirm that the required services are running\n",
+    "   - TEM3 packages: `TEM3.connect()`\n",
+    "   - Other packages: `check_connection()`\n",
+    "3. If not reachable: diagnose with `get_config()`, reconfigure with `set_ip()`\n",
+    "\n",
+    "\n",
+    "**Prerequisites**\n",
+    "\n",
+    "- Miniconda is installed.\n",
+    "- A vjem environment is available (for example: vjem38, vjem310).\n",
+    "- PyJEM is already installed in the target vjem environment.\n",
+    "- For online operation, TEMCenter/TEMServer (or required services) are running."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "057d45f5",
+   "metadata": {},
+   "source": [
+    "### Step 1: Activate vjem and Start Python\n\n\nOpen a command prompt and run:\n\n```bash\nconda activate vjem38\npython\n```\n\nReplace `vjem38` with the name of your environment (e.g., `vjem310`).\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1e710eb5",
+   "metadata": {},
+   "source": [
+    "### Step 2: Confirm that the required services are running\n\n\nThe method to use depends on the package:\n\n| Package type | Confirmation method |\n|---|---|\n| TEM3 | `TEM3.connect()` |\n| All other packages | `package.check_connection()` |\n\nRun the appropriate code cell below for your target package.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d6711dd2",
+   "metadata": {},
+   "source": [
+    "#### TEM3 package"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9d3e658f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "TEM3: Connected\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Step 2 (TEM3): Confirm TEM3 service is running\n",
+    "from PyJEM import TEM3\n",
+    "\n",
+    "try:\n",
+    "    TEM3.connect()\n",
+    "    print(\"TEM3: Connected\")\n",
+    "except Exception as e:\n",
+    "    print(\"TEM3: Connection failed ->\", e)\n",
+    "    print(\"Verify that TEMCenter / TEMServer is running on the TEM PC.\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a38efa4a",
+   "metadata": {},
+   "source": [
+    "#### others package\n",
+    "\n",
+    "For packages other than TEM3, call `check_connection()` on each package.  \n",
+    "`True` — the service is running.  \n",
+    "`False` — the service is not reachable (check IP address and port).\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5136d948",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Package        Connected    ip  port\n",
+      "-------------------------------------------------------\n",
+      "detector       True         127.0.0.1 49226\n",
+      "detectorext    True         127.0.0.1 49326\n",
+      "eds            True         127.0.0.1 49326\n",
+      "sightx         False        127.0.0.1 49260\n",
+      "eels           True         127.0.0.1 49326\n",
+      "eftem          True         127.0.0.1 49326\n",
+      "stem4d         True         127.0.0.1 49326\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Step 2 (other packages): Check that each service is running\n",
+    "from PyJEM import detector, detectorext, eds, sightx, eels, eftem, stem4d\n",
+    "\n",
+    "packages = {\n",
+    "    \"detector\":    detector,\n",
+    "    \"detectorext\": detectorext,\n",
+    "    \"eds\":         eds,\n",
+    "    \"sightx\":      sightx,\n",
+    "    \"eels\":        eels,\n",
+    "    \"eftem\":       eftem,\n",
+    "    \"stem4d\":      stem4d,\n",
+    "}\n",
+    "\n",
+    "print(f\"{'Package':<14} {'Connected':<12} ip        port\")\n",
+    "print(\"-\" * 55)\n",
+    "for pkg_name, pkg in packages.items():\n",
+    "    connected = pkg.check_connection()\n",
+    "    cfg = pkg.get_config()\n",
+    "    print(f\"{pkg_name:<14} {str(connected):<12} {cfg.get('ip', '?')}    {cfg.get('port', '?')}\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bd2cb45b",
+   "metadata": {},
+   "source": [
+    "### Appendix: If a service is not reachable\n",
+    "\n",
+    "When `check_connection()` returns `False`:\n",
+    "\n",
+    "1. **Inspect current settings** with `get_config()` — check the `ip` and `port` values.\n",
+    "2. **Update the IP address** with `set_ip(\"x.x.x.x\")` to point to the correct host.\n",
+    "3. **Retry** `check_connection()` to confirm the service is now reachable."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "5d8e10c2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "detector: Connected\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Appendix: Diagnose and reconfigure (example using detector)\n",
+    "from PyJEM import detector\n",
+    "\n",
+    "if detector.check_connection():\n",
+    "    print(\"detector: Connected\")\n",
+    "else:\n",
+    "    # 1. Inspect current settings\n",
+    "    config = detector.get_config()\n",
+    "    print(\"Not connected. Current config:\", config)\n",
+    "\n",
+    "    # 2. Update IP address to the correct host and retry\n",
+    "    new_ip = \"127.0.0.1\"  # Replace with the actual IP address of the service\n",
+    "    detector.set_ip(new_ip)\n",
+    "    print(f\"IP updated to: {new_ip}\")\n",
+    "    print(f\"New config: {detector.get_config()}\")\n",
+    "    print(f\"Retry check_connection: {detector.check_connection()}\")\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "vjem310",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

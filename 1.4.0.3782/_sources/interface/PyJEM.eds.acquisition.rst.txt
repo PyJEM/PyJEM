@@ -1,0 +1,8 @@
+PyJEM.eds.acquisition
+=====================
+
+.. automodule:: PyJEM.eds.acquisition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

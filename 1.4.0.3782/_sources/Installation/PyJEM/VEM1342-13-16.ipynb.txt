@@ -1,0 +1,68 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "8306a97a",
+   "metadata": {},
+   "source": [
+    "## VEM1342-12 - 16\n",
+    "\n",
+    "\n",
+    "This document explains the PyJEM package installation procedure.\n",
+    "Follow the steps below from 1 to 3 while checking each installer screen image.\n",
+    "\n",
+    "### Overall Flow\n",
+    "1. Select the virtual environment\n",
+    "2. Select the PyJEM package\n",
+    "3. Run installation\n",
+    "\n",
+    "### 1. Select the Virtual Environment\n",
+    "\n",
+    "**Procedure:**\n",
+    "1. Select the target virtual environment name from the combo box.\n",
+    "2. If the required environment is not listed, enter the environment name manually.\n",
+    "3. Confirm the setting and proceed to the next step.\n",
+    "\n",
+    "<img src=\"../../_static/仮想環境の選択.png\" width=\"50%\">\n",
+    "\n",
+    "### 2. Select the PyJEM Package\n",
+    "**Procedure:**\n",
+    "1. Select the PyJEM package to install.\n",
+    "2. If you want to use a non-default package, specify a file using the [...] button.\n",
+    "3. Confirm your selection and proceed to the next step.\n",
+    "\n",
+    "<img src=\"../../_static/update_pyjem_11_later.png\" width=\"50%\">\n",
+    "\n",
+    "**Package Selection Method:**\n",
+    "| Method | Description |\n",
+    "|---|---|\n",
+    "| Use default package | Uses the PyJEM package bundled with the installer. |\n",
+    "| Specify from [...] | Specifies any version downloaded from the [Forum](https://github.com/PyJEM/PyJEM/releases). |\n",
+    "\n",
+    "### 3. Start Installation\n",
+    "\n",
+    "**Procedure:**\n",
+    "1. Click the Install button to start installation.\n",
+    "2. Check the progress messages and wait until processing is complete.\n",
+    "3. After completion, confirm the result message.\n",
+    "\n",
+    "<img src=\"../../_static/インストールボタンの押下.png\" width=\"50%\">\n",
+    "\n",
+    "**Checkpoints:**\n",
+    "- No error is displayed.\n",
+    "- A completion message is shown.\n",
+    "\n",
+    "### Notes\n",
+    "- If the virtual environment is incorrect, return to Step 1 and select it again.\n",
+    "- When using a custom version, choose a file compatible with the target environment."
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

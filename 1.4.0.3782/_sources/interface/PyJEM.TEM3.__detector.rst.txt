@@ -1,0 +1,8 @@
+PyJEM.TEM3.\_\_detector
+=======================
+
+.. automodule:: PyJEM.TEM3.__detector
+   :members:
+   :undoc-members:
+   :private-members:
+   :exclude-members: _instance, _initialized

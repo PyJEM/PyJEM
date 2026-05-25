@@ -1,0 +1,8 @@
+PyJEM.eels.sicube
+=================
+
+.. automodule:: PyJEM.eels.sicube
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

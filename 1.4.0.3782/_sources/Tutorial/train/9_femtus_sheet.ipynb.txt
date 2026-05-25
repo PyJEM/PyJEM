@@ -1,0 +1,512 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "688e4983",
+   "metadata": {},
+   "source": [
+    "# FEMTUS: worksheet / repository\n",
+    "\n",
+    "This tutorial explains the data structure of the FEMTUS worksheet and how to access each layer.\n",
+    "\n",
+    "## Worksheet structure\n",
+    "\n",
+    "The worksheet data is organized in a hierarchical structure:\n",
+    "\n",
+    "```\n",
+    "worksheet\n",
+    "  └─ element (per measurement result)\n",
+    "       └─ content (ImageContent / GraphContent)\n",
+    "            └─ dataset\n",
+    "                 └─ clump  (raw numeric array)\n",
+    "```\n",
+    "\n",
+    "Each layer is accessed by its **Id** and a corresponding function:\n",
+    "\n",
+    "| Layer | Access function | Key to next layer |\n",
+    "|---|---|---|\n",
+    "| worksheet (list) | `get_worksheets()` | `[n][\"Id\"]` → worksheet Id |\n",
+    "| worksheet | `get_worksheet(worksheet_id)` | `[\"Children\"][n][\"Id\"]` → element Id |\n",
+    "| element | `get_worksheet_element(element_id)` | `[\"ContentSummary\"][\"Id\"]` → content Id |\n",
+    "| content | `get_image_content(content_id)` / `get_graph_content(content_id)` | `[\"Children\"][n][\"Id\"]` → dataset Id |\n",
+    "| dataset | `get_data_set(dataset_id)` | `[\"Clump\"][\"Id\"]` → clump Id |\n",
+    "| clump | `get_clump(clump_id)` | — |\n",
+    "| raw bytes | `get_clump_num_array_accessor(clump_id)` | — |\n",
+    "\n",
+    ":::{note}\n",
+    "FEMTUS service must be running before executing any cell.\n",
+    ":::"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "17799b45",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from PyJEM.femtus import worksheet, repository"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1d0a9a02",
+   "metadata": {},
+   "source": [
+    "### 1. Worksheet\n",
+    "\n",
+    "`get_worksheets()` returns a list of all worksheets.  \n",
+    "Each worksheet has an `Id` and a `Children` list of element references.\n",
+    "\n",
+    "| Function | Description |\n",
+    "|---|---|\n",
+    "| `get_worksheets()` | Get all worksheets |\n",
+    "| `get_worksheet(worksheet_id)` | Get a single worksheet by Id |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "d60325ab",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "worksheet count: 2\n",
+      "worksheet_id: 6d33305e-8d86-4867-917f-7d959c3398bb\n",
+      "element count: 7\n",
+      "# Worksheet detail\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "{'Id': '6d33305e-8d86-4867-917f-7d959c3398bb',\n",
+       " 'Title': 'tutorial_sheet',\n",
+       " 'Children': [{'Id': 'bd56ca45-7c58-4584-8ec6-beac308371c2',\n",
+       "   'Title': 'HAADF_20260403_1411'},\n",
+       "  {'Id': '8bbacf87-31fe-434f-98a2-97d7098a945f',\n",
+       "   'Title': 'HAADF_SelectedArea_20260403_1411'},\n",
+       "  {'Id': '80051f5e-2480-4612-ae21-b1f9e2c1957a',\n",
+       "   'Title': 'EELS Line_20260403_1411'},\n",
+       "  {'Id': 'f54e6008-d36e-4f9a-a2ce-377fa9848b76',\n",
+       "   'Title': 'WholeSpectrum_EELS Line_20260403_1411'},\n",
+       "  {'Id': '32b63852-2a7b-4d4d-b3e6-9999b32cc107',\n",
+       "   'Title': 'HAADF_20260403_1441'},\n",
+       "  {'Id': 'fd254d91-a51d-4eae-af32-122543a8e23f',\n",
+       "   'Title': 'HAADF_SelectedArea_20260403_1441'},\n",
+       "  {'Id': '41722e14-13e7-40cc-995f-f2a4e563b1aa',\n",
+       "   'Title': 'EELS Line_20260403_1441'}]}"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Get all worksheets\n",
+    "worksheets = worksheet.get_worksheets()\n",
+    "print(\"worksheet count:\", len(worksheets))\n",
+    "\n",
+    "# Pick the first worksheet and display its Id and Children count\n",
+    "ws = worksheets[1]  # [0] is the \"Live\" sheet.\n",
+    "worksheet_id = ws[\"Id\"]\n",
+    "children = ws.get(\"Children\", [])\n",
+    "print(\"worksheet_id:\", worksheet_id)\n",
+    "print(\"element count:\", len(children))\n",
+    "\n",
+    "print(\"# Worksheet detail\")\n",
+    "ws"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "256caf03",
+   "metadata": {},
+   "source": [
+    "### 2. Element\n",
+    "\n",
+    "A worksheet holds a list of elements in `[\"Children\"]`.  \n",
+    "Pass an element Id to `get_worksheet_element()` to retrieve its detail, including its `ContentSummary`.\n",
+    "\n",
+    "| Function | Description |\n",
+    "|---|---|\n",
+    "| `get_worksheet_element(element_id)` | Get element detail |\n",
+    "| Key `[\"ContentSummary\"][\"Id\"]` | Id of the content (image or graph) |\n",
+    "| Key `[\"ContentSummary\"][\"ContentType\"]` | Type of the content (`ImageContent` or `GraphContent`) |\n",
+    "| Key `[\"Title\"]` | Display title of the element |\n",
+    "\n",
+    "`ContentType` is used in 3 to select the appropriate access function for the content."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b8bee5bc",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "element title: HAADF_20260403_1411\n",
+      "content_id: fc23c92c-31c5-46e5-b0ba-e21e9d5ef185\n",
+      "ContentType: ImageContent\n",
+      "# Content detail\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "{'Id': 'bd56ca45-7c58-4584-8ec6-beac308371c2',\n",
+       " 'Title': 'HAADF_20260403_1411',\n",
+       " 'IsActive': False,\n",
+       " 'IsEdited': True,\n",
+       " 'IsLive': False,\n",
+       " 'ContentSummary': {'Id': 'fc23c92c-31c5-46e5-b0ba-e21e9d5ef185',\n",
+       "  'ContentType': 'ImageContent'}}"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Use the worksheet_id obtained in 1\n",
+    "ws_detail = worksheet.get_worksheet(worksheet_id)\n",
+    "element_ref = ws_detail[\"Children\"][0]          # first element reference\n",
+    "element_id = element_ref[\"Id\"]\n",
+    "\n",
+    "# Get element detail\n",
+    "element = worksheet.get_worksheet_element(element_id)\n",
+    "print(\"element title:\", element.get(\"Title\"))\n",
+    "content_id = element[\"ContentSummary\"][\"Id\"]\n",
+    "print(\"content_id:\", content_id)\n",
+    "print(\"ContentType:\", element[\"ContentSummary\"][\"ContentType\"])\n",
+    "\n",
+    "print(\"# Content detail\")\n",
+    "element\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "65da5234",
+   "metadata": {},
+   "source": [
+    "### 3. Content (Image / Graph)\n",
+    "\n",
+    "Each element contains one content: either an **ImageContent** or a **GraphContent**.  \n",
+    "The content holds a `Children` list of dataset references.\n",
+    "\n",
+    "| ContentType | Function |\n",
+    "|---|---|\n",
+    "| `ImageContent` | `get_image_content(content_id)` |\n",
+    "| `GraphContent` | `get_graph_content(content_id)` |\n",
+    "\n",
+    "The next dataset Id is obtained from `content[\"Children\"][n][\"Id\"]`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "06945906",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "content_type: ImageContent\n",
+      "dataset_id: 994ae97d-fb0b-4b17-b0ba-2eee53e4154b\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Use the content_id obtained in 2\n",
+    "content_type = element[\"ContentSummary\"][\"ContentType\"]\n",
+    "\n",
+    "if content_type == \"ImageContent\":\n",
+    "    content = worksheet.get_image_content(content_id)\n",
+    "else:\n",
+    "    content = worksheet.get_graph_content(content_id)\n",
+    "\n",
+    "dataset_id = content[\"Children\"][0][\"Id\"]\n",
+    "print(\"content_type:\", content_type)\n",
+    "print(\"dataset_id:\", dataset_id)\n",
+    "\n",
+    "print(\"# Content detail\")\n",
+    "content"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0a9aa68b",
+   "metadata": {},
+   "source": [
+    "### 4. Dataset\n",
+    "\n",
+    "`get_data_set(dataset_id)` returns metadata and a reference to the clump.\n",
+    "\n",
+    "The clump Id is in `dataset[\"Clump\"][\"Id\"]`.  \n",
+    "Calibration information (offset, scale, unit) is in `dataset[\"Clump\"][\"Information\"][\"MeasurementInformation\"][\"CalibrationCoefficients\"]`.\n",
+    "\n",
+    "| Key | Description |\n",
+    "|---|---|\n",
+    "| `[\"Clump\"][\"Id\"]` | Id of the raw data clump |\n",
+    "| `[\"Clump\"][\"Information\"][\"DataInformation\"][\"Dimensions\"]` | Shape of the array |\n",
+    "| `[\"Clump\"][\"Information\"][\"MeasurementInformation\"][\"CalibrationCoefficients\"]` | Axis calibration (offset, scale, unit) |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c74e7546",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "clump_id: fe812832-11b6-424e-aa69-17814371ec62\n",
+      "dimensions: [512, 512]\n",
+      "calibration: {'Scale': 14.6875, 'Offset': 0, 'Unit': 'Nanometer'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Use the dataset_id obtained in 3\n",
+    "dataset = worksheet.get_data_set(dataset_id)\n",
+    "clump_id = dataset[\"Clump\"][\"Id\"]\n",
+    "dimensions = dataset[\"Clump\"][\"Information\"][\"DataInformation\"][\"Dimensions\"]\n",
+    "calib = dataset[\"Clump\"][\"Information\"][\"MeasurementInformation\"][\"CalibrationCoefficients\"][0]\n",
+    "\n",
+    "print(\"clump_id:\", clump_id)\n",
+    "print(\"dimensions:\", dimensions)\n",
+    "print(\"calibration:\", calib)\n",
+    "\n",
+    "print(\"# Data set detail\")\n",
+    "dataset"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cb1d92b9",
+   "metadata": {},
+   "source": [
+    "### 5. Clump\n",
+    "\n",
+    "A clump holds the actual measurement data as a numeric array.\n",
+    "\n",
+    "- `get_clump_num_array(clump_id)` — returns array shape and type metadata\n",
+    "- `get_clump_num_array_accessor(clump_id)` — returns the raw bytes of the array\n",
+    "\n",
+    "| Function | Returns |\n",
+    "|---|---|\n",
+    "| `get_clump_num_array(clump_id)` | `dict` with `Dimensions`, `ElementType`, etc. |\n",
+    "| `get_clump_num_array_accessor(clump_id)` | `bytes` — raw numeric data |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "3da0ea45",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "array info: {'ElementType': 'UInt16', 'Dimensions': [1, 512, 512], 'ElementCount': 262144, 'MemoryLoadableSize': 524288, 'WholeSize': 524288, 'ElementSize': 2, 'IsEdited': True}\n",
+      "shape: (1, 512, 512) dtype: uint16\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "# Array shape and type metadata\n",
+    "array_info = worksheet.get_clump_num_array(clump_id)\n",
+    "print(\"array info:\", array_info)\n",
+    "\n",
+    "# Raw bytes → NumPy array\n",
+    "raw_bytes = worksheet.get_clump_num_array_accessor(clump_id)\n",
+    "total_elements = 1\n",
+    "for d in array_info[\"Dimensions\"]:\n",
+    "    total_elements *= d\n",
+    "\n",
+    "dtype_map = {1: np.uint8, 2: np.uint16, 4: np.float32, 8: np.float64}\n",
+    "bytes_per_element = len(raw_bytes) // total_elements\n",
+    "dtype = dtype_map.get(bytes_per_element, np.float32)\n",
+    "\n",
+    "narray = np.frombuffer(raw_bytes, dtype=dtype).reshape(array_info[\"Dimensions\"])\n",
+    "print(\"shape:\", narray.shape, \"dtype:\", narray.dtype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "d4fee184",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "image/png": "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k25bunSpVq9e7W5P9jVKdfHiRf3sZz/T7Nmzx75+sv5oyTjbu3evCQQCZvfu3ebMmTPmscceMwUFBWmfVJmoLly4YN5++23z9ttvG0nma1/7mnn77bfNf/3XfxljPvg4fEFBgfnud79rfvzjH5v7778/48fhf+3Xfs0cO3bM/PCHPzR33HHHhPk4/Nq1a01+fr55/fXX0z6y+7//+79un8cff9yUlJSYI0eOmDfffNNEIhETiUTc485HdleuXGlOnjxpDh06ZG699dYJ8XHmp59+2rS0tJizZ8+aH//4x+bpp582OTk55vDhw8aYyb02I0n9VKExk3uNvvKVr5jXX3/dnD171vzoRz8yFRUVZtasWaa3t9cYM7ZrY11wGWPMN7/5TVNSUmL8fr+59957TVtb23gPaUz84Ac/MJKuaDU1NcaYDz4S/9WvftWEQiETCATMihUrTGdnZ9p9/PKXvzQPP/ywmT59ugkGg+bLX/6yuXDhwjjMZvRlWhtJZteuXW6f999/3/z+7/++ueWWW8zUqVPN7/zO75hz586l3c9//ud/mlWrVpkpU6aYWbNmma985StmaGhojGcz+n7v937PzJs3z/j9fnPrrbeaFStWuKFlzORem5EMD67JvEYPPfSQmT17tvH7/eZXfuVXzEMPPWTeffdd9/hYrg3/1gQAYBWrfsYFAADBBQCwCsEFALAKwQUAsArBBQCwCsEFALAKwQUAsArBBQCwCsEFALAKwQUAsArBBQCwCsEFALDK/wFIMX+1kNa1AgAAAABJRU5ErkJggg==",
+      "text/plain": [
+       "<Figure size 640x480 with 1 Axes>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "display = narray.squeeze()  # remove size-1 dimensions\n",
+    "\n",
+    "if display.ndim == 1:\n",
+    "    # Spectrum / profile\n",
+    "    offset = calib[\"Offset\"]\n",
+    "    scale = calib[\"Scale\"]\n",
+    "    unit = calib[\"Unit\"]\n",
+    "    axis = offset + scale * np.arange(len(display))\n",
+    "    plt.figure()\n",
+    "    plt.plot(axis, display)\n",
+    "    plt.show()\n",
+    "elif display.ndim == 2:\n",
+    "    plt.imshow(display, cmap=\"gray\")\n",
+    "else:\n",
+    "    # 3D or higher: collapse spectral axis and show as 2D\n",
+    "    img2d = display.sum(axis=-1)\n",
+    "    plt.imshow(img2d, cmap=\"gray\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "732a846c",
+   "metadata": {},
+   "source": [
+    "\n",
+    "## Repository: saving and loading worksheets\n",
+    "\n",
+    "The `repository` package provides functions to save and load worksheet data as files.\n",
+    "\n",
+    "### Sheet: save / load a worksheet\n",
+    "\n",
+    "A worksheet can be saved as a `.jfw` file and reloaded later.\n",
+    "\n",
+    "| Function | Description |\n",
+    "|---|---|\n",
+    "| `can_write_plainsheet(worksheet_id, path)` | Check whether the worksheet can be saved |\n",
+    "| `write_plainsheet(worksheet_id, path)` | Save the worksheet to a `.jfw` file |\n",
+    "| `read_plainsheet(path)` | Load a worksheet from a `.jfw` file |\n",
+    "\n",
+    ":::{warning}\n",
+    "Loading a worksheet file that is already open in FEMTUS will result in an error.\n",
+    ":::"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "d9e156b5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "can_write: {'Result': True}\n",
+      "write_plainsheet: done → C:/tmp/tutorial_sheet.jfw\n"
+     ]
+    }
+   ],
+   "source": [
+    "plain_sheet_path = \"C:/tmp/tutorial_sheet.jfw\"\n",
+    "\n",
+    "# Check if the worksheet can be saved\n",
+    "can_write = repository.can_write_plainsheet(worksheet_id, plain_sheet_path)\n",
+    "print(\"can_write:\", can_write)\n",
+    "\n",
+    "if can_write.get(\"Result\"):\n",
+    "    # Save the worksheet\n",
+    "    repository.write_plainsheet(worksheet_id, plain_sheet_path)\n",
+    "    print(\"write_plainsheet: done →\", plain_sheet_path)\n",
+    "\n",
+    "    # # Load the worksheet from file\n",
+    "    # loaded = repository.read_plainsheet(plain_sheet_path)\n",
+    "    # print(\"read_plainsheet:\", loaded)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "29b94a78",
+   "metadata": {},
+   "source": [
+    "### Element: save / load a single element\n",
+    "\n",
+    "A single element (one measurement result) can be saved as a `.jh5` file.\n",
+    "\n",
+    "| Function | Description |\n",
+    "|---|---|\n",
+    "| `write_worksheet_element(element_id, path)` | Save the element to a `.jh5` file |\n",
+    "| `read_worksheet_element(path)` | Load an element from a `.jh5` file |\n",
+    "\n",
+    ":::{warning}\n",
+    "Loading a worksheet file that is already open in FEMTUS will result in an error.\n",
+    ":::"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "ac219d5a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "write_worksheet_element: done → C:/tmp/tutorial_element.jh5\n"
+     ]
+    }
+   ],
+   "source": [
+    "element_path = \"C:/tmp/tutorial_element.jh5\"\n",
+    "\n",
+    "# Save a single element\n",
+    "repository.write_worksheet_element(element_id, element_path)\n",
+    "print(\"write_worksheet_element: done →\", element_path)\n",
+    "\n",
+    "# # Load the element from file\n",
+    "# loaded_element = repository.read_worksheet_element(element_path)\n",
+    "# print(\"read_worksheet_element:\", loaded_element)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "vjem310",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,15 @@
+PyJEM.stem4d
+============
+
+
+.. toctree::
+   :maxdepth: 2
+
+   PyJEM.stem4d.acquisition
+
+
+.. automodule:: PyJEM.stem4d
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

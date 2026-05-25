@@ -1,0 +1,9 @@
+PyJEM.detector
+==============
+
+
+.. automodule:: PyJEM.detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
