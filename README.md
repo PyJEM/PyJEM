@@ -20,6 +20,8 @@ vjem is a recommendate python environment for PyJEM development.
 The vjem environment includes libraries such as NumPy and OpenCV.
 It also makes it easier to specify and share recommended environments when exchanging code.
 
+- python 3.12 : [vjem312.yml](vjem/vjem312.yml)
+- python 3.11 : [vjem311.yml](vjem/vjem311.yml)
 - python 3.10 : [vjem310.yml](vjem/vjem310.yml)
 - python 3.9 : [vjem39.yml](vjem/vjem39.yml)
 
