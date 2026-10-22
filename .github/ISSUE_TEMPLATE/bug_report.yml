@@ -1,0 +1,92 @@
+name: "🐞Technical Support Request"
+description: "Report a software issue to the Customer Support team"
+title: "[Support] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to file a bug report. Do not include passwords, license keys, personal data, or other confidential information.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Describe the issue:"
+      placeholder: "Provide a concise description of the issue and its impact on your work."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: "Machine model:"
+      description: > 
+        "Select the instrument model affected by this issue."
+      options:
+        - NEOARM
+        - GARM
+        - F200
+        - CryoARM
+        - ACE
+        - Other
+    validations:
+      required: true
+
+  # - type: dropdown
+  #   id: software
+  #   attributes:
+  #     label: "Affected Software"
+  #     description: "Select all software products related to this issue."
+  #     multiple: true
+  #     options:
+  #       - TEMCenter
+  #       - PyJEM
+  #       - TEMExt
+  #       - FEMTUS
+  #       - Other
+  #   validations:
+  #     required: false
+
+  - type: textarea
+    id: software_versions
+    attributes:
+      label: "Software and Version"
+      description: >
+        List each affected software product and its version on a separate line.
+      placeholder: |
+        TEMCenter: ex. v4.1.16
+        PyJEM: ex. 1.4.0.3786
+        TEMExt: ...
+        FEMTUS: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Error messages:"
+      description: "Attach relevant screenshots, error messages, or log files. "
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to Reproduce"
+      description: "If available, provide the steps required to reproduce the issue."
+      placeholder: |
+        1. Open...
+        2. Select...
+        3. Observe...
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Additional Information"
+      description: >
+        Provide any other information that may assist with the investigation. 
+    validations:
+      required: false
