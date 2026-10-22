@@ -1,4 +1,4 @@
-name: "🐞Technical Support Request"
+name: "🐞Bug report"
 description: "Report a software issue to the Customer Support team"
 title: "[Support] "
 labels: ["bug"]
